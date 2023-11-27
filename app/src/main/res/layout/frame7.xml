@@ -10,7 +10,7 @@
         android:id="@+id/lowhill"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/lowhill"
+        android:src="@drawable/hill_low"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent">
     </ImageView>
@@ -150,7 +150,7 @@
                 android:id="@+id/memoinput"
                 android:layout_width="272dp"
                 android:layout_height="160dp"
-                android:background="@drawable/memoinput"
+                android:background="@drawable/memo_input"
                 app:layout_constraintTop_toBottomOf="@id/quarter"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -172,7 +172,7 @@
                 android:id="@+id/memofinish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/memofinish"
+                android:src="@drawable/memo_finish"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/memoinput"

@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.chobo.onrest"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.chobo.onrest"
         minSdk = 26
-        targetSdk = 33
+        targetSdk = 32
         versionCode = 1
         versionName = "1.0"
 

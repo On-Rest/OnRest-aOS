@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/lowhill"
+        android:src="@drawable/hill_low"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent">
     </ImageView>
@@ -79,7 +79,7 @@
         android:id="@+id/calender1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/calender1"
+        android:src="@drawable/calender1_on"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/vertical1"
         app:layout_constraintEnd_toEndOf="@+id/vertical2">
@@ -89,7 +89,7 @@
         android:id="@+id/calender2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/calender2"
+        android:src="@drawable/calender2_off"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/vertical3"
         app:layout_constraintEnd_toEndOf="@+id/vertical4"
@@ -97,10 +97,10 @@
     </ImageView>
 
     <ImageView
-        android:id="@+id/Substract3"
+        android:id="@+id/calender3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/subtract3"
+        android:src="@drawable/calender3_off"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/vertical6"
         app:layout_constraintStart_toStartOf="@+id/vertical5"
@@ -111,7 +111,7 @@
         android:id="@+id/calender4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/calender4"
+        android:src="@drawable/calender4_off"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/vertical8"
         app:layout_constraintStart_toStartOf="@+id/vertical7"

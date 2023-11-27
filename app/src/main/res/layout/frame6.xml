@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/lowhill"
+        android:src="@drawable/hill_low"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent">
     </ImageView>
@@ -183,7 +183,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="none"
-            android:src="@drawable/angryment"
+            android:src="@drawable/angry_ment"
             app:layout_constraintBottom_toTopOf="@id/rectangle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -194,7 +194,7 @@
             android:id="@+id/stripe"
             android:layout_width="52dp"
             android:layout_height="78dp"
-            android:src="@drawable/angrypage"
+            android:src="@drawable/angry_page"
             android:scaleType="fitXY"
             android:background="none"
             app:layout_constraintStart_toStartOf="parent"
