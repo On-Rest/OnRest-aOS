@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/calender1_on_off"
+        android:title="1"
+        android:enabled="true"
+        />
+
+    <item
+        android:id="@+id/star"
+        android:icon="@drawable/calender2_on_off"
+        android:title="2"
+        android:enabled="true"
+        />
+    <item
+        android:id="@+id/group"
+        android:icon="@drawable/calender3_on_off"
+        android:title="3"
+        android:enabled="true"
+        />
+    <item
+        android:id="@+id/hotel"
+        android:icon="@drawable/calender4_on_off"
+        android:title="4"
+        android:enabled="true"
+        />
+
+</menu>
