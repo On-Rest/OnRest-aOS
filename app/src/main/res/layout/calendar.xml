@@ -29,6 +29,15 @@
         tools:ignore="MissingConstraints">
     </ImageView>
 
+    <CalendarView
+        android:layout_width="329dp"
+        android:layout_height="444dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="64dp">
+    </CalendarView>
+
     <ImageButton
         android:id="@+id/speechbubble"
         android:layout_width="wrap_content"
