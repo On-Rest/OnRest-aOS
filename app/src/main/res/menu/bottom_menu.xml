@@ -2,27 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
-        android:icon="@drawable/calender1_on_off"
-        android:title="1"
+        android:icon="@drawable/calender1_on"
+        android:title="calender"
         android:enabled="true"
         />
 
     <item
         android:id="@+id/star"
-        android:icon="@drawable/calender2_on_off"
-        android:title="2"
+        android:icon="@drawable/calender2_on"
+        android:title="post"
         android:enabled="true"
         />
     <item
         android:id="@+id/group"
-        android:icon="@drawable/calender3_on_off"
-        android:title="3"
+        android:icon="@drawable/calender3_on"
+        android:title="mission"
         android:enabled="true"
         />
     <item
         android:id="@+id/hotel"
-        android:icon="@drawable/calender4_on_off"
-        android:title="4"
+        android:icon="@drawable/calender4_on"
+        android:title="personal"
         android:enabled="true"
         />
 
