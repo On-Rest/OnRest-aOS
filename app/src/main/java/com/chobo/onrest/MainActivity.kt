@@ -10,7 +10,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 // MainActivity.java
 class MainActivity : AppCompatActivity() {
     private var binding: ActivityMainBinding? = null
-    var missionList = arrayListOf<Mission>()
+    var missionList = arrayListOf<Mission>(Mission (12,"미션","미션디테일",true))
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
