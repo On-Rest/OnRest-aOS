@@ -118,12 +118,21 @@
             tools:ignore="MissingConstraints">
         </ImageView>
 
+        <ListView
+            android:id="@+id/mainListView"
+            android:layout_width="wrap_content"
+            android:layout_height="164dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/midbutton"
+            app:layout_constraintBottom_toBottomOf="@id/midbutton"
+            
+
         <ImageButton
             android:id="@+id/speechbubble"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="none"
-            android:src="@drawable/diary"
+            android:src="@drawable/quest_choice"
             app:layout_constraintBottom_toTopOf="@id/rectangle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
