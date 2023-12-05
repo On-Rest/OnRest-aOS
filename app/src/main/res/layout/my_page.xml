@@ -162,13 +162,107 @@
             android:layout_height="0.1dp"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.0444" />
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_MAbackground_end"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.9556" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_pieChart_end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5833" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_pieChart_top"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3263" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_pieChart_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5338" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_pieChart_start"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1222" />
+
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_feelPercent_top"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.37" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_feelPercent_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.40" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_feelPercent_start"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.66" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_feelPercent_end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.72" />
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/g_sadfacePercent_top"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.45" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_sadfacePercent_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.48" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_angryfacePercent_top"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.41" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_angryfacePercent_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.44" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_Percent_start"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.76" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_Percent_end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.84" />
         <View
             android:id="@+id/separator"
             android:layout_width="328dp"
@@ -187,8 +281,7 @@
             app:layout_constraintBottom_toBottomOf="@id/g_logo_bottom"
             app:layout_constraintEnd_toEndOf="@id/g_logo_end"
             app:layout_constraintStart_toStartOf="@id/g_logo_start"
-            app:layout_constraintTop_toTopOf="@id/g_logo_top"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintTop_toTopOf="@id/g_logo_top" />
 
         <ImageView
             android:id="@+id/profile"
@@ -226,6 +319,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="이번 달의 기분 분포"
+            android:textColor="@color/textBrown"
             app:layout_constraintTop_toTopOf="@id/g_MA_top"
             app:layout_constraintBottom_toBottomOf="@id/g_MA_bottom"
             app:layout_constraintStart_toStartOf="@id/g_MA_start"
@@ -233,5 +327,66 @@
             android:gravity="top|center"
             android:textStyle="bold"
             />
+        <ImageView
+            android:id="@+id/happyPercentIcon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/happy_face"
+            app:layout_constraintTop_toTopOf="@id/g_feelPercent_top"
+            app:layout_constraintBottom_toBottomOf="@+id/g_feelPercent_bottom"
+            app:layout_constraintStart_toStartOf="@id/g_feelPercent_start"
+            app:layout_constraintEnd_toEndOf="@id/g_feelPercent_end"/>
+        <ImageView
+            android:id="@+id/angryPercentIcon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/angry_face"
+            app:layout_constraintTop_toTopOf="@id/g_angryfacePercent_top"
+            app:layout_constraintBottom_toBottomOf="@id/g_angryfacePercent_bottom"
+            app:layout_constraintStart_toStartOf="@id/g_feelPercent_start"
+            app:layout_constraintEnd_toEndOf="@id/g_feelPercent_end"/>
+        <ImageView
+            android:id="@+id/sadPercentIcon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/sad_face"
+            app:layout_constraintTop_toTopOf="@id/g_sadfacePercent_top"
+            app:layout_constraintBottom_toBottomOf="@id/g_sadfacePercent_bottom"
+            app:layout_constraintStart_toStartOf="@id/g_feelPercent_start"
+            app:layout_constraintEnd_toEndOf="@id/g_feelPercent_end"/>
 
+
+        <TextView
+            android:id="@+id/happyPercent"
+            android:text="20%"
+            android:textColor="@color/brown1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/g_feelPercent_top"
+            app:layout_constraintBottom_toBottomOf="@id/g_feelPercent_bottom"
+            app:layout_constraintStart_toStartOf="@id/g_Percent_start"
+            app:layout_constraintEnd_toEndOf="@id/g_Percent_end"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/angryPercent"
+            android:text="20%"
+            android:textColor="@color/brown2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/g_angryfacePercent_top"
+            app:layout_constraintBottom_toBottomOf="@id/g_angryfacePercent_bottom"
+            app:layout_constraintStart_toStartOf="@id/g_Percent_start"
+            app:layout_constraintEnd_toEndOf="@id/g_Percent_end"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/sadPercent"
+            android:text="20%"
+            android:textColor="@color/brown3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/g_sadfacePercent_top"
+            app:layout_constraintBottom_toBottomOf="@id/g_sadfacePercent_bottom"
+            app:layout_constraintStart_toStartOf="@id/g_Percent_start"
+            app:layout_constraintEnd_toEndOf="@id/g_Percent_end"
+            android:gravity="center"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
