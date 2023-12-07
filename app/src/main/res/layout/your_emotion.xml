@@ -47,7 +47,7 @@
             android:src="@drawable/happy_face"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/hamstertext"
+            app:layout_constraintTop_toBottomOf="@id/hamstertext"
             android:layout_marginTop="15dp"/>
 
         <TextView
@@ -119,7 +119,7 @@
             android:background="none"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/box">
+            app:layout_constraintBottom_toTopOf="@id/box">
         </ImageButton>
 
         <ImageView
@@ -129,7 +129,7 @@
             android:src="@drawable/rectangle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/stripe"
+            app:layout_constraintBottom_toTopOf="@id/stripe"
             android:layout_marginBottom="8dp"
             tools:ignore="DuplicateIds">
         </ImageView>

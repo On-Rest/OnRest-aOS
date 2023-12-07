@@ -12,6 +12,27 @@ class MainListAdapter(private val context: Context, val missionList: ArrayList<M
     @SuppressLint("ViewHolder", "InflateParams")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view: View = LayoutInflater.from(context).inflate(R.layout.mission_list_view, null)
+        val itemList: List<Mission> = listOf(
+            Mission(
+                date = 1,
+                mission = "안녕0",
+                missionDetail = "인사",
+                check = false
+            ),
+            Mission(
+                date = 1,
+                mission = "안녕2",
+                missionDetail = "인사해",
+                check = false
+            ),
+            Mission(
+                date = 1,
+                mission = "안녕3",
+                missionDetail = "인사해2",
+                check = false
+            )
+
+        )
 
         val missionDate = view.findViewById<TextView>(R.id.dateTV)
         val missionMission = view.findViewById<TextView>(R.id.missionTV)
@@ -19,11 +40,11 @@ class MainListAdapter(private val context: Context, val missionList: ArrayList<M
         val missionCheck = view.findViewById<TextView>(R.id.checkTV)
 
         val mission1 = missionList[position]
-        missionDate.text = Mission.date
-        missionMission.text = Mission.age
-        missionMissionDetail.text = Mission.missionDetail
-        missionCheck.text = Mission.check
 
+        missionDate.text = itemList[position].date.toString()
+        missionMission.text = itemList[position].mission
+        missionMissionDetail.text = itemList[position].missionDetail
+        missionCheck.text = itemList[position].check.toString()
         return view
     }
 

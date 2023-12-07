@@ -69,7 +69,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:src="@drawable/dhatgle"
-        app:layout_constraintTop_toBottomOf="@+id/detail"
+        app:layout_constraintTop_toBottomOf="@id/detail"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="204dp"
@@ -81,8 +81,8 @@
         android:text="300"
         android:textColor="#89857C"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/dhatgle"
-        app:layout_constraintTop_toBottomOf="@+id/detail"
+        app:layout_constraintStart_toEndOf="@id/dhatgle"
+        app:layout_constraintTop_toBottomOf="@id/detail"
         android:layout_marginStart="2dp"
         android:layout_marginTop="11.5dp"/>
 
@@ -91,7 +91,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:src="@drawable/heart"
-        app:layout_constraintTop_toBottomOf="@+id/detail"
+        app:layout_constraintTop_toBottomOf="@id/detail"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="264dp"
@@ -103,8 +103,8 @@
         android:text="300"
         android:textColor="#89857C"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/heart"
-        app:layout_constraintTop_toBottomOf="@+id/detail"
+        app:layout_constraintStart_toEndOf="@id/heart"
+        app:layout_constraintTop_toBottomOf="@id/detail"
         android:layout_marginStart="2dp"
         android:layout_marginTop="11.5dp"/>
 

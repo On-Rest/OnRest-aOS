@@ -77,20 +77,20 @@
             android:id="@+id/calender1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/calender1_off"
+            android:src="@drawable/calender1_on"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/vertical1"
-            app:layout_constraintEnd_toEndOf="@+id/vertical2">
+            app:layout_constraintStart_toStartOf="@id/vertical1"
+            app:layout_constraintEnd_toEndOf="@id/vertical2">
         </ImageView>
 
         <ImageView
             android:id="@+id/calender2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/calender2_on"
+            android:src="@drawable/calender2_off"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/vertical3"
-            app:layout_constraintEnd_toEndOf="@+id/vertical4"
+            app:layout_constraintStart_toStartOf="@id/vertical3"
+            app:layout_constraintEnd_toEndOf="@id/vertical4"
             tools:ignore="MissingConstraints">
         </ImageView>
 
@@ -100,8 +100,8 @@
             android:layout_height="wrap_content"
             android:src="@drawable/calender3_off"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/vertical6"
-            app:layout_constraintStart_toStartOf="@+id/vertical5"
+            app:layout_constraintEnd_toEndOf="@id/vertical6"
+            app:layout_constraintStart_toStartOf="@id/vertical5"
             tools:ignore="MissingConstraints">
         </ImageView>
 
@@ -111,8 +111,8 @@
             android:layout_height="wrap_content"
             android:src="@drawable/calender4_off"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/vertical8"
-            app:layout_constraintStart_toStartOf="@+id/vertical7"
+            app:layout_constraintEnd_toEndOf="@id/vertical8"
+            app:layout_constraintStart_toStartOf="@id/vertical7"
             tools:ignore="MissingConstraints">
         </ImageView>
 

@@ -119,12 +119,13 @@
         </ImageView>
 
         <ListView
-            android:id="@+id/mainListView"
+            android:id="@+id/a"
             android:layout_width="wrap_content"
             android:layout_height="164dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/midbutton"
-            app:layout_constraintBottom_toBottomOf="@id/midbutton"
+            app:layout_constraintBottom_toBottomOf="@id/midbutton">
+        </ListView>
             
 
         <ImageButton
@@ -148,7 +149,7 @@
             android:background="none"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/box">
+            app:layout_constraintBottom_toTopOf="@id/box">
         </ImageButton>
 
         <ImageView
@@ -158,7 +159,7 @@
             android:src="@drawable/rectangle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/stripe"
+            app:layout_constraintBottom_toTopOf="@id/stripe"
             android:layout_marginBottom="8dp"
             tools:ignore="DuplicateIds">
         </ImageView>
