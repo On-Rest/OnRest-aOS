@@ -49,10 +49,12 @@
             android:textSize="16dp"
             android:hint="검색어를 입력해주세요"
             app:layout_constraintEnd_toStartOf="@id/filter"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
         </EditText>
 
-            <ImageButton
+            <ToggleButton
                 android:id="@+id/filter"
                 android:layout_width="77dp"
                 android:layout_height="37dp"
@@ -60,12 +62,13 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/search"
-                android:src="@drawable/filter"
-                android:background="@NULL"
+                android:background="@drawable/comunity_filter_on_off"
+                android:textOn=""
+                android:textOff=""
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="4dp"
                 android:layout_marginStart="16dp">
-            </ImageButton>
+            </ToggleButton>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -112,6 +115,7 @@
             app:layout_constraintStart_toStartOf="@+id/vertical7"
             tools:ignore="MissingConstraints">
         </ImageView>
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/vertical0.5"
             android:layout_width="wrap_content"
