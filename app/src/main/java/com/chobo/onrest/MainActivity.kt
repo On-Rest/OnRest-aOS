@@ -4,12 +4,13 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.databinding.ActivityMainBinding
+import com.chobo.onrest.databinding.MyPageBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 // MainActivity.java
 class MainActivity : AppCompatActivity() {
-    private var binding: ActivityMainBinding? = null
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
