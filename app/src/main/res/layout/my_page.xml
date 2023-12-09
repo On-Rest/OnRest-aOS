@@ -358,8 +358,7 @@
 
         <TextView
             android:id="@+id/happyPercent"
-            android:text="20%"
-            android:textColor="@color/brown1"
+            android:text=""
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="@id/g_feelPercent_top"
@@ -369,8 +368,7 @@
             android:gravity="center"/>
         <TextView
             android:id="@+id/angryPercent"
-            android:text="20%"
-            android:textColor="@color/brown2"
+            android:text=""
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="@id/g_angryfacePercent_top"
@@ -380,8 +378,6 @@
             android:gravity="center"/>
         <TextView
             android:id="@+id/sadPercent"
-            android:text="20%"
-            android:textColor="@color/brown3"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="@id/g_sadfacePercent_top"
@@ -389,4 +385,16 @@
             app:layout_constraintStart_toStartOf="@id/g_Percent_start"
             app:layout_constraintEnd_toEndOf="@id/g_Percent_end"
             android:gravity="center"/>
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChart"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/g_pieChart_top"
+            app:layout_constraintBottom_toBottomOf="@id/g_pieChart_bottom"
+            app:layout_constraintStart_toStartOf="@id/g_pieChart_start"
+            app:layout_constraintEnd_toEndOf="@id/g_pieChart_end"
+
+            />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
