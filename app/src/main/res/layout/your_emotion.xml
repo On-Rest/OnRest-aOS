@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F8F5F1">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/hill_low"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </ImageView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/wholerest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/wholerest"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+        </ImageView>
+        
+        <TextView
+            android:id="@+id/hamstertext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오늘의 햄스터는..."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="155dp"/>
+        
+        <ImageView
+            android:layout_width="139dp"
+            android:layout_height="117dp"
+            android:src="@drawable/happy_face"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hamstertext"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:id="@+id/hamsteremotion"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="327dp"
+            android:text="행복한 햄스터"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:lineSpacingExtra="2sp"
+            android:translationY="-1.07sp"
+            android:gravity="center_horizontal|top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <Button
+            android:id="@+id/choice1"
+            android:text="이 감정으로 퀘스트 받을래!"
+            android:textColor="@color/black"
+            android:layout_width="234dp"
+            android:layout_height="51dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/round_white_with_outline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="413dp"
+            android:layout_marginBottom="20dp">
+        </Button>
+
+        <Button
+            android:id="@+id/choice2"
+            android:text="내가 직접 감정 입력할래!"
+            android:textColor="@color/black"
+            android:layout_width="234dp"
+            android:layout_height="51dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/round_white_with_outline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="484dp"
+            android:layout_marginBottom="20dp">
+        </Button>
+
+        <ImageButton
+            android:id="@+id/speechbubble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="none"
+            android:src="@drawable/youremotion"
+            app:layout_constraintBottom_toTopOf="@id/rectangle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="3dp">
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/stripe"
+            android:layout_width="52dp"
+            android:layout_height="78dp"
+            android:src="@drawable/stripe"
+            android:scaleType="fitXY"
+            android:background="none"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/box">
+        </ImageButton>
+
+        <ImageView
+            android:id="@+id/rectangle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rectangle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/stripe"
+            android:layout_marginBottom="8dp"
+            tools:ignore="DuplicateIds">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/box"
+            android:layout_width="10dp"
+            android:layout_height="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+        </TextView>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

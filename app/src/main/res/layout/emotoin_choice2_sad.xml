@@ -126,18 +126,6 @@
             tools:ignore="MissingConstraints">
         </ImageView>
 
-        <ImageView
-            android:id="@+id/square"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/quarter2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/progress"
-            app:layout_constraintBottom_toBottomOf="@+id/progress"
-            android:layout_marginBottom="90dp">
-        </ImageView>
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -154,6 +142,7 @@
                 android:layout_width="234dp"
                 android:layout_height="51dp"
                 android:backgroundTint="@color/white"
+                android:background="@drawable/round_white_with_outline"
                 android:layout_marginBottom="20dp">
             </Button>
 
@@ -164,6 +153,7 @@
                 android:layout_width="234dp"
                 android:layout_height="51dp"
                 android:backgroundTint="@color/white"
+                android:background="@drawable/round_white_with_outline"
                 android:layout_marginBottom="20dp">
             </Button>
 
@@ -173,6 +163,7 @@
                 android:textColor="@color/black"
                 android:layout_width="234dp"
                 android:layout_height="51dp"
+                android:background="@drawable/round_white_with_outline"
                 android:backgroundTint="#FFFFFF">
             </Button>
 
@@ -199,7 +190,7 @@
             android:background="none"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/box">
+            app:layout_constraintBottom_toTopOf="@id/box">
         </ImageButton>
 
         <ImageView
@@ -209,7 +200,7 @@
             android:src="@drawable/rectangle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/stripe"
+            app:layout_constraintBottom_toTopOf="@id/stripe"
             android:layout_marginBottom="8dp"
             tools:ignore="DuplicateIds">
         </ImageView>

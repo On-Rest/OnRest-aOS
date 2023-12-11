@@ -24,6 +24,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.69" />
+  
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_search_bottom"
         android:layout_width="match_parent"

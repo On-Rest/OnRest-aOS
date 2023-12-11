@@ -118,18 +118,6 @@
             tools:ignore="MissingConstraints">
         </ImageView>
 
-        <ImageView
-            android:id="@+id/square"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/quarter4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/progress"
-            app:layout_constraintBottom_toBottomOf="@+id/progress"
-            android:layout_marginBottom="90dp">
-        </ImageView>
-
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -193,7 +181,7 @@
             android:background="none"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/box">
+            app:layout_constraintBottom_toTopOf="@id/box">
         </ImageButton>
 
         <ImageView
@@ -203,7 +191,7 @@
             android:src="@drawable/rectangle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/stripe"
+            app:layout_constraintBottom_toTopOf="@id/stripe"
             android:layout_marginBottom="8dp"
             tools:ignore="DuplicateIds">
         </ImageView>
