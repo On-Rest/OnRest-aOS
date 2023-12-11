@@ -5,33 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_logo_start"
-            android:layout_width="match_parent"
-            android:layout_height="0.1dp"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.036" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_logo_top"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.005" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_logo_end"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.2167" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_logo_bottom"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.05" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_profile_top"
@@ -263,6 +237,53 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.84" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="59dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/g_logo_start"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.05" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/g_logo_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.27" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/g_logo_end"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.25" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/g_logo_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.72" />
+
+                <ImageButton
+                    android:layout_width="72dp"
+                    android:layout_height="27dp"
+                    android:src="@drawable/wholerest"
+                    android:background=""
+                    android:scaleType="fitXY"
+                    app:layout_constraintTop_toTopOf="@id/g_logo_top"
+                    app:layout_constraintBottom_toBottomOf="@id/g_logo_bottom"
+                    app:layout_constraintStart_toStartOf="@id/g_logo_start"
+                    app:layout_constraintEnd_toEndOf="@id/g_logo_end"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <View
             android:id="@+id/separator"
             android:layout_width="328dp"
@@ -273,16 +294,6 @@
             app:layout_constraintEnd_toEndOf="@id/g_separator_end"
             app:layout_constraintStart_toStartOf="@id/g_separator_start"
             />
-        <ImageButton
-            android:id="@+id/wholerest"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:src="@drawable/wholerest"
-            app:layout_constraintBottom_toBottomOf="@id/g_logo_bottom"
-            app:layout_constraintEnd_toEndOf="@id/g_logo_end"
-            app:layout_constraintStart_toStartOf="@id/g_logo_start"
-            app:layout_constraintTop_toTopOf="@id/g_logo_top" />
-
         <ImageView
             android:id="@+id/profile"
             android:layout_width="0dp"
