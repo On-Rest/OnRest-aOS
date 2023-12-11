@@ -100,9 +100,10 @@
         android:layout_height="wrap_content"
         android:src="@drawable/calender2_off"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/vertical3"
         app:layout_constraintEnd_toEndOf="@id/vertical4"
+        app:layout_constraintStart_toStartOf="@id/vertical3"
         tools:ignore="MissingConstraints">
+
     </ImageView>
 
     <ImageView

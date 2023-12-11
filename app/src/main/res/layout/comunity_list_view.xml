@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="328dp"
+    android:layout_width="match_parent"
     android:layout_height="142dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/round_white_18dp">
+    android:background="@drawable/round_white_18dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
-        android:layout_height="21dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="16dp"
         android:text="기숙사에서 햄스터를 키우고 싶어요"
@@ -23,16 +26,17 @@
     <TextView
         android:id="@+id/detail"
         android:layout_width="293dp"
-        android:layout_height="43dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="47dp"
-        android:textSize="14sp"
-        android:textColor="#89857C"
-        android:text="삶이 너무 힘들고 지쳐서 햄스터 한마리를 키우고 싶은데 기숙사에서 키우면 안 될까요? 해바라기씨도 주고 집도 주고 잘 키울 수 있어요 진짜로 밀웜도 잡아다가 공수해서 줄 수 있어요"
+        android:layout_height="42dp"
+        android:ellipsize="end"
         android:maxLines="2"
-        android:ellipsize="end"/>
+        android:text="삶이 너무 힘들고 지쳐서 햄스터 한마리를 키우고 싶은데 기숙사에서 키우면 안 될까요? 해바라기씨도 주고 집도 주고 잘 키울 수 있어요 진짜로 밀웜도 잡아다가 공수해서 줄 수 있어요"
+        android:textColor="#89857C"
+        android:textSize="14sp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <TextView
         android:id="@+id/tag1"
