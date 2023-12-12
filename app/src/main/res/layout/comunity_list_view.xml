@@ -4,8 +4,7 @@
     android:layout_height="142dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/round_white_18dp"
-    android:layout_marginBottom="28dp"
-    android:layout_gravity="center|top">
+    android:layout_marginBottom="28dp">
 
     <TextView
         android:id="@+id/title"
@@ -80,6 +79,7 @@
         android:background="@NULL"/>
 
     <TextView
+        android:id="@+id/dhatglenum"
         android:layout_width="22dp"
         android:layout_height="17dp"
         android:text="300"
@@ -102,6 +102,7 @@
         android:background="@NULL"/>
 
     <TextView
+        android:id="@+id/heartnum"
         android:layout_width="22dp"
         android:layout_height="17dp"
         android:text="300"
@@ -111,7 +112,5 @@
         app:layout_constraintTop_toBottomOf="@id/detail"
         android:layout_marginStart="2dp"
         android:layout_marginTop="11.5dp"/>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
