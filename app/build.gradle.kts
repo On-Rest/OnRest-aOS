@@ -38,7 +38,6 @@ android {
         //noinspection DataBindingWithoutKapt
         dataBinding = true
     }
-    buildToolsVersion = "33.0.1"
 }
 
 dependencies {

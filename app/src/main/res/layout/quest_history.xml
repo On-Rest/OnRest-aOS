@@ -63,7 +63,7 @@
                 app:layout_constraintStart_toEndOf="@id/date"
                 android:layout_marginStart="10dp"
                 android:stateListAnimator="@null"
-                android:background="@NULL">
+                android:background="@android:color/transparent">
             </ImageButton>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
