@@ -173,7 +173,7 @@
             android:id="@+id/speechbubble"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="none"
+            android:background="@android:color/transparent"
             android:src="@drawable/happy_ment"
             app:layout_constraintBottom_toTopOf="@id/rectangle"
             app:layout_constraintStart_toStartOf="parent"
@@ -187,7 +187,7 @@
             android:layout_height="78dp"
             android:src="@drawable/happy_page"
             android:scaleType="fitXY"
-            android:background="none"
+            android:background="@android:color/transparent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/box">

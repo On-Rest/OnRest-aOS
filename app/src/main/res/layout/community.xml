@@ -151,7 +151,7 @@
             android:layout_width="72dp"
             android:layout_height="27dp"
             android:src="@drawable/wholerest"
-            android:background=""
+            android:background="@android:color/transparent"
             android:scaleType="fitXY"
             app:layout_constraintTop_toTopOf="@id/g_logo_top"
             app:layout_constraintBottom_toBottomOf="@id/g_logo_bottom"
