@@ -73,7 +73,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="204dp"
-        android:background="@NULL"/>
+        android:background="@android:color/transparent"/>
 
     <TextView
         android:layout_width="22dp"
@@ -95,7 +95,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="264dp"
-        android:background="@NULL"/>
+        android:background="@android:color/transparent"/>
 
     <TextView
         android:layout_width="22dp"

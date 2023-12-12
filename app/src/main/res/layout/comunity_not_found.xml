@@ -48,7 +48,8 @@
                 android:textSize="16dp"
                 android:hint="검색어를 입력해주세요"
                 app:layout_constraintEnd_toStartOf="@id/filter"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
             </EditText>
 
             <ImageButton
@@ -60,7 +61,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/search"
                 android:src="@drawable/filter"
-                android:background="@NULL"
+                android:background="@android:color/transparent"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="4dp"
                 android:layout_marginStart="16dp">
