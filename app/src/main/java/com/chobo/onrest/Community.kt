@@ -16,7 +16,6 @@ class Community : AppCompatActivity(){
         binding = CommunityBinding.inflate(layoutInflater)
         val view = binding!!.root
         setContentView(R.layout.community)
-
     }
     private fun initRecycler() {
         communityAdapter = CommunityAdapter(this)
