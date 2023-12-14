@@ -117,7 +117,7 @@
         android:layout_height="59dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_logo_start"
@@ -157,79 +157,70 @@
             app:layout_constraintBottom_toBottomOf="@id/g_logo_bottom"
             app:layout_constraintStart_toStartOf="@id/g_logo_start"
             app:layout_constraintEnd_toEndOf="@id/g_logo_end"/>
-        
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/calender1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="16dp"
         android:src="@drawable/calender1_on"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/vertical1"
         app:layout_constraintEnd_toEndOf="@id/vertical2"
-        android:padding="16dp">
-    </ImageView>
+        app:layout_constraintStart_toStartOf="@id/vertical1"></ImageView>
 
     <ImageView
         android:id="@+id/calender2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="16dp"
         android:src="@drawable/calender2_off"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/vertical3"
         app:layout_constraintEnd_toEndOf="@id/vertical4"
-        tools:ignore="MissingConstraints"
-        android:padding="16dp">
-    </ImageView>
+        app:layout_constraintStart_toStartOf="@id/vertical3"
+        tools:ignore="MissingConstraints"></ImageView>
 
     <ImageView
         android:id="@+id/calender3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="16dp"
         android:src="@drawable/calender3_off"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/vertical6"
         app:layout_constraintStart_toStartOf="@id/vertical5"
-        tools:ignore="MissingConstraints"
-        android:padding="16dp">
-    </ImageView>
+        tools:ignore="MissingConstraints"></ImageView>
 
     <ImageView
         android:id="@+id/calender4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="16dp"
         android:src="@drawable/calender4_off"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/vertical8"
         app:layout_constraintStart_toStartOf="@id/vertical7"
-        tools:ignore="MissingConstraints"
-        android:padding="16dp">
-    </ImageView>
+        tools:ignore="MissingConstraints"></ImageView>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05">
-    </androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.05"></androidx.constraintlayout.widget.Guideline>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.175">
-    </androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.175"></androidx.constraintlayout.widget.Guideline>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.305">
-    </androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.305"></androidx.constraintlayout.widget.Guideline>
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -237,23 +228,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.435">
-    </androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.435"></androidx.constraintlayout.widget.Guideline>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.5">
+
+    </androidx.constraintlayout.widget.Guideline>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.695">
-    </androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.695"></androidx.constraintlayout.widget.Guideline>
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -261,15 +252,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.825">
-    </androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.825"></androidx.constraintlayout.widget.Guideline>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.955">
-    </androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.955"></androidx.constraintlayout.widget.Guideline>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
