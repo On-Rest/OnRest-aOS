@@ -81,8 +81,7 @@
         app:layout_constraintBottom_toBottomOf="@id/g_filter_bottom"
         app:layout_constraintEnd_toEndOf="@id/g_filter_end"
         app:layout_constraintStart_toStartOf="@id/g_filter_start"
-        app:layout_constraintTop_toTopOf="@+id/g_filter_top"
-        android:background=""/>
+        app:layout_constraintTop_toTopOf="@+id/g_filter_top"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/logo_constraint"
