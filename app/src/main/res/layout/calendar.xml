@@ -83,7 +83,6 @@
         app:layout_constraintBottom_toBottomOf="parent">
     </TextView>
 
-
     <ImageView
         android:id="@+id/calender1"
         android:layout_width="wrap_content"
@@ -200,9 +199,6 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.955">
     </androidx.constraintlayout.widget.Guideline>
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
