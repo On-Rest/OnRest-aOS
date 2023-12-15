@@ -62,6 +62,21 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.1331" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_recyclerview_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.16" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_recyclerview_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.92"/>
+
+
 
     <EditText
         android:id="@+id/search"
@@ -89,5 +104,104 @@
         app:layout_constraintStart_toStartOf="@id/g_filter_start"
         app:layout_constraintTop_toTopOf="@+id/g_filter_top" />
 
+    <ImageView
+        android:id="@+id/calender1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:src="@drawable/calender1_on"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/vertical2"
+        app:layout_constraintStart_toStartOf="@id/vertical1"/>
+
+    <ImageView
+        android:id="@+id/calender2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:src="@drawable/calender2_off"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/vertical4"
+        app:layout_constraintStart_toStartOf="@id/vertical3"
+        tools:ignore="MissingConstraints"/>
+
+    <ImageView
+        android:id="@+id/calender3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:src="@drawable/calender3_off"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/vertical6"
+        app:layout_constraintStart_toStartOf="@id/vertical5"
+        tools:ignore="MissingConstraints"/>
+
+    <ImageView
+        android:id="@+id/calender4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:src="@drawable/calender4_off"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/vertical8"
+        app:layout_constraintStart_toStartOf="@id/vertical7"
+        tools:ignore="MissingConstraints"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.175"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.305"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.435"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.695"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.825"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.955"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
