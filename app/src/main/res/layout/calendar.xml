@@ -201,8 +201,6 @@
         app:layout_constraintGuide_percent="0.955">
     </androidx.constraintlayout.widget.Guideline>
 
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
