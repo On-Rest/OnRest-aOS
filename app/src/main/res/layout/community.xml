@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background">
-
+    <include layout="@layout/header"/>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_search_top"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.08" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_search_start"
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.04" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_search_end"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.69" />
-  
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_search_bottom"
         android:layout_width="match_parent"
@@ -38,18 +40,21 @@
         android:layout_height="0.1dp"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.74" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_filter_end"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.95" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_filter_top"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.0869" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_filter_bottom"
         android:layout_width="match_parent"
@@ -64,72 +69,25 @@
         android:layout_height="0dp"
         android:background="@drawable/search_square"
         android:drawableEnd="@drawable/search_icon"
+        android:hint="검색어를 입력해주세요"
         android:paddingStart="16dp"
         android:paddingEnd="12dp"
         android:textSize="14sp"
-        android:hint="검색어를 입력해주세요"
-        app:layout_constraintTop_toTopOf="@id/g_search_top"
-        app:layout_constraintStart_toStartOf="@id/g_search_start"
+        app:layout_constraintBottom_toBottomOf="@id/g_search_bottom"
         app:layout_constraintEnd_toEndOf="@id/g_search_end"
-        app:layout_constraintBottom_toBottomOf="@id/g_search_bottom"/>
+        app:layout_constraintStart_toStartOf="@id/g_search_start"
+        app:layout_constraintTop_toTopOf="@id/g_search_top" />
 
     <ImageButton
         android:id="@+id/filter"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="?selectableItemBackground"
         android:src="@drawable/filter"
         app:layout_constraintBottom_toBottomOf="@id/g_filter_bottom"
         app:layout_constraintEnd_toEndOf="@id/g_filter_end"
         app:layout_constraintStart_toStartOf="@id/g_filter_start"
-        app:layout_constraintTop_toTopOf="@+id/g_filter_top"/>
+        app:layout_constraintTop_toTopOf="@+id/g_filter_top" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/logo_constraint"
-        android:layout_width="0dp"
-        android:layout_height="59dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_logo_start"
-            android:layout_width="match_parent"
-            android:layout_height="0.1dp"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.05" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_logo_top"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.27" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_logo_end"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.25" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_logo_bottom"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.72" />
-        
-        <ImageButton
-            android:layout_width="72dp"
-            android:layout_height="27dp"
-            android:src="@drawable/wholerest"
-            android:background="@android:color/transparent"
-            android:scaleType="fitXY"
-            app:layout_constraintTop_toTopOf="@id/g_logo_top"
-            app:layout_constraintBottom_toBottomOf="@id/g_logo_bottom"
-            app:layout_constraintStart_toStartOf="@id/g_logo_start"
-            app:layout_constraintEnd_toEndOf="@id/g_logo_end"/>
-        
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

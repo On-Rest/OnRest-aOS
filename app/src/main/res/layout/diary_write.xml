@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#F8F5F1">
-
+    <include layout="@layout/header"/>
     <ImageView
         android:id="@+id/lowhill"
         android:layout_width="match_parent"
@@ -52,14 +52,6 @@
             app:layout_constraintGuide_percent="0.45">
         </androidx.constraintlayout.widget.Guideline>
 
-        <ImageView
-            android:id="@+id/wholerest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/wholerest"
-            app:layout_constraintStart_toStartOf="@id/vertical1"
-            tools:ignore="MissingConstraints">
-        </ImageView>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"

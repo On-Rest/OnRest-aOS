@@ -5,22 +5,13 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#F8F5F1">
-
+    <include layout="@layout/header"/>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
 
-        <ImageView
-            android:id="@+id/wholerest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/wholerest"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints">
-        </ImageView>
-        
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/date_box"
             android:layout_width="121dp"
