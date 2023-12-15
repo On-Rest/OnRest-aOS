@@ -14,15 +14,16 @@
         app:layout_constraintTop_toTopOf="@id/horizontal1"
         app:layout_constraintBottom_toBottomOf="@id/horizontal2"
         app:layout_constraintStart_toStartOf="@id/vertical1"
-        app:layout_constraintEnd_toEndOf="@id/vertical2">
-    </ImageView>
+        app:layout_constraintEnd_toEndOf="@id/vertical2"
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintGuide_percent="0.1722"
-        android:orientation="vertical"/>
+        android:orientation="vertical"
+        />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -30,7 +31,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintGuide_percent="0.8278"
-        android:orientation="vertical"/>
+        android:orientation="vertical"
+        />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -38,13 +40,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintGuide_percent="0.3875"
-        android:orientation="horizontal"/>
+        android:orientation="horizontal"
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/horizontal2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintGuide_percent="0.6125"
-        android:orientation="horizontal"/>
+        android:orientation="horizontal"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

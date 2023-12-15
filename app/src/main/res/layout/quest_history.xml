@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#F8F5F1">
+    android:background="@color/background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,8 +18,8 @@
             android:src="@drawable/wholerest"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints">
-        </ImageView>
+            tools:ignore="MissingConstraints"
+            />
         
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/date_box"
@@ -40,8 +40,8 @@
                 android:textSize="18sp"
                 android:textColor="#1E1D1B"
                 android:text="날자"
-                android:gravity="center">
-            </TextView>
+                android:gravity="center"
+                />
 
             <ImageButton
                 android:layout_width="16dp"
@@ -53,8 +53,8 @@
                 app:layout_constraintStart_toEndOf="@id/date"
                 android:layout_marginStart="10dp"
                 android:stateListAnimator="@null"
-                android:background="@android:color/transparent">
-            </ImageButton>
+                android:background="@android:color/transparent"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -65,8 +65,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/date_box"
-            android:layout_marginTop="20dp">
-        </ListView>
+            android:layout_marginTop="20dp"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
