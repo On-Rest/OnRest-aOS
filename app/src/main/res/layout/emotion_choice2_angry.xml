@@ -19,9 +19,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-16dp">
+        android:padding="20dp">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/midbutton"
@@ -31,52 +29,45 @@
             app:layout_constraintGuide_percent="0.45"
             />
 
-            <ImageView
-                android:id="@+id/wholerest"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/wholerest"
-                tools:ignore="MissingConstraints"
-                />
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="@id/midbutton"
+            app:layout_constraintTop_toTopOf="@id/midbutton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/midbutton">
+            app:layout_constraintBottom_toBottomOf="@id/midbutton">
 
             <Button
                 android:id="@+id/choice1"
+                android:text="오늘 정말 화났어!"
+                android:textColor="@color/black"
                 android:layout_width="234dp"
                 android:layout_height="51dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/round_white_with_outline"
                 android:backgroundTint="@color/white"
-                android:text="오늘 정말 화났어!"
+                android:background="@drawable/round_white_with_outline"
                 android:layout_marginBottom="20dp"
                 />
 
             <Button
                 android:id="@+id/choice2"
+                android:text="오늘은 좀 별로였어"
+                android:textColor="@color/black"
                 android:layout_width="234dp"
                 android:layout_height="51dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/round_white_with_outline"
                 android:backgroundTint="@color/white"
-                android:text="오늘은 좀 별로였어"
+                android:background="@drawable/round_white_with_outline"
                 android:layout_marginBottom="20dp"
                 />
 
             <Button
                 android:id="@+id/choice3"
+                android:text="그냥 짜증났어"
+                android:textColor="@color/black"
                 android:layout_width="234dp"
                 android:layout_height="51dp"
                 android:background="@drawable/round_white_with_outline"
                 android:backgroundTint="#FFFFFF"
-                android:text="그냥 짜증났어"
                 />
 
         </LinearLayout>
@@ -85,12 +76,11 @@
             android:id="@+id/speechbubble"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="3dp"
             android:background="@android:color/transparent"
             android:src="@drawable/sad_ment"
             app:layout_constraintBottom_toTopOf="@id/rectangle"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="3dp"
             />
 
@@ -98,17 +88,27 @@
             android:id="@+id/stripe"
             android:layout_width="86dp"
             android:layout_height="78dp"
-            android:background="@android:color/transparent"
-            android:scaleType="fitXY"
             android:src="@drawable/sad_page"
-            app:layout_constraintBottom_toTopOf="@+id/box"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:scaleType="fitXY"
+            android:background="@android:color/transparent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="47dp"
+            />
+
+        <ImageView
+            android:id="@+id/rectangle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rectangle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/stripe"
             android:layout_marginBottom="8dp"
             tools:ignore="DuplicateIds"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-  
+
 </androidx.constraintlayout.widget.ConstraintLayout>
