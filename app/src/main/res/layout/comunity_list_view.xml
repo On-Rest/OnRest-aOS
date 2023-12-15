@@ -35,7 +35,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/title"
+              />
 
     <TextView
         android:id="@+id/tag1"
@@ -49,8 +50,8 @@
         android:textSize="12sp"
         android:textColor="#1E1D1B"
         android:text="#행복"
-        android:gravity="center">
-    </TextView>
+        android:gravity="center"
+        />
 
     <TextView
         android:id="@+id/tag2"
@@ -64,8 +65,8 @@
         android:textSize="12sp"
         android:textColor="#1E1D1B"
         android:text="#신난"
-        android:gravity="center">
-    </TextView>
+        android:gravity="center"
+        />
 
     <ImageButton
         android:id="@+id/dhatgle"
@@ -76,7 +77,8 @@
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="204dp"
-        android:background="@android:color/transparent"/>
+        android:background="@android:color/transparent"
+        />
 
     <TextView
         android:id="@+id/dhatglenum"
@@ -88,7 +90,8 @@
         app:layout_constraintStart_toEndOf="@id/dhatgle"
         app:layout_constraintTop_toBottomOf="@id/detail"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="11.5dp"/>
+        android:layout_marginTop="11.5dp"
+        />
 
     <ImageButton
         android:id="@+id/heart"
@@ -99,7 +102,8 @@
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="264dp"
-        android:background="@android:color/transparent"/>
+        android:background="@android:color/transparent"
+        />
 
     <TextView
         android:id="@+id/heartnum"
@@ -111,6 +115,8 @@
         app:layout_constraintStart_toEndOf="@id/heart"
         app:layout_constraintTop_toBottomOf="@id/detail"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="11.5dp"/>
+        android:layout_marginTop="11.5dp"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

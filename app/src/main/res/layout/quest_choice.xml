@@ -4,36 +4,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#F8F5F1">
+    android:background="@color/background">
+
+    <include layout="@layout/header"/>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/hill_low"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent">
-    </ImageView>
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="20dp">
+
       <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/midbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.45">
-        </androidx.constraintlayout.widget.Guideline>
-
-        <ImageView
-            android:id="@+id/wholerest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/wholerest"
-            tools:ignore="MissingConstraints">
-        </ImageView>
-
+          android:id="@+id/midbutton"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          app:layout_constraintGuide_percent="0.45"
+          />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -51,8 +45,8 @@
                 android:layout_width="234dp"
                 android:layout_height="51dp"
                 android:backgroundTint="@color/white"
-                android:layout_marginBottom="20dp">
-            </Button>
+                android:layout_marginBottom="20dp"
+                />
 
             <Button
                 android:id="@+id/choice2"
@@ -61,8 +55,8 @@
                 android:layout_width="234dp"
                 android:layout_height="51dp"
                 android:backgroundTint="@color/white"
-                android:layout_marginBottom="20dp">
-            </Button>
+                android:layout_marginBottom="20dp"
+                />
 
             <Button
                 android:id="@+id/choice3"
@@ -70,11 +64,10 @@
                 android:textColor="@color/black"
                 android:layout_width="234dp"
                 android:layout_height="51dp"
-                android:backgroundTint="#FFFFFF">
-            </Button>
+                android:backgroundTint="#FFFFFF"
+                />
 
         </LinearLayout>
-
 
         <ImageButton
             android:id="@+id/speechbubble"
@@ -85,8 +78,8 @@
             app:layout_constraintBottom_toTopOf="@id/rectangle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="3dp">
-        </ImageButton>
+            android:layout_marginBottom="3dp"
+            />
 
         <ImageButton
             android:id="@+id/stripe"
@@ -97,8 +90,8 @@
             android:background="@android:color/transparent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/box">
-        </ImageButton>
+            app:layout_constraintBottom_toTopOf="@id/box"
+            />
 
         <ImageView
             android:id="@+id/rectangle"
@@ -109,8 +102,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/stripe"
             android:layout_marginBottom="8dp"
-            tools:ignore="DuplicateIds">
-        </ImageView>
+            tools:ignore="DuplicateIds"
+            />
 
         <TextView
             android:id="@+id/box"
@@ -118,9 +111,8 @@
             android:layout_height="50dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
-        </TextView>
-
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
