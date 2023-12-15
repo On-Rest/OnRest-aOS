@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#F8F5F1">
+    android:background="@color/background">
 
     <ImageView
         android:id="@+id/lowhill"
@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:src="@drawable/hill_low"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent">
-    </ImageView>
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -25,32 +25,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.045">
-        </androidx.constraintlayout.widget.Guideline>
+            app:layout_constraintGuide_percent="0.045"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/speechbubble1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.74">
-        </androidx.constraintlayout.widget.Guideline>
+            app:layout_constraintGuide_percent="0.74"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.23">
-        </androidx.constraintlayout.widget.Guideline>
+            app:layout_constraintGuide_percent="0.23"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/midbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.45">
-        </androidx.constraintlayout.widget.Guideline>
+            app:layout_constraintGuide_percent="0.45"
+            />
 
         <ImageView
             android:id="@+id/wholerest"
@@ -58,8 +58,8 @@
             android:layout_height="wrap_content"
             android:src="@drawable/wholerest"
             app:layout_constraintStart_toStartOf="@id/vertical1"
-            tools:ignore="MissingConstraints">
-        </ImageView>
+            tools:ignore="MissingConstraints"
+            />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
@@ -76,8 +76,8 @@
                 android:background="@drawable/memo_input"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-            </EditText>
+                app:layout_constraintTop_toTopOf="parent"
+                />
 
             <Button
                 android:layout_width="100dp"
@@ -91,7 +91,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/memoinput"
-                android:layout_marginTop="24dp"/>
+                android:layout_marginTop="24dp"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -104,8 +105,8 @@
             app:layout_constraintBottom_toTopOf="@id/rectangle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="3dp">
-        </ImageButton>
+            android:layout_marginBottom="3dp"
+            />
 
         <ImageButton
             android:id="@+id/stripe"
@@ -116,8 +117,9 @@
             android:background="@android:color/transparent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/box">
-        </ImageButton>
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="60dp"
+            />
 
         <ImageView
             android:id="@+id/rectangle"
@@ -128,17 +130,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/stripe"
             android:layout_marginBottom="8dp"
-            tools:ignore="DuplicateIds">
-        </ImageView>
-
-        <TextView
-            android:id="@+id/box"
-            android:layout_width="10dp"
-            android:layout_height="50dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
-        </TextView>
+            tools:ignore="DuplicateIds"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

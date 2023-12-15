@@ -4,16 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#F8F5F1">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="#F8F5F1">
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    android:background="@color/background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -27,7 +18,8 @@
             android:src="@drawable/wholerest"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints"/>
+            tools:ignore="MissingConstraints"
+            />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
@@ -49,8 +41,8 @@
                 android:hint="검색어를 입력해주세요"
                 app:layout_constraintEnd_toStartOf="@id/filter"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-            </EditText>
+                app:layout_constraintTop_toTopOf="parent"
+                />
 
             <ImageButton
                 android:id="@+id/filter"
@@ -64,8 +56,8 @@
                 android:background="@android:color/transparent"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="4dp"
-                android:layout_marginStart="16dp">
-            </ImageButton>
+                android:layout_marginStart="16dp"
+                />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -77,8 +69,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/not_found">
-        </ImageView>
+            android:src="@drawable/not_found"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -12,109 +12,128 @@
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.08" />
+            app:layout_constraintGuide_percent="0.08"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_profile_bottom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.1925" />
+            app:layout_constraintGuide_percent="0.1925"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_profile_start"
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.2944" />
+            app:layout_constraintGuide_percent="0.2944"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_profile_end"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.53" />
+            app:layout_constraintGuide_percent="0.53"
+            />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_nickname_top"
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.12" />
+            app:layout_constraintGuide_percent="0.12"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_nickname_bottom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.1481" />
+            app:layout_constraintGuide_percent="0.1481"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_nickname_start"
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5689" />
+            app:layout_constraintGuide_percent="0.5689"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_nickname_end"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.7056" />
+            app:layout_constraintGuide_percent="0.7056"
+            />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_separator_top"
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.2175" />
+            app:layout_constraintGuide_percent="0.2175"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_separator_bottom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.2225" />
+            app:layout_constraintGuide_percent="0.2225"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_separator_start"
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.0444" />
+            app:layout_constraintGuide_percent="0.0444"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_separator_end"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.9556" />
+            app:layout_constraintGuide_percent="0.9556"
+            />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_MA_top"
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.2775" />
+            app:layout_constraintGuide_percent="0.2775"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_MA_bottom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.3013" />
+            app:layout_constraintGuide_percent="0.3013"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_MA_start"
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.1222" />
+            app:layout_constraintGuide_percent="0.1222"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_MA_end"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.4639" />
+            app:layout_constraintGuide_percent="0.4639"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_MAbackground_top"
@@ -128,115 +147,137 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5638" />
+            app:layout_constraintGuide_percent="0.5638"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_MAbackground_start"
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.0444" />
+            app:layout_constraintGuide_percent="0.0444"
+            />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_MAbackground_end"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.9556" />
+            app:layout_constraintGuide_percent="0.9556"
+            />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_pieChart_end"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5833" />
+            app:layout_constraintGuide_percent="0.5833"
+            />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_pieChart_top"
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.3263" />
+            app:layout_constraintGuide_percent="0.3263"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_pieChart_bottom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5338" />
+            app:layout_constraintGuide_percent="0.5338"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_pieChart_start"
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.1222" />
-
-
+            app:layout_constraintGuide_percent="0.1222"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_feelPercent_top"
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.37" />
+            app:layout_constraintGuide_percent="0.37"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_feelPercent_bottom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.40" />
+            app:layout_constraintGuide_percent="0.40"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_feelPercent_start"
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.66" />
+            app:layout_constraintGuide_percent="0.66"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_feelPercent_end"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.72" />
+            app:layout_constraintGuide_percent="0.72"
+            />
+
         <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/g_sadfacePercent_top"
-                android:layout_width="match_parent"
-                android:layout_height="0.1dp"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.45" />
+            android:id="@+id/g_sadfacePercent_top"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.45"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_sadfacePercent_bottom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.48" />
+            app:layout_constraintGuide_percent="0.48"
+            />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_angryfacePercent_top"
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.41" />
+            app:layout_constraintGuide_percent="0.41"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_angryfacePercent_bottom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.44" />
+            app:layout_constraintGuide_percent="0.44"
+            />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_Percent_start"
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.76" />
+            app:layout_constraintGuide_percent="0.76"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_Percent_end"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.84" />
+            app:layout_constraintGuide_percent="0.84"
+            />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="59dp"
@@ -249,28 +290,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="0.1dp"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.05" />
+                    app:layout_constraintGuide_percent="0.05"
+                    />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/g_logo_top"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    app:layout_constraintGuide_percent="0.27" />
+                    app:layout_constraintGuide_percent="0.27"
+                    />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/g_logo_end"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.25" />
+                    app:layout_constraintGuide_percent="0.25"
+                    />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/g_logo_bottom"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    app:layout_constraintGuide_percent="0.72" />
+                    app:layout_constraintGuide_percent="0.72"
+                    />
 
                 <ImageButton
                     android:layout_width="72dp"
@@ -281,9 +326,11 @@
                     app:layout_constraintTop_toTopOf="@id/g_logo_top"
                     app:layout_constraintBottom_toBottomOf="@id/g_logo_bottom"
                     app:layout_constraintStart_toStartOf="@id/g_logo_start"
-                    app:layout_constraintEnd_toEndOf="@id/g_logo_end"/>
+                    app:layout_constraintEnd_toEndOf="@id/g_logo_end"
+                    />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <View
             android:id="@+id/separator"
             android:layout_width="328dp"
@@ -294,6 +341,7 @@
             app:layout_constraintEnd_toEndOf="@id/g_separator_end"
             app:layout_constraintStart_toStartOf="@id/g_separator_start"
             />
+
         <ImageView
             android:id="@+id/profile"
             android:layout_width="0dp"
@@ -302,7 +350,8 @@
             app:layout_constraintBottom_toBottomOf="@id/g_profile_bottom"
             app:layout_constraintEnd_toEndOf="@id/g_profile_end"
             app:layout_constraintStart_toStartOf="@id/g_profile_start"
-            app:layout_constraintTop_toTopOf="@id/g_profile_top" />
+            app:layout_constraintTop_toTopOf="@id/g_profile_top"
+            />
 
         <TextView
             android:id="@+id/nickname"
@@ -314,7 +363,8 @@
             app:layout_constraintBottom_toBottomOf="@id/g_nickname_bottom"
             app:layout_constraintEnd_toEndOf="@id/g_nickname_end"
             app:layout_constraintStart_toStartOf="@id/g_nickname_start"
-            app:layout_constraintTop_toTopOf="@id/g_nickname_top" />
+            app:layout_constraintTop_toTopOf="@id/g_nickname_top"
+            />
 
         <View
             android:id="@+id/month_analysis_background"
@@ -324,7 +374,9 @@
             app:layout_constraintTop_toTopOf="@id/g_MAbackground_top"
             app:layout_constraintBottom_toBottomOf="@id/g_MAbackground_bottom"
             app:layout_constraintStart_toStartOf="@id/g_MAbackground_start"
-            app:layout_constraintEnd_toEndOf="@id/g_MAbackground_end"/>
+            app:layout_constraintEnd_toEndOf="@id/g_MAbackground_end"
+            />
+
         <TextView
             android:id="@+id/month_analysis"
             android:layout_width="0dp"
@@ -338,6 +390,7 @@
             android:gravity="top|center"
             android:textStyle="bold"
             />
+
         <ImageView
             android:id="@+id/happyPercentIcon"
             android:layout_width="0dp"
@@ -346,7 +399,9 @@
             app:layout_constraintTop_toTopOf="@id/g_feelPercent_top"
             app:layout_constraintBottom_toBottomOf="@+id/g_feelPercent_bottom"
             app:layout_constraintStart_toStartOf="@id/g_feelPercent_start"
-            app:layout_constraintEnd_toEndOf="@id/g_feelPercent_end"/>
+            app:layout_constraintEnd_toEndOf="@id/g_feelPercent_end"
+            />
+
         <ImageView
             android:id="@+id/angryPercentIcon"
             android:layout_width="0dp"
@@ -355,7 +410,9 @@
             app:layout_constraintTop_toTopOf="@id/g_angryfacePercent_top"
             app:layout_constraintBottom_toBottomOf="@id/g_angryfacePercent_bottom"
             app:layout_constraintStart_toStartOf="@id/g_feelPercent_start"
-            app:layout_constraintEnd_toEndOf="@id/g_feelPercent_end"/>
+            app:layout_constraintEnd_toEndOf="@id/g_feelPercent_end"
+            />
+
         <ImageView
             android:id="@+id/sadPercentIcon"
             android:layout_width="0dp"
@@ -364,8 +421,8 @@
             app:layout_constraintTop_toTopOf="@id/g_sadfacePercent_top"
             app:layout_constraintBottom_toBottomOf="@id/g_sadfacePercent_bottom"
             app:layout_constraintStart_toStartOf="@id/g_feelPercent_start"
-            app:layout_constraintEnd_toEndOf="@id/g_feelPercent_end"/>
-
+            app:layout_constraintEnd_toEndOf="@id/g_feelPercent_end"
+            />
 
         <TextView
             android:id="@+id/happyPercent"
@@ -376,7 +433,9 @@
             app:layout_constraintBottom_toBottomOf="@id/g_feelPercent_bottom"
             app:layout_constraintStart_toStartOf="@id/g_Percent_start"
             app:layout_constraintEnd_toEndOf="@id/g_Percent_end"
-            android:gravity="center"/>
+            android:gravity="center"
+            />
+
         <TextView
             android:id="@+id/angryPercent"
             android:text=""
@@ -386,7 +445,9 @@
             app:layout_constraintBottom_toBottomOf="@id/g_angryfacePercent_bottom"
             app:layout_constraintStart_toStartOf="@id/g_Percent_start"
             app:layout_constraintEnd_toEndOf="@id/g_Percent_end"
-            android:gravity="center"/>
+            android:gravity="center"
+            />
+
         <TextView
             android:id="@+id/sadPercent"
             android:layout_width="0dp"
@@ -395,7 +456,9 @@
             app:layout_constraintBottom_toBottomOf="@id/g_sadfacePercent_bottom"
             app:layout_constraintStart_toStartOf="@id/g_Percent_start"
             app:layout_constraintEnd_toEndOf="@id/g_Percent_end"
-            android:gravity="center"/>
+            android:gravity="center"
+            />
+
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/pieChart"
             android:layout_width="0dp"
@@ -404,7 +467,6 @@
             app:layout_constraintBottom_toBottomOf="@id/g_pieChart_bottom"
             app:layout_constraintStart_toStartOf="@id/g_pieChart_start"
             app:layout_constraintEnd_toEndOf="@id/g_pieChart_end"
-
             />
 
 
