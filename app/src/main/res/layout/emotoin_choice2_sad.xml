@@ -4,24 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#F8F5F1">
+    android:background="@color/background">
+
     <include layout="@layout/header"/>
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/hill_low"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent">
-    </ImageView>
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/midbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.45">
-        </androidx.constraintlayout.widget.Guideline>
-
+            app:layout_constraintGuide_percent="0.45"
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -40,8 +41,8 @@
                 android:layout_height="51dp"
                 android:backgroundTint="@color/white"
                 android:background="@drawable/round_white_with_outline"
-                android:layout_marginBottom="20dp">
-            </Button>
+                android:layout_marginBottom="20dp"
+                />
 
             <Button
                 android:id="@+id/choice2"
@@ -51,8 +52,8 @@
                 android:layout_height="51dp"
                 android:backgroundTint="@color/white"
                 android:background="@drawable/round_white_with_outline"
-                android:layout_marginBottom="20dp">
-            </Button>
+                android:layout_marginBottom="20dp"
+                />
 
             <Button
                 android:id="@+id/choice3"
@@ -61,8 +62,8 @@
                 android:layout_width="234dp"
                 android:layout_height="51dp"
                 android:background="@drawable/round_white_with_outline"
-                android:backgroundTint="#FFFFFF">
-            </Button>
+                android:backgroundTint="#FFFFFF"
+                />
 
         </LinearLayout>
 
@@ -75,8 +76,8 @@
             app:layout_constraintBottom_toTopOf="@id/rectangle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="3dp">
-        </ImageButton>
+            android:layout_marginBottom="3dp"
+            />
 
         <ImageButton
             android:id="@+id/stripe"
@@ -87,8 +88,9 @@
             android:background="@android:color/transparent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/box">
-        </ImageButton>
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="60dp"
+            />
 
         <ImageView
             android:id="@+id/rectangle"
@@ -99,16 +101,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/stripe"
             android:layout_marginBottom="8dp"
-            tools:ignore="DuplicateIds">
-        </ImageView>
-
-        <TextView
-            android:id="@+id/box"
-            android:layout_width="10dp"
-            android:layout_height="50dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
-        </TextView>
+            tools:ignore="DuplicateIds"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

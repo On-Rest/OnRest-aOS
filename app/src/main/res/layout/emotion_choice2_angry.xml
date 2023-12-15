@@ -4,15 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#F8F5F1">
+    android:background="@color/background">
+
     <include layout="@layout/header"/>
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/hill_low"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent">
-    </ImageView>
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -26,8 +28,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.45"></androidx.constraintlayout.widget.Guideline>
+            app:layout_constraintGuide_percent="0.45"
+            />
 
+            <ImageView
+                android:id="@+id/wholerest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/wholerest"
+                tools:ignore="MissingConstraints"
+                />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -46,7 +56,8 @@
                 android:background="@drawable/round_white_with_outline"
                 android:backgroundTint="@color/white"
                 android:text="오늘 정말 화났어!"
-                android:textColor="@color/black"></Button>
+                android:layout_marginBottom="20dp"
+                />
 
             <Button
                 android:id="@+id/choice2"
@@ -56,7 +67,8 @@
                 android:background="@drawable/round_white_with_outline"
                 android:backgroundTint="@color/white"
                 android:text="오늘은 좀 별로였어"
-                android:textColor="@color/black"></Button>
+                android:layout_marginBottom="20dp"
+                />
 
             <Button
                 android:id="@+id/choice3"
@@ -65,7 +77,7 @@
                 android:background="@drawable/round_white_with_outline"
                 android:backgroundTint="#FFFFFF"
                 android:text="그냥 짜증났어"
-                android:textColor="@color/black"></Button>
+                />
 
         </LinearLayout>
 
@@ -78,7 +90,9 @@
             android:src="@drawable/sad_ment"
             app:layout_constraintBottom_toTopOf="@id/rectangle"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"></ImageButton>
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="3dp"
+            />
 
         <ImageButton
             android:id="@+id/stripe"
@@ -89,26 +103,12 @@
             android:src="@drawable/sad_page"
             app:layout_constraintBottom_toTopOf="@+id/box"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"></ImageButton>
-
-        <ImageView
-            android:id="@+id/rectangle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:src="@drawable/rectangle"
-            app:layout_constraintBottom_toTopOf="@+id/stripe"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="DuplicateIds"></ImageView>
-
-        <TextView
-            android:id="@+id/box"
-            android:layout_width="10dp"
-            android:layout_height="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"></TextView>
+            android:layout_marginBottom="8dp"
+            tools:ignore="DuplicateIds"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+  
 </androidx.constraintlayout.widget.ConstraintLayout>

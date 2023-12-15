@@ -4,22 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#F8F5F1">
+    android:background="@color/background">
+
     <include layout="@layout/header"/>
+
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/hill_low"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent">
-    </ImageView>
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
-
 
         <TextView
             android:id="@+id/hamstertext"
@@ -31,7 +32,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="155dp"/>
+            android:layout_marginTop="155dp"
+            />
         
         <ImageView
             android:layout_width="139dp"
@@ -40,7 +42,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/hamstertext"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="15dp"
+            />
 
         <TextView
             android:id="@+id/hamsteremotion"
@@ -72,8 +75,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="413dp"
-            android:layout_marginBottom="20dp">
-        </Button>
+            android:layout_marginBottom="20dp"
+            />
 
         <Button
             android:id="@+id/choice2"
@@ -87,8 +90,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="484dp"
-            android:layout_marginBottom="20dp">
-        </Button>
+            android:layout_marginBottom="20dp"
+            />
 
         <ImageButton
             android:id="@+id/speechbubble"
@@ -99,8 +102,8 @@
             app:layout_constraintBottom_toTopOf="@id/rectangle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="3dp">
-        </ImageButton>
+            android:layout_marginBottom="3dp"
+            />
 
         <ImageButton
             android:id="@+id/stripe"
@@ -111,8 +114,8 @@
             android:background="@android:color/transparent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/box">
-        </ImageButton>
+            app:layout_constraintBottom_toTopOf="@id/box"
+            />
 
         <ImageView
             android:id="@+id/rectangle"
@@ -123,8 +126,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/stripe"
             android:layout_marginBottom="8dp"
-            tools:ignore="DuplicateIds">
-        </ImageView>
+            tools:ignore="DuplicateIds"
+            />
 
         <TextView
             android:id="@+id/box"
@@ -132,12 +135,8 @@
             android:layout_height="50dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
-        </TextView>
-
-
-
-
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

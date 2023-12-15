@@ -6,77 +6,87 @@
     android:layout_height="match_parent"
     android:background="@color/background">
     <include layout="@layout/header"/>
+  
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_search_top"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.08" />
+        app:layout_constraintGuide_percent="0.08"
+        />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_search_start"
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.04" />
+        app:layout_constraintGuide_percent="0.04"
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_search_end"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.69" />
+        app:layout_constraintGuide_percent="0.69"
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_search_bottom"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.14" />
+        app:layout_constraintGuide_percent="0.14"
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_filter_start"
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.74" />
+        app:layout_constraintGuide_percent="0.74"
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_filter_end"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.95" />
+        app:layout_constraintGuide_percent="0.95"
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_filter_top"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.0869" />
+        app:layout_constraintGuide_percent="0.0869"
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_filter_bottom"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1331" />
+        app:layout_constraintGuide_percent="0.1331"
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_recyclerview_top"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.16" />
+        app:layout_constraintGuide_percent="0.16"
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_recyclerview_bottom"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.92"/>
-
-
+        app:layout_constraintGuide_percent="0.92"
+        />
 
     <EditText
         android:id="@+id/search"
@@ -91,7 +101,9 @@
         app:layout_constraintBottom_toBottomOf="@id/g_search_bottom"
         app:layout_constraintEnd_toEndOf="@id/g_search_end"
         app:layout_constraintStart_toStartOf="@id/g_search_start"
-        app:layout_constraintTop_toTopOf="@id/g_search_top" />
+        app:layout_constraintTop_toTopOf="@id/g_search_top"
+        app:layout_constraintBottom_toBottomOf="@id/g_search_bottom"
+        />
 
     <ImageButton
         android:id="@+id/filter"
@@ -102,7 +114,87 @@
         app:layout_constraintBottom_toBottomOf="@id/g_filter_bottom"
         app:layout_constraintEnd_toEndOf="@id/g_filter_end"
         app:layout_constraintStart_toStartOf="@id/g_filter_start"
-        app:layout_constraintTop_toTopOf="@+id/g_filter_top" />
+        app:layout_constraintTop_toTopOf="@+id/g_filter_top"
+        />
+  
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        tools:listitem="@layout/comunity_list_view"
+        app:layout_constraintStart_toStartOf="@id/g_search_start"
+        app:layout_constraintEnd_toEndOf="@id/g_filter_end"
+        app:layout_constraintTop_toTopOf="@id/g_recyclerview_top"
+        app:layout_constraintBottom_toBottomOf="@id/g_recyclerview_bottom"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/logo_constraint"
+        android:layout_width="0dp"
+        android:layout_height="59dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    <ImageButton
+        android:layout_width="72dp"
+        android:layout_height="27dp"
+        android:src="@drawable/wholerest"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toTopOf="@id/g_logo_top"
+        app:layout_constraintBottom_toBottomOf="@id/g_logo_bottom"
+        app:layout_constraintStart_toStartOf="@id/g_logo_start"
+        app:layout_constraintEnd_toEndOf="@id/g_logo_end"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_start"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.27"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.72"
+            />
+        
+        <ImageButton
+            android:layout_width="72dp"
+            android:layout_height="27dp"
+            android:src="@drawable/wholerest"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toTopOf="@id/g_logo_top"
+            app:layout_constraintBottom_toBottomOf="@id/g_logo_bottom"
+            app:layout_constraintStart_toStartOf="@id/g_logo_start"
+            app:layout_constraintEnd_toEndOf="@id/g_logo_end"
+            />
+        
+  </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/calender1"
@@ -112,7 +204,8 @@
         android:src="@drawable/calender1_on"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/vertical2"
-        app:layout_constraintStart_toStartOf="@id/vertical1"/>
+        app:layout_constraintStart_toStartOf="@id/vertical1"
+               />
 
     <ImageView
         android:id="@+id/calender2"
@@ -123,7 +216,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/vertical4"
         app:layout_constraintStart_toStartOf="@id/vertical3"
-        tools:ignore="MissingConstraints"/>
+        tools:ignore="MissingConstraints"
+               />
 
     <ImageView
         android:id="@+id/calender3"
@@ -134,7 +228,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/vertical6"
         app:layout_constraintStart_toStartOf="@id/vertical5"
-        tools:ignore="MissingConstraints"/>
+        tools:ignore="MissingConstraints"
+               />
 
     <ImageView
         android:id="@+id/calender4"
@@ -145,49 +240,56 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/vertical8"
         app:layout_constraintStart_toStartOf="@id/vertical7"
-        tools:ignore="MissingConstraints"/>
+        tools:ignore="MissingConstraints"
+               />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05"/>
+        app:layout_constraintGuide_percent="0.05"
+                                                />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.175"/>
+        app:layout_constraintGuide_percent="0.175"
+                                                />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.305"/>
+        app:layout_constraintGuide_percent="0.305"
+                                                />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.435"/>
+        app:layout_constraintGuide_percent="0.435"
+                                                />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5"/>
+        app:layout_constraintGuide_percent="0.5"
+                                                />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.695"/>
+        app:layout_constraintGuide_percent="0.695"
+                                                />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -195,13 +297,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.825"/>
+        app:layout_constraintGuide_percent="0.825"
+                                                />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.955"/>
+        app:layout_constraintGuide_percent="0.955"
+                                                />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
