@@ -10,6 +10,8 @@ import com.chobo.onrest.databinding.CommunityBinding
 class CommunityFragment : Fragment() {
 
     private lateinit var binding: CommunityBinding
+    lateinit var communityAdapter: CommunityAdapter
+    val datas = mutableListOf<CommunityData>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -17,6 +19,23 @@ class CommunityFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = CommunityBinding.inflate(inflater, container, false)
+        initRecycler()
         return binding.root
+    }
+    private fun initRecycler() {
+        communityAdapter = CommunityAdapter(requireContext())
+        binding.list.adapter = communityAdapter
+
+        datas.apply {
+            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 19, 27))
+            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 19, 27))
+            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 19, 27))
+            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 19, 27))
+            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 19, 27))
+            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 19, 27))
+            // 임시 지정(수동)
+            communityAdapter.datas = datas
+            communityAdapter.notifyDataSetChanged()
+        }
     }
 }
