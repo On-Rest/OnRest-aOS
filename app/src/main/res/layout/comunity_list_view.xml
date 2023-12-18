@@ -1,57 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="328dp"
+    android:layout_width="match_parent"
     android:layout_height="142dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/round_white_18dp"
-    android:layout_marginBottom="28dp">
+    android:background="@drawable/round_white_18dp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_title_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1408"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_title_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2746"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_title_start"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0488"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_title_end"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7165"/>
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="21dp"
+        app:layout_constraintTop_toTopOf="@id/g_title_top"
+        app:layout_constraintStart_toStartOf="@id/g_title_start"
+        app:layout_constraintBottom_toBottomOf="@id/g_title_bottom"
+        app:layout_constraintEnd_toEndOf="@id/g_title_end"
         android:text="기숙사에서 햄스터를 키우고 싶어요"
         android:includeFontPadding="false"
-        android:gravity="top"
         android:textSize="16sp"
         android:textColor="#1E1D1B"
         />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_detail_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3310"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_detail_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6268"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_detail1_end"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9512"/>
+
     <TextView
         android:id="@+id/detail"
-        android:layout_width="293dp"
-        android:layout_height="42dp"
-        android:ellipsize="end"
-        android:maxLines="2"
-        android:layout_marginStart="16dp"
-        android:text="삶이 너무 힘들고 지쳐서 햄스터 한마리를 키우고 싶은데 기숙사에서 키우면 안 될까요? 해바라기씨도 주고 집도 주고 잘 키울 수 있어요 진짜로 밀웜도 잡아다가 공수해서 줄 수 있어요"
-        android:textColor="#89857C"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/g_title_start"
+        app:layout_constraintTop_toTopOf="@id/g_detail_top"
+        app:layout_constraintBottom_toBottomOf="@id/g_detail_bottom"
+        app:layout_constraintEnd_toEndOf="@id/g_detail1_end"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-              />
+        android:textColor="#89857C"
+        android:text="삶이 너무 힘들고 지쳐서 햄스터 한마리를 키우고 싶은데 기숙사에서 키우면 안 될까요? 해바라기씨도 주고 집도 주고 잘 키울 수 있어요 진짜로 밀웜도 잡아다가 공수해서 줄 수 있어요"
+        android:maxLines="1"
+        android:ellipsize="end"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_tag_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6831"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_imageButten_start"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6831"/>
+
 
     <TextView
         android:id="@+id/tag1"
         android:layout_width="44dp"
         android:layout_height="25dp"
         android:background="@drawable/round_white_f8f5f1"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="20dp"
+        app:layout_constraintStart_toStartOf="@id/g_title_start"
+        app:layout_constraintTop_toTopOf="@id/g_tag_top"
         android:textSize="12sp"
         android:textColor="#1E1D1B"
         android:text="#행복"
-        android:gravity="center"
-        />
+        android:gravity="center">
+    </TextView>
 
     <TextView
         android:id="@+id/tag2"
@@ -60,28 +117,31 @@
         android:background="@drawable/round_white_f8f5f1"
         app:layout_constraintStart_toEndOf="@+id/tag1"
         android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="20dp"
+        app:layout_constraintTop_toTopOf="@id/g_tag_top"
         android:textSize="12sp"
         android:textColor="#1E1D1B"
         android:text="#신난"
-        android:gravity="center"
-        />
+        android:gravity="center">
+    </TextView>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_detail1_start"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6220"/>
 
     <ImageButton
         android:id="@+id/dhatgle"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:src="@drawable/dhatgle"
-        app:layout_constraintTop_toBottomOf="@id/detail"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="204dp"
-        android:background="@android:color/transparent"
-        />
+        app:layout_constraintTop_toTopOf="@id/g_tag_top"
+        app:layout_constraintStart_toStartOf="@id/g_detail1_start"
+        android:background="@android:color/transparent"/>
 
     <TextView
-        android:id="@+id/dhatglenum"
         android:layout_width="22dp"
         android:layout_height="17dp"
         android:text="300"
@@ -90,8 +150,14 @@
         app:layout_constraintStart_toEndOf="@id/dhatgle"
         app:layout_constraintTop_toBottomOf="@id/detail"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="11.5dp"
-        />
+        android:layout_marginTop="11.5dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_detail2_start"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8049"/>
 
     <ImageButton
         android:id="@+id/heart"
@@ -100,13 +166,10 @@
         android:src="@drawable/heart"
         app:layout_constraintTop_toBottomOf="@id/detail"
         android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="264dp"
-        android:background="@android:color/transparent"
-        />
+        app:layout_constraintStart_toStartOf="@id/g_detail2_start"
+        android:background="@android:color/transparent"/>
 
     <TextView
-        android:id="@+id/heartnum"
         android:layout_width="22dp"
         android:layout_height="17dp"
         android:text="300"
@@ -115,8 +178,8 @@
         app:layout_constraintStart_toEndOf="@id/heart"
         app:layout_constraintTop_toBottomOf="@id/detail"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="11.5dp"
-        />
+        android:layout_marginTop="11.5dp"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
