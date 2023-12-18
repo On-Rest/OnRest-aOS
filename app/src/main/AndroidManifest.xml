@@ -15,6 +15,9 @@
         android:theme="@style/Theme.OnRest"
         tools:targetApi="31">
         <activity
+            android:name=".NaviActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity

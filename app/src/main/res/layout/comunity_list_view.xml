@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="142dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/round_white_18dp">
+    android:background="@drawable/round_white_18dp"
+    android:layout_marginBottom="28dp">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_title_top"
@@ -142,6 +143,7 @@
         android:background="@android:color/transparent"/>
 
     <TextView
+        android:id="@+id/dhatglenum"
         android:layout_width="22dp"
         android:layout_height="17dp"
         android:text="300"
@@ -170,6 +172,7 @@
         android:background="@android:color/transparent"/>
 
     <TextView
+        android:id="@+id/heartnum"
         android:layout_width="22dp"
         android:layout_height="17dp"
         android:text="300"

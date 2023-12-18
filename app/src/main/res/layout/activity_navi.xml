@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NaviActivity"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/mainFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="?selectableItemBackground"
+        app:itemBackground="@android:color/transparent"
+        app:itemIconTint="@drawable/menu_click_color"
+        app:itemTextColor="@drawable/menu_click_color"
+        android:layout_weight="1"
+        app:itemActiveIndicatorStyle="@null"
+        app:menu="@menu/navi_menu"
+        tools:ignore="MissingConstraints"
+        android:stateListAnimator="@null"
+        style="?android:attr/borderlessButtonStyle"
+        app:layout_constraintTop_toTopOf="@id/naviguideline"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/naviguideline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.91"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

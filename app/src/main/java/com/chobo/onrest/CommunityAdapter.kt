@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
 class CommunityAdapter(private val context: Context) : RecyclerView.Adapter<CommunityAdapter.ViewHolder>() {
     var datas = mutableListOf<CommunityData>()
