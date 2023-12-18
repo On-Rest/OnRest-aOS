@@ -19,6 +19,34 @@
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
         <activity
+            android:name=".EmotionChoice1"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
+        <activity
+            android:name=".DiaryWrite"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
+        <activity
+            android:name=".YourEmotion"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
+        <activity
+            android:name=".EmotionChoice2Sad"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
+        <activity
+            android:name=".EmotionChoice2Happy"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
+        <activity
+            android:name=".EmotionChoice2Angry"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
+        <activity
+            android:name=".QuestList"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
+        <activity
             android:name=".MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
