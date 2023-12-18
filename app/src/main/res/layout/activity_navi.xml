@@ -26,6 +26,14 @@
         app:menu="@menu/navi_menu"
         tools:ignore="MissingConstraints"
         android:stateListAnimator="@null"
-        style="?android:attr/borderlessButtonStyle"/>
+        style="?android:attr/borderlessButtonStyle"
+        app:layout_constraintTop_toTopOf="@id/naviguideline"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/naviguideline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.91"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
