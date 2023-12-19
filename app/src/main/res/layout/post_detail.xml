@@ -41,6 +41,7 @@
             android:orientation="vertical">
 
             <TextView
+                style="@style/title_sm_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="제목"
@@ -49,10 +50,12 @@
                 android:textStyle="bold" />
 
             <TextView
+                style="@style/text_md_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="이 편지는 영 에서 최초로 시작되어 일년에 한바퀴를 돌면서 받는 사람에게 행운을 주었고 지금은 당신에게로 옮겨진 이 편지는 4일 안에 당신 곁을 떠나야 합니다. 이 편지를 포함해서 7통을 행운이 필요한 사람에게 보내 주셔야 합니다. 복사를 해도 좋습니다. 혹 미신이라 하실지 모르지만 사실입니다.영국에서 HGXWCH이라는 사람은 1930년에 이 편지를 받았습니다. 그는 비서에게 복사해서 보내라고 했습니다. 며칠 뒤에 복권이 당첨되어 20억을 받았습니다. 어떤 이는 이 편지를 받았으나 96시간 이내 자신의 손에서 떠나야 한다는 사실을 "
+                android:lineSpacingExtra="7sp"
+                android:text="이 편지는 영쿸에서 최초로 시작되어 일년에 한바퀴를 돌면서 받는 사람에게 행운을 주었고 지금은 당신에게로 옮겨진 이 편지는 4일 안에 당신 곁을 떠나야 합니다. 이 편지를 포함해서 7통을 행운이 필요한 사람에게 보내 주셔야 합니다. 복사를 해도 좋습니다. 혹 미신이라 하실지 모르지만 사실입니다.영국에서 HGXWCH이라는 사람은 1930년에 이 편지를 받았습니다. 그는 비서에게 복사해서 보내라고 했습니다. 며칠 뒤에 복권이 당첨되어 20억을 받았습니다. 어떤 이는 이 편지를 받았으나 96시간 이내 자신의 손에서 떠나야 한다는 사실을 "
                 android:textColor="@color/black"
                 android:textSize="17sp" />
 
@@ -65,6 +68,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    style="@style/text_sm_font"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="4dp"
@@ -142,10 +146,12 @@
             app:layout_constraintTop_toTopOf="@id/g_ctrlZ_top" />
 
         <TextView
+            style="@style/text_md_font"
             android:layout_width="42dp"
             android:layout_height="27dp"
             android:gravity="center"
             android:text="게시글"
+            android:textColor="#54514B"
             app:layout_constraintBottom_toBottomOf="@id/g_ctrlZ_bottom"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

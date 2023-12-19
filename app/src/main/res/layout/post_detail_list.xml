@@ -7,6 +7,7 @@
 
     <TextView
         android:id="@+id/name"
+        style="@style/caption_font"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -16,9 +17,11 @@
 
     <TextView
         android:id="@+id/detail_text"
+        style="@style/text_sm_font"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
+        android:lineSpacingExtra="7sp"
         android:text="행운의 편지 정말 잘 봤습니다.\n오늘도 행복한 하루 보내시길 바랍니다."
         android:textColor="#000" />
 
