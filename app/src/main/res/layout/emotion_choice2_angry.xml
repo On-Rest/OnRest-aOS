@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/background">
 
-    <include layout="@layout/header" />
+    <include layout="@layout/header"
+        android:id="@+id/wholrest"/>
 
     <ImageView
         android:layout_width="match_parent"

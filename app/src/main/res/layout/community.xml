@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/background">
 
-    <include layout="@layout/header"/>
+    <include layout="@layout/header"
+        android:id="@+id/wholrest"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_search_top"
