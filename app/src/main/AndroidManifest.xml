@@ -23,9 +23,9 @@
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
         <activity
-        android:name=".QuestList"
-        android:exported="false"
-        android:windowSoftInputMode="adjustNothing"/>
+            android:name=".QuestList"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
         <activity
             android:name=".DiaryWrite"
             android:exported="false"
@@ -63,11 +63,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-        android:name=".PostWrite"
-        android:exported="false"
-        android:windowSoftInputMode="adjustNothing" />
-        <activity
-            android:name=".QuestHistory"
+            android:name=".PostWrite"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity

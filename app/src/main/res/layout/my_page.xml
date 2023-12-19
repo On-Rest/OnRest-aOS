@@ -317,7 +317,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:src="@drawable/angry_face"
-        app:layout_constraintBottom_toBottomOf="@id/g_angryfacePercent_bottom"
+        app:layout_constraintBottom_toTopOf="@+id/g_sadfacePercent_top"
         app:layout_constraintEnd_toEndOf="@id/g_feelPercent_end"
         app:layout_constraintStart_toStartOf="@id/g_feelPercent_start"
         app:layout_constraintTop_toTopOf="@id/g_angryfacePercent_top" />
