@@ -1,74 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <include
+        android:id="@+id/wholrest"
+        layout="@layout/header" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_search_top"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
-
-        <ImageView
-            android:id="@+id/wholerest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/wholerest"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/wholerest">
-
-            <EditText
-                android:id="@+id/search"
-                style="@style/text_sm_font"
-                android:layout_width="235dp"
-                android:layout_height="45dp"
-                android:background="@drawable/search_square"
-                android:drawableEnd="@drawable/search_icon"
-                android:hint="검색어를 입력해주세요"
-                android:paddingStart="16dp"
-                android:paddingEnd="12.5dp"
-                android:textColorHint="#B9B7B2"
-                app:layout_constraintEnd_toStartOf="@id/filter"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageButton
-                android:id="@+id/filter"
-                android:layout_width="77dp"
-                android:layout_height="37dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
-                android:background="@android:color/transparent"
-                android:src="@drawable/filter"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/search"
-                app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_search_start"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
 
-        <ImageView
-            android:layout_width="219dp"
-            android:layout_height="172dp"
-            android:layout_marginTop="253dp"
-            android:src="@drawable/not_found"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_search_end"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.69" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_search_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.14" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_filter_start"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.74" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_filter_end"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_filter_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.0869" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_filter_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1331" />
+
+    <EditText
+        android:id="@+id/search"
+        style="@style/text_sm_font"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/search_square"
+        android:drawableEnd="@drawable/search_icon"
+        android:hint="검색어를 입력해주세요"
+        android:paddingStart="16dp"
+        android:paddingEnd="12dp"
+        android:textColor="#B9B7B2"
+        app:layout_constraintBottom_toBottomOf="@id/g_search_bottom"
+        app:layout_constraintEnd_toEndOf="@id/g_search_end"
+        app:layout_constraintStart_toStartOf="@id/g_search_start"
+        app:layout_constraintTop_toTopOf="@id/g_search_top" />
+
+    <ImageButton
+        android:id="@+id/filter"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?selectableItemBackground"
+        android:src="@drawable/filter"
+        app:layout_constraintBottom_toBottomOf="@id/g_filter_bottom"
+        app:layout_constraintEnd_toEndOf="@id/g_filter_end"
+        app:layout_constraintStart_toStartOf="@id/g_filter_start"
+        app:layout_constraintTop_toTopOf="@+id/g_filter_top" />
+
+    <ImageView
+        android:layout_width="219dp"
+        android:layout_height="172dp"
+        android:layout_marginTop="253dp"
+        android:src="@drawable/not_found"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

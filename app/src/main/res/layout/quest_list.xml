@@ -17,11 +17,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="20dp">
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/midbutton"
             android:layout_width="wrap_content"
@@ -30,17 +25,17 @@
             app:layout_constraintGuide_percent="0.45"
             />
 
-        <ListView
-            android:id="@+id/a"
-            android:layout_width="wrap_content"
-            android:layout_height="164dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/midbutton"
-            app:layout_constraintBottom_toBottomOf="@id/midbutton"
-            />
-            
+    <ListView
+        android:id="@+id/a"
+        android:layout_width="0dp"
+        android:layout_height="164dp"
+        app:layout_constraintBottom_toBottomOf="@id/midbutton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/midbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
-        <ImageButton
+    <ImageButton
             android:id="@+id/speechbubble"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -61,7 +56,8 @@
             android:background="@android:color/transparent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/box"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="60dp"
             />
 
         <ImageView
@@ -75,17 +71,5 @@
             android:layout_marginBottom="8dp"
             tools:ignore="DuplicateIds"
             />
-
-        <TextView
-            android:id="@+id/box"
-            android:layout_width="10dp"
-            android:layout_height="50dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

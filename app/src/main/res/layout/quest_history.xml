@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".QuestHistory"
     android:background="@color/background">
 
     <include layout="@layout/header" />
@@ -35,6 +36,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
+                android:id="@+id/id_date"
                 android:layout_width="16dp"
                 android:layout_height="16dp"
                 android:layout_marginStart="10dp"

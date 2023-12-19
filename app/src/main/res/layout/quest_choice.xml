@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".QuestChoice"
     android:background="@color/background">
 
     <include layout="@layout/header" />
@@ -15,17 +16,12 @@
         android:src="@drawable/hill_low"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="20dp">
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/midbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.45" />
+      <androidx.constraintlayout.widget.Guideline
+          android:id="@+id/midbutton"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          app:layout_constraintGuide_percent="0.45" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -88,9 +84,10 @@
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
             android:src="@drawable/stripe"
-            app:layout_constraintBottom_toTopOf="@id/box"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="60dp" />
 
         <ImageView
             android:id="@+id/rectangle"
@@ -102,15 +99,5 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="DuplicateIds" />
-
-        <TextView
-            android:id="@+id/box"
-            android:layout_width="10dp"
-            android:layout_height="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
