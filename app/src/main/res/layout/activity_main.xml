@@ -4,9 +4,16 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity"
-    android:background="@color/white">
+    tools:context=".MainActivity">
 
+    <com.google.android.gms.common.SignInButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toTopOf="@id/horizontal2"
+        app:layout_constraintEnd_toEndOf="@id/vertical2"
+        app:layout_constraintStart_toStartOf="@id/vertical1"
+        android:layout_marginTop="20dp"/>
 
     <ImageView
         android:layout_width="0dp"

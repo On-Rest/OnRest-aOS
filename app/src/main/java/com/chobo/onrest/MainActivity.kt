@@ -11,6 +11,8 @@ import com.chobo.onrest.databinding.EmotionChoice2AngryBinding
 import com.chobo.onrest.databinding.EmotionChoice2HappyBinding
 import com.chobo.onrest.databinding.HeaderBinding
 import com.chobo.onrest.databinding.YourEmotionBinding
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 
 // MainActivity.java
 class MainActivity : AppCompatActivity() {
@@ -20,6 +22,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding!!.root
         setContentView(view)
+
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .build()
+
+        val mGoogleSingInClient = this?.let { GoogleSignIn.getClient(it, gso) }!!
     }
 
     class Calender : AppCompatActivity() {
