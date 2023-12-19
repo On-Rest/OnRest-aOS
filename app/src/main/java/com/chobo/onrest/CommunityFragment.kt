@@ -27,8 +27,8 @@ class CommunityFragment : Fragment() {
         binding.list.adapter = communityAdapter
 
         datas.apply {
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 19, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 19, 27))
+            add(CommunityData("햄스터?", "햄스터란dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd...", "#햄", "#찌", 19, 27))
+            add(CommunityData("햄스터?", "햄스터란아니 명훈아 좀더 긴걸 넣었어애지...", "#햄", "#찌", 19, 27))
             add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 19, 27))
             add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 19, 27))
             add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 19, 27))

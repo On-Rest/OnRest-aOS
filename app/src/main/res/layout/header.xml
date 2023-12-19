@@ -33,6 +33,7 @@
         app:layout_constraintGuide_percent="0.72" />
 
     <ImageButton
+        android:id="@+id/wholerest"
         android:layout_width="72dp"
         android:layout_height="27dp"
         android:background="@android:color/transparent"
