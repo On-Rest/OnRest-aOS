@@ -219,8 +219,7 @@ class Header : AppCompatActivity() {
         setContentView(view)
 
         binding.wholerest.setOnClickListener() {
-            val intent = Intent(this, Calender::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, Calender::class.java))
             finish()
             overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
         }
