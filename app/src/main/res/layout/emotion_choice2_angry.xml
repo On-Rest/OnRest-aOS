@@ -1,70 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/background"
-    tools:context=".EmotionChoice2Angry">
+    android:background="@color/background">
 
-    <include layout="@layout/header"/>
+    <include layout="@layout/header" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/hill_low"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
-    
+        android:src="@drawable/hill_low"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/midbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.45"
-            />
+            app:layout_constraintGuide_percent="0.45" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintTop_toTopOf="@id/midbutton"
+            app:layout_constraintBottom_toBottomOf="@id/midbutton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/midbutton">
+            app:layout_constraintTop_toTopOf="@id/midbutton">
 
             <Button
                 android:id="@+id/choice1"
-                android:text="오늘 정말 화났어!"
-                android:textColor="@color/black"
+                style="@style/button_font"
                 android:layout_width="234dp"
                 android:layout_height="51dp"
-                android:backgroundTint="@color/white"
-                android:background="@drawable/round_white_with_outline"
                 android:layout_marginBottom="20dp"
-                />
+                android:background="@drawable/round_white_with_outline"
+                android:text="오늘 정말 화났어!"
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/choice2"
-                android:text="오늘은 좀 별로였어"
-                android:textColor="@color/black"
+                style="@style/button_font"
                 android:layout_width="234dp"
                 android:layout_height="51dp"
-                android:backgroundTint="@color/white"
-                android:background="@drawable/round_white_with_outline"
                 android:layout_marginBottom="20dp"
-                />
+                android:background="@drawable/round_white_with_outline"
+                android:text="오늘은 좀 별로였어"
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/choice3"
-                android:text="그냥 짜증났어"
-                android:textColor="@color/black"
+                style="@style/button_font"
                 android:layout_width="234dp"
                 android:layout_height="51dp"
                 android:background="@drawable/round_white_with_outline"
-                android:backgroundTint="#FFFFFF"
-                />
+                android:text="그냥 짜증났어"
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
@@ -75,34 +69,30 @@
             android:background="@android:color/transparent"
             android:src="@drawable/sad_ment"
             app:layout_constraintBottom_toTopOf="@id/rectangle"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="3dp"
-            />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/stripe"
             android:layout_width="86dp"
             android:layout_height="78dp"
-            android:src="@drawable/sad_page"
-            android:scaleType="fitXY"
-            android:background="@android:color/transparent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="47dp"
-            />
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/sad_page"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/rectangle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/rectangle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/stripe"
             android:layout_marginBottom="8dp"
-            tools:ignore="DuplicateIds"
-            />
+            android:src="@drawable/rectangle"
+            app:layout_constraintBottom_toTopOf="@+id/stripe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="DuplicateIds" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

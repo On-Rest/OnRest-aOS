@@ -7,7 +7,7 @@
     android:background="@color/background">
 
     <include layout="@layout/header"/>
-  
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_search_top"
         android:layout_width="match_parent"
@@ -109,6 +109,7 @@
 
     <EditText
         android:id="@+id/search"
+        style="@style/text_sm_font"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/search_square"
@@ -116,7 +117,7 @@
         android:hint="검색어를 입력해주세요"
         android:paddingStart="16dp"
         android:paddingEnd="12dp"
-        android:textSize="14sp"
+        android:textColor="#B9B7B2"
         app:layout_constraintBottom_toBottomOf="@id/g_search_bottom"
         app:layout_constraintEnd_toEndOf="@id/g_search_end"
         app:layout_constraintStart_toStartOf="@id/g_search_start"
@@ -139,11 +140,11 @@
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="vertical"
-        tools:listitem="@layout/comunity_list_view"
-        app:layout_constraintStart_toStartOf="@id/g_search_start"
+        app:layout_constraintBottom_toBottomOf="@id/g_recyclerview_bottom"
         app:layout_constraintEnd_toEndOf="@id/g_filter_end"
+        app:layout_constraintStart_toStartOf="@id/g_search_start"
         app:layout_constraintTop_toTopOf="@id/g_recyclerview_top"
-        app:layout_constraintBottom_toBottomOf="@id/g_recyclerview_bottom" />
+        tools:listitem="@layout/comunity_list_view" />
 
     <ImageButton
         android:id="@+id/pen"
@@ -156,6 +157,5 @@
         app:layout_constraintBottom_toBottomOf="@id/g_pen_bottom"
         android:background="@null"
         android:stateListAnimator="@null" />
-        
 
 </androidx.constraintlayout.widget.ConstraintLayout>
