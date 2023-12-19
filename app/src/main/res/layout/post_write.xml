@@ -87,7 +87,7 @@
         android:text="0/30"
         app:layout_constraintBottom_toBottomOf="@id/titleinput"
         app:layout_constraintEnd_toEndOf="@id/titleinput"
-        app:layout_constraintTop_toTopOf="@id/titleinput"
+        app:layout_constraintTop_toTopOf="@id/titleinput"/>
 
     <TextView
         style="@style/caption_font"
@@ -98,7 +98,7 @@
         android:text="0/300"
         android:textColor="#89857C"
         app:layout_constraintBottom_toBottomOf="@id/detailinput"
-        app:layout_constraintEnd_toEndOf="@id/detailinput" />
+        app:layout_constraintEnd_toEndOf="@id/detailinput"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/emotionbox"
