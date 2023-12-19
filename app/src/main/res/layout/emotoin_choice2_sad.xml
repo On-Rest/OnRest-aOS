@@ -67,7 +67,7 @@
 
         </LinearLayout>
 
-        <ImageButton
+        <ImageView
             android:id="@+id/speechbubble"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
             android:layout_marginBottom="3dp"
             />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/stripe"
             android:layout_width="52dp"
             android:layout_height="78dp"
@@ -104,4 +104,4 @@
             tools:ignore="DuplicateIds"
             />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

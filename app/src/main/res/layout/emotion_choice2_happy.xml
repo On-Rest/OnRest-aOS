@@ -17,11 +17,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="20dp">
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/midbutton"
             android:layout_width="wrap_content"
@@ -73,7 +68,7 @@
 
         </LinearLayout>
 
-        <ImageButton
+        <ImageView
             android:id="@+id/speechbubble"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -85,7 +80,7 @@
             android:layout_marginBottom="3dp"
             />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/stripe"
             android:layout_width="52dp"
             android:layout_height="78dp"
@@ -109,7 +104,5 @@
             android:layout_marginBottom="8dp"
             tools:ignore="DuplicateIds"
             />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
