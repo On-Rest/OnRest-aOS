@@ -7,18 +7,19 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.chobo.onrest.databinding.CommunityBinding
 import com.chobo.onrest.databinding.QuestChoiceBinding
+import com.chobo.onrest.databinding.QuestHistoryBinding
 import com.chobo.onrest.databinding.QuestListBinding
 
 class   QuestFragment : Fragment() {
 
-    private lateinit var binding: QuestListBinding
+    private lateinit var binding: QuestHistoryBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = QuestListBinding.inflate(inflater, container, false)
+        binding = QuestHistoryBinding.inflate(inflater, container, false)
         return binding.root
     }
 }

@@ -23,6 +23,10 @@
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
         <activity
+        android:name=".QuestList"
+        android:exported="false"
+        android:windowSoftInputMode="adjustNothing"/>
+        <activity
             android:name=".DiaryWrite"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
@@ -43,11 +47,27 @@
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
         <activity
-            android:name=".QuestList"
+            android:name=".QuestChoice"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
         <activity
             android:name=".MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".Header"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".QuestHistory"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+        android:name=".PostWrite"
+        android:exported="false"
+        android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".QuestHistory"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
