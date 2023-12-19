@@ -25,12 +25,12 @@ class CalendarFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.stripe.setOnClickListener {
-            startActivityWithAnimation(MainActivity.DiaryWrite::class.java)
+            startActivityWithAnimation(DiaryWrite::class.java)
         }
 
         binding.speechbubble.setOnClickListener {
-            startActivityWithAnimation(MainActivity.DiaryWrite::class.java)
-            startActivityWithAnimation(MainActivity.DiaryWrite::class.java)
+            startActivityWithAnimation(DiaryWrite::class.java)
+            startActivityWithAnimation(DiaryWrite::class.java)
         }
     }
 

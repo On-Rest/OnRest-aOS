@@ -31,7 +31,7 @@ class CommunityFragment : Fragment() {
         }
 
         binding.pen.setOnClickListener {
-            startActivityWithAnimation(Postwrite::class.java)
+            startActivityWithAnimation(PostWrite::class.java)
         }
     }
 
