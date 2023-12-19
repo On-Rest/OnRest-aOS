@@ -25,16 +25,17 @@
             app:layout_constraintGuide_percent="0.45"
             />
 
-        <ListView
-            android:id="@+id/a"
-            android:layout_width="wrap_content"
-            android:layout_height="164dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/midbutton"
-            app:layout_constraintBottom_toBottomOf="@id/midbutton"
-            />
+    <ListView
+        android:id="@+id/a"
+        android:layout_width="0dp"
+        android:layout_height="164dp"
+        app:layout_constraintBottom_toBottomOf="@id/midbutton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/midbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
-        <ImageButton
+    <ImageButton
             android:id="@+id/speechbubble"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

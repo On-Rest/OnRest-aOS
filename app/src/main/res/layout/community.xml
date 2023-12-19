@@ -79,6 +79,34 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.92" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_pen_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8425" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_pen_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9050" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_pen_start"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8056" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_pen_end"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9444" />
+
     <EditText
         android:id="@+id/search"
         android:layout_width="0dp"
@@ -117,13 +145,17 @@
         app:layout_constraintTop_toTopOf="@id/g_recyclerview_top"
         app:layout_constraintBottom_toBottomOf="@id/g_recyclerview_bottom" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/logo_constraint"
+    <ImageButton
+        android:id="@+id/pen"
         android:layout_width="0dp"
-        android:layout_height="59dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_height="0dp"
+        android:src="@drawable/pen"
+        app:layout_constraintStart_toStartOf="@id/g_pen_start"
+        app:layout_constraintEnd_toEndOf="@id/g_pen_end"
+        app:layout_constraintTop_toTopOf="@id/g_pen_top"
+        app:layout_constraintBottom_toBottomOf="@id/g_pen_bottom"
+        android:background="@null"
+        android:stateListAnimator="@null" />
+        
 
 </androidx.constraintlayout.widget.ConstraintLayout>
