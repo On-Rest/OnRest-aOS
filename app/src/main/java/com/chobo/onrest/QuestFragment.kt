@@ -9,16 +9,16 @@ import com.chobo.onrest.databinding.CommunityBinding
 import com.chobo.onrest.databinding.QuestChoiceBinding
 import com.chobo.onrest.databinding.QuestListBinding
 
-class QuestFragment : Fragment() {
+class   QuestFragment : Fragment() {
 
-    private lateinit var binding: QuestChoiceBinding
+    private lateinit var binding: QuestListBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = QuestChoiceBinding.inflate(inflater, container, false)
+        binding = QuestListBinding.inflate(inflater, container, false)
         return binding.root
     }
 }

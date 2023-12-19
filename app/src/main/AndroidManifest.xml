@@ -8,7 +8,7 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -16,6 +16,34 @@
         tools:targetApi="31">
         <activity
             android:name=".NaviActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
+        <activity
+            android:name=".EmotionChoice1"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
+        <activity
+            android:name=".DiaryWrite"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
+        <activity
+            android:name=".YourEmotion"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
+        <activity
+            android:name=".EmotionChoice2Sad"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
+        <activity
+            android:name=".EmotionChoice2Happy"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
+        <activity
+            android:name=".EmotionChoice2Angry"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
+        <activity
+            android:name=".QuestList"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
         <activity
