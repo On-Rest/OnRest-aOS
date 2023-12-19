@@ -29,7 +29,7 @@ class CalendarFragment : Fragment() {
         }
 
         binding.speechbubble.setOnClickListener {
-            startActivityWithoutAnimation(DiaryWrite::class.java)
+            startActivityWithAnimation(DiaryWrite::class.java)
         }
     }
 
@@ -37,10 +37,5 @@ class CalendarFragment : Fragment() {
         val intent = Intent(requireContext(), clazz)
         startActivity(intent)
         requireActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-    }
-
-    private fun startActivityWithoutAnimation(clazz: Class<*>) {
-        val intent = Intent(requireContext(), clazz)
-        startActivity(intent)
     }
 }
