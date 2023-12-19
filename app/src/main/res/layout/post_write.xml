@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,179 +18,174 @@
             android:src="@drawable/wholerest"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints"
-            />
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/text"
+            style="@style/title_sm_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
             android:text="게시물 작성"
+            android:textColor="#3C3C3E"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/wholerest"
-            android:layout_marginTop="28dp"
-            android:textColor="#1E1D1B"
-            />
+            app:layout_constraintTop_toBottomOf="@id/wholerest" />
 
         <EditText
             android:id="@+id/titleinput"
+            style="@style/text_md_font"
             android:layout_width="328dp"
             android:layout_height="43dp"
-            android:hint="게시물 제목 작성해주세요.*"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:background="@drawable/round_white_with_outline"
             android:layout_marginTop="28dp"
+            android:background="@drawable/round_white_with_outline"
+            android:hint="게시물 제목 작성해주세요.*"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            app:layout_constraintTop_toBottomOf="@id/text"
-            />
+            android:textColor="#A19E97"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text" />
 
         <EditText
             android:id="@+id/detailinput"
+            style="@style/text_sm_font"
             android:layout_width="328dp"
             android:layout_height="320dp"
-            android:hint="게시물 내용 작성해주세요.*"
-            android:gravity="top"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:background="@drawable/round_white_with_outline"
             android:layout_marginTop="28dp"
-            app:layout_constraintTop_toBottomOf="@id/titleinput"
-            />
+            android:background="@drawable/round_white_with_outline"
+            android:gravity="top"
+            android:hint="게시물 내용 작성해주세요.*"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp"
+            android:textColor="#A19E97"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleinput" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/emotionbox"
             android:layout_width="315dp"
             android:layout_height="95dp"
-            app:layout_constraintTop_toBottomOf="@id/detailinput"
+            android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="20dp">
+            app:layout_constraintTop_toBottomOf="@id/detailinput">
 
             <TextView
+                style="@style/text_sm_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="감정"
                 android:textColor="#89857C"
-                android:textSize="14sp"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="315dp"
                 android:layout_height="62dp"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@id/tag1"
                     android:layout_width="315dp"
                     android:layout_height="25dp"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ToggleButton
                         android:id="@+id/happy"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="44dp"
                         android:layout_height="25dp"
-                        android:textOff="#행복"
-                        android:textOn="#행복"
-                        android:textColor="@drawable/emotion_toggle_textcolor"
-                        android:textSize="12sp"
                         android:background="@drawable/emotion_toggle_backgroundcolor"
                         android:checked="false"
-                        style="?android:attr/borderlessButtonStyle"
+                        android:textColor="@drawable/emotion_toggle_textcolor"
+                        android:textOff="#행복"
+                        android:textOn="#행복"
+                        android:textSize="12sp"
                         app:layout_constraintStart_toStartOf="parent"
-                        tools:ignore="MissingConstraints"
-                        />
+                        tools:ignore="MissingConstraints" />
 
                     <ToggleButton
                         android:id="@+id/excited"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="44dp"
                         android:layout_height="25dp"
-                        android:textOff="#신난"
-                        android:textOn="#신난"
-                        android:textColor="@drawable/emotion_toggle_textcolor"
-                        android:textSize="12sp"
+                        android:layout_marginStart="8dp"
+
                         android:background="@drawable/emotion_toggle_backgroundcolor"
                         android:checked="false"
-                        style="?android:attr/borderlessButtonStyle"
+                        android:textColor="@drawable/emotion_toggle_textcolor"
+                        android:textOff="#신난"
+                        android:textOn="#신난"
+                        android:textSize="12sp"
                         app:layout_constraintStart_toEndOf="@id/happy"
-                        android:layout_marginStart="8dp"
-                        tools:ignore="MissingConstraints"
-                        />
+                        tools:ignore="MissingConstraints" />
 
                     <ToggleButton
                         android:id="@+id/tranquility"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="44dp"
                         android:layout_height="25dp"
-                        android:textOff="#평온"
-                        android:textOn="#평온"
-                        android:textColor="@drawable/emotion_toggle_textcolor"
-                        android:textSize="12sp"
+                        android:layout_marginStart="8dp"
                         android:background="@drawable/emotion_toggle_backgroundcolor"
                         android:checked="false"
-                        style="?android:attr/borderlessButtonStyle"
+                        android:textColor="@drawable/emotion_toggle_textcolor"
+                        android:textOff="#평온"
+                        android:textOn="#평온"
+                        android:textSize="12sp"
                         app:layout_constraintStart_toEndOf="@id/excited"
-                        android:layout_marginStart="8dp"
-                        tools:ignore="MissingConstraints"
-                        />
+                        tools:ignore="MissingConstraints" />
 
                     <ToggleButton
                         android:id="@+id/joyful"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="55dp"
                         android:layout_height="25dp"
-                        android:textOff="#즐거운"
-                        android:textOn="#즐거운"
-                        android:textColor="@drawable/emotion_toggle_textcolor"
-                        android:textSize="12sp"
+                        android:layout_marginStart="8dp"
                         android:background="@drawable/emotion_toggle_backgroundcolor"
                         android:checked="false"
-                        style="?android:attr/borderlessButtonStyle"
+                        android:textColor="@drawable/emotion_toggle_textcolor"
+                        android:textOff="#즐거운"
+                        android:textOn="#즐거운"
+                        android:textSize="12sp"
                         app:layout_constraintStart_toEndOf="@id/tranquility"
-                        android:layout_marginStart="8dp"
-                        tools:ignore="MissingConstraints"
-                        />
+                        tools:ignore="MissingConstraints" />
 
                     <ToggleButton
                         android:id="@+id/angry"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="44dp"
                         android:layout_height="25dp"
-                        android:textOff="#화난"
-                        android:textOn="#화난"
-                        android:textColor="@drawable/emotion_toggle_textcolor"
-                        android:textSize="12sp"
+                        android:layout_marginStart="8dp"
                         android:background="@drawable/emotion_toggle_backgroundcolor"
                         android:checked="false"
-                        style="?android:attr/borderlessButtonStyle"
+                        android:textColor="@drawable/emotion_toggle_textcolor"
+                        android:textOff="#화난"
+                        android:textOn="#화난"
+                        android:textSize="12sp"
                         app:layout_constraintStart_toEndOf="@id/joyful"
-                        android:layout_marginStart="8dp"
-                        tools:ignore="MissingConstraints"
-                        />
+                        tools:ignore="MissingConstraints" />
 
                     <ToggleButton
                         android:id="@+id/anoying"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="44dp"
                         android:layout_height="25dp"
-                        android:textOff="#짜증"
-                        android:textOn="#짜증"
-                        android:textColor="@drawable/emotion_toggle_textcolor"
-                        android:textSize="12sp"
+                        android:layout_marginStart="8dp"
                         android:background="@drawable/emotion_toggle_backgroundcolor"
                         android:checked="false"
-                        style="?android:attr/borderlessButtonStyle"
+                        android:textColor="@drawable/emotion_toggle_textcolor"
+                        android:textOff="#짜증"
+                        android:textOn="#짜증"
+                        android:textSize="12sp"
                         app:layout_constraintStart_toEndOf="@id/angry"
-                        android:layout_marginStart="8dp"
-                        tools:ignore="MissingConstraints"
-                        />
+                        tools:ignore="MissingConstraints" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -198,56 +193,53 @@
                     android:id="@+id/tag2"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent">
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
 
                     <ToggleButton
                         android:id="@+id/shy"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="55dp"
                         android:layout_height="25dp"
-                        android:textOff="#수줍은"
-                        android:textOn="#수줍은"
-                        android:textColor="@drawable/emotion_toggle_textcolor"
-                        android:textSize="12sp"
                         android:background="@drawable/emotion_toggle_backgroundcolor"
                         android:checked="false"
-                        style="?android:attr/borderlessButtonStyle"
+                        android:textColor="@drawable/emotion_toggle_textcolor"
+                        android:textOff="#수줍은"
+                        android:textOn="#수줍은"
+                        android:textSize="12sp"
                         app:layout_constraintStart_toStartOf="parent"
-                        android:layout_marginStart="8dp"
                         tools:ignore="MissingConstraints"
-                        />
+                        tools:layout_editor_absoluteY="0dp" />
 
                     <ToggleButton
                         android:id="@+id/helpless"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="65dp"
                         android:layout_height="25dp"
-                        android:textOff="#무기력한"
-                        android:textOn="#무기력한"
-                        android:textColor="@drawable/emotion_toggle_textcolor"
-                        android:textSize="12sp"
+                        android:layout_marginStart="8dp"
                         android:background="@drawable/emotion_toggle_backgroundcolor"
                         android:checked="false"
-                        style="?android:attr/borderlessButtonStyle"
+                        android:textColor="@drawable/emotion_toggle_textcolor"
+                        android:textOff="#무기력한"
+                        android:textOn="#무기력한"
+                        android:textSize="12sp"
                         app:layout_constraintStart_toEndOf="@id/shy"
-                        android:layout_marginStart="8dp"
-                        tools:ignore="MissingConstraints"
-                        />
+                        tools:ignore="MissingConstraints" />
 
                     <ToggleButton
                         android:id="@+id/sad"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="44dp"
                         android:layout_height="25dp"
-                        android:textOff="#슬픈"
-                        android:textOn="#슬픈"
-                        android:textColor="@drawable/emotion_toggle_textcolor"
-                        android:textSize="12sp"
+                        android:layout_marginStart="8dp"
                         android:background="@drawable/emotion_toggle_backgroundcolor"
                         android:checked="false"
-                        style="?android:attr/borderlessButtonStyle"
+                        android:textColor="@drawable/emotion_toggle_textcolor"
+                        android:textOff="#슬픈"
+                        android:textOn="#슬픈"
+                        android:textSize="12sp"
                         app:layout_constraintStart_toEndOf="@id/helpless"
-                        android:layout_marginStart="8dp"
-                        tools:ignore="MissingConstraints"
-                        />
+                        tools:ignore="MissingConstraints" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -257,21 +249,18 @@
 
         <ToggleButton
             android:id="@+id/send"
+            style="@style/text_lg_font"
             android:layout_width="328dp"
             android:layout_height="48dp"
-            android:textOff="전송"
-            android:textOn="전송"
-            android:textColor="@drawable/post_toggle_textcolor"
-            android:textSize="18sp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/post_toggle_backgroundcolor"
             android:checked="false"
-            style="?android:attr/borderlessButtonStyle"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@drawable/post_toggle_textcolor"
+            android:textOff="전송"
+            android:textOn="전송"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/emotionbox"
-            android:layout_marginTop="40dp"
-            />
-
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emotionbox" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

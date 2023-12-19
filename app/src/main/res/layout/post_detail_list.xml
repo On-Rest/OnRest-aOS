@@ -7,6 +7,7 @@
 
     <TextView
         android:id="@+id/name"
+        style="@style/caption_font"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -16,6 +17,7 @@
 
     <TextView
         android:id="@+id/detail_text"
+        style="@style/text_sm_font"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"

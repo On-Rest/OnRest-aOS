@@ -41,6 +41,7 @@
             android:orientation="vertical">
 
             <TextView
+                style="@style/title_sm_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="제목"
@@ -49,6 +50,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                style="@style/text_md_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -65,6 +67,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    style="@style/text_sm_font"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="4dp"
