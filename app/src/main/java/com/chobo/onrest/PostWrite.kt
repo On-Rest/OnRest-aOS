@@ -1,6 +1,7 @@
 package com.chobo.onrest
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -33,13 +34,18 @@ class PostWrite : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // 텍스트가 변경될 때 호출되는 메서드
+                // 첫 번째 EditText에 대한 코드 (maxCharacters = 300)
                 val inputText = s.toString()
                 val currentLength = inputText.length
-                captionTextView.text = "$currentLength/$maxCharacters" // 현재 글자 수 표시
+                captionTextView.text = "$currentLength/$maxCharacters" // 현재 글자 수를 보여줍니다
+
                 if (currentLength > maxCharacters) {
-                    editText.setText(inputText.substring(0, maxCharacters)) // 입력 글자 수 제한
-                    editText.setSelection(maxCharacters) // 커서 위치를 제한된 글자 수 끝으로 이동
+                    editText.setText(inputText.substring(0, maxCharacters))
+                    editText.setSelection(maxCharacters)
+                    captionTextView.setTextColor(Color.parseColor("#E92626")) // 텍스트 색상을 변경합니다
+                } else {
+                    // 글자 수 제한 안에 있을 때 텍스트 색상을 리셋합니다
+                    captionTextView1.setTextColor(Color.parseColor("#89857C")) // 원하는 기본 색상으로 변경하세요
                 }
             }
 
@@ -57,13 +63,18 @@ class PostWrite : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // 텍스트가 변경될 때 호출되는 메서드
+                // 두 번째 EditText에 대한 코드 (maxCharacters1 = 30)
                 val inputText1 = s.toString()
                 val currentLength1 = inputText1.length
-                captionTextView1.text = "$currentLength1/$maxCharacters1" // 현재 글자 수 표시
+                captionTextView1.text = "$currentLength1/$maxCharacters1" // 현재 글자 수를 보여줍니다
+
                 if (currentLength1 > maxCharacters1) {
-                    editText1.setText(inputText1.substring(0, maxCharacters1)) // 입력 글자 수 제한
-                    editText1.setSelection(maxCharacters1) // 커서 위치를 제한된 글자 수 끝으로 이동
+                    editText1.setText(inputText1.substring(0, maxCharacters1))
+                    editText1.setSelection(maxCharacters1)
+                    captionTextView1.setTextColor(Color.parseColor("#E92626")) // 텍스트 색상을 변경합니다
+                } else {
+                    // 글자 수 제한 안에 있을 때 텍스트 색상을 리셋합니다
+                    captionTextView1.setTextColor(Color.parseColor("#89857C")) // 원하는 기본 색상으로 변경하세요
                 }
             }
 
