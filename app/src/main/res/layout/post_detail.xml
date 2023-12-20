@@ -78,7 +78,10 @@
                 <ImageButton
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/heart" />
+                    android:src="@drawable/heart"
+                    android:background="@null"
+                    android:backgroundTint="@null"
+                    android:stateListAnimator="@null"/>
             </LinearLayout>
 
             <View
@@ -136,6 +139,7 @@
             app:layout_constraintGuide_percent="0.7034" />
 
         <ImageButton
+            android:id="@+id/goback"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@android:color/transparent"
