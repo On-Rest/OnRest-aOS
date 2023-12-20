@@ -65,7 +65,8 @@
             android:textColorHint="#89857C"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="#1E1D1B"/>
 
         <Button
             android:id="@+id/write"
