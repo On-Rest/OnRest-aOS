@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0667" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9556" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1513" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3050" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/emotionbox"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingVertical="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal2"
+        app:layout_constraintEnd_toEndOf="@id/vertical2"
+        app:layout_constraintStart_toStartOf="@id/vertical1"
+        app:layout_constraintTop_toTopOf="@id/horizontal1">
+
+        <TextView
+            style="@style/text_sm_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="감정 필터"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="315dp"
+            android:layout_height="62dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@id/tag1"
+                android:layout_width="315dp"
+                android:layout_height="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ToggleButton
+                    android:id="@+id/happy"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="44dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/community_tag_on_off"
+                    android:checked="false"
+                    android:textColor="@drawable/emotion_toggle_textcolor"
+                    android:textOff="#행복"
+                    android:textOn="#행복"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ToggleButton
+                    android:id="@+id/excited"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="44dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/community_tag_on_off"
+                    android:checked="false"
+                    android:textColor="@drawable/emotion_toggle_textcolor"
+                    android:textOff="#신난"
+                    android:textOn="#신난"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@id/happy"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ToggleButton
+                    android:id="@+id/tranquility"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="44dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/community_tag_on_off"
+                    android:checked="false"
+                    android:textColor="@drawable/emotion_toggle_textcolor"
+                    android:textOff="#평온"
+                    android:textOn="#평온"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@id/excited"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ToggleButton
+                    android:id="@+id/joyful"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="55dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/community_tag_on_off"
+                    android:checked="false"
+                    android:textColor="@drawable/emotion_toggle_textcolor"
+                    android:textOff="#즐거운"
+                    android:textOn="#즐거운"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@id/tranquility"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ToggleButton
+                    android:id="@+id/angry"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="44dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/community_tag_on_off"
+                    android:checked="true"
+                    android:textColor="@drawable/emotion_toggle_textcolor"
+                    android:textOff="#화난"
+                    android:textOn="#화난"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@id/joyful"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ToggleButton
+                    android:id="@+id/anoying"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="44dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/community_tag_on_off"
+                    android:checked="false"
+                    android:textColor="@drawable/emotion_toggle_textcolor"
+                    android:textOff="#짜증"
+                    android:textOn="#짜증"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@id/angry"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/tag2"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ToggleButton
+                    android:id="@+id/shy"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="55dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/community_tag_on_off"
+                    android:checked="false"
+                    android:textColor="@drawable/emotion_toggle_textcolor"
+                    android:textOff="#수줍은"
+                    android:textOn="#수줍은"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ToggleButton
+                    android:id="@+id/helpless"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="65dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/community_tag_on_off"
+                    android:checked="false"
+                    android:textColor="@drawable/emotion_toggle_textcolor"
+                    android:textOff="#무기력한"
+                    android:textOn="#무기력한"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@id/shy"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ToggleButton
+                    android:id="@+id/sad"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="44dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/community_tag_on_off"
+                    android:checked="false"
+                    android:textColor="@drawable/emotion_toggle_textcolor"
+                    android:textOff="#슬픈"
+                    android:textOn="#슬픈"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@id/helpless"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
