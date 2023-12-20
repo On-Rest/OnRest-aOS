@@ -44,6 +44,7 @@
             android:includeFontPadding="false"
             android:text="기숙사에서 햄스터를 키우고 싶어요"
             android:textColor="#1E1D1B"
+            android:maxLines="1"
             app:layout_constraintBottom_toBottomOf="@id/g_title_bottom"
             app:layout_constraintEnd_toEndOf="@id/g_title_end"
             app:layout_constraintStart_toStartOf="@id/g_title_start"
