@@ -369,7 +369,7 @@
         app:layout_constraintTop_toTopOf="@id/g_sadfacePercent_top" />
 
     <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/pieChart"
+        android:id="@+id/feel_pie_chart"
         style="@style/text_sm_font"
         android:layout_width="0dp"
         android:layout_height="0dp"
