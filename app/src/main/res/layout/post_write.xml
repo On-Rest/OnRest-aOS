@@ -72,6 +72,7 @@
         android:layout_marginTop="17dp"
         android:background="@drawable/round_white_with_outline"
         android:gravity="top"
+        android:lineSpacingExtra="7sp"
         android:hint="게시물 내용 작성해주세요.*"
         android:paddingHorizontal="16dp"
         android:paddingVertical="12dp"
