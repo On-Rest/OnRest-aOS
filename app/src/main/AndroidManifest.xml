@@ -67,6 +67,10 @@
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
+            android:name=".PostDetail"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
             android:name=".splash_logo"
             android:exported="true">
             <intent-filter>

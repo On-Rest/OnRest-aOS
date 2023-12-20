@@ -84,6 +84,17 @@
             app:layout_constraintStart_toStartOf="@id/g_title_start"
             app:layout_constraintTop_toTopOf="@id/g_detail_top" />
 
+        <Button
+            android:id="@+id/detail_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#000ff000"
+            android:stateListAnimator="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/g_detail1_end"
+            app:layout_constraintStart_toStartOf="@id/g_title_start"
+            app:layout_constraintTop_toTopOf="@id/g_title_top"/>
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_tag_top"
             android:layout_width="match_parent"
