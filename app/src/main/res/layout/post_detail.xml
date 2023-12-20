@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="@color/background"
+    tools:context=".PostDetail">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_recylerview_top"
@@ -107,6 +108,7 @@
         android:layout_height="59dp"
         android:background="@color/background"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
