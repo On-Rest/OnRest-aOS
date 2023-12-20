@@ -62,6 +62,7 @@ class PostWrite : AppCompatActivity() {
         toggleButton4.setOnCheckedChangeListener(toggleListener)
         toggleButton5.setOnCheckedChangeListener(toggleListener)
         toggleButton6.setOnCheckedChangeListener(toggleListener)
+        toggleButton7.setOnCheckedChangeListener(toggleListener)
         toggleButton8.setOnCheckedChangeListener(toggleListener)
         toggleButton9.setOnCheckedChangeListener(toggleListener)
 
