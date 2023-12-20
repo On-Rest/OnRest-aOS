@@ -78,7 +78,7 @@
                 <ImageButton
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/action_post_detail_heart_button" />
+                    android:src="@drawable/heart" />
             </LinearLayout>
 
             <View
