@@ -54,10 +54,10 @@ class CommunityFragment : Fragment() {
             add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
             add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
             add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
+            add(CommunityData("햄스터?", "햄스터란...", "#햄이", "#찌", 100, 27))
+            add(CommunityData("햄스터?", "햄스터란", "#햄이야", "#찌", 100000, 27))
+            add(CommunityData("햄스터?", "햄스터란...", "#햄끄러운", "#찌", 100, 27))
+            add(CommunityData("햄스터?", "햄스터란...", "#햄사사롭다", "#찌", 100, 27))
             add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
             add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
             add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
@@ -71,4 +71,5 @@ class CommunityFragment : Fragment() {
             communityAdapter.notifyDataSetChanged()
         }
     }
+
 }
