@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     tools:context=".DiaryWrite">
+  
+    <include layout="@layout/header" />
 
     <include
         android:id="@+id/header"

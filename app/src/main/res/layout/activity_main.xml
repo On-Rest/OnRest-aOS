@@ -4,44 +4,82 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity"
-    android:background="#F8F5F1">
-<androidx.constraintlayout.widget.Guideline
+    tools:context=".MainActivity">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.1722"
+        android:orientation="vertical" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.8278"
+        android:orientation="vertical" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.3875"
+        android:orientation="horizontal" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.6125"
+        android:orientation="horizontal" />
+
+
+    <androidx.constraintlayout.widget.Guideline
     android:id="@+id/g_start"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     app:layout_constraintGuide_percent="0.2639"/>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.7361"/>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_text_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.3"/>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_login_button_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.44"/>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_login_button_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6488"/>
+        app:layout_constraintGuide_percent="0.69"/>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_text_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.365"/>
+
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -53,8 +91,9 @@
         style="@style/title_sm_font"
         android:textColor="#1E1D1B"
         android:gravity="center"/>
+
     <ImageButton
-        android:id="@+id/login_button"
+        android:id="@+id/google_login_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:src="@drawable/login_google_button"
