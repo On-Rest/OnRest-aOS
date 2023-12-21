@@ -56,7 +56,7 @@
         android:id="@+id/today_month_text"
         android:layout_width="wrap_content"
         android:layout_height="27dp"
-        android:text="2023년 11월"
+        android:text="2023년 12월"
         android:textColor="#1E1D1B"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@id/g_Dday_bottom"
