@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">onRest</string>
-    <string name="default_web_client_id">185678905585-qiu71h6asvf7euthhkjgvqt1qr8ma45t.apps.googleusercontent.com</string>
+    <string name="sign_in_client_id">185678905585-qiu71h6asvf7euthhkjgvqt1qr8ma45t.apps.googleusercontent.com</string>
 </resources>
