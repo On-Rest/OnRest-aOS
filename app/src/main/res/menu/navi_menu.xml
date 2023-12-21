@@ -3,21 +3,21 @@
 
     <item
         android:id="@+id/calender"
-        android:title="캘린더"
+        android:title="@null"
         android:icon="@drawable/calender1_off"/>
 
     <item
         android:id="@+id/community"
-        android:title="커뮤니티"
-        android:icon="@drawable/calender2_off"/>
+        android:title="@null"
+        android:icon="@drawable/calender2_off" />
 
     <item
         android:id="@+id/quest"
-        android:title="미션"
+        android:title="@null"
         android:icon="@drawable/calender3_off"/>
 
     <item
         android:id="@+id/my_page"
-        android:title="프로필"
+        android:title="@null"
         android:icon="@drawable/calender4_off"/>
 </menu>

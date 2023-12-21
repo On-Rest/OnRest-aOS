@@ -14,7 +14,6 @@
         app:layout_constraintGuide_percent="0.1722"
         android:orientation="vertical" />
 
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical2"
         android:layout_width="match_parent"

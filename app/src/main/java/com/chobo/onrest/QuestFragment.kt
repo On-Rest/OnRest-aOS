@@ -13,6 +13,8 @@ import com.chobo.onrest.databinding.QuestListBinding
 class   QuestFragment : Fragment() {
 
     private lateinit var binding: QuestHistoryBinding
+    lateinit var questHistoryAdapter: QuestHistoryAdapter
+    val datas = mutableListOf<QuestHistoryData>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,6 +22,20 @@ class   QuestFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = QuestHistoryBinding.inflate(inflater, container, false)
+        initRecycler()
         return binding.root
+    }
+
+    private fun initRecycler() {
+        questHistoryAdapter = QuestHistoryAdapter(requireContext())
+        binding.questList.adapter = questHistoryAdapter
+
+        datas.apply {
+            add(QuestHistoryData("21일", "명상을 해봐요"))
+            add(QuestHistoryData("21일", "스트레칭을 해봐요"))
+            add(QuestHistoryData("21일", "노래를 들어와요"))
+        }
+        questHistoryAdapter.datas = datas
+        questHistoryAdapter.notifyDataSetChanged()
     }
 }
