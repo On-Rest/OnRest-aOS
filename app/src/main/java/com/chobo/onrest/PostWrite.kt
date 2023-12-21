@@ -31,16 +31,6 @@ class PostWrite : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        var toggleButton1: ToggleButton = findViewById(R.id.sad)
-        var toggleButton2: ToggleButton = findViewById(R.id.helpless)
-        var toggleButton3: ToggleButton = findViewById(R.id.shy)
-        var toggleButton4: ToggleButton = findViewById(R.id.anoying)
-        var toggleButton5: ToggleButton = findViewById(R.id.angry)
-        var toggleButton6: ToggleButton = findViewById(R.id.joyful)
-        var toggleButton7: ToggleButton = findViewById(R.id.tranquility)
-        var toggleButton8: ToggleButton = findViewById(R.id.excited)
-        var toggleButton9: ToggleButton = findViewById(R.id.happy)
-
         val toggleListener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
                 if (currentToggleCount >= maxToggleCount) {
@@ -56,15 +46,15 @@ class PostWrite : AppCompatActivity() {
             }
         }
 
-        toggleButton1.setOnCheckedChangeListener(toggleListener)
-        toggleButton2.setOnCheckedChangeListener(toggleListener)
-        toggleButton3.setOnCheckedChangeListener(toggleListener)
-        toggleButton4.setOnCheckedChangeListener(toggleListener)
-        toggleButton5.setOnCheckedChangeListener(toggleListener)
-        toggleButton6.setOnCheckedChangeListener(toggleListener)
-        toggleButton7.setOnCheckedChangeListener(toggleListener)
-        toggleButton8.setOnCheckedChangeListener(toggleListener)
-        toggleButton9.setOnCheckedChangeListener(toggleListener)
+        binding.sad.setOnCheckedChangeListener(toggleListener)
+        binding.shy.setOnCheckedChangeListener(toggleListener)
+        binding.anoying.setOnCheckedChangeListener(toggleListener)
+        binding.angry.setOnCheckedChangeListener(toggleListener)
+        binding.joyful.setOnCheckedChangeListener(toggleListener)
+        binding.tranquility.setOnCheckedChangeListener(toggleListener)
+        binding.excited.setOnCheckedChangeListener(toggleListener)
+        binding.helpless.setOnCheckedChangeListener(toggleListener)
+        binding.happy.setOnCheckedChangeListener(toggleListener)
 
         editText = binding.detailinput // EditText 참조 가져오기
         captionTextView = binding.detailTextnum // TextView 참조 가져오기
