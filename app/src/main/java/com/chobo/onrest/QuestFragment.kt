@@ -33,7 +33,7 @@ class   QuestFragment : Fragment() {
         datas.apply {
             add(QuestHistoryData("21일", "명상을 해봐요"))
             add(QuestHistoryData("21일", "스트레칭을 해봐요"))
-            add(QuestHistoryData("21일", "노래를 들어와요"))
+            add(QuestHistoryData("21일", "노래를 들어봐요"))
         }
         questHistoryAdapter.datas = datas
         questHistoryAdapter.notifyDataSetChanged()
