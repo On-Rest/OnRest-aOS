@@ -44,6 +44,12 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.1138" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_recyclerview_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
 
     <TextView
         style="@style/text_lg_font"
@@ -57,6 +63,7 @@
         app:layout_constraintEnd_toEndOf="@id/g_end"
         app:layout_constraintStart_toStartOf="@id/g_start"
         app:layout_constraintTop_toTopOf="@id/g_Dday_top" />
+
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,6 +73,7 @@
         app:layout_constraintTop_toTopOf="@id/today_month_text"
         app:layout_constraintBottom_toBottomOf="@id/today_month_text"
         android:layout_marginEnd="4dp"/>
+
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -77,12 +85,13 @@
         android:layout_marginStart="4dp"/>
 
 
-
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="0dp"
+        android:id="@+id/quest_list"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/g_recyclerview_bottom"
         app:layout_constraintEnd_toEndOf="@id/g_end"
         app:layout_constraintStart_toStartOf="@id/g_start"
         app:layout_constraintTop_toTopOf="@id/g_recyclerview_top"

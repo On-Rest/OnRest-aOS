@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="157dp"
     android:layout_height="164dp"
-    android:background="@drawable/round_white_18dp">
+    android:background="@drawable/round_white_18dp"
+    android:layout_marginBottom="24dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_title_top"
@@ -46,7 +49,7 @@
         app:layout_constraintEnd_toEndOf="@id/guide_title_end"
         app:layout_constraintStart_toStartOf="@id/guide_title_start"
         app:layout_constraintTop_toTopOf="@+id/guide_title_top"
-        tools:text="date" />
+        tools:text="일" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_mission_top"
