@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="@color/background"
+    tools:context=".PostDetail">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_recylerview_top"
@@ -68,6 +69,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/heartnum"
                     style="@style/text_sm_font"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -75,10 +77,16 @@
                     android:gravity="center"
                     android:text="15" />
 
-                <ImageButton
+                <ToggleButton
+                    android:id="@+id/heart"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/heart" />
+                    android:background="@drawable/heart_on_off"
+                    android:textOn=""
+                    android:textOff=""
+                    android:backgroundTint="@null"
+                    android:stateListAnimator="@null"/>
+              
             </LinearLayout>
 
             <View
@@ -93,8 +101,11 @@
                 tools:listitem="@layout/post_detail_list">
 
             </androidx.recyclerview.widget.RecyclerView>
+
         </LinearLayout>
+
     </androidx.core.widget.NestedScrollView>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -133,6 +144,7 @@
             app:layout_constraintGuide_percent="0.7034" />
 
         <ImageButton
+            android:id="@+id/goback"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@android:color/transparent"
@@ -155,46 +167,6 @@
             app:layout_constraintTop_toTopOf="@id/g_ctrlZ_top" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
-        android:background="@color/background"
-        android:paddingVertical="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_chatting_start"
-            android:layout_width="match_parent"
-            android:layout_height="0.1dp"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.0444" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_chatting_end"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.9556" />
-
-        <EditText
-            style="@style/text_md_font"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/post_detail_edit_text"
-            android:foregroundGravity="center"
-            android:hint="답글 남기기"
-            android:paddingVertical="6.5dp"
-            android:paddingStart="20dp"
-            android:textColorHint="#B9B7B2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/g_chatting_end"
-            app:layout_constraintStart_toStartOf="@id/g_chatting_start"
-            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

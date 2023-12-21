@@ -1,9 +1,11 @@
 package com.chobo.onrest
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -26,6 +28,8 @@ class CommunityAdapter(private val context: Context) : RecyclerView.Adapter<Comm
         private val tag2: TextView = itemView.findViewById(R.id.tag2)
         private val commentnum: TextView = itemView.findViewById(R.id.dhatglenum)
         private val heartnum: TextView = itemView.findViewById(R.id.heartnum)
+        private val detailButton: Button = itemView.findViewById(R.id.detail_button)
+
 
         fun bind(item: CommunityData){
             title.text = item.title
@@ -34,6 +38,10 @@ class CommunityAdapter(private val context: Context) : RecyclerView.Adapter<Comm
             tag2.text = item.tag2
             commentnum.text = item.comment.toString()
             heartnum.text = item.heart.toString()
+
+            detailButton.setOnClickListener() {
+                context.startActivity(Intent(context, PostDetail::class.java))
+            }
         }
     }
 }
