@@ -30,7 +30,7 @@
         android:layout_width="23dp"
         android:layout_height="24dp"
         android:background="@android:color/transparent"
-        android:src="@drawable/ctrlz"
+        android:src="@drawable/go_back_icon"
         app:layout_constraintBottom_toBottomOf="@id/write_post_text"
         app:layout_constraintStart_toStartOf="@id/g_write_block_start"
         app:layout_constraintTop_toTopOf="@id/write_post_text" />

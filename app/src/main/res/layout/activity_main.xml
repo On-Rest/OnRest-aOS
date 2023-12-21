@@ -4,17 +4,64 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/login"
+    tools:context=".MainActivity"
+    android:background="#F8F5F1">
+<androidx.constraintlayout.widget.Guideline
+    android:id="@+id/g_start"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.2639"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login Page"
-        android:textSize="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7361"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_text_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_login_button_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.44"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_login_button_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6488"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_text_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.365"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Google 로그인하고\n나만의 삶 쉼표 만들기"
+        app:layout_constraintStart_toStartOf="@id/g_start"
+        app:layout_constraintEnd_toEndOf="@id/g_end"
+        app:layout_constraintTop_toTopOf="@id/g_text_top"
+        app:layout_constraintBottom_toBottomOf="@id/g_text_bottom"
+        style="@style/title_sm_font"
+        android:textColor="#1E1D1B"
+        android:gravity="center"/>
+    <ImageButton
+        android:id="@+id/login_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/login_google_button"
+        app:layout_constraintStart_toStartOf="@id/g_start"
+        app:layout_constraintEnd_toEndOf="@id/g_end"
+        app:layout_constraintTop_toTopOf="@id/g_login_button_top"
+        app:layout_constraintBottom_toBottomOf="@id/g_login_button_bottom"
+        android:background="@android:color/transparent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

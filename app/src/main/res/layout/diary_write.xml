@@ -7,7 +7,23 @@
     android:background="@color/background"
     tools:context=".DiaryWrite">
 
-    <include layout="@layout/header" />
+    <include
+        android:id="@+id/header"
+        layout="@layout/header" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_start"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0444" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_end"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9556" />
 
     <ImageView
         android:id="@+id/lowhill"
@@ -16,13 +32,6 @@
         android:scaleType="fitXY"
         android:src="@drawable/hill_low"
         app:layout_constraintBottom_toBottomOf="parent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/vertical1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.045" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/speechbubble1"
@@ -45,47 +54,39 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.45" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/memoinput"
-            style="@style/text_sm_font"
-            android:layout_width="272dp"
-            android:layout_height="200dp"
-            android:background="@drawable/memo_input"
-            android:gravity="top"
-            android:hint="일기를 작성해보세요"
-            android:padding="16dp"
-            android:textColorHint="#89857C"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textColor="#1E1D1B"/>
+    <EditText
+        android:id="@+id/memoinput"
+        style="@style/text_sm_font"
+        android:layout_width="0dp"
+        android:layout_height="289dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/memo_input"
+        android:gravity="top"
+        android:hint="일기를 작성해보세요"
+        android:padding="16dp"
+        android:textColor="#1E1D1B"
+        android:textColorHint="#89857C"
+        app:layout_constraintEnd_toEndOf="@id/g_end"
+        app:layout_constraintStart_toStartOf="@id/g_start"
+        app:layout_constraintTop_toBottomOf="@id/header" />
 
-        <Button
-            android:id="@+id/write"
-            style="@style/button_font"
-            android:layout_width="100dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/dairy_button"
-            android:backgroundTint="#393733"
-            android:gravity="top|center_horizontal"
-            android:paddingTop="8dp"
-            android:text="일기작성"
-            android:textColor="#EAE9E7"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/memoinput" />
+    <Button
+        android:id="@+id/write"
+        style="@style/button_font"
+        android:layout_width="100dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/dairy_button"
+        android:backgroundTint="#393733"
+        android:gravity="top|center_horizontal"
+        android:paddingTop="8dp"
+        android:text="일기작성"
+        android:textColor="#EAE9E7"
+        app:layout_constraintEnd_toEndOf="@id/g_end"
+        app:layout_constraintStart_toStartOf="@id/g_start"
+        app:layout_constraintTop_toBottomOf="@id/memoinput" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/speechbubble"

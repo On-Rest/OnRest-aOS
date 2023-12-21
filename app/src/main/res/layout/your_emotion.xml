@@ -32,7 +32,7 @@
             android:layout_width="139dp"
             android:layout_height="117dp"
             android:layout_marginTop="15dp"
-            android:src="@drawable/happy_face"
+            android:src="@drawable/angry_face"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/hamstertext" />
@@ -47,7 +47,7 @@
             android:layout_marginTop="327dp"
             android:gravity="center_horizontal|top"
             android:lineSpacingExtra="2sp"
-            android:text="행복한 햄스터"
+            android:text="화난 햄스터"
             android:textColor="#000000"
             android:translationY="-1.07sp"
             app:layout_constraintEnd_toEndOf="parent"
