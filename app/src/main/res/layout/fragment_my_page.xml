@@ -189,32 +189,11 @@
             app:layout_constraintGuide_percent="0.37" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_feelPercent_bottom"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.40" />
-
-        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_feelPercent_start"
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.66" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_feelPercent_end"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.72" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_sadfacePercent_top"
-            android:layout_width="match_parent"
-            android:layout_height="0.1dp"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.45" />
+            app:layout_constraintGuide_percent="0.6611" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_sadfacePercent_bottom"
@@ -223,33 +202,13 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.48" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_angryfacePercent_top"
-            android:layout_width="match_parent"
-            android:layout_height="0.1dp"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.41" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_angryfacePercent_bottom"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="355dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_Percent_start"
-            android:layout_width="match_parent"
-            android:layout_height="0.1dp"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.76" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_Percent_end"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.84" />
+            app:layout_constraintGuide_percent="0.8444" />
 
         <View
             android:id="@+id/separator"
@@ -308,78 +267,88 @@
             app:layout_constraintStart_toStartOf="@id/g_MA_start"
             app:layout_constraintTop_toTopOf="@id/g_MA_top" />
 
-        <ImageView
-            android:id="@+id/happyPercentIcon"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@drawable/happy_face"
-            app:layout_constraintBottom_toBottomOf="@+id/g_feelPercent_bottom"
-            app:layout_constraintEnd_toEndOf="@id/g_feelPercent_end"
-            app:layout_constraintStart_toStartOf="@id/g_feelPercent_start"
-            app:layout_constraintTop_toTopOf="@id/g_feelPercent_top" />
-
-        <ImageView
-            android:id="@+id/angryPercentIcon"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:src="@drawable/angry_face"
-            app:layout_constraintBottom_toBottomOf="@id/g_angryfacePercent_bottom"
-            app:layout_constraintEnd_toEndOf="@id/g_feelPercent_end"
-            app:layout_constraintStart_toStartOf="@id/g_feelPercent_start"
-            app:layout_constraintTop_toTopOf="@id/g_angryfacePercent_top" />
-
-        <ImageView
-            android:id="@+id/sadPercentIcon"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:src="@drawable/sad_face"
-            app:layout_constraintBottom_toBottomOf="@id/g_sadfacePercent_bottom"
-            app:layout_constraintEnd_toEndOf="@id/g_feelPercent_end"
-            app:layout_constraintStart_toStartOf="@id/g_feelPercent_start"
-            app:layout_constraintTop_toTopOf="@id/g_sadfacePercent_top" />
-
-        <TextView
-            android:id="@+id/happyPercent"
-            style="@style/text_sm_font"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:gravity="center"
-            android:text=""
-            android:textColor="@color/brown1"
-            app:layout_constraintBottom_toBottomOf="@id/g_feelPercent_bottom"
-            app:layout_constraintEnd_toEndOf="@id/g_Percent_end"
-            app:layout_constraintStart_toStartOf="@id/g_Percent_start"
-            app:layout_constraintTop_toTopOf="@id/g_feelPercent_top" />
-
-        <TextView
-            android:id="@+id/angryPercent"
-            style="@style/text_sm_font"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:gravity="center"
-            android:text=""
-            android:textColor="@color/brown2"
-            app:layout_constraintBottom_toBottomOf="@id/g_angryfacePercent_bottom"
-            app:layout_constraintEnd_toEndOf="@id/g_Percent_end"
-            app:layout_constraintStart_toStartOf="@id/g_Percent_start"
-            app:layout_constraintTop_toTopOf="@id/g_angryfacePercent_top" />
-
-        <TextView
-            android:id="@+id/sadPercent"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="@id/g_sadfacePercent_bottom"
             app:layout_constraintEnd_toEndOf="@id/g_Percent_end"
-            app:layout_constraintStart_toStartOf="@id/g_Percent_start"
-            app:layout_constraintTop_toTopOf="@id/g_sadfacePercent_top" />
+            app:layout_constraintStart_toStartOf="@id/g_feelPercent_start"
+            app:layout_constraintTop_toTopOf="@id/g_feelPercent_top">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/g_feel_icon_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.3636"/>
+            <ImageView
+                android:id="@+id/happyPercentIcon"
+                android:layout_width="24dp"
+                android:layout_height="21dp"
+                android:src="@drawable/happy_face"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/g_feel_icon_end" />
+
+            <ImageView
+                android:id="@+id/angryPercentIcon"
+                android:layout_width="24dp"
+                android:layout_height="21dp"
+                android:src="@drawable/angry_face"
+                app:layout_constraintBottom_toTopOf="@id/sadPercentIcon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/happyPercentIcon"
+                app:layout_constraintEnd_toEndOf="@id/g_feel_icon_end" />
+
+            <ImageView
+                android:id="@+id/sadPercentIcon"
+                android:layout_width="24dp"
+                android:layout_height="21dp"
+                android:src="@drawable/sad_face"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/g_feel_icon_end"/>
+
+            <TextView
+                android:id="@+id/happyPercent"
+                style="@style/text_sm_font"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:gravity="center_vertical"
+                android:text="0%"
+                android:textColor="@color/brown1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/angryPercent"
+                style="@style/text_sm_font"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:gravity="center_vertical"
+                android:text="100%"
+                android:textColor="@color/brown2"
+                app:layout_constraintBottom_toTopOf="@id/sadPercent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/happyPercent" />
+
+            <TextView
+                android:id="@+id/sadPercent"
+                style="@style/text_sm_font"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:gravity="center_vertical"
+                android:text="0%"
+                android:textColor="#785829"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/feel_pie_chart"
-            style="@style/text_sm_font"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:textColor="@color/brown3"
             app:layout_constraintBottom_toBottomOf="@id/g_pieChart_bottom"
             app:layout_constraintEnd_toEndOf="@id/g_pieChart_end"
             app:layout_constraintStart_toStartOf="@id/g_pieChart_start"
