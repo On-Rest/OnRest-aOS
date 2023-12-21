@@ -4,61 +4,90 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QuestHistory"
-    android:background="@color/background">
+    android:background="@color/background"
+    tools:context=".QuestHistory">
 
     <include layout="@layout/header" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_start"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0444" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_end"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9556" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/date_box"
-            android:layout_width="121dp"
-            android:layout_height="27dp"
-            android:layout_marginTop="64dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_recyclerview_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1438" />
 
-            <TextView
-                android:id="@+id/date"
-                style="@style/text_lg_font"
-                android:layout_width="95dp"
-                android:layout_height="27dp"
-                android:gravity="center"
-                android:text="날자"
-                android:textColor="#1E1D1B"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_Dday_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
 
-            <ImageButton
-                android:id="@+id/id_date"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:layout_marginStart="10dp"
-                android:background="@android:color/transparent"
-                android:src="@drawable/date_check"
-                android:stateListAnimator="@null"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/date"
-                app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_Dday_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1138" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ListView
-            android:id="@+id/mainListView"
-            android:layout_width="328dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/date_box" />
+    <TextView
+        style="@style/text_lg_font"
+        android:id="@+id/today_month_text"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:text="2023년 11월"
+        android:textColor="#1E1D1B"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@id/g_Dday_bottom"
+        app:layout_constraintEnd_toEndOf="@id/g_end"
+        app:layout_constraintStart_toStartOf="@id/g_start"
+        app:layout_constraintTop_toTopOf="@id/g_Dday_top" />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ctrlz_left"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toStartOf="@id/today_month_text"
+        app:layout_constraintTop_toTopOf="@id/today_month_text"
+        app:layout_constraintBottom_toBottomOf="@id/today_month_text"
+        android:layout_marginEnd="4dp"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ctrlz_right"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="@id/today_month_text"
+        app:layout_constraintBottom_toBottomOf="@id/today_month_text"
+        app:layout_constraintStart_toEndOf="@+id/today_month_text"
+        android:layout_marginStart="4dp"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/g_end"
+        app:layout_constraintStart_toStartOf="@id/g_start"
+        app:layout_constraintTop_toTopOf="@id/g_recyclerview_top"
+        app:spanCount="2"
+        tools:listitem="@layout/mission_list_view" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
