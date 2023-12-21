@@ -13,10 +13,6 @@ class QuestHistory : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.idDate.setOnClickListener() {
-            startActivity(Intent(this, QuestList::class.java))
-            overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
-            finish()
-        }
+
     }
 }
