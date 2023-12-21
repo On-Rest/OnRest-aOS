@@ -34,9 +34,9 @@ class MyPageFragment : Fragment() {
     private fun initPieChart() {
         // 데이터 추가는 Entry 클래스를 이용한다.
         val feelRatio = listOf(
-            PieEntry(40f),
-            PieEntry(21f),
-            PieEntry(39f),
+            PieEntry(0f),
+            PieEntry(100f),
+            PieEntry(0f),
         )
 
         val pieColors = listOf(
