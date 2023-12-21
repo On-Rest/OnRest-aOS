@@ -27,6 +27,10 @@
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
         <activity
+            android:name=".CommunityPopupView"
+            android:exported="false"
+            android:theme="@style/FloatingActivityTheme"/>
+        <activity
             android:name=".DiaryWrite"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
