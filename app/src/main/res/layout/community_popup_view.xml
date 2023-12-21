@@ -43,8 +43,7 @@
         app:layout_constraintBottom_toBottomOf="@id/horizontal2"
         app:layout_constraintEnd_toEndOf="@id/vertical2"
         app:layout_constraintStart_toStartOf="@id/vertical1"
-        app:layout_constraintTop_toTopOf="@id/horizontal1"
-        android:background="@drawable/community_popup_background">
+        app:layout_constraintTop_toTopOf="@id/horizontal1">
 
         <TextView
             style="@style/text_sm_font"
