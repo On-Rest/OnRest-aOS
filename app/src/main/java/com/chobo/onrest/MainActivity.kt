@@ -1,10 +1,17 @@
 package com.chobo.onrest
 
+import android.accounts.AccountManager
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentTransaction
 import com.chobo.onrest.databinding.ActivityMainBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -12,47 +19,91 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
+import okhttp3.OkHttpClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+
 
 // MainActivity.java
-class MainActivity : AppCompatActivity() {
+class MainActivity : FragmentActivity() {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var mGoogleSingInClient: GoogleSignInClient
+    lateinit var mGoogleSignInClient: GoogleSignInClient
+    lateinit var resultLauncher: ActivityResultLauncher<Intent>
+
+
+    override fun onStart() {
+        super.onStart()
+        val account = GoogleSignIn.getLastSignedInAccount(this)
+        if (account != null) {
+            Toast.makeText(this, "로그인", Toast.LENGTH_SHORT).show()
+        } else {
+            Log.d("SignIn", "로그인된 계정을 찾을 수 없습니다.")
+            Toast.makeText(this, "아직 로그인되지 않았습니다.", Toast.LENGTH_SHORT).show()
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        setResultSignUp()
+
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail()
+            .requestProfile()
             .build()
 
-        mGoogleSingInClient = GoogleSignIn.getClient(this, gso)
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        binding.googlebutton.setOnClickListener() {
-            SignIn()
+        with(binding) {
+            googlebutton.setOnClickListener() {
+                signIn()
+            }
+        }
+    }
+    private fun setResultSignUp() {
+        resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+                handleSignInResult(task)
+            }
         }
     }
 
-    private fun SignIn() {
-        val signInIntent = mGoogleSingInClient.signInIntent
+    private fun signIn() {
+        val signInIntent: Intent = mGoogleSignInClient.getSignInIntent()
         resultLauncher.launch(signInIntent)
     }
 
-    private var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == 1) {
-            val data: Intent? = result.data
-            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
-            handleSignInResult(task)
-        }
-    }
 
     private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
         try {
             val account = completedTask.getResult(ApiException::class.java)
             val email = account?.email.toString()
-            val familyName = account?.familyName.toString()
-        } catch(e: ApiException) {
-            Log.w("failed", "signInResult:failed code = " + e.statusCode)
-        }
+            val displayName = account?.displayName.toString()
+            val photoUrl = account?.photoUrl.toString()
+            val idToken = account?.idToken.toString()
+
+            val serverUrl = "http://46.250.250.34:5000"
+
+            val nextPage = Intent(this, NaviActivity::class.java)
+            startActivity(nextPage)
+
+            Log.d("로그인한 유저의 이메일", email)
+            Log.d("로그인한 유저의 전체이름", displayName)
+            Log.d("로그인한 유저의 프로필 사진의 주소", photoUrl)
+
+            Log.d("로그인한 유저의 아이디 토큰", idToken)
+
+        } catch (e:ApiException) {
+            Log.w("failed", "signInResultfailed = " + e.statusCode) }
+    }
+
+    private fun sendIdTokenToServer(id_token: String?, serverUrl: String) {
     }
 }

@@ -16,6 +16,13 @@ dependencyResolutionManagement {
     }
 }
 
+buildscript {
+    repositories{
+        google()
+        mavenCentral()
+    }
+}
+
 rootProject.name = "onRest"
 include(":app")
  
