@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="@color/background"
+    tools:context=".PostDetail">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_recylerview_top"
@@ -68,6 +69,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/heartnum"
                     style="@style/text_sm_font"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -75,10 +77,16 @@
                     android:gravity="center"
                     android:text="15" />
 
-                <ImageButton
+                <ToggleButton
+                    android:id="@+id/heart"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/heart" />
+                    android:background="@drawable/heart_on_off"
+                    android:textOn=""
+                    android:textOff=""
+                    android:backgroundTint="@null"
+                    android:stateListAnimator="@null"/>
+              
             </LinearLayout>
 
             <View
@@ -136,6 +144,7 @@
             app:layout_constraintGuide_percent="0.7034" />
 
         <ImageButton
+            android:id="@+id/goback"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@android:color/transparent"
@@ -159,4 +168,5 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

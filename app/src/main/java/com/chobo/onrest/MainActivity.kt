@@ -1,6 +1,5 @@
 package com.chobo.onrest
 
-import android.accounts.AccountManager
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -8,10 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentTransaction
 import com.chobo.onrest.databinding.ActivityMainBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -19,20 +15,12 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
-import okhttp3.OkHttpClient
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-
 
 // MainActivity.java
 class MainActivity : FragmentActivity() {
     private lateinit var binding: ActivityMainBinding
     lateinit var mGoogleSignInClient: GoogleSignInClient
     lateinit var resultLauncher: ActivityResultLauncher<Intent>
-
 
     override fun onStart() {
         super.onStart()
@@ -61,15 +49,17 @@ class MainActivity : FragmentActivity() {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
         with(binding) {
-            googlebutton.setOnClickListener() {
+            googleLoginButton.setOnClickListener() {
                 signIn()
             }
         }
     }
+
     private fun setResultSignUp() {
-        resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){result ->
+        resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
-                val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+                val task: Task<GoogleSignInAccount> =
+                    GoogleSignIn.getSignedInAccountFromIntent(result.data)
                 handleSignInResult(task)
             }
         }
@@ -80,6 +70,9 @@ class MainActivity : FragmentActivity() {
         resultLauncher.launch(signInIntent)
     }
 
+    private fun signOut() {
+
+    }
 
     private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
         try {
@@ -100,8 +93,9 @@ class MainActivity : FragmentActivity() {
 
             Log.d("로그인한 유저의 아이디 토큰", idToken)
 
-        } catch (e:ApiException) {
-            Log.w("failed", "signInResultfailed = " + e.statusCode) }
+        } catch (e: ApiException) {
+            Log.w("failed", "signInResultfailed = " + e.statusCode)
+        }
     }
 
     private fun sendIdTokenToServer(id_token: String?, serverUrl: String) {

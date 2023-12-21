@@ -85,7 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8425" />
+        app:layout_constraintGuide_percent="0.83" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_pen_bottom"
@@ -116,20 +116,22 @@
         android:background="@drawable/search_square"
         android:drawableEnd="@drawable/search_icon"
         android:hint="검색어를 입력해주세요"
+        android:textColorHint="#A19E97"
         android:paddingStart="16dp"
         android:paddingEnd="12dp"
-        android:textColor="#B9B7B2"
+        android:textColor="#1E1D1B"
         app:layout_constraintBottom_toBottomOf="@id/g_search_bottom"
         app:layout_constraintEnd_toEndOf="@id/g_search_end"
         app:layout_constraintStart_toStartOf="@id/g_search_start"
         app:layout_constraintTop_toTopOf="@id/g_search_top" />
 
-    <ImageButton
+    <ToggleButton
         android:id="@+id/filter"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="?selectableItemBackground"
-        android:src="@drawable/filter"
+        android:background="@drawable/filter_on_off"
+        android:textOn=""
+        android:textOff=""
         app:layout_constraintBottom_toBottomOf="@id/g_filter_bottom"
         app:layout_constraintEnd_toEndOf="@id/g_filter_end"
         app:layout_constraintStart_toStartOf="@id/g_filter_start"
