@@ -25,15 +25,427 @@
             app:layout_constraintGuide_percent="0.45"
             />
 
-    <ListView
+    <HorizontalScrollView
         android:id="@+id/a"
+        android:orientation="horizontal"
         android:layout_width="0dp"
         android:layout_height="164dp"
         app:layout_constraintBottom_toBottomOf="@id/midbutton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/midbutton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="157dp"
+                android:layout_height="164dp"
+                android:background="@drawable/round_white_18dp">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_title_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.0915" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_title_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.2378" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_title_start"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.2803" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_title_end"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.7006" />
+
+                <TextView
+                    android:id="@+id/dateTV"
+                    style="@style/text_sm_font"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/round_gray_eae9e7"
+                    android:gravity="center"
+                    android:textColor="#54514B"
+                    app:layout_constraintBottom_toBottomOf="@+id/guide_title_bottom"
+                    app:layout_constraintEnd_toEndOf="@id/guide_title_end"
+                    app:layout_constraintStart_toStartOf="@id/guide_title_start"
+                    app:layout_constraintTop_toTopOf="@+id/guide_title_top"
+                    tools:text="date" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_mission_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.3294" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_mission_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.6220" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_mission_start"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.1943" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_mission_end"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.8248" />
+
+                <TextView
+                    android:id="@+id/missionTV"
+                    style="@style/text_sm_font"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="#000000"
+                    app:layout_constraintBottom_toBottomOf="@id/guide_mission_bottom"
+                    app:layout_constraintEnd_toEndOf="@id/guide_mission_end"
+                    app:layout_constraintStart_toStartOf="@id/guide_mission_start"
+                    app:layout_constraintTop_toTopOf="@id/guide_mission_top"
+                    tools:text="mission" />
+
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_togle_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.7317" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_togle_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.8780" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_togle_start"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.4236" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_togle_end"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5764" />
+
+                <ToggleButton
+                    android:id="@+id/checkTV"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/check_on_off"
+                    android:gravity="center"
+                    android:textOff=""
+                    android:textOn=""
+                    app:layout_constraintBottom_toBottomOf="@id/guide_togle_bottom"
+                    app:layout_constraintEnd_toEndOf="@id/guide_togle_end"
+                    app:layout_constraintStart_toStartOf="@id/guide_togle_start"
+                    app:layout_constraintTop_toTopOf="@id/guide_togle_top" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="157dp"
+                android:layout_height="164dp"
+                android:background="@drawable/round_white_18dp"
+                android:layout_marginStart="10dp">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_title_top1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.0915" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_title_bottom1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.2378" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_title_start1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.2803" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_title_end1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.7006" />
+
+                <TextView
+                    android:id="@+id/dateTV1"
+                    style="@style/text_sm_font"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/round_gray_eae9e7"
+                    android:gravity="center"
+                    android:textColor="#54514B"
+                    app:layout_constraintBottom_toBottomOf="@+id/guide_title_bottom1"
+                    app:layout_constraintEnd_toEndOf="@id/guide_title_end1"
+                    app:layout_constraintStart_toStartOf="@id/guide_title_start1"
+                    app:layout_constraintTop_toTopOf="@+id/guide_title_top1"
+                    tools:text="date" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_mission_top1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.3294" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_mission_bottom1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.6220" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_mission_start1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.1943" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_mission_end1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.8248" />
+
+                <TextView
+                    android:id="@+id/missionTV1"
+                    style="@style/text_sm_font"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="#000000"
+                    app:layout_constraintBottom_toBottomOf="@id/guide_mission_bottom1"
+                    app:layout_constraintEnd_toEndOf="@id/guide_mission_end1"
+                    app:layout_constraintStart_toStartOf="@id/guide_mission_start1"
+                    app:layout_constraintTop_toTopOf="@id/guide_mission_top1"
+                    tools:text="mission" />
+
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_togle_top1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.7317" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_togle_bottom1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.8780" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_togle_start1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.4236" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_togle_end1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5764" />
+
+                <ToggleButton
+                    android:id="@+id/checkTV1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/check_on_off"
+                    android:gravity="center"
+                    android:textOff=""
+                    android:textOn=""
+                    app:layout_constraintBottom_toBottomOf="@id/guide_togle_bottom1"
+                    app:layout_constraintEnd_toEndOf="@id/guide_togle_end1"
+                    app:layout_constraintStart_toStartOf="@id/guide_togle_start1"
+                    app:layout_constraintTop_toTopOf="@id/guide_togle_top1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="157dp"
+                android:layout_height="164dp"
+                android:background="@drawable/round_white_18dp"
+                android:layout_marginStart="10dp">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_title_top2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.0915" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_title_bottom2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.2378" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_title_start2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.2803" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_title_end2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.7006" />
+
+                <TextView
+                    android:id="@+id/dateTV2"
+                    style="@style/text_sm_font"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/round_gray_eae9e7"
+                    android:gravity="center"
+                    android:textColor="#54514B"
+                    app:layout_constraintBottom_toBottomOf="@+id/guide_title_bottom2"
+                    app:layout_constraintEnd_toEndOf="@id/guide_title_end2"
+                    app:layout_constraintStart_toStartOf="@id/guide_title_start2"
+                    app:layout_constraintTop_toTopOf="@+id/guide_title_top2"
+                    tools:text="date" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_mission_top2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.3294" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_mission_bottom2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.6220" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_mission_start2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.1943" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_mission_end2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.8248" />
+
+                <TextView
+                    android:id="@+id/missionTV2"
+                    style="@style/text_sm_font"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="#000000"
+                    app:layout_constraintBottom_toBottomOf="@id/guide_mission_bottom2"
+                    app:layout_constraintEnd_toEndOf="@id/guide_mission_end2"
+                    app:layout_constraintStart_toStartOf="@id/guide_mission_start2"
+                    app:layout_constraintTop_toTopOf="@id/guide_mission_top2"
+                    tools:text="mission" />
+
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_togle_top2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.7317" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_togle_bottom2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.8780" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_togle_start2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.4236" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_togle_end2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5764" />
+
+                <ToggleButton
+                    android:id="@+id/checkTV2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/check_on_off"
+                    android:gravity="center"
+                    android:textOff=""
+                    android:textOn=""
+                    app:layout_constraintBottom_toBottomOf="@id/guide_togle_bottom2"
+                    app:layout_constraintEnd_toEndOf="@id/guide_togle_end2"
+                    app:layout_constraintStart_toStartOf="@id/guide_togle_start2"
+                    app:layout_constraintTop_toTopOf="@id/guide_togle_top2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
 
     <ImageButton
             android:id="@+id/speechbubble"

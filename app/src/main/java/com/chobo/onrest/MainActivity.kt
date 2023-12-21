@@ -25,6 +25,11 @@ class MainActivity : FragmentActivity() {
     override fun onStart() {
         super.onStart()
         val account = GoogleSignIn.getLastSignedInAccount(this)
+        binding.googleLoginButton.setOnClickListener() {
+            startActivity(Intent(this, NaviActivity::class.java))
+            overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
+            finish()
+        }
         if (account != null) {
             Toast.makeText(this, "로그인", Toast.LENGTH_SHORT).show()
         } else {
@@ -81,7 +86,6 @@ class MainActivity : FragmentActivity() {
             val serverUrl = "http://46.250.250.34:5000"
 
             val nextPage = Intent(this, NaviActivity::class.java)
-            startActivity(nextPage)
 
             Log.d("로그인한 유저의 이메일", email)
             Log.d("로그인한 유저의 전체이름", displayName)

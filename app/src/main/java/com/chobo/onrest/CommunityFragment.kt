@@ -45,27 +45,7 @@ class CommunityFragment : Fragment() {
         binding.list.adapter = communityAdapter
 
         datas.apply {
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 19, 27))
-            add(CommunityData("햄스터?", "햄스터란아니 명훈아 좀더 긴걸 넣었어애지...", "#햄", "#찌", 19, 27))
-            add(CommunityData("햄스터이것도 얼마니긴지알아야지?햄스터이것도 얼마니긴지알아야지?햄스터이것도 얼마니긴지알아야지?", "햄스터란...", "#햄", "#찌", 19, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 19, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 19, 100))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄이", "#찌", 100, 27))
-            add(CommunityData("햄스터?", "햄스터란", "#햄이야", "#찌", 100000, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄끄러운", "#찌", 100, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄사사롭다", "#찌", 100, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
-            add(CommunityData("햄스터?", "햄스터란...", "#햄", "#찌", 100, 27))
+            add(CommunityData("오늘의 화난썰", "오늘은 아이디어 페스티벌 프로젝트를 진행했다.", "#화난", "#짜증", 19, 27))
             // 임시 지정(수동)
             communityAdapter.datas = datas
             communityAdapter.notifyDataSetChanged()
