@@ -16,13 +16,18 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-    <CalendarView
+    <ImageButton
+        android:id="@+id/calender"
         android:layout_width="329dp"
-        android:layout_height="444dp"
+        android:layout_height="500dp"
+        android:scaleType="fitXY"
+        android:stateListAnimator="@null"
+        android:src="@drawable/calender"
+        android:background="@color/background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="64dp" />
+        android:layout_marginTop="75dp" />
 
     <ImageButton
         android:id="@+id/speechbubble"

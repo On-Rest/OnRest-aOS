@@ -22,6 +22,10 @@
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
         <activity
+            android:name=".CalenderClick"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
+        <activity
             android:name=".EmotionChoice1"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>

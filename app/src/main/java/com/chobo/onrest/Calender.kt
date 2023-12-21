@@ -23,5 +23,10 @@ class Calender : AppCompatActivity() {
             overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
             finish()
         }
+        binding.calender.setOnClickListener() {
+            startActivity(Intent(this, CalenderClick::class.java))
+            overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
+            finish()
+        }
     }
 }
