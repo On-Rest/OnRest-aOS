@@ -71,5 +71,4 @@ class CommunityFragment : Fragment() {
             communityAdapter.notifyDataSetChanged()
         }
     }
-
 }
