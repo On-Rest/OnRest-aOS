@@ -23,6 +23,10 @@ class PostWrite : AppCompatActivity() {
     private val maxCharacters1 = 30 // 최대 글자 수
     var maxToggleCount = 2 // 최대 토글 횟수
     var currentToggleCount = 0 // 현재 토글 횟수
+    var inputText1 = "" // 초기 값을 빈 문자열로 설정
+    var currentLength1 = 0
+    var inputText = "" // 초기 값을 빈 문자열로 설정
+    var currentLength = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,17 +35,7 @@ class PostWrite : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        var toggleButton1: ToggleButton = findViewById(R.id.sad)
-        var toggleButton2: ToggleButton = findViewById(R.id.helpless)
-        var toggleButton3: ToggleButton = findViewById(R.id.shy)
-        var toggleButton4: ToggleButton = findViewById(R.id.anoying)
-        var toggleButton5: ToggleButton = findViewById(R.id.angry)
-        var toggleButton6: ToggleButton = findViewById(R.id.joyful)
-        var toggleButton7: ToggleButton = findViewById(R.id.tranquility)
-        var toggleButton8: ToggleButton = findViewById(R.id.excited)
-        var toggleButton9: ToggleButton = findViewById(R.id.happy)
-
-        val toggleListener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
+     val toggleListener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
                 if (currentToggleCount >= maxToggleCount) {
                     // 최대 토글 횟수를 초과하면 다시 체크를 해제합니다.
@@ -56,28 +50,33 @@ class PostWrite : AppCompatActivity() {
             }
         }
 
-        toggleButton1.setOnCheckedChangeListener(toggleListener)
-        toggleButton2.setOnCheckedChangeListener(toggleListener)
-        toggleButton3.setOnCheckedChangeListener(toggleListener)
-        toggleButton4.setOnCheckedChangeListener(toggleListener)
-        toggleButton5.setOnCheckedChangeListener(toggleListener)
-        toggleButton6.setOnCheckedChangeListener(toggleListener)
-        toggleButton7.setOnCheckedChangeListener(toggleListener)
-        toggleButton8.setOnCheckedChangeListener(toggleListener)
-        toggleButton9.setOnCheckedChangeListener(toggleListener)
+        binding.sad.setOnCheckedChangeListener(toggleListener)
+        binding.shy.setOnCheckedChangeListener(toggleListener)
+        binding.anoying.setOnCheckedChangeListener(toggleListener)
+        binding.angry.setOnCheckedChangeListener(toggleListener)
+        binding.joyful.setOnCheckedChangeListener(toggleListener)
+        binding.tranquility.setOnCheckedChangeListener(toggleListener)
+        binding.excited.setOnCheckedChangeListener(toggleListener)
+        binding.helpless.setOnCheckedChangeListener(toggleListener)
+        binding.happy.setOnCheckedChangeListener(toggleListener)
 
         editText = binding.detailinput // EditText 참조 가져오기
         captionTextView = binding.detailTextnum // TextView 참조 가져오기
 
         editText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                // 텍스트 변경 전에 호출되는 메서드
             }
-
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // 첫 번째 EditText에 대한 코드 (maxCharacters = 300)
-                val inputText = s.toString()
-                val currentLength = inputText.length
+            }
+            override fun afterTextChanged(s: Editable?) {
+                inputText = s.toString()
+                currentLength = inputText.length
+                binding.send.isChecked = false
+                if (currentLength1 > 0){
+                    if (currentLength > 0){
+                        binding.send.isChecked = true
+                    }
+                }
                 captionTextView.text = "$currentLength/$maxCharacters" // 현재 글자 수를 보여줍니다
 
                 if (currentLength > maxCharacters) {
@@ -86,27 +85,27 @@ class PostWrite : AppCompatActivity() {
                     captionTextView.setTextColor(Color.parseColor("#E92626")) // 텍스트 색상을 변경합니다
                 } else {
                     // 글자 수 제한 안에 있을 때 텍스트 색상을 리셋합니다
-                    captionTextView1.setTextColor(Color.parseColor("#89857C"))
-                }
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-                // 텍스트 변경 후에 호출되는 메서드
-            }
+                    captionTextView.setTextColor(Color.parseColor("#89857C"))
+                }            }
         })
-
         editText1 = binding.titleinput // EditText 참조 가져오기
         captionTextView1 = binding.titleTextnum // TextView 참조 가져오기
 
         editText1.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                // 텍스트 변경 전에 호출되는 메서드
             }
-
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // 두 번째 EditText에 대한 코드 (maxCharacters1 = 30)
-                val inputText1 = s.toString()
-                val currentLength1 = inputText1.length
+            }
+            override fun afterTextChanged(s: Editable?) {
+                // 텍스트 변경 후에 호출되는 메서드
+                inputText1 = s.toString()
+                currentLength1 = inputText1.length
+                binding.send.isChecked = false
+                if (currentLength1 > 0){
+                    if (currentLength > 0){
+                        binding.send.isChecked = true
+                    }
+                }
                 captionTextView1.text = "$currentLength1/$maxCharacters1" // 현재 글자 수를 보여줍니다
 
                 if (currentLength1 > maxCharacters1) {
@@ -118,16 +117,16 @@ class PostWrite : AppCompatActivity() {
                     captionTextView1.setTextColor(Color.parseColor("#89857C"))
                 }
             }
-
-            override fun afterTextChanged(s: Editable?) {
-                // 텍스트 변경 후에 호출되는 메서드
-            }
         })
-
         binding.send.setOnClickListener() {
-            startActivity(Intent(this, QuestList::class.java))
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-            finish()
+            binding.send.isChecked = false
+            if (currentLength1 > 0){
+                if (currentLength > 0){
+                    startActivity(Intent(this, QuestList::class.java))
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+                    finish()
+                }
+            }
         }
         binding.gobackIcon.setOnClickListener() {
             super.onBackPressed()

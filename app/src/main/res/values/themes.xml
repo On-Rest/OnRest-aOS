@@ -11,6 +11,10 @@
         </item>
     </style>
 
+    <style name="FloatingActivityTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+    </style>
+
     <style name="Theme.OnRest" parent="Base.Theme.OnRest" />
 
     <style name="caption_font">
