@@ -49,7 +49,7 @@ class MainActivity : FragmentActivity() {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
         with(binding) {
-            googleLoginButton.setOnClickListener() {
+            googleLoginButton.setOnClickListener {
                 signIn()
             }
         }
@@ -66,12 +66,8 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun signIn() {
-        val signInIntent: Intent = mGoogleSignInClient.getSignInIntent()
+        val signInIntent: Intent = mGoogleSignInClient.signInIntent
         resultLauncher.launch(signInIntent)
-    }
-
-    private fun signOut() {
-
     }
 
     private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
@@ -90,7 +86,6 @@ class MainActivity : FragmentActivity() {
             Log.d("로그인한 유저의 이메일", email)
             Log.d("로그인한 유저의 전체이름", displayName)
             Log.d("로그인한 유저의 프로필 사진의 주소", photoUrl)
-
             Log.d("로그인한 유저의 아이디 토큰", idToken)
 
         } catch (e: ApiException) {
