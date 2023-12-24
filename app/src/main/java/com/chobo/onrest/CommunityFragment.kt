@@ -20,7 +20,7 @@ class CommunityFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = CommunityBinding.inflate(inflater, container, false)
-        initRecycler()`
+        initRecycler()
         return binding.root
 
     }
