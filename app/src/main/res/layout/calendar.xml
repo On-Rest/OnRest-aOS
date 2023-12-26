@@ -22,7 +22,6 @@
         android:layout_height="500dp"
         android:scaleType="fitXY"
         android:stateListAnimator="@null"
-        android:src="@drawable/calender"
         android:background="@color/background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
