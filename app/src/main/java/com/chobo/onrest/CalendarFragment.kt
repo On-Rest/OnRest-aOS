@@ -30,7 +30,6 @@ class CalendarFragment : Fragment() {
 
         binding.speechbubble.setOnClickListener {
             startActivityWithAnimation(DiaryWrite::class.java)
-            startActivityWithAnimation(DiaryWrite::class.java)
         }
     }
 

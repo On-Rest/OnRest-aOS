@@ -16,7 +16,7 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-    <ImageButton
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/calender"
         android:layout_width="329dp"
         android:layout_height="500dp"
@@ -26,7 +26,72 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="75dp" />
+        android:layout_marginTop="75dp" >
+
+        <TextView
+            android:id="@+id/sun"
+            android:layout_width="13dp"
+            android:layout_height="24dp"
+            android:text="일"
+            android:layout_marginStart="11dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/mon"
+            android:layout_width="13dp"
+            android:layout_height="24dp"
+            android:text="월"
+            android:layout_marginStart="36dp"
+            app:layout_constraintStart_toStartOf="@id/sun"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tue"
+            android:layout_width="13dp"
+            android:layout_height="24dp"
+            android:text="화"
+            android:layout_marginStart="36dp"
+            app:layout_constraintStart_toStartOf="@id/mon"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/wed"
+            android:layout_width="13dp"
+            android:layout_height="24dp"
+            android:text="수"
+            android:layout_marginStart="36dp"
+            app:layout_constraintStart_toStartOf="@id/tue"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/thu"
+            android:layout_width="13dp"
+            android:layout_height="24dp"
+            android:text="목"
+            android:layout_marginStart="36dp"
+            app:layout_constraintStart_toStartOf="@id/wed"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/fri"
+            android:layout_width="13dp"
+            android:layout_height="24dp"
+            android:text="금"
+            android:layout_marginStart="36dp"
+            app:layout_constraintStart_toStartOf="@id/thu"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/sat"
+            android:layout_width="13dp"
+            android:layout_height="24dp"
+            android:text="목"
+            android:layout_marginStart="36dp"
+            app:layout_constraintStart_toStartOf="@id/fri"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageButton
         android:id="@+id/speechbubble"
