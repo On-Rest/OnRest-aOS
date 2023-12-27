@@ -5,12 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.chobo.onrest.databinding.CommunityBinding
-import com.chobo.onrest.databinding.QuestChoiceBinding
 import com.chobo.onrest.databinding.QuestHistoryBinding
-import com.chobo.onrest.databinding.QuestListBinding
 
-class   QuestFragment : Fragment() {
+class   QuestHistoryFragment : Fragment() {
 
     private lateinit var binding: QuestHistoryBinding
     lateinit var questHistoryAdapter: QuestHistoryAdapter
