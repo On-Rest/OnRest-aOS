@@ -1,41 +1,41 @@
 package com.chobo.onrest
 
-import android.content.Context
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
-import android.widget.PopupWindow
-import androidx.fragment.app.DialogFragment
-import com.chobo.onrest.databinding.CommunityBinding
+import android.widget.CompoundButton
+import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.databinding.CommunityPopupViewBinding
 
+class CommunityPopupView : AppCompatActivity() {
+    private lateinit var binding: CommunityPopupViewBinding
+    val taglist = mutableMapOf(
+        "sad" to false,
+        "helpless" to false,
+        "shy" to false,
+        "anoying" to false,
+        "angry" to false,
+        "joyful" to false,
+        "tranquility" to false,
+        "excited" to false,
+        "happy" to false
+    )
 
-class CommunityPopupView {
-    fun showCustomPopup(context: Context, anchorView: View) {
-        lateinit var binding: CommunityBinding
-        val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val popupView = inflater.inflate(R.layout.community_popup_view, null)
-        val popupWindow = PopupWindow(popupView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true)
-
-
-        // 팝업창 내부 요소들 참조
-        binding.filter.setOnClickListener {
-            // 토글 버튼 상태에 따라 팝업창 열고 닫기
-            if (popupWindow?.isShowing == true) {
-                popupWindow.dismiss()
-            } else {
-                PopupWindow(popupView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true)
-            }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = CommunityPopupViewBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+        val toggleListener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
+            taglist[buttonView.toString()] = isChecked
         }
 
-        // 팝업창이 표시될 위치 설정
-        popupWindow.showAsDropDown(anchorView)
-
-        // 외부 클릭으로 닫기 설정
-        popupWindow.isOutsideTouchable = true
+        binding.sad.setOnCheckedChangeListener(toggleListener)
+        binding.helpless.setOnCheckedChangeListener(toggleListener)
+        binding.shy.setOnCheckedChangeListener(toggleListener)
+        binding.anoying.setOnCheckedChangeListener(toggleListener)
+        binding.angry.setOnCheckedChangeListener(toggleListener)
+        binding.joyful.setOnCheckedChangeListener(toggleListener)
+        binding.tranquility.setOnCheckedChangeListener(toggleListener)
+        binding.excited.setOnCheckedChangeListener(toggleListener)
+        binding.happy.setOnCheckedChangeListener(toggleListener)
     }
 }
