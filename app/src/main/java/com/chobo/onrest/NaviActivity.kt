@@ -9,7 +9,7 @@ import com.chobo.onrest.databinding.ActivityNaviBinding
 
 private const val TAG_CALENDAR = "calendar_fragment"
 private const val TAG_COMMUNITY = "community_fragment"
-private const val TAG_QUEST_History = "quest_List_fragment"
+private const val TAG_QUEST_History = "quest_History_fragment"
 private const val TAG_MY_PAGE = "my_page_fragment"
 
 class NaviActivity : AppCompatActivity() {
