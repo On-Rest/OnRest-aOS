@@ -1,5 +1,6 @@
 package com.chobo.onrest
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -24,7 +25,6 @@ class CommunityFragment : Fragment() {
         _binding = CommunityBinding.inflate(inflater, container, false)
         initRecycler()
         showCustomPopup(binding.filter, requireContext())
-        binding..requestFocus()
         return binding.root
     }
 
@@ -57,28 +57,38 @@ class CommunityFragment : Fragment() {
         binding.pen.setOnClickListener {
             startActivityWithAnimation(PostWrite::class.java)
         }
-    }
 
+    }
     private fun startActivityWithAnimation(clazz: Class<*>) {
         val intent = Intent(requireContext(), clazz)
         startActivity(intent)
         requireActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
+    @SuppressLint("SuspiciousIndentation")
     fun showCustomPopup(anchorView: View, context: Context) {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val popupView = inflater.inflate(R.layout.community_popup_view, null)
-        val popupWindow = PopupWindow(popupView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true)
+        val widthInDp = 320 // 원하는 가로 크기(dp)
+        val heightInDp = 123 // 원하는 세로 크기(dp)
 
-            binding.filter.setOnClickListener {
+        val density = resources.displayMetrics.density
+        val widthInPx = (widthInDp * density).toInt()
+        val heightInPx = (heightInDp * density).toInt()
+
+        val popupWindow = PopupWindow(popupView, widthInPx, heightInPx, true)
+        binding.filter.setOnClickListener {
             if (popupWindow.isShowing) {
                 popupWindow.dismiss()
+                binding.filter.isChecked = false
             } else {
                 popupWindow.showAsDropDown(anchorView)
+                binding.filter.isChecked = true
             }
         }
 
-        // 외부 클릭으로 닫기 설정
-        popupWindow.isOutsideTouchable = false
+        popupWindow.setOnDismissListener {
+            binding.filter.isChecked = false
+        }
+        popupWindow.isOutsideTouchable = true
     }
-
 }
