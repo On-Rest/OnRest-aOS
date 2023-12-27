@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/emotionbox"
-    android:layout_width="320dp"
+    android:layout_width="340dp"
     android:layout_height="123dp"
-    android:paddingVertical="16dp"
-    android:background="@drawable/round_white_nooutline"
-    android:padding="16dp">
+    android:background="#00000000">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/emotionbox"
+        android:layout_width="320dp"
+        android:layout_height="123dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_white_nooutline"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             style="@style/text_sm_font"
@@ -20,10 +29,10 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="62dp"
+            android:layout_marginStart="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp">
+            app:layout_constraintStart_toStartOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@id/tag1"
@@ -99,7 +108,7 @@
                     android:layout_height="25dp"
                     android:layout_marginStart="8dp"
                     android:background="@drawable/community_tag_on_off"
-                    android:checked="true"
+                    android:checked="false"
                     android:textColor="@drawable/emotion_toggle_textcolor"
                     android:textOff="#화난"
                     android:textOn="#화난"
@@ -181,3 +190,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

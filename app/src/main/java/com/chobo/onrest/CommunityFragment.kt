@@ -68,7 +68,7 @@ class CommunityFragment : Fragment() {
     fun showCustomPopup(anchorView: View, context: Context) {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val popupView = inflater.inflate(R.layout.community_popup_view, null)
-        val widthInDp = 320 // 원하는 가로 크기(dp)
+        val widthInDp = 340 // 원하는 가로 크기(dp)
         val heightInDp = 123 // 원하는 세로 크기(dp)
 
         val density = resources.displayMetrics.density
@@ -81,7 +81,7 @@ class CommunityFragment : Fragment() {
                 popupWindow.dismiss()
                 binding.filter.isChecked = false
             } else {
-                popupWindow.showAsDropDown(anchorView)
+                popupWindow.showAsDropDown(anchorView, 0, 25)
                 binding.filter.isChecked = true
             }
         }
