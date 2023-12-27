@@ -3,6 +3,7 @@ package com.chobo.onrest
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -33,19 +34,11 @@ class CommunityFragment : Fragment() {
         binding.list.adapter = communityAdapter
 
         datas.apply {
-
+            add(CommunityData("b b", "b b b b b.", "#화난", "#짜증", 0, 0))
             add(CommunityData("오늘의 화난썰", "오늘은 아이디어 페스티벌 프로젝트를 진행했다.", "#화난", "#짜증", 19, 27))
             add(CommunityData("오늘의 화난썰", "오늘은 아이디어 페스티벌 프로젝트를 진행했다.", "#화난", "#짜증", 19, 27))
             add(CommunityData("오늘의 화난썰", "오늘은 아이디어 페스티벌 프로젝트를 진행했다.", "#화난", "#짜증", 19, 27))
             add(CommunityData("오늘의 화난썰", "오늘은 아이디어 페스티벌 프로젝트를 진행했다.", "#화난", "#짜증", 19, 27))
-            add(CommunityData("오늘의 화난썰", "오늘은 아이디어 페스티벌 프로젝트를 진행했다.", "#화난", "#짜증", 19, 27))
-            add(CommunityData("오늘의 화난썰", "오늘은 아이디어 페스티벌 프로젝트를 진행했다.", "#화난", "#짜증", 19, 27))
-            add(CommunityData("오늘의 화난썰", "오늘은 아이디어 페스티벌 프로젝트를 진행했다.", "#화난", "#짜증", 19, 27))
-            add(CommunityData("오늘의 화난썰", "오늘은 아이디어 페스티벌 프로젝트를 진행했다.", "#화난", "#짜증", 19, 27))
-            add(CommunityData("오늘의 화난썰", "오늘은 아이디어 페스티벌 프로젝트를 진행했다.", "#화난", "#짜증", 19, 27))
-            add(CommunityData("오늘의 화난썰", "오늘은 아이디어 페스티벌 프로젝트를 진행했다.", "#화난", "#짜증", 19, 27))
-            add(CommunityData("오늘의 화난썰", "오늘은 아이디어 페스티벌 프로젝트를 진행했다.", "#화난", "#짜증", 19, 27))
-            // 임시 저장 임의 데이터
         }
         communityAdapter.datas = datas
         communityAdapter.notifyDataSetChanged()
@@ -53,6 +46,12 @@ class CommunityFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        if (datas.isEmpty()){
+            binding.list.setBackgroundColor(Color.parseColor("#00000000"))
+        }
+        else{
+            binding.list.setBackgroundColor(Color.parseColor("#F8F5F1"))
+        }
 
         binding.pen.setOnClickListener {
             startActivityWithAnimation(PostWrite::class.java)
@@ -70,7 +69,6 @@ class CommunityFragment : Fragment() {
         val popupView = inflater.inflate(R.layout.community_popup_view, null)
         val widthInDp = 340 // 원하는 가로 크기(dp)
         val heightInDp = 123 // 원하는 세로 크기(dp)
-
         val density = resources.displayMetrics.density
         val widthInPx = (widthInDp * density).toInt()
         val heightInPx = (heightInDp * density).toInt()
