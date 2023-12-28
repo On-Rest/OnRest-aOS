@@ -1,5 +1,6 @@
 package com.chobo.onrest
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,12 +23,13 @@ class   QuestHistoryFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = QuestHistoryBinding.inflate(inflater, container, false)
         initRecycler()
         return binding.root
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun initRecycler() {
         questHistoryAdapter = QuestHistoryAdapter(requireContext())
         binding.questList.adapter = questHistoryAdapter
@@ -52,11 +54,11 @@ class   QuestHistoryFragment : Fragment() {
 
         // 버튼에 클릭 리스너 추가
         binding.cancel.setOnClickListener {
-            popupWindow?.dismiss()
+            popupWindow.dismiss()
         }
 
         binding.complete.setOnClickListener {
-            popupWindow?.dismiss()
+            popupWindow.dismiss()
         }
 
         // 팝업창이 나타날 위치 설정

@@ -16,24 +16,59 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/month_back"
+        app:layout_constraintEnd_toStartOf="@id/date"
+        app:layout_constraintTop_toTopOf="@id/date"
+        app:layout_constraintBottom_toBottomOf="@id/date"/>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/month_next"
+        app:layout_constraintStart_toEndOf="@id/date"
+        app:layout_constraintTop_toTopOf="@id/date"
+        app:layout_constraintBottom_toBottomOf="@id/date"/>
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:textSize="18sp"
+        android:textColor="#1E1D1B"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="67dp"
+        android:text="2024년 1월"/>
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/calender"
         android:layout_width="329dp"
-        android:layout_height="500dp"
-        android:scaleType="fitXY"
-        android:stateListAnimator="@null"
+        android:layout_height="wrap_content"
         android:background="@color/background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="75dp" >
+        android:layout_marginTop="119dp" >
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/days"
+            android:layout_width="307dp"
+            android:layout_height="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/sun"
             android:layout_width="13dp"
             android:layout_height="24dp"
             android:text="일"
-            android:layout_marginStart="11dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -42,8 +77,8 @@
             android:layout_width="13dp"
             android:layout_height="24dp"
             android:text="월"
-            android:layout_marginStart="36dp"
-            app:layout_constraintStart_toStartOf="@id/sun"
+            app:layout_constraintStart_toEndOf="@id/sun"
+            app:layout_constraintEnd_toStartOf="@id/tue"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
@@ -51,8 +86,8 @@
             android:layout_width="13dp"
             android:layout_height="24dp"
             android:text="화"
-            android:layout_marginStart="36dp"
-            app:layout_constraintStart_toStartOf="@id/mon"
+            app:layout_constraintStart_toEndOf="@id/mon"
+            app:layout_constraintEnd_toStartOf="@id/wed"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
@@ -60,8 +95,8 @@
             android:layout_width="13dp"
             android:layout_height="24dp"
             android:text="수"
-            android:layout_marginStart="36dp"
-            app:layout_constraintStart_toStartOf="@id/tue"
+            app:layout_constraintStart_toEndOf="@id/tue"
+            app:layout_constraintEnd_toStartOf="@id/thu"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
@@ -69,8 +104,8 @@
             android:layout_width="13dp"
             android:layout_height="24dp"
             android:text="목"
-            android:layout_marginStart="36dp"
-            app:layout_constraintStart_toStartOf="@id/wed"
+            app:layout_constraintStart_toEndOf="@id/wed"
+            app:layout_constraintEnd_toStartOf="@id/fri"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
@@ -78,20 +113,1286 @@
             android:layout_width="13dp"
             android:layout_height="24dp"
             android:text="금"
-            android:layout_marginStart="36dp"
-            app:layout_constraintStart_toStartOf="@id/thu"
+            app:layout_constraintStart_toEndOf="@id/thu"
+            app:layout_constraintEnd_toStartOf="@id/sat"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/sat"
             android:layout_width="13dp"
             android:layout_height="24dp"
-            android:text="목"
-            android:layout_marginStart="36dp"
-            app:layout_constraintStart_toStartOf="@id/fri"
+            android:text="토"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/days"
+            android:layout_marginTop="21dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#D2D0CC"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/lastday31"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/last_month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="49dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day1"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="98dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day2"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="147dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day3"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="196dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day4"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="245dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day5"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="294dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day6"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line1"
+            android:layout_marginTop="16dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day7"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="49dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day8"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="98dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day9"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="147dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day10"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="196dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day11"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="245dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day12"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="294dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day13"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/line3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line2"
+            android:layout_marginTop="16dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/lastday14"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="49dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day15"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="98dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day16"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="147dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day17"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="196dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day18"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="245dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day19"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="294dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day20"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/line4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line3"
+            android:layout_marginTop="16dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day21"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="49dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day22"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="98dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day23"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="147dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day24"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="196dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day25"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="245dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day26"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="294dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day27"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/line5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line4"
+            android:layout_marginTop="16dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day28"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="49dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day29"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="98dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day30"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="147dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#6F6B63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/day31"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="196dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#D2D0CC"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/next1"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/last_month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="245dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#D2D0CC"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/next2"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/last_month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="294dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#D2D0CC"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/next3"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/last_month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/line6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line5"
+            android:layout_marginTop="16dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#D2D0CC"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/next4"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/last_month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="49dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#D2D0CC"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/next5"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/last_month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="98dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#D2D0CC"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/next6"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/last_month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="147dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#D2D0CC"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/next7"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/last_month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="196dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#D2D0CC"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/next8"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/last_month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="245dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#D2D0CC"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/next9"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/last_month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="35dp"
+                android:layout_height="54dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="294dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:text="10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:textColor="#D2D0CC"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/next10"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/last_month_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <ImageButton
         android:id="@+id/speechbubble"
