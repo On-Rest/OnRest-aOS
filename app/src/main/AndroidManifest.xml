@@ -66,17 +66,12 @@
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".QuestHistory"
-            android:exported="false"
-            android:windowSoftInputMode="adjustNothing" />
-        <activity
             android:name=".PostWrite"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
             android:name=".PostDetail"
-            android:exported="false"
-            android:windowSoftInputMode="adjustNothing" />
+            android:exported="false" />
         <activity
             android:name=".splash_logo"
             android:exported="true">
