@@ -52,7 +52,7 @@ class CommunityFragment : Fragment() {
         else{
             binding.list.setBackgroundColor(Color.parseColor("#F8F5F1"))
         }
-
+        // TODO: 검색완료하는방법 추가 
         binding.pen.setOnClickListener {
             startActivityWithAnimation(PostWrite::class.java)
         }
