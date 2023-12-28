@@ -31,23 +31,11 @@ class PostWrite : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        var toggleButton1: ToggleButton = findViewById(R.id.sad)
-        var toggleButton2: ToggleButton = findViewById(R.id.helpless)
-        var toggleButton3: ToggleButton = findViewById(R.id.shy)
-        var toggleButton4: ToggleButton = findViewById(R.id.anoying)
-        var toggleButton5: ToggleButton = findViewById(R.id.angry)
-        var toggleButton6: ToggleButton = findViewById(R.id.joyful)
-        var toggleButton7: ToggleButton = findViewById(R.id.tranquility)
-        var toggleButton8: ToggleButton = findViewById(R.id.excited)
-        var toggleButton9: ToggleButton = findViewById(R.id.happy)
-
         val toggleListener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
                 if (currentToggleCount >= maxToggleCount) {
-                    // 최대 토글 횟수를 초과하면 다시 체크를 해제합니다.
                     buttonView.isChecked = false
                 } else {
-                    // 현재 토글 횟수가 최대 토글 횟수보다 작을 경우에만 토글 횟수 증가
                     currentToggleCount++
                 }
             } else {
@@ -56,47 +44,44 @@ class PostWrite : AppCompatActivity() {
             }
         }
 
-        toggleButton1.setOnCheckedChangeListener(toggleListener)
-        toggleButton2.setOnCheckedChangeListener(toggleListener)
-        toggleButton3.setOnCheckedChangeListener(toggleListener)
-        toggleButton4.setOnCheckedChangeListener(toggleListener)
-        toggleButton5.setOnCheckedChangeListener(toggleListener)
-        toggleButton6.setOnCheckedChangeListener(toggleListener)
-        toggleButton7.setOnCheckedChangeListener(toggleListener)
-        toggleButton8.setOnCheckedChangeListener(toggleListener)
-        toggleButton9.setOnCheckedChangeListener(toggleListener)
+        binding.sad.setOnCheckedChangeListener(toggleListener)
+        binding.helpless.setOnCheckedChangeListener(toggleListener)
+        binding.shy.setOnCheckedChangeListener(toggleListener)
+        binding.anoying.setOnCheckedChangeListener(toggleListener)
+        binding.angry.setOnCheckedChangeListener(toggleListener)
+        binding.joyful.setOnCheckedChangeListener(toggleListener)
+        binding.tranquility.setOnCheckedChangeListener(toggleListener)
+        binding.excited.setOnCheckedChangeListener(toggleListener)
+        binding.happy.setOnCheckedChangeListener(toggleListener)
 
-        editText = binding.detailinput // EditText 참조 가져오기
-        captionTextView = binding.detailTextnum // TextView 참조 가져오기
+        editText = binding.detailinput
+        captionTextView = binding.detailTextnum
 
         editText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                // 텍스트 변경 전에 호출되는 메서드
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 // 첫 번째 EditText에 대한 코드 (maxCharacters = 300)
                 val inputText = s.toString()
                 val currentLength = inputText.length
-                captionTextView.text = "$currentLength/$maxCharacters" // 현재 글자 수를 보여줍니다
+                captionTextView.text = "$currentLength/$maxCharacters"
 
                 if (currentLength > maxCharacters) {
                     editText.setText(inputText.substring(0, maxCharacters))
                     editText.setSelection(maxCharacters)
-                    captionTextView.setTextColor(Color.parseColor("#E92626")) // 텍스트 색상을 변경합니다
+                    captionTextView.setTextColor(Color.parseColor("#E92626"))
                 } else {
-                    // 글자 수 제한 안에 있을 때 텍스트 색상을 리셋합니다
                     captionTextView1.setTextColor(Color.parseColor("#89857C"))
                 }
             }
 
             override fun afterTextChanged(s: Editable?) {
-                // 텍스트 변경 후에 호출되는 메서드
             }
         })
 
-        editText1 = binding.titleinput // EditText 참조 가져오기
-        captionTextView1 = binding.titleTextnum // TextView 참조 가져오기
+        editText1 = binding.titleinput
+        captionTextView1 = binding.titleTextnum
 
         editText1.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {

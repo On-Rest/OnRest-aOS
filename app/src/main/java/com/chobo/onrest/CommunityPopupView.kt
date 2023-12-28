@@ -1,35 +1,41 @@
 package com.chobo.onrest
 
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.DialogFragment
+import android.widget.CompoundButton
+import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.databinding.CommunityPopupViewBinding
 
+class CommunityPopupView : AppCompatActivity() {
+    private lateinit var binding: CommunityPopupViewBinding
+    val taglist = mutableMapOf(
+        "sad" to false,
+        "helpless" to false,
+        "shy" to false,
+        "anoying" to false,
+        "angry" to false,
+        "joyful" to false,
+        "tranquility" to false,
+        "excited" to false,
+        "happy" to false
+    )
 
-class CommunityPopupView() : DialogFragment() {
-    // 뷰 바인딩 정의
-    private var _binding: CommunityPopupViewBinding? = null
-    private val binding get() = _binding!!
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = CommunityPopupViewBinding.inflate(inflater, container, false)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = CommunityPopupViewBinding.inflate(layoutInflater)
         val view = binding.root
+        setContentView(view)
+        val toggleListener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
+            taglist[buttonView.toString()] = isChecked
+        }
 
-        // 레이아웃 배경을 투명하게 해줌, 필수 아님
-        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        return view
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        binding.sad.setOnCheckedChangeListener(toggleListener)
+        binding.helpless.setOnCheckedChangeListener(toggleListener)
+        binding.shy.setOnCheckedChangeListener(toggleListener)
+        binding.anoying.setOnCheckedChangeListener(toggleListener)
+        binding.angry.setOnCheckedChangeListener(toggleListener)
+        binding.joyful.setOnCheckedChangeListener(toggleListener)
+        binding.tranquility.setOnCheckedChangeListener(toggleListener)
+        binding.excited.setOnCheckedChangeListener(toggleListener)
+        binding.happy.setOnCheckedChangeListener(toggleListener)
     }
 }
-

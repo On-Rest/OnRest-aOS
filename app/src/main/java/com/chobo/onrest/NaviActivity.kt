@@ -1,15 +1,19 @@
 package com.chobo.onrest
 
+import android.annotation.SuppressLint
 import android.mtp.MtpConstants
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.chobo.onrest.databinding.ActivityNaviBinding
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.bottomnavigation.LabelVisibilityMode
 
 private const val TAG_CALENDAR = "calendar_fragment"
 private const val TAG_COMMUNITY = "community_fragment"
-private const val TAG_QUEST_List = "quest_List_fragment"
+private const val TAG_QUEST_History = "quest_History_fragment"
 private const val TAG_MY_PAGE = "my_page_fragment"
 
 class NaviActivity : AppCompatActivity() {
@@ -24,11 +28,18 @@ class NaviActivity : AppCompatActivity() {
             when(item.itemId){
                 R.id.calender -> setFragment(TAG_CALENDAR, CalendarFragment())
                 R.id.community -> setFragment(TAG_COMMUNITY, CommunityFragment())
-                R.id.quest -> setFragment(TAG_QUEST_List, QuestFragment())
+                R.id.quest -> setFragment(TAG_QUEST_History, QuestHistoryFragment())
                 R.id.my_page -> setFragment(TAG_MY_PAGE, MyPageFragment())
             }
             true
         }
+
+        /* @SuppressLint("RestrictedApi")
+        fun removeNavigationShiftMode(View: BottomNavigationView) {
+            val menuView = view.getChildAt(0) as BottomNavigationMenuView
+            menuView.labelVisibilityMode = LabelVisibilityMode.LABEL_VISIBILITY_LABELED
+            menuView.buildMenuView()
+        } */
     }
 
     private fun setFragment(tag : String, fragment : Fragment) {
@@ -41,8 +52,11 @@ class NaviActivity : AppCompatActivity() {
         //findFragmentByTag는 Fragment에서 추가한 태그를 불러오는 역할을 함
         val calendar = manager.findFragmentByTag(TAG_CALENDAR)
         val community = manager.findFragmentByTag(TAG_COMMUNITY)
-        val quest = manager.findFragmentByTag(TAG_QUEST_List)
+        val quest = manager.findFragmentByTag(TAG_QUEST_History)
         val my_page = manager.findFragmentByTag(TAG_MY_PAGE)
+
+        //hideFragments(fragTransaction , calendar, community, quest, my_page)
+
 
         if (calendar != null) {
             fragTransaction.hide(calendar)
@@ -72,7 +86,7 @@ class NaviActivity : AppCompatActivity() {
             }
         }
 
-        if(tag == TAG_QUEST_List) {
+        if (tag == TAG_QUEST_History) {
             if(quest != null){
                 fragTransaction.show(quest)
             }
@@ -87,4 +101,12 @@ class NaviActivity : AppCompatActivity() {
         fragTransaction.commitAllowingStateLoss()
         //fragTransaction은 프래그먼트를 추가/교체/삭제하는 역할을 함
     }
+    /* private fun hideFragments(transaction: androidx.fragment.app.FragmentTransaction, vararg fragments: Fragment?) {
+        for (fragment in fragments) {
+            if (fragment != null) {
+                transaction.setCustomAnimations(0, 0, 0, 0)
+                transaction.hide(fragment)
+            }
+        } // 자체적으로 애니메이션을 만듦
+    } */
 }
