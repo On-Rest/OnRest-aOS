@@ -19,6 +19,5 @@ class CalenderClick : AppCompatActivity() {
         binding.missionTV.text = "명상을 해봐요"
         binding.missionTV1.text = "스트래칭을 해봐요"
         binding.missionTV2.text = "노래를 들어봐요"
-
     }
 }
