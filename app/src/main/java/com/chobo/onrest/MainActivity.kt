@@ -26,6 +26,7 @@ class MainActivity : FragmentActivity() {
         super.onStart()
         val account = GoogleSignIn.getLastSignedInAccount(this)
         binding.googleLoginButton.setOnClickListener() {
+            startActivity(Intent(this, NaviActivity::class.java))
             overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
             finish()
         }

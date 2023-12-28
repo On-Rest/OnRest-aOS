@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#33000000">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.1611"
+        android:orientation="vertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.8389"
+        android:orientation="vertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.4250"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.5800"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_white_20"
+        app:layout_constraintStart_toStartOf="@id/v1"
+        app:layout_constraintEnd_toEndOf="@id/v2"
+        app:layout_constraintTop_toTopOf="@id/h1"
+        app:layout_constraintBottom_toBottomOf="@id/h2">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/title_h1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintGuide_percent="0.129"
+            android:orientation="horizontal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/title_h2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintGuide_percent="0.3387"
+            android:orientation="horizontal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/detail_h1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintGuide_percent="0.5403"
+            android:orientation="horizontal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/title_v1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintGuide_percent="0.0656"
+            android:orientation="vertical"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/button_v1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintGuide_percent="0.5328"
+            android:orientation="vertical"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/button_v2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintGuide_percent="0.7172"
+            android:orientation="vertical"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/button_v3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintGuide_percent="0.75"
+            android:orientation="vertical"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/button_v4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintGuide_percent="0.9344"
+            android:orientation="vertical"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/button_h1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintGuide_percent="0.6532"
+            android:orientation="horizontal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/button_h2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintGuide_percent="0.8710"
+            android:orientation="horizontal"/>
+        
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="“다섯 번 크게 웃기”"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/title_v1"
+            app:layout_constraintTop_toTopOf="@id/title_h1"
+            app:layout_constraintBottom_toBottomOf="@id/title_h2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="퀘스트를 완료 하셨나요?"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/title_v1"
+            app:layout_constraintTop_toTopOf="@id/title_h2"
+            app:layout_constraintBottom_toBottomOf="@id/detail_h1"/>
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/round_only_outline_d2d0cc"
+            android:text="취소"
+            android:textColor="#89857C"
+            app:layout_constraintStart_toStartOf="@id/button_v1"
+            app:layout_constraintEnd_toEndOf="@id/button_v2"
+            app:layout_constraintTop_toTopOf="@id/button_h1"
+            app:layout_constraintBottom_toBottomOf="@id/button_h2"/>
+
+        <Button
+            android:id="@+id/complete"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/round_only_outline_89857c"
+            android:text="완료"
+            android:textColor="#54514B"
+            app:layout_constraintStart_toStartOf="@id/button_v3"
+            app:layout_constraintEnd_toEndOf="@id/button_v4"
+            app:layout_constraintTop_toTopOf="@id/button_h1"
+            app:layout_constraintBottom_toBottomOf="@id/button_h2"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
