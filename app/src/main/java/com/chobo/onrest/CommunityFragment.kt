@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.PopupWindow
 import androidx.fragment.app.Fragment
 import com.chobo.onrest.databinding.CommunityBinding
@@ -52,7 +53,11 @@ class CommunityFragment : Fragment() {
         else{
             binding.list.setBackgroundColor(Color.parseColor("#F8F5F1"))
         }
-        // TODO: 검색완료하는방법 추가 
+        binding.searchIcon.setOnClickListener{
+            val imm = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(it.windowToken, 0)
+            binding.search.clearFocus()
+        }
         binding.pen.setOnClickListener {
             startActivityWithAnimation(PostWrite::class.java)
         }

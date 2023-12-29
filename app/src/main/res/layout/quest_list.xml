@@ -44,7 +44,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="157dp"
                 android:layout_height="164dp"
-                android:background="@drawable/round_white_18dp">
+                android:background="@drawable/round_white_18dp"
+                android:layout_marginStart="16dp">
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guide_title_top"
