@@ -13,20 +13,5 @@ class Calender : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.speechbubble.setOnClickListener() {
-            startActivity(Intent(this, DiaryWrite::class.java))
-            overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
-            finish()
-        }
-        binding.stripe.setOnClickListener() {
-            startActivity(Intent(this, DiaryWrite::class.java))
-            overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
-            finish()
-        }
-        binding.calender.setOnClickListener() {
-            startActivity(Intent(this, CalenderClick::class.java))
-            overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
-            finish()
-        }
     }
 }
