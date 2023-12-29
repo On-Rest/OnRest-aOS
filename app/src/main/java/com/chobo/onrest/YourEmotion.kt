@@ -13,6 +13,7 @@ class YourEmotion : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+
         binding.choice1.setOnClickListener() {
             startActivity(Intent(this, QuestList::class.java))
             overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )

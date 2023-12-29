@@ -14,17 +14,20 @@ class EmotionChoice1 : AppCompatActivity() {
         setContentView(view)
 
         binding.happyface.setOnClickListener() {
-            startActivity(Intent(this, EmotionChoice2Happy::class.java))
+            val intent = Intent(this, EmotionChoice2Happy::class.java)
+            startActivity(intent)
             overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
             finish()
         }
         binding.angryface.setOnClickListener() {
-            startActivity(Intent(this, EmotionChoice2Angry::class.java))
+            val intent = Intent(this, EmotionChoice2Angry::class.java)
+            startActivity(intent)
             overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
             finish()
         }
         binding.sadface.setOnClickListener() {
-            startActivity(Intent(this, EmotionChoice2Sad::class.java))
+            val intent = Intent(this, EmotionChoice2Sad::class.java)
+            startActivity(intent)
             overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
             finish()
         }

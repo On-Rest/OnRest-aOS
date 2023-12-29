@@ -26,6 +26,8 @@ class QuestList : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+
+
         val receivedValue = intent.getStringExtra("key") // 받은 값
         val selectedList = when(receivedValue) {
             "happylist" -> happylist

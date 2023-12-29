@@ -30,8 +30,7 @@ class QuestChoice : AppCompatActivity() {
             finish()
         }
         binding.choice3.setOnClickListener() {
-            val intent =Intent(this, QuestList::class.java)
-            intent.putExtra("key", receivedValue) // 데이터 전달
+            val intent =Intent(this, Calender::class.java)
             startActivity(intent)
             overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
             finish()
