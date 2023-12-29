@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.databinding.QuestListBinding
+import java.io.Serializable
 import java.text.SimpleDateFormat
 import java.util.Date
 
@@ -16,6 +17,7 @@ class QuestList : AppCompatActivity() {
     val sadlist = listOf<String>("아슬퍼","진짜슬퍼","너무 슬퍼")
     val date = Date() // 현재 날짜와 시간 가져오기
     val dayOfMonth = SimpleDateFormat("dd").format(date) // 일만 가져오기
+
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +43,28 @@ class QuestList : AppCompatActivity() {
 
 
         binding.checkTV.setOnClickListener(){
-
+            val intent =  Intent(this, CalenderClick::class.java)
+            intent.putExtra("myList", selectedList as Serializable)
+            intent.putExtra("key", "1") // 데이터 전달
+            startActivity(intent)
+            overridePendingTransition( R.anim.fade_in, R.anim.fade_out )
+            finish()
+        }
+        binding.checkTV1.setOnClickListener(){
+            val intent =  Intent(this, CalenderClick::class.java)
+            intent.putExtra("myList", selectedList as Serializable)
+            intent.putExtra("key", "2") // 데이터 전달
+            startActivity(intent)
+            overridePendingTransition( R.anim.fade_in, R.anim.fade_out )
+            finish()
+        }
+        binding.checkTV2.setOnClickListener(){
+            val intent =  Intent(this, CalenderClick::class.java)
+            intent.putExtra("myList", selectedList as Serializable)
+            intent.putExtra("key", "3") // 데이터 전달
+            startActivity(intent)
+            overridePendingTransition( R.anim.fade_in, R.anim.fade_out )
+            finish()
         }
     }
 }
