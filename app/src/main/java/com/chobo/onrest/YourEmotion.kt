@@ -15,7 +15,7 @@ class YourEmotion : AppCompatActivity() {
 
 
         binding.choice1.setOnClickListener() {
-            startActivity(Intent(this, QuestList::class.java))
+            startActivity(Intent(this, Calender::class.java))
             overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
             finish()
         }
