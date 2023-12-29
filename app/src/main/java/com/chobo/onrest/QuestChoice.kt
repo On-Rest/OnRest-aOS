@@ -13,18 +13,26 @@ class QuestChoice : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        val receivedValue = intent.getStringExtra("key") // 받은 값
+
         binding.choice1.setOnClickListener() {
-            startActivity(Intent(this, QuestList::class.java))
+            val intent =Intent(this, QuestList::class.java)
+            intent.putExtra("key", receivedValue) // 데이터 전달
+            startActivity(intent)
             overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
             finish()
         }
         binding.choice2.setOnClickListener() {
-            startActivity(Intent(this, QuestList::class.java))
+            val intent =Intent(this, QuestList::class.java)
+            intent.putExtra("key", receivedValue) // 데이터 전달
+            startActivity(intent)
             overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
             finish()
         }
         binding.choice3.setOnClickListener() {
-            startActivity(Intent(this, NaviActivity::class.java))
+            val intent =Intent(this, QuestList::class.java)
+            intent.putExtra("key", receivedValue) // 데이터 전달
+            startActivity(intent)
             overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
             finish()
         }

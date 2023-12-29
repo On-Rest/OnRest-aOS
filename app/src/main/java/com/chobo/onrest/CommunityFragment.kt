@@ -41,6 +41,7 @@ class CommunityFragment : Fragment() {
             add(CommunityData("오늘의 화난썰", "오늘은 아이디어 페스티벌 프로젝트를 진행했다.", "#화난", "#짜증", 19, 27))
             add(CommunityData("오늘의 화난썰", "오늘은 아이디어 페스티벌 프로젝트를 진행했다.", "#화난", "#짜증", 19, 27))
         }
+
         communityAdapter.datas = datas
         communityAdapter.notifyDataSetChanged()
     }
