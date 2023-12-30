@@ -14,12 +14,15 @@ class CalenderClick : AppCompatActivity() {
     private lateinit var binding: CalendarClickBinding
     val date = Date() // 현재 날짜와 시간 가져오기
     val dayOfMonth = SimpleDateFormat("dd").format(date) // 일만 가져오기
+    val year = SimpleDateFormat("yyyy").format(date) // 일만 가져오기
+    val month = SimpleDateFormat("MM").format(date) // 일만 가져오기
     val fileName = "missionData.txt" // 파일 이름r
     var stringValue = "" // 저장할 데이터
     val booleanValue = false
     val angryImageDrawable = R.drawable.angry_face
     val happyImageDrawable = R.drawable.happy_face
     val sadImageDrawable = R.drawable.sad_face
+    val editeddate = "${year}년 ${month}월 ${dayOfMonth}일"
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -91,5 +94,6 @@ class CalenderClick : AppCompatActivity() {
         binding.missionTV1.text = receivedList[1]
         binding.missionTV2.text = receivedList[2]
 
+        binding.dayText.text = editeddate
     }
 }
