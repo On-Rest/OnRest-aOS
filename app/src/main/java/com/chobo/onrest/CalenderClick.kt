@@ -69,11 +69,11 @@ class CalenderClick : AppCompatActivity() {
             }
             "2" ->  {
                 stringValue = receivedList!![1]
-                binding.checkTV.isChecked = true
+                binding.checkTV1.isChecked = true
             }
             "3" ->  {
                 stringValue = receivedList!![2]
-                binding.checkTV.isChecked = true
+                binding.checkTV2.isChecked = true
             }
         }
 
