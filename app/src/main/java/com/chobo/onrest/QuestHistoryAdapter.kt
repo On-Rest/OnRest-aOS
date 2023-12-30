@@ -27,7 +27,6 @@ class QuestHistoryAdapter(private val context: Context) : RecyclerView.Adapter<Q
         private val mission: TextView = itemView.findViewById(R.id.missionTV)
         private val checkTV: ToggleButton = itemView.findViewById(R.id.checkTV)
 
-
         fun bind(item: QuestHistoryData){
             data.text = item.date
             mission.text = item.mission
