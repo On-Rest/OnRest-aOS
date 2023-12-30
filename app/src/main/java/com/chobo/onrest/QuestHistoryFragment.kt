@@ -6,45 +6,42 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.PopupWindow
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.chobo.onrest.QuestHistory
 import com.chobo.onrest.databinding.QuestHistoryBinding
-import com.chobo.onrest.databinding.QuestHistoryPopupBinding
 import java.io.BufferedReader
 import java.io.InputStreamReader
-import com.chobo.onrest.QuestHistory as QuestHistory1
+import java.text.SimpleDateFormat
+import java.util.Date
 
 class   QuestHistoryFragment : Fragment() {
 
     private lateinit var binding: QuestHistoryBinding
     lateinit var questHistoryAdapter: QuestHistoryAdapter
     val datas = mutableListOf<QuestHistoryData>()
-
+    val date = Date() // 현재 날짜와 시간 가져오기
+    val year = SimpleDateFormat("yyyy").format(date) // 일만 가져오기
+    val fileLines = mutableListOf<String>()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = QuestHistoryBinding.inflate(inflater, container, false)
-        initRecycler()
         readFile(requireContext())
+        initRecycler()
         return binding.root
     }
     private fun readFile(context: Context){
-        val fileName = "myData.txt" // 파일 이름
+        val fileName = "${year}"
+
         try {
             val fileInputStream = context.openFileInput(fileName)
             val inputStreamReader = InputStreamReader(fileInputStream)
             val bufferedReader = BufferedReader(inputStreamReader)
 
-            // 여러 줄에 걸쳐 저장된 값을 읽어옴
             var line: String?
             while (bufferedReader.readLine().also { line = it } != null) {
-                // 각 줄에서 읽어온 값을 처리
-                // 예: Log.d("TAG", "Read line: $line")
+                fileLines.add(line.orEmpty()) // 각 줄의 데이터를 리스트에 추가합니다.
             }
 
             fileInputStream.close()
@@ -54,38 +51,14 @@ class   QuestHistoryFragment : Fragment() {
     }
     @SuppressLint("NotifyDataSetChanged")
     private fun initRecycler() {
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd")
         questHistoryAdapter = QuestHistoryAdapter(requireContext())
         binding.questList.adapter = questHistoryAdapter
-
-        datas.apply {
-            add(QuestHistoryData("21일", "명상을 해봐요"))
-            add(QuestHistoryData("21일", "스트레칭을 해봐요"))
-            add(QuestHistoryData("21일", "노래를 들어봐요"))
+        for(i in 0 until (fileLines.size - 2) step 3) {
+            val day = dateFormat.format(date).substring(8)
+            datas.add(QuestHistoryData("${day}일", fileLines[i + 1], fileLines[i + 2].toBoolean()))
         }
         questHistoryAdapter.datas = datas
         questHistoryAdapter.notifyDataSetChanged()
-
-    }
-    fun showPopup(context: Context, anchorView: View) {
-        val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val popupView = inflater.inflate(R.layout.quest_history_popup, null)
-
-        val popupWindow = PopupWindow(popupView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true)
-        val binding = QuestHistoryPopupBinding.bind(popupView)
-        var title = "다섯번 웃기"
-        // 팝업창 내부의 버튼과 텍스트뷰에 대한 작업
-        binding.title.text = "“$title“"
-
-        // 버튼에 클릭 리스너 추가
-        binding.cancel.setOnClickListener {
-            popupWindow.dismiss()
-        }
-
-        binding.complete.setOnClickListener {
-            popupWindow.dismiss()
-        }
-
-        // 팝업창이 나타날 위치 설정
-        popupWindow.showAsDropDown(anchorView)
     }
 }

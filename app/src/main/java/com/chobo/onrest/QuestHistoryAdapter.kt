@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.ToggleButton
 import androidx.recyclerview.widget.RecyclerView
 
 class QuestHistoryAdapter(private val context: Context) : RecyclerView.Adapter<QuestHistoryAdapter.ViewHolder>() {
@@ -24,11 +25,13 @@ class QuestHistoryAdapter(private val context: Context) : RecyclerView.Adapter<Q
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val data: TextView = itemView.findViewById(R.id.dateTV)
         private val mission: TextView = itemView.findViewById(R.id.missionTV)
+        private val checkTV: ToggleButton = itemView.findViewById(R.id.checkTV)
 
 
         fun bind(item: QuestHistoryData){
             data.text = item.date
             mission.text = item.mission
+            checkTV.isChecked = item.checkTV
         }
     }
 }
