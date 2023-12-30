@@ -10,8 +10,12 @@ import android.widget.Button
 import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.chobo.onrest.QuestHistory
 import com.chobo.onrest.databinding.QuestHistoryBinding
 import com.chobo.onrest.databinding.QuestHistoryPopupBinding
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import com.chobo.onrest.QuestHistory as QuestHistory1
 
 class   QuestHistoryFragment : Fragment() {
 
@@ -26,9 +30,28 @@ class   QuestHistoryFragment : Fragment() {
     ): View {
         binding = QuestHistoryBinding.inflate(inflater, container, false)
         initRecycler()
+        readFile(requireContext())
         return binding.root
     }
+    private fun readFile(context: Context){
+        val fileName = "myData.txt" // 파일 이름
+        try {
+            val fileInputStream = context.openFileInput(fileName)
+            val inputStreamReader = InputStreamReader(fileInputStream)
+            val bufferedReader = BufferedReader(inputStreamReader)
 
+            // 여러 줄에 걸쳐 저장된 값을 읽어옴
+            var line: String?
+            while (bufferedReader.readLine().also { line = it } != null) {
+                // 각 줄에서 읽어온 값을 처리
+                // 예: Log.d("TAG", "Read line: $line")
+            }
+
+            fileInputStream.close()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
     @SuppressLint("NotifyDataSetChanged")
     private fun initRecycler() {
         questHistoryAdapter = QuestHistoryAdapter(requireContext())
@@ -41,6 +64,7 @@ class   QuestHistoryFragment : Fragment() {
         }
         questHistoryAdapter.datas = datas
         questHistoryAdapter.notifyDataSetChanged()
+
     }
     fun showPopup(context: Context, anchorView: View) {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
