@@ -42,7 +42,9 @@
         android:textColor="#3C3C3E"
         app:layout_constraintStart_toEndOf="@id/goback_icon"
         app:layout_constraintTop_toBottomOf="@id/header" />
+
     <ImageView
+        android:id="@+id/todaysemotion"
         android:layout_width="24dp"
         android:layout_height="20dp"
         android:src="@drawable/angry_face"
@@ -50,6 +52,7 @@
         app:layout_constraintTop_toTopOf="@id/day_text"
         app:layout_constraintBottom_toBottomOf="@id/day_text"
         android:layout_marginStart="8dp"/>
+
     <TextView
         android:id="@+id/diary_text"
         android:layout_width="wrap_content"

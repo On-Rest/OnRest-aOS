@@ -106,7 +106,6 @@
 
     </androidx.core.widget.NestedScrollView>
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="59dp"
@@ -166,17 +165,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/g_ctrlZ_top" />
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sendconstraint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="64dp"
-        android:background="@color/background"
-        android:paddingVertical="8dp">
+        android:background="@color/background">
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_start"
             android:layout_width="match_parent"
@@ -190,17 +190,48 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.9556" />
+
         <EditText
+            android:id="@+id/postDetailInput"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/post_detail_edit_text"
             app:layout_constraintStart_toStartOf="@id/g_start"
             app:layout_constraintEnd_toEndOf="@id/g_end"
+            app:layout_constraintTop_toTopOf="@id/sendconstraint"
+            app:layout_constraintBottom_toBottomOf="@id/sendconstraint"
+            android:layout_marginVertical="8dp"
             android:hint="답글 남기기"
             android:textColorHint="#B9B7B2"
             android:textColor="#1E1D1B"
             android:paddingVertical="12dp"
             android:paddingStart="20dp"
+            android:paddingEnd="60dp"
             style="@style/text_md_font"/>
+
+        <TextView
+            android:id="@+id/textcounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#89857C"
+            app:layout_constraintEnd_toEndOf="@id/send"
+            app:layout_constraintStart_toStartOf="@id/send"
+            app:layout_constraintBottom_toTopOf="@id/send"
+            app:layout_constraintTop_toTopOf="@id/postDetailInput"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/textcounter"
+            app:layout_constraintEnd_toEndOf="@id/postDetailInput"
+            app:layout_constraintBottom_toBottomOf="@id/postDetailInput"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/send"
+            android:visibility="invisible"/>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

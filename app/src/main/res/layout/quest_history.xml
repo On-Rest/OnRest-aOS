@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="@color/background"
+    tools:context=".QuestHistory">
 
     <include layout="@layout/header" />
 
@@ -64,6 +65,7 @@
         app:layout_constraintTop_toTopOf="@id/g_Dday_top" />
 
     <ImageButton
+        android:id="@+id/goback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ctrlz_left"
@@ -74,6 +76,7 @@
         android:layout_marginEnd="4dp"/>
 
     <ImageButton
+        android:id="@+id/gonext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ctrlz_right"
