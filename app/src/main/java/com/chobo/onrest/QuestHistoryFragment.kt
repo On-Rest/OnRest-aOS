@@ -3,6 +3,7 @@ package com.chobo.onrest
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
+import android.provider.Settings.Global
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,12 +12,13 @@ import androidx.fragment.app.Fragment
 import com.chobo.onrest.databinding.QuestHistoryBinding
 import java.io.BufferedReader
 import java.io.InputStreamReader
+import java.text.FieldPosition
 import java.text.SimpleDateFormat
 import java.util.Date
 
 class QuestHistoryFragment : Fragment(), ToggleStateChangeListener {
 
-        private lateinit var binding: QuestHistoryBinding
+    private lateinit var binding: QuestHistoryBinding
     lateinit var questHistoryAdapter: QuestHistoryAdapter
     private lateinit var toggleStateChangeListener: ToggleStateChangeListener // 변수 선언
     val datas = mutableListOf<QuestHistoryData>()
@@ -27,7 +29,9 @@ class QuestHistoryFragment : Fragment(), ToggleStateChangeListener {
     val yearMonthList = mutableListOf<String>()
     var index = 0
     val dialogFragment = QuestHistoryPopup()
-
+    companion object {
+        var titleText: String = ""
+    }
     override fun onStart(){
         super.onStart()
         readFile(requireContext())
@@ -51,9 +55,10 @@ class QuestHistoryFragment : Fragment(), ToggleStateChangeListener {
 
         return binding.root
     }
-    override fun onToggleStateChanged(position: Int, isChecked: Boolean) {
+    override fun onToggleStateChanged(mission: String, isChecked: Boolean, position: Int) {
         // 상태가 변경된 아이템의 위치(position)와 상태(isChecked)를 여기서 사용할 수 있습니다
-        Log.d("ToggleStateChanged", "Position: $position, Checked: $isChecked")
+        titleText = mission
+        Log.d("ToggleStateChanged", "Position: $mission, Checked: $isChecked")
         dialogFragment.show(requireActivity().supportFragmentManager, "QuestHistoryPopup")
     }
     private fun initDateFilter(){

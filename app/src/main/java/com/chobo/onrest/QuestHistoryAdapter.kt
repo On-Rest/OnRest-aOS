@@ -22,10 +22,11 @@ class QuestHistoryAdapter(
     override fun getItemCount(): Int = datas.size
     override fun onBindViewHolder(holder: QuestHistoryAdapter.ViewHolder, position: Int) {
         holder.bind(datas[position])
+        val currentItem = datas[position]
 
         // 토글 버튼 상태 변경 리스너 설정
         holder.checkTV.setOnCheckedChangeListener { _, isChecked ->
-            toggleStateChangeListener.onToggleStateChanged(position, isChecked)
+            toggleStateChangeListener.onToggleStateChanged(currentItem.mission, isChecked, position )
         }
     }
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

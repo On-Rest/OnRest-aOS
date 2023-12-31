@@ -1,5 +1,5 @@
 package com.chobo.onrest
 
 interface ToggleStateChangeListener {
-    fun onToggleStateChanged(position: Int, isChecked: Boolean)
+    fun onToggleStateChanged(mission: String, isChecked: Boolean, position: Int)
 }
