@@ -8,7 +8,6 @@ import android.text.TextWatcher
 import android.widget.CompoundButton
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.databinding.PostWriteBinding
 

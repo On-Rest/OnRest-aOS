@@ -21,6 +21,7 @@
         android:theme="@style/Theme.OnRest"
         tools:targetApi="31"
         android:usesCleartextTraffic="true">
+        <activity android:name=".CalenderClick1"/>
         <activity
             android:name=".NaviActivity"
             android:exported="false"

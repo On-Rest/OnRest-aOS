@@ -23,17 +23,83 @@ class CalenderClick : AppCompatActivity() {
     val happyImageDrawable = R.drawable.happy_face
     val sadImageDrawable = R.drawable.sad_face
     val editeddate = "${year}년 ${month}월 ${dayOfMonth}일"
+    var todaysEmotion = "" // "key"에 해당하는 데이터를 가져옵니다. 만약 데이터가 없으면 기본값인 "defaultValue"가 반환됩니다.
+    private lateinit var selectedmission: String
+    private lateinit var receivedList: List<String>
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = CalendarClickBinding.inflate(layoutInflater)
-
-        val sharedPrefs = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-        val retrievedValue = sharedPrefs.getString("memoinput", "defaultValue") // "key"에 해당하는 데이터를 가져옵니다. 만약 데이터가 없으면 기본값인 "defaultValue"가 반환됩니다.
-        val todaysEmotion = sharedPrefs.getString("yourEmotion", "defaultValue") // "key"에 해당하는 데이터를 가져옵니다. 만약 데이터가 없으면 기본값인 "defaultValue"가 반환됩니다.
-        val selectedmission = intent.getStringExtra("key") // 받은 값
-        val receivedList = intent.getSerializableExtra("myList") as? List<String>
         val view = binding.root
+        receivedList = intent.getSerializableExtra("myList") as? List<String> ?: emptyList()
+        selectedmission = intent.getStringExtra("key") ?: ""
+
+        setView()
+        writefileTodo()
+        writefile()
+        setContentView(view)
+
+        binding.gobackIcon.setOnClickListener(){
+            super.onBackPressed()
+        }
+    }
+
+    private fun writefileTodo() {
+        val filesDir = applicationContext.filesDir
+        val fileName = "${year}-${month}"
+        val fileOutputStream: FileOutputStream
+        val myFile = File(filesDir, fileName)
+
+        try {
+            if (myFile.exists())
+            {fileOutputStream = openFileOutput(fileName, Context.MODE_APPEND) }
+            else
+            {fileOutputStream = openFileOutput(fileName, Context.MODE_PRIVATE) }
+
+            fileOutputStream.use {
+                it.write(dayOfMonth.toByteArray())
+                it.write("\n".toByteArray())
+                it.write(stringValue.toByteArray())
+                it.write("\n".toByteArray())
+                it.write(booleanValue.toString().toByteArray())
+                it.write("\n".toByteArray())
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+    private fun writefile() {
+        val fileName = "${year}-${month}-${dayOfMonth}"
+        val fileOutputStream: FileOutputStream
+
+        try {
+            fileOutputStream = openFileOutput(fileName, Context.MODE_PRIVATE)
+
+            fileOutputStream.use {
+                it.write(todaysEmotion.toByteArray())
+                it.write("\n".toByteArray())
+                it.write(editeddate.toByteArray())
+                it.write("\n".toByteArray())
+                it.write("${dayOfMonth}일".toByteArray())
+                it.write("\n".toByteArray())
+                it.write(selectedmission.toString().toByteArray())
+                it.write("\n".toByteArray())
+                it.write(receivedList!![0].toByteArray())
+                it.write("\n".toByteArray())
+                it.write(receivedList[1].toByteArray())
+                it.write("\n".toByteArray())
+                it.write(receivedList[2].toByteArray())
+                it.write("\n".toByteArray())
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+    fun setView(){
+        val sharedPrefs = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        val retrievedValue = sharedPrefs.getString("memoinput", "defaultValue")
+        todaysEmotion = sharedPrefs.getString("yourEmotion", "defaultValue").toString()
         when(selectedmission){
             "1" ->  {
                 stringValue = receivedList!![0]
@@ -45,14 +111,6 @@ class CalenderClick : AppCompatActivity() {
                 stringValue = receivedList!![2]
             }
         }
-        writefile()
-        setContentView(view)
-
-        binding.gobackIcon.setOnClickListener(){
-            super.onBackPressed()
-        }
-
-
         when(todaysEmotion){
             "angry" -> binding.todaysemotion.setImageResource(angryImageDrawable)
             "happy" -> binding.todaysemotion.setImageResource(happyImageDrawable)
@@ -86,32 +144,5 @@ class CalenderClick : AppCompatActivity() {
         binding.missionTV2.text = receivedList[2]
 
         binding.dayText.text = editeddate
-    }
-
-    private fun writefile() {
-        val filesDir = applicationContext.filesDir
-        val fileName = "${year}-${month}"
-        val fileOutputStream: FileOutputStream
-        val myFile = File(filesDir, fileName)
-
-        try {
-            if (myFile.exists()) {
-                fileOutputStream = openFileOutput(fileName, Context.MODE_APPEND)
-
-            } else {
-                fileOutputStream = openFileOutput(fileName, Context.MODE_PRIVATE)
-            }
-
-            fileOutputStream.use {
-                it.write(dayOfMonth.toByteArray())
-                it.write("\n".toByteArray())
-                it.write(stringValue.toByteArray())
-                it.write("\n".toByteArray())
-                it.write(booleanValue.toString().toByteArray())
-                it.write("\n".toByteArray())
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
     }
 }
