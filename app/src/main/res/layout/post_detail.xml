@@ -213,6 +213,7 @@
             android:id="@+id/textcounter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#89857C"
             app:layout_constraintEnd_toEndOf="@id/send"
             app:layout_constraintStart_toStartOf="@id/send"
             app:layout_constraintBottom_toTopOf="@id/send"
