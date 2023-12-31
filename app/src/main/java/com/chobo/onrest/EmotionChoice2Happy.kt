@@ -1,5 +1,6 @@
 package com.chobo.onrest
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +14,13 @@ class EmotionChoice2Happy : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = EmotionChoice2HappyBinding.inflate(layoutInflater)
         val view = binding.root
+        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+        editor.putString("yourEmotion","happy")
+        editor.apply() // 변경 사항을 저장합니다.
         setContentView(view)
+
 
         binding.choice1.setOnClickListener() {
             val intent =  Intent(this, QuestChoice::class.java)
