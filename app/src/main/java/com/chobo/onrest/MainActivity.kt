@@ -7,7 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.fragment.app.FragmentActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.databinding.ActivityMainBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -16,7 +16,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 
-class MainActivity : FragmentActivity() {
+class MainActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityMainBinding
     lateinit var mGoogleSignInClient: GoogleSignInClient
     lateinit var resultLauncher: ActivityResultLauncher<Intent>
@@ -33,7 +34,16 @@ class MainActivity : FragmentActivity() {
         }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private fun setResultSignUp() {
+        resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+                handleSignInResult(task)
+            }
+        }
+    }
+
+     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
@@ -56,18 +66,8 @@ class MainActivity : FragmentActivity() {
         }
     }
 
-    private fun setResultSignUp() {
-        resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                val task: Task<GoogleSignInAccount> =
-                    GoogleSignIn.getSignedInAccountFromIntent(result.data)
-                handleSignInResult(task)
-            }
-        }
-    }
-
     private fun signIn() {
-        val signInIntent: Intent = mGoogleSignInClient.getSignInIntent()
+        val signInIntent = mGoogleSignInClient.getSignInIntent()
         resultLauncher.launch(signInIntent)
     }
 
@@ -98,7 +98,8 @@ class MainActivity : FragmentActivity() {
             Log.d("로그인한 유저의 아이디 토큰", idToken)
 
         } catch (e: ApiException) {
-            Log.w("failed", "signInResultfailed = " + e.statusCode)
+            Log.e("failed", "signInResultfailed = " + e.statusCode)
+            Toast.makeText(this, "구글 로그인에 실패했습니다. 상태 코드: ${e.statusCode}", Toast.LENGTH_SHORT).show()
         }
     }
 
