@@ -25,4 +25,3 @@ buildscript {
 
 rootProject.name = "onRest"
 include(":app")
- 

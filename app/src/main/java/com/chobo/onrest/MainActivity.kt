@@ -16,25 +16,20 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 
-// MainActivity.java
 class MainActivity : FragmentActivity() {
     private lateinit var binding: ActivityMainBinding
     lateinit var mGoogleSignInClient: GoogleSignInClient
     lateinit var resultLauncher: ActivityResultLauncher<Intent>
 
-    override fun onStart() {
+    override fun onStart(){
         super.onStart()
         val account = GoogleSignIn.getLastSignedInAccount(this)
-        binding.googleLoginButton.setOnClickListener() {
-            startActivity(Intent(this, NaviActivity::class.java))
-            overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
-            finish()
-        }
-        if (account != null) {
-            Toast.makeText(this, "로그인", Toast.LENGTH_SHORT).show()
+
+        if(account != null) {
+            Log.d("SignIn", "이름 : ${account.displayName}, 이메일 : ${account.email}, 아이디 토큰 : ${account.idToken}")
+            Toast.makeText(this, "로그인이 되어있습니다", Toast.LENGTH_SHORT).show()
         } else {
-            Log.d("SignIn", "로그인된 계정을 찾을 수 없습니다.")
-            Toast.makeText(this, "아직 로그인되지 않았습니다.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "로그인이 되지않았습니다", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -47,6 +42,7 @@ class MainActivity : FragmentActivity() {
         setResultSignUp()
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            //.requestIdToken(getString(R.string.sign_in_client_id))
             .requestEmail()
             .requestProfile()
             .build()
@@ -71,7 +67,7 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun signIn() {
-        val signInIntent: Intent = mGoogleSignInClient.signInIntent
+        val signInIntent: Intent = mGoogleSignInClient.getSignInIntent()
         resultLauncher.launch(signInIntent)
     }
 
@@ -83,10 +79,18 @@ class MainActivity : FragmentActivity() {
             val photoUrl = account?.photoUrl.toString()
             val idToken = account?.idToken.toString()
 
-            val serverUrl = "http://46.250.250.34:5000"
+            //val serverUrl = "http://46.250.250.34:5000"
+
+            //sendIdTokenToServer(idToken, serverUrl)
 
             val nextPage = Intent(this, NaviActivity::class.java)
             startActivity(nextPage)
+
+            val acount = GoogleSignIn.getLastSignedInAccount(this)
+
+            if (acount != null) {
+                Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
+            }
 
             Log.d("로그인한 유저의 이메일", email)
             Log.d("로그인한 유저의 전체이름", displayName)
@@ -98,6 +102,6 @@ class MainActivity : FragmentActivity() {
         }
     }
 
-    private fun sendIdTokenToServer(id_token: String?, serverUrl: String) {
+    private fun sendIdTokenToServer(idToken: String?, serverUrl: String) {
     }
 }
