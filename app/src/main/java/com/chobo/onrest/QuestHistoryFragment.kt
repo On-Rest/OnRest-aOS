@@ -14,10 +14,11 @@ import java.io.InputStreamReader
 import java.text.SimpleDateFormat
 import java.util.Date
 
-class   QuestHistoryFragment : Fragment() {
+class QuestHistoryFragment : Fragment(), ToggleStateChangeListener {
 
         private lateinit var binding: QuestHistoryBinding
     lateinit var questHistoryAdapter: QuestHistoryAdapter
+    private lateinit var toggleStateChangeListener: ToggleStateChangeListener // 변수 선언
     val datas = mutableListOf<QuestHistoryData>()
     val date = Date() // 현재 날짜와 시간 가져오기
     val year = SimpleDateFormat("yyyy").format(date) // 일만 가져오기
@@ -27,12 +28,17 @@ class   QuestHistoryFragment : Fragment() {
     var index = 0
     val dialogFragment = QuestHistoryPopup()
 
-
     override fun onStart(){
         super.onStart()
         readFile(requireContext())
         initRecycler()
-        dialogFragment.show(requireActivity().supportFragmentManager, "QuestHistoryPopup")
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        toggleStateChangeListener = this // 또는 원하는 대상으로 설정
+        // QuestHistoryAdapter 인스턴스를 생성할 때 ToggleStateChangeListener를 전달합니다.
+        questHistoryAdapter = QuestHistoryAdapter(requireContext(), toggleStateChangeListener)
+        // 리사이클러뷰 설정 등의 작업 수행
     }
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,7 +51,11 @@ class   QuestHistoryFragment : Fragment() {
 
         return binding.root
     }
-
+    override fun onToggleStateChanged(position: Int, isChecked: Boolean) {
+        // 상태가 변경된 아이템의 위치(position)와 상태(isChecked)를 여기서 사용할 수 있습니다
+        Log.d("ToggleStateChanged", "Position: $position, Checked: $isChecked")
+        dialogFragment.show(requireActivity().supportFragmentManager, "QuestHistoryPopup")
+    }
     private fun initDateFilter(){
         for (year in 2023..2025) {
             for (month in 1..12) {
@@ -89,7 +99,6 @@ class   QuestHistoryFragment : Fragment() {
     }
     @SuppressLint("NotifyDataSetChanged")
     private fun initRecycler() {
-        questHistoryAdapter = QuestHistoryAdapter(requireContext())
         binding.questList.adapter = questHistoryAdapter
         datas.clear()
 
