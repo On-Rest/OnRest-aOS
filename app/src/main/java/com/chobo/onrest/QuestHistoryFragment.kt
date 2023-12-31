@@ -16,7 +16,7 @@ import java.util.Date
 
 class   QuestHistoryFragment : Fragment() {
 
-    private lateinit var binding: QuestHistoryBinding
+        private lateinit var binding: QuestHistoryBinding
     lateinit var questHistoryAdapter: QuestHistoryAdapter
     val datas = mutableListOf<QuestHistoryData>()
     val date = Date() // 현재 날짜와 시간 가져오기
@@ -25,11 +25,14 @@ class   QuestHistoryFragment : Fragment() {
     val fileLines = mutableListOf<String>()
     val yearMonthList = mutableListOf<String>()
     var index = 0
+    val dialogFragment = QuestHistoryPopup()
+
 
     override fun onStart(){
         super.onStart()
         readFile(requireContext())
         initRecycler()
+        dialogFragment.show(requireActivity().supportFragmentManager, "QuestHistoryPopup")
     }
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,6 +42,7 @@ class   QuestHistoryFragment : Fragment() {
         binding = QuestHistoryBinding.inflate(inflater, container, false)
         initDateFilter()
         dateFilter()
+
         return binding.root
     }
 
