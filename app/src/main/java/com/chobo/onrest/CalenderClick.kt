@@ -17,7 +17,6 @@ class CalenderClick : AppCompatActivity() {
     val dayOfMonth = SimpleDateFormat("dd").format(date) // 일만 가져오기
     val year = SimpleDateFormat("yyyy").format(date) // 일만 가져오기
     val month = SimpleDateFormat("MM").format(date) // 일만 가져오기
-    val data =  SimpleDateFormat("yyyy-MM-dd").format(date)
     var stringValue = "" // 저장할 데이터
     val booleanValue = false
     val angryImageDrawable = R.drawable.angry_face
@@ -45,9 +44,6 @@ class CalenderClick : AppCompatActivity() {
             "3" ->  {
                 stringValue = receivedList!![2]
             }
-        }
-        receivedList?.forEachIndexed { index, data ->
-            Log.d("FileContent", "Line $index: $data")
         }
         writefile()
         setContentView(view)
@@ -94,7 +90,7 @@ class CalenderClick : AppCompatActivity() {
 
     private fun writefile() {
         val filesDir = applicationContext.filesDir
-        val fileName = year
+        val fileName = "${year}-${month}"
         val fileOutputStream: FileOutputStream
         val myFile = File(filesDir, fileName)
 
@@ -107,7 +103,7 @@ class CalenderClick : AppCompatActivity() {
             }
 
             fileOutputStream.use {
-                it.write(data.toByteArray())
+                it.write(dayOfMonth.toByteArray())
                 it.write("\n".toByteArray())
                 it.write(stringValue.toByteArray())
                 it.write("\n".toByteArray())
