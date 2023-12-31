@@ -42,11 +42,13 @@ class QuestHistoryPopup : DialogFragment() {
     private fun dialogFragmentButton(){
         binding.cancel.setOnClickListener(){
             popupCallback?.onPopupAction() // Callback 호출
+
             dismiss()
         }
         binding.complete.setOnClickListener(){
             modifyFile()
             popupCallback?.onPopupAction() // Fragment의 콜백 함수 호출
+
             dismiss()
         }
     }

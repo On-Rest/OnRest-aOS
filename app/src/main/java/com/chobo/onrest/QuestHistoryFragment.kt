@@ -61,8 +61,8 @@ class QuestHistoryFragment : Fragment(), ToggleStateChangeListener,PopupCallback
     override fun onPopupAction() {
         // QuestHistoryPopup에서 호출될 콜백 메서드의 로직 작성
         // 원하는 동작 수행
-        initRecycler()
         readFile(requireContext())
+        initRecycler()
     }
     override fun onToggleStateChanged(mission: String, isChecked: Boolean, position: Int) {
         // 상태가 변경된 아이템의 위치(position)와 상태(isChecked)를 여기서 사용할 수 있습니다

@@ -1,0 +1,501 @@
+[33mcommit 5463c0a8d0fec66376371ca8c51fe09ea29bfdeb[m[33m ([m[1;36mHEAD -> [m[1;32m91-feature-completion[m[33m)[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Sun Dec 31 21:53:48 2023 +0900
+
+    :sparkles: 미션의 체크상태를 파일에 저장하고 다시 리사이클러뷰를 초기화하는기능 구현, 팝업창에서 complete를 눌러야만 라사이클러의 아이템의 checkTV가 체크되게하는 기능구현 ㅎㅎ
+
+[33mcommit 5c150c07850c192b192d17ef8aef41b904d08772[m[33m ([m[1;31morigin/91-feature-completion[m[33m)[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Sun Dec 31 18:49:50 2023 +0900
+
+    :sparkles: 선택한 아이템의 미션을 팝업창에 띄워주는기능 구현
+
+[33mcommit 7bbd3e7e5155b344a0a4417126c60710723d5007[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Sun Dec 31 18:15:48 2023 +0900
+
+    :construction: QuestHistoryFragment 아이템의 버튼 눌렀을떄 팝업창 띄우기 누른버튼이 있는 아이템의 정보 받아오기
+
+[33mcommit 6764008a72990f7e308395a573dc1955a4853b74[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Sun Dec 31 16:00:23 2023 +0900
+
+    :sparkles: QuestHistoryFragment 팝업창 띄우기
+
+[33mcommit 1987d48760569b356b62f3642ab68af61144a22b[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Sun Dec 31 12:20:28 2023 +0900
+
+    :lipstick: 텍스트카운터 색 적용
+
+[33mcommit c464e7e1832d7b51d7c5fddcd2b17a098549d83f[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Sun Dec 31 00:48:25 2023 +0900
+
+    :sparkles: PostDetail 댓글 글자수카운터 구현 전송버튼 구현
+
+[33mcommit 3bd4c7e8e2125dc276462d5fab50fc7f440597f6[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Sat Dec 30 19:55:46 2023 +0900
+
+    :sparkles: QuestHistoryFragment 년,달 필터 구현
+
+[33mcommit 3e70efcfb288550a18daf7859741ba15ce0c692a[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Sat Dec 30 18:11:08 2023 +0900
+
+    :sparkles: QuestList에서고른 미션을 CalenderClick에서 텍스트 파일로 저장시키고 QuestHistoryFragment에서 불러오는기능 구현
+
+[33mcommit b7af782eca7bcb826aa3e8da9a788b5c619aa7a6[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Sat Dec 30 14:13:59 2023 +0900
+
+    :bug: check1만 체크되는 오류 수정
+
+[33mcommit 2750afba6165d3cd27e2c793760806122853b83d[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Sat Dec 30 14:13:12 2023 +0900
+
+    :sparkles: 오늘의 날짜 보여주는기능 추가
+
+[33mcommit e6d908cd692c5c4398bbbde01764095f965cfd63[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Sat Dec 30 14:00:40 2023 +0900
+
+    :construction: 투두정보 파일에 저장하는기능 준비중
+
+[33mcommit e71b769b984f3254c5567c48f51f041c34caa6f9[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Sat Dec 30 13:59:46 2023 +0900
+
+    :sparkles: CalenderClick의 감정 아이콘 선택한감정에따라서 바뀌게 설정
+
+[33mcommit b649a23009e02bf1f45aee17a535ce4c8bb271d0[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 9b7941f 817d29d
+Author: 혜성 <118062596+ansloveli@users.noreply.github.com>
+Date:   Fri Dec 29 21:31:26 2023 +0900
+
+    Merge pull request #90 from On-Rest/82-layout_complete
+    
+    82 layout complete
+
+[33mcommit 817d29d36c88501bf879deee45926d6258236e03[m[33m ([m[1;31morigin/82-layout_complete[m[33m, [m[1;32m82-layout_complete[m[33m)[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Fri Dec 29 21:30:59 2023 +0900
+
+    .
+
+[33mcommit fc81482c7de1c0572f42c32f827da393db6ca09f[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Fri Dec 29 21:24:23 2023 +0900
+
+    :lipstick: 잘못쓴 말풍선 수정
+
+[33mcommit 084c74a3da27448fd8c6777c0af26d9f03858a54[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Fri Dec 29 21:18:12 2023 +0900
+
+    :sparkles: DiaryWrite의 일기를 CalenderClick으로 보낸다
+
+[33mcommit 5365b5b504505c88819f8df5de0867b6192a1341[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Fri Dec 29 12:39:33 2023 +0900
+
+    :sparkles: QuestList에서 고른 미션과 미션 리스트를 CalenderClick으로 넘기는 기능구현
+
+[33mcommit be7ad3a00e6487893b04d581e82c888dbecf1ca0[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Fri Dec 29 12:09:53 2023 +0900
+
+    :sparkles: QuestList의 미션을 앞에서고는 감정에 맞춰서 바꾸는 기능 구현
+
+[33mcommit d5caa0b29dd9014dbd811f460b3db9381f8fe6b3[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Fri Dec 29 10:04:52 2023 +0900
+
+    :sparkles: 검색 끝내는 버튼 ,기능 추가
+
+[33mcommit 10c18d0e21f015972620cd5c89e862527288ce92[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Fri Dec 29 10:03:44 2023 +0900
+
+    :fire: 안쓰는 코드 삭제
+
+[33mcommit 3282777932078531a41abd5abec19aef2898ade6[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Fri Dec 29 10:01:56 2023 +0900
+
+    :sparkles: 기능 롤백
+
+[33mcommit 9b7941f47bcfdab745644d665209cda02946ef39[m[33m ([m[1;31morigin/suin-data-class[m[33m, [m[1;31morigin/87-googlesociallogin[m[33m, [m[1;31morigin/85-googlesociallogin-idtoken[m[33m)[m
+Merge: 867f858 43ad23c
+Author: 혜성 <118062596+ansloveli@users.noreply.github.com>
+Date:   Thu Dec 28 16:00:12 2023 +0900
+
+    Merge pull request #84 from On-Rest/82-layout_complete
+    
+    82 layout complete
+
+[33mcommit 43ad23caef27ab45163c0ba7760744fd233e3d17[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Thu Dec 28 15:59:07 2023 +0900
+
+    todo
+
+[33mcommit a5b9e1d80452c88c15acd6c409a9b7ecc24ed2ad[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Thu Dec 28 15:51:51 2023 +0900
+
+    :goal_net: post_detail에서 키보드에의해 입력창이 가려지는오류 수정
+
+[33mcommit d6f134c58272a61be3600755ddb8326cf1c732c1[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Thu Dec 28 15:40:23 2023 +0900
+
+    :lipstick: 달력 퍼블리싱
+
+[33mcommit 455ad2cbd23193361224cf4e1558db89d8e51a5c[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Wed Dec 27 20:59:27 2023 +0900
+
+    :construction: QuestHistoryFragment.kt 팝업 준비
+
+[33mcommit 1668f2c122cc0418bc1b1a2976b2a5e1252dbeb2[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Wed Dec 27 18:26:24 2023 +0900
+
+    :art: 잘못된 이름변경
+
+[33mcommit 502136b40310a1512883b3dec8db1bbc9d4c762e[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Wed Dec 27 18:20:29 2023 +0900
+
+    :technologist: 네비게이션바 QuestHistory 이름변경, QuestFragment.kt 이름 QuestHistoryFragment.kt로 변경
+
+[33mcommit 8ea8cdd5e335805e7ffe8b995709a5aa181b40e8[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Wed Dec 27 18:04:07 2023 +0900
+
+    :lipstick: 게시글을 찾을수없다 아이콘을 출력하기위한 ui변경
+
+[33mcommit bc1fb4a7494b666ee6ad50bd7b07cc1fdd318248[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Wed Dec 27 18:02:54 2023 +0900
+
+    :technologist: 통신을 위한 변수사용
+
+[33mcommit f8e9f627a8e817dfee571868150dfc9753736595[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Wed Dec 27 18:01:58 2023 +0900
+
+    :technologist: 코드 간소화
+
+[33mcommit 1c69be09ac6f225f1c9ccaef68b4eff257daa89c[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Wed Dec 27 18:00:59 2023 +0900
+
+    :lipstick: 안쓰는뷰 삭제
+
+[33mcommit 31a9123c283a71e9348151207ccdf4bdd4a0c98b[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Wed Dec 27 18:00:24 2023 +0900
+
+    :sparkles: 게시글이 없으면 찾을수없다는 아이콘 출력
+
+[33mcommit aa95006b024011a35d44a3e3beb048531e8cef74[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Wed Dec 27 17:59:59 2023 +0900
+
+    :sparkles: 게시글이 없으면 찾을수없다는 아이콘 출력
+
+[33mcommit abac02b81d5017b77f1c5bf3fa11068573a7dc11[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Wed Dec 27 13:55:11 2023 +0900
+
+    :lipstick: 팝업위치 수정
+
+[33mcommit 1b966edf918720fd9de3fd4f5fedcab0f6fc52d6[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Wed Dec 27 12:05:53 2023 +0900
+
+    :sparkles: 팝업기능 추가
+
+[33mcommit e0b2561212500643112c608d108d6952afb51353[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Tue Dec 26 23:52:10 2023 +0900
+
+    a
+
+[33mcommit 867f858e12407bc49b7cf6f5b872dbc6d4b4da7c[m
+Merge: e6a7bb1 6589b6a
+Author: 명훈 <132070179+audgns10@users.noreply.github.com>
+Date:   Tue Dec 26 16:48:26 2023 +0900
+
+    Merge pull request #81 from On-Rest/80-simple-edit
+    
+    [#80] :: 화면이동 수정
+
+[33mcommit 6589b6a6e2964d6a294c654207483d56ce4ee07c[m
+Author: Github <s23065@gsm.hs.kr>
+Date:   Tue Dec 26 08:39:04 2023 +0900
+
+    [#80] :: 화면이동 수정
+
+[33mcommit e6a7bb189d1cdef7ce25f3078704dcedfc0bf48b[m
+Author: 명훈 <132070179+audgns10@users.noreply.github.com>
+Date:   Fri Dec 22 08:10:49 2023 +0900
+
+    Update CommunityFragment.kt
+
+[33mcommit ab799833d12fe5294397fa3fdca6cb041ee64e52[m
+Merge: 0fe33dd 02ca9f1
+Author: 명훈 <132070179+audgns10@users.noreply.github.com>
+Date:   Fri Dec 22 08:09:51 2023 +0900
+
+    Merge pull request #79 from On-Rest/77-edit
+    
+    [#77] :: 통신전 마지막 파일 정리
+
+[33mcommit 02ca9f1f6e3378c6a796d271206e34c455463f26[m
+Merge: 6c1003c 0fe33dd
+Author: 명훈 <132070179+audgns10@users.noreply.github.com>
+Date:   Fri Dec 22 08:09:45 2023 +0900
+
+    Merge branch 'main' into 77-edit
+
+[33mcommit 6c1003c019dc44ac9c532634889189d69d21f1ed[m
+Author: Github <s23065@gsm.hs.kr>
+Date:   Fri Dec 22 08:05:03 2023 +0900
+
+    [#77] :: 통신전 마지막 파일 정리
+
+[33mcommit 0fe33dd4a378c0378ce0bbafeabd4d935db99fec[m
+Merge: a3e77bd 5ee4bdb
+Author: 혜성 <118062596+ansloveli@users.noreply.github.com>
+Date:   Thu Dec 21 23:57:19 2023 +0900
+
+    Merge pull request #78 from On-Rest/72-emergency_suzaku
+    
+    🔀
+
+[33mcommit 5ee4bdb2eafe45036b5ff839af042e43ebcb4e05[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Thu Dec 21 23:52:35 2023 +0900
+
+    ㅁ
+
+[33mcommit a3e77bd3003aefcbd08d36a262ed3cfcd6019e0c[m
+Merge: e1e23c0 6168d0a
+Author: 명훈 <132070179+audgns10@users.noreply.github.com>
+Date:   Thu Dec 21 23:10:09 2023 +0900
+
+    Merge pull request #76 from On-Rest/75-questhistory
+    
+    빨리
+
+[33mcommit 6168d0a1af124c0663e7f2b7e260fb104ad46865[m[33m ([m[1;31morigin/75-questhistory[m[33m)[m
+Author: Github <s23065@gsm.hs.kr>
+Date:   Thu Dec 21 23:08:40 2023 +0900
+
+    asdf
+
+[33mcommit e1e23c07aae32a7020e47dc176008bb1974d2127[m
+Merge: b0196f4 5f13b5d
+Author: 혜성 <118062596+ansloveli@users.noreply.github.com>
+Date:   Thu Dec 21 21:18:29 2023 +0900
+
+    Merge pull request #74 from On-Rest/revert-73-61-button기능구현
+    
+    Revert "61 button기능구현"
+
+[33mcommit 5f13b5dc467c2870bdfb9859dd6ebb24d5f59d9f[m
+Author: 혜성 <118062596+ansloveli@users.noreply.github.com>
+Date:   Thu Dec 21 21:16:48 2023 +0900
+
+    Revert "61 button기능구현"
+
+[33mcommit b0196f4d3edf8245b7032dd37d6cc1d978c5f3d2[m
+Merge: 7a22504 231e570
+Author: 혜성 <118062596+ansloveli@users.noreply.github.com>
+Date:   Thu Dec 21 21:01:00 2023 +0900
+
+    Merge pull request #73 from On-Rest/61-button기능구현
+    
+    61 button기능구현
+
+[33mcommit 7a22504e565c1c2781f3803b0055c8ebde61a9bd[m
+Merge: 0631c47 f7063fc
+Author: 수잉 <128392740+WithYouAtDawn@users.noreply.github.com>
+Date:   Thu Dec 21 20:11:10 2023 +0900
+
+    Merge pull request #71 from On-Rest/suin-ui_changes_modify
+    
+    🔀 :: 냅다 머지 (아무튼 ui 바꿈)
+
+[33mcommit f7063fcec9125812856468f7168a7912c029f062[m
+Author: 수잉 <djswpsrkaksskfskf@gmail.com>
+Date:   Thu Dec 21 20:09:35 2023 +0900
+
+    :lipstick: :: 대충 미션 페이지
+
+[33mcommit 830e828e7d26d7cc3b1dc1c205084cd12af17ec4[m
+Merge: 57e60c2 0631c47
+Author: 수잉 <djswpsrkaksskfskf@gmail.com>
+Date:   Thu Dec 21 18:05:55 2023 +0900
+
+    Merge branch 'main' of github.com:On-Rest/OnrRest-aOS into suin-ui_changes_modify
+
+[33mcommit 57e60c28804a4fff6661b0f667ba71e6d8fd6c2c[m
+Author: 수잉 <djswpsrkaksskfskf@gmail.com>
+Date:   Thu Dec 21 18:05:39 2023 +0900
+
+    :lipstick: :: 뒤로가기 앞으로가기 icon
+
+[33mcommit 0631c47021dd68c522e36e05b4f595d950ced1fe[m
+Merge: c97726a 733a535
+Author: 혜성 <118062596+ansloveli@users.noreply.github.com>
+Date:   Thu Dec 21 18:03:19 2023 +0900
+
+    Merge pull request #70 from On-Rest/43-google-login
+    
+    그냥 머지해주세요
+
+[33mcommit 733a53573b04d95e6d4f4f6ee5b795d8c5ea489f[m[33m ([m[1;31morigin/43-google-login[m[33m)[m
+Author: Github <s23065@gsm.hs.kr>
+Date:   Thu Dec 21 17:37:07 2023 +0900
+
+    java version update(동학)
+
+[33mcommit bc27671ce53b6c024c6200cace7cceb9ec4a2b59[m
+Author: Github <s23065@gsm.hs.kr>
+Date:   Thu Dec 21 17:03:22 2023 +0900
+
+    edit
+
+[33mcommit 200deaa3f52e70733cca6591ed85edcb5dd7b384[m
+Merge: 7d8b5a7 c97726a
+Author: 수잉 <djswpsrkaksskfskf@gmail.com>
+Date:   Thu Dec 21 16:55:53 2023 +0900
+
+    Merge branch 'main' of github.com:On-Rest/OnrRest-aOS into suin-ui_changes_modify
+
+[33mcommit c97726a4206671e7792f2aa5bf21c87f98958da8[m
+Merge: b96a72e 1ed66b1
+Author: 혜성 <118062596+ansloveli@users.noreply.github.com>
+Date:   Thu Dec 21 16:51:30 2023 +0900
+
+    Merge pull request #69 from On-Rest/43-google-login
+    
+    [#43] :: edit push
+
+[33mcommit 1ed66b114f8d87a1790fa8cd783fd6aa9bd62705[m
+Author: Github <s23065@gsm.hs.kr>
+Date:   Thu Dec 21 16:44:55 2023 +0900
+
+    edit
+
+[33mcommit ac4d651a6da85fc4ac1b593754e2ce04a94bc9a1[m
+Author: Github <s23065@gsm.hs.kr>
+Date:   Thu Dec 21 16:07:46 2023 +0900
+
+    [#43] :: eidt
+
+[33mcommit 7d8b5a72d1b1a244e46976f011e7c605c3fbc1e1[m
+Author: 수잉 <djswpsrkaksskfskf@gmail.com>
+Date:   Thu Dec 21 15:19:15 2023 +0900
+
+    :lipstick: :: chatbar UI
+
+[33mcommit b96a72e6421e59482b7e8d770403779b86be7407[m
+Merge: 7009c21 a0cfa3f
+Author: 명훈 <132070179+audgns10@users.noreply.github.com>
+Date:   Thu Dec 21 15:08:02 2023 +0900
+
+    Merge pull request #68 from On-Rest/43-google-login
+    
+    [#43] ::  :sparkles: google login(아직 서버에 POST는 못함)
+
+[33mcommit a0cfa3f427eb932d8fdbbb8327109305ac666852[m
+Merge: cf5bce9 52ef58f
+Author: Github <s23065@gsm.hs.kr>
+Date:   Thu Dec 21 14:54:54 2023 +0900
+
+    [#43] :: :memo: 로그인 수정
+
+[33mcommit 7009c214bd41ed30db3a589548951d691126e624[m
+Merge: 52ef58f 24c0e4d
+Author: 혜성 <118062596+ansloveli@users.noreply.github.com>
+Date:   Thu Dec 21 14:01:35 2023 +0900
+
+    Merge pull request #67 from On-Rest/suin-ui_changes_modify
+    
+    🔀 :: fix wrong icon
+
+[33mcommit cf5bce971f917b6f357a60b767332f4e1b0caefc[m
+Author: Github <s23065@gsm.hs.kr>
+Date:   Thu Dec 21 13:58:14 2023 +0900
+
+    [#43] :: :sparkles: 구글 로그인을 구현합니다
+
+[33mcommit 231e5707fa1dac6422d689d3110fb065d982cb4d[m
+Author: youloveli <mymhj122@gmail.com>
+Date:   Thu Dec 21 13:57:59 2023 +0900
+
+    :lipstick: 적응형 아이콘 추가
+
+[33mcommit 24c0e4de626b1a0f378445f84052ce653f7ebd7e[m
+Author: 수잉 <djswpsrkaksskfskf@gmail.com>
+Date:   Thu Dec 21 13:56:43 2023 +0900
+
+    :lipstick: :: emotion_choice2_angry.xml <-> emotion_choice2_sad.xml, imageButton src exchange
+
+[33mcommit 52ef58f470c79bfe40a8153d7d96b7ffa7877e1e[m
+Merge: 3a8c6a0 1745947
+Author: 혜성 <118062596+ansloveli@users.noreply.github.com>
+Date:   Thu Dec 21 13:45:38 2023 +0900
+
+    Merge pull request #66 from On-Rest/suin-ui_changes_modify
+    
+    🔀 :: UI change
+
+[33mcommit 3a8c6a0778fee0aeb359cb6229cef2f8dcf9521b[m
+Author: 혜성 <118062596+ansloveli@users.noreply.github.com>
+Date:   Thu Dec 21 13:43:30 2023 +0900
+
+    Update appicon.xml
+
+[33mcommit 97ba5960cb3c82f4159e91b8c4839ed93b7d2db5[m
+Author: 혜성 <118062596+ansloveli@users.noreply.github.com>
+Date:   Thu Dec 21 13:43:08 2023 +0900
+
+    Create appicon.xml
+
+[33mcommit 174594766f8fbe05f4177ddcedac68c9a86579e8[m
+Author: 수잉 <djswpsrkaksskfskf@gmail.com>
+Date:   Thu Dec 21 12:36:39 2023 +0900
+
+    :lipstick: :: default happy -> angry
+
+[33mcommit 258be5a69cc585d56cb4cc37a5f3cb2cfa26af3e[m
+Author: 수잉 <djswpsrkaksskfskf@gmail.com>
+Date:   Thu Dec 21 12:36:12 2023 +0900
+
+    :lipstick: :: modify goback icon
+
+[33mcommit 7599d3c6732331651110717b03cb399dd7cd3fe4[m
+Author: 수잉 <djswpsrkaksskfskf@gmail.com>
+Date:   Thu Dec 21 12:35:48 2023 +0900
+
+    :lipstick: :: modify pieChart percent
+
+[33mcommit 4dbae9921a69d7ea8dc459a4884e12b6b48e4645[m
+Author: 수잉 <djswpsrkaksskfskf@gmail.com>
+Date:   Thu Dec 21 12:35:13 2023 +0900
+
+    :lipstick: :: code delete, modify button id
+
+[33mcommit 516fbf53d13f150dac9bc24345ea0d8172413951[m
+Author: 수잉 <djswpsrkaksskfskf@gmail.com>
+Date:   Thu Dec 21 12:34:42 2023 +0900
+
+    :lipstick: :: google login icon
