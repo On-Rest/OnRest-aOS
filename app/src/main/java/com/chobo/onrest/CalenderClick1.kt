@@ -15,21 +15,22 @@ import java.util.Date
 class CalenderClick1 : AppCompatActivity() {
     private lateinit var binding: CalenderClick1Binding
     val date = Date() // 현재 날짜와 시간 가져오기
-    val dayOfMonth = SimpleDateFormat("dd").format(date) // 일만 가져오기
     val year = SimpleDateFormat("yyyy").format(date) // 일만 가져오기
     val month = SimpleDateFormat("MM").format(date) // 일만 가져오
     val angryImageDrawable = R.drawable.angry_face
     val happyImageDrawable = R.drawable.happy_face
     val sadImageDrawable = R.drawable.sad_face
     val fileLines = mutableListOf<String>()
+    var fileName = ""
+
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = CalenderClick1Binding.inflate(layoutInflater)
+        initFileName()
         readFile(this)
         setView()
-        Log.d("ets",fileLines[2])
         val view = binding.root
 
         setContentView(view)
@@ -39,7 +40,6 @@ class CalenderClick1 : AppCompatActivity() {
         }
     }
     private fun readFile(context: Context){
-        val fileName = "${year}-${month}-${dayOfMonth}"
         fileLines.clear()
 
         try {
@@ -59,7 +59,11 @@ class CalenderClick1 : AppCompatActivity() {
             e.printStackTrace()
         }
     }
-    fun setView(){
+    private fun initFileName(){
+        val fileDate = intent.getStringExtra("BUTTON_ID")
+        fileName = "${year}-${month}-${fileDate}"
+    }
+    private fun setView(){
         when(fileLines[0]){
             "angry" -> binding.todaysemotion.setImageResource(angryImageDrawable)
             "happy" -> binding.todaysemotion.setImageResource(happyImageDrawable)
