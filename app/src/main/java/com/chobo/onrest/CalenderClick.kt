@@ -71,7 +71,6 @@ class CalenderClick : AppCompatActivity() {
     private fun writefile() {
         val fileName = "${year}-${month}-${dayOfMonth}"
         val fileOutputStream: FileOutputStream
-
         try {
             fileOutputStream = openFileOutput(fileName, Context.MODE_PRIVATE)
 
@@ -91,14 +90,18 @@ class CalenderClick : AppCompatActivity() {
                 it.write(receivedList[2].toByteArray())
                 it.write("\n".toByteArray())
                 it.write(retrievedValue.toByteArray())
-            }
+                }
         } catch (e: Exception) {
             e.printStackTrace()
         }
     }
+     @SuppressLint("SetTextI18n")
      private fun setView(){
         val sharedPrefs = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
          retrievedValue = sharedPrefs.getString("memoinput", "defaultValue").toString()
+         if (retrievedValue == ""){
+             retrievedValue = " "
+         }
          receivedList = intent.getSerializableExtra("myList") as? List<String> ?: emptyList()
          selectedmission = intent.getStringExtra("key") ?: ""
         todaysEmotion = sharedPrefs.getString("yourEmotion", "defaultValue").toString()

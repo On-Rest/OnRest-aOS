@@ -1,6 +1,5 @@
 package com.chobo.onrest
 
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
@@ -121,9 +120,7 @@ class PostWrite : AppCompatActivity() {
             binding.send.isChecked = false
             if (currentLength1 > 0){
                 if (currentLength > 0){
-                    startActivity(Intent(this, QuestList::class.java))
-                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-                    finish()
+                    super.onBackPressed()
                 }
             }
         }

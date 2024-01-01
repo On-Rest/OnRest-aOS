@@ -16,23 +16,6 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/month_back"
-        app:layout_constraintEnd_toStartOf="@id/date"
-        app:layout_constraintTop_toTopOf="@id/date"
-        app:layout_constraintBottom_toBottomOf="@id/date"/>
-
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/month_next"
-        app:layout_constraintStart_toEndOf="@id/date"
-        app:layout_constraintTop_toTopOf="@id/date"
-        app:layout_constraintBottom_toBottomOf="@id/date"/>
-
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
@@ -1399,7 +1382,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        android:src="@drawable/diary"
+        android:src="@drawable/calender_speachbubble"
         app:layout_constraintBottom_toTopOf="@id/rectangle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
