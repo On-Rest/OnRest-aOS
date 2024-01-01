@@ -83,6 +83,8 @@ class CalenderClick1 : AppCompatActivity() {
             }
         }
 
+        binding.memoinput.setText(fileLines[7])
+
         binding.checkTV.isEnabled = false
         binding.checkTV1.isEnabled = false
         binding.checkTV2.isEnabled = false
