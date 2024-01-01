@@ -104,5 +104,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun sendIdTokenToServer(idToken: String?, serverUrl: String) {
+
     }
 }

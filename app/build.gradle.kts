@@ -41,6 +41,7 @@ android {
 }
 
 dependencies {
+    implementation ("com.google.android.gms:play-services-auth:19.2.0")
     implementation ("com.google.firebase:firebase-auth:22.0.0")
     implementation ("com.google.firebase:firebase-bom:32.0.0")
     implementation ("com.google.code.gson:gson:2.8.9")
