@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/day_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textColor="#6F6B63"
+        style="@style/caption_font"
+        app:layout_constraintStart_toStartOf="@id/day_icon"
+        app:layout_constraintEnd_toEndOf="@id/day_icon"/>
+
+    <ImageButton
+        android:id="@+id/day_icon"
+        android:layout_width="35dp"
+        android:layout_height="30dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/gray_happy_icon"
+        app:layout_constraintTop_toBottomOf="@id/day_number"
+        android:layout_marginTop="2dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
