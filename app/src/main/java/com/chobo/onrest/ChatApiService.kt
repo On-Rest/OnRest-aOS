@@ -6,7 +6,7 @@ import retrofit2.http.POST
 
 interface ChatApiService {
     @Headers("Content-Type: application/json",
-        "Authorization: Bearer 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")
+        "Authorization: Bearer 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")
     @POST("v1/chat/completions")
     suspend fun getChatCompletion(@Body requestBody: ChatRequestBody): ChatResponse
 }
