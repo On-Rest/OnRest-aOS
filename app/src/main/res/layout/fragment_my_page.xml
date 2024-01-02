@@ -1,65 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
-    tools:context=".MyPageFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MyPageFragment"
+    android:background="@color/background">
+
+    <FrameLayout
+        android:id="@+id/myPage_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="59dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:context=".Header">
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/g_logo_start"
-                android:layout_width="match_parent"
-                android:layout_height="0.1dp"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.05" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/g_logo_top"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.27" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/g_logo_end"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.25" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/g_logo_bottom"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.72" />
-
-            <ImageButton
-                android:id="@+id/header"
-                android:layout_width="72dp"
-                android:layout_height="27dp"
-                android:background="@android:color/transparent"
-                android:scaleType="fitXY"
-                android:src="@drawable/wholerest"
-                app:layout_constraintBottom_toBottomOf="@id/g_logo_bottom"
-                app:layout_constraintEnd_toEndOf="@id/g_logo_end"
-                app:layout_constraintStart_toStartOf="@id/g_logo_start"
-                app:layout_constraintTop_toTopOf="@id/g_logo_top" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <include layout="@layout/header" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_profile_top"
@@ -268,27 +225,28 @@
             app:layout_constraintStart_toStartOf="@id/g_separator_start"
             app:layout_constraintTop_toTopOf="@id/g_separator_top" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@drawable/profile"
             app:layout_constraintBottom_toBottomOf="@id/g_profile_bottom"
             app:layout_constraintEnd_toEndOf="@id/g_profile_end"
             app:layout_constraintStart_toStartOf="@id/g_profile_start"
-            app:layout_constraintTop_toTopOf="@id/g_profile_top" />
+            app:layout_constraintTop_toTopOf="@id/g_profile_top"/>
 
         <TextView
             android:id="@+id/nickname"
             style="@style/button_font"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:gravity="top|center"
             android:text="홍길동"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@id/g_nickname_bottom"
             app:layout_constraintStart_toStartOf="@id/g_nickname_start"
-            app:layout_constraintTop_toTopOf="@id/g_nickname_top" />
+            app:layout_constraintTop_toTopOf="@id/g_nickname_top"
+            app:layout_constraintVertical_bias="1.0" />
 
         <View
             android:id="@+id/month_analysis_background"
@@ -327,16 +285,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.3636" />
-
+                app:layout_constraintGuide_percent="0.3636"/>
             <ImageView
                 android:id="@+id/happyPercentIcon"
                 android:layout_width="24dp"
                 android:layout_height="21dp"
                 android:src="@drawable/happy_face"
-                app:layout_constraintEnd_toEndOf="@id/g_feel_icon_end"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/g_feel_icon_end" />
 
             <ImageView
                 android:id="@+id/angryPercentIcon"
@@ -344,9 +301,9 @@
                 android:layout_height="21dp"
                 android:src="@drawable/angry_face"
                 app:layout_constraintBottom_toTopOf="@id/sadPercentIcon"
-                app:layout_constraintEnd_toEndOf="@id/g_feel_icon_end"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/happyPercentIcon" />
+                app:layout_constraintTop_toBottomOf="@id/happyPercentIcon"
+                app:layout_constraintEnd_toEndOf="@id/g_feel_icon_end" />
 
             <ImageView
                 android:id="@+id/sadPercentIcon"
@@ -354,8 +311,8 @@
                 android:layout_height="21dp"
                 android:src="@drawable/sad_face"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/g_feel_icon_end"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/g_feel_icon_end"/>
 
             <TextView
                 android:id="@+id/happyPercent"
@@ -430,5 +387,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 
 </FrameLayout>

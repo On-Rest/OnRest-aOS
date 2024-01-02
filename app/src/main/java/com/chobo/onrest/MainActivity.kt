@@ -1,6 +1,7 @@
 package com.chobo.onrest
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -51,9 +52,6 @@ class MainActivity : AppCompatActivity() {
 
         setResultSignUp()
 
-         val nextPage = Intent(this, NaviActivity::class.java)
-         startActivity(nextPage)
-
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             //.requestIdToken(getString(R.string.sign_in_client_id))
             .requestEmail()
@@ -82,7 +80,16 @@ class MainActivity : AppCompatActivity() {
             val photoUrl = account?.photoUrl.toString()
             val idToken = account?.idToken.toString()
 
+            val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+
+            editor.putString("username", displayName)
+            editor.putString("userPhotoUrl", photoUrl)
+            editor.apply()
+
             val serverUrl = "http://46.250.250.34:5000"
+
+            sendIdTokenToServer(idToken, serverUrl)
 
             val nextPage = Intent(this, NaviActivity::class.java)
             startActivity(nextPage)
@@ -102,5 +109,8 @@ class MainActivity : AppCompatActivity() {
             Log.e("failed", "signInResultfailed = " + e.statusCode)
             Toast.makeText(this, "구글 로그인에 실패했습니다. 상태 코드: ${e.statusCode}", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun sendIdTokenToServer(idToken: String?, serverUrl: String) {
     }
 }

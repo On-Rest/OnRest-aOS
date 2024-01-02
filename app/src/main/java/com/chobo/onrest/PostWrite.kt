@@ -60,15 +60,17 @@ class PostWrite : AppCompatActivity() {
             }
         }
 
-        binding.sad.setOnCheckedChangeListener(toggleListener)
-        binding.shy.setOnCheckedChangeListener(toggleListener)
-        binding.anoying.setOnCheckedChangeListener(toggleListener)
-        binding.angry.setOnCheckedChangeListener(toggleListener)
-        binding.joyful.setOnCheckedChangeListener(toggleListener)
-        binding.tranquility.setOnCheckedChangeListener(toggleListener)
-        binding.excited.setOnCheckedChangeListener(toggleListener)
-        binding.helpless.setOnCheckedChangeListener(toggleListener)
-        binding.happy.setOnCheckedChangeListener(toggleListener)
+        with(binding){
+            sad.setOnCheckedChangeListener(toggleListener)
+            shy.setOnCheckedChangeListener(toggleListener)
+            anoying.setOnCheckedChangeListener(toggleListener)
+            angry.setOnCheckedChangeListener(toggleListener)
+            joyful.setOnCheckedChangeListener(toggleListener)
+            tranquility.setOnCheckedChangeListener(toggleListener)
+            excited.setOnCheckedChangeListener(toggleListener)
+            helpless.setOnCheckedChangeListener(toggleListener)
+            happy.setOnCheckedChangeListener(toggleListener)
+        }
 
         editText = binding.detailinput // EditText 참조 가져오기
         captionTextView = binding.detailTextnum // TextView 참조 가져오기
