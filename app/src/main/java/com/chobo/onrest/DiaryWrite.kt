@@ -24,7 +24,9 @@ class DiaryWrite : AppCompatActivity() {
         setContentView(view)
         val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
-
+        binding.header1.setOnClickListener(){
+            super.onBackPressed()
+        }
         binding.write.setOnClickListener() {
             memoinputText = binding.memoinput.text.toString()
 

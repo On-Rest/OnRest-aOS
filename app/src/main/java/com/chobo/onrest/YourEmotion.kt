@@ -20,6 +20,9 @@ class YourEmotion : AppCompatActivity() {
         binding = YourEmotionBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        binding.header.setOnClickListener(){
+            super.onBackPressed()
+        }
         sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
         editor = sharedPreferences.edit()
         emotion = sharedPreferences.getString("yourEmotion", "defaultValue").toString()

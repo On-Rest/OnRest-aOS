@@ -17,7 +17,9 @@ class EmotionChoice2Angry : AppCompatActivity() {
         val view = binding.root
         val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
-
+        binding.header.setOnClickListener(){
+            super.onBackPressed()
+        }
         editor.putString("yourEmotion","angry")
         editor.apply() // 변경 사항을 저장합니다.
         setContentView(view)

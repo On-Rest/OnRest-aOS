@@ -28,6 +28,9 @@ class QuestList : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        binding.header.setOnClickListener(){
+            super.onBackPressed()
+        }
 
         val receivedValue = intent.getStringExtra("key") // 받은 값
 

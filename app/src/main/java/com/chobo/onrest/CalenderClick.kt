@@ -33,7 +33,9 @@ class CalenderClick : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = CalendarClickBinding.inflate(layoutInflater)
         val view = binding.root
-
+        binding.header1.setOnClickListener(){
+            super.onBackPressed()
+        }
         setView()
         writefileTodo()
         writefile()

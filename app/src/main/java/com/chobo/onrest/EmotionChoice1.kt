@@ -12,7 +12,9 @@ class EmotionChoice1 : AppCompatActivity() {
         binding = EmotionChoice1Binding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
+        binding.header.setOnClickListener(){
+            super.onBackPressed()
+        }
         binding.happyface.setOnClickListener() {
             val intent = Intent(this, EmotionChoice2Happy::class.java)
             startActivity(intent)
