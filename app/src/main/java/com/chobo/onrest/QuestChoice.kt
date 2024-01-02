@@ -30,10 +30,7 @@ class QuestChoice : AppCompatActivity() {
             finish()
         }
         binding.choice3.setOnClickListener() {
-            val intent =Intent(this, CalendarFragment::class.java)
-            startActivity(intent)
-            overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
-            finish()
+            super.onBackPressed()
         }
     }
 }

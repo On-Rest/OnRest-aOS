@@ -23,6 +23,7 @@ class CalenderClick : AppCompatActivity() {
     val happyImageDrawable = R.drawable.happy_face
     val sadImageDrawable = R.drawable.sad_face
     val editeddate = "${year}년 ${month}월 ${dayOfMonth}일"
+    var retrievedValue = ""
     var todaysEmotion = "" // "key"에 해당하는 데이터를 가져옵니다. 만약 데이터가 없으면 기본값인 "defaultValue"가 반환됩니다.
     private lateinit var receivedList: List<String>
     private lateinit var selectedmission: String
@@ -71,7 +72,6 @@ class CalenderClick : AppCompatActivity() {
     private fun writefile() {
         val fileName = "${year}-${month}-${dayOfMonth}"
         val fileOutputStream: FileOutputStream
-
         try {
             fileOutputStream = openFileOutput(fileName, Context.MODE_PRIVATE)
 
@@ -90,14 +90,19 @@ class CalenderClick : AppCompatActivity() {
                 it.write("\n".toByteArray())
                 it.write(receivedList[2].toByteArray())
                 it.write("\n".toByteArray())
-            }
+                it.write(retrievedValue.toByteArray())
+                }
         } catch (e: Exception) {
             e.printStackTrace()
         }
     }
+     @SuppressLint("SetTextI18n")
      private fun setView(){
         val sharedPrefs = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-        val retrievedValue = sharedPrefs.getString("memoinput", "defaultValue")
+         retrievedValue = sharedPrefs.getString("memoinput", "defaultValue").toString()
+         if (retrievedValue == ""){
+             retrievedValue = " "
+         }
          receivedList = intent.getSerializableExtra("myList") as? List<String> ?: emptyList()
          selectedmission = intent.getStringExtra("key") ?: ""
         todaysEmotion = sharedPrefs.getString("yourEmotion", "defaultValue").toString()
