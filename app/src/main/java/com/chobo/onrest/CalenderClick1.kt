@@ -69,8 +69,6 @@ class CalenderClick1 : AppCompatActivity() {
             "happy" -> binding.todaysemotion.setImageResource(happyImageDrawable)
             "sad" -> binding.todaysemotion.setImageResource(sadImageDrawable)
         }
-        // TODO:  통신하면 일기데이터 여기로 넣어주셈
-        //binding.memoinput.setText()
         when(fileLines[3]){
             "1" ->  {
                 binding.checkTV.isChecked = true
@@ -82,6 +80,7 @@ class CalenderClick1 : AppCompatActivity() {
                 binding.checkTV2.isChecked = true
             }
         }
+        binding.memoinput.setText(fileLines[7])
 
         binding.checkTV.isEnabled = false
         binding.checkTV1.isEnabled = false

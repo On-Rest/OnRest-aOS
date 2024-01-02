@@ -1,6 +1,5 @@
 package com.chobo.onrest
 
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
@@ -125,11 +124,7 @@ class PostWrite : AppCompatActivity() {
                 if (currentLength > 0){
                     val apiServiceImpl = ApiServiceImpl()
                     apiServiceImpl.submitBoard(inputText,inputText1,"imbabo","board",1)
-
-
-                    startActivity(Intent(this, QuestList::class.java))
-                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-                    finish()
+                    super.onBackPressed()
                 }
             }
         }

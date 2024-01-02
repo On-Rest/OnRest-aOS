@@ -24,6 +24,7 @@ class PostDetail : AppCompatActivity() {
             super.onBackPressed()
         }
         binding.send.setOnClickListener(){
+            super.onBackPressed()
         }
         binding.postDetailInput.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
