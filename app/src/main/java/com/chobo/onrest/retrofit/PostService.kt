@@ -1,10 +1,12 @@
-package com.chobo.onrest
+package com.chobo.onrest.retrofit
 
+import com.chobo.onrest.dto.PostSubmitRequest
+import com.chobo.onrest.dto.PostSubmitResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface PostService {
-    @POST("/api/pins")
+    @POST("api/pins")
     fun submitPost(@Body postSubmitRequest: PostSubmitRequest): Call<PostSubmitResponse>
 }

@@ -10,6 +10,9 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.databinding.PostWriteBinding
+import com.chobo.onrest.dto.PostSubmitRequest
+import com.chobo.onrest.retrofit.PostService
+import com.chobo.onrest.retrofit.RetrofitClass
 
 
 class PostWrite : AppCompatActivity() {
@@ -134,11 +137,17 @@ class PostWrite : AppCompatActivity() {
             if (currentLength1 > 0){
                 if (currentLength > 0){
                     if(currentToggleCount == 2){
-                    
-                    val apiServiceImpl = ApiServiceImpl()
-                    val success = apiServiceImpl.submitBoard(inputText, inputText1,"imbabo-imbabo-imbabo-imbabo",1)
-                    Log.d("fuck", success.execute().body().toString()
-                    )
+                        val retrofit = RetrofitClass()
+                        val res = retrofit.postService.submitPost(
+                            PostSubmitRequest(
+                                subject = inputText,
+                                doc = inputText1,
+                                type = "board",
+                                clientId = "fuck-fuck-fuck-fuck",
+                                emotion = 1
+                            )
+                        ).request()
+                        Log.d("TAF", res.body().toString())
 
                     super.onBackPressed()
                     }
