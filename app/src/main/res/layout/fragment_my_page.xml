@@ -225,15 +225,14 @@
             app:layout_constraintStart_toStartOf="@id/g_separator_start"
             app:layout_constraintTop_toTopOf="@id/g_separator_top" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@drawable/profile"
             app:layout_constraintBottom_toBottomOf="@id/g_profile_bottom"
             app:layout_constraintEnd_toEndOf="@id/g_profile_end"
             app:layout_constraintStart_toStartOf="@id/g_profile_start"
-            app:layout_constraintTop_toTopOf="@id/g_profile_top" />
+            app:layout_constraintTop_toTopOf="@id/g_profile_top"/>
 
         <TextView
             android:id="@+id/nickname"

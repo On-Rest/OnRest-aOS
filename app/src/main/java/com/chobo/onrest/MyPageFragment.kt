@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.graphics.toColor
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.chobo.onrest.databinding.FragmentMyPageBinding
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.data.BubbleDataSet
@@ -42,11 +43,15 @@ class MyPageFragment : Fragment() {
     ): View {
         _binding = FragmentMyPageBinding.inflate(inflater, container, false)
 
-        val email = arguments?.getString("email")
-        val displayName = arguments?.getString("displayName")
-        val photoUrl = arguments?.getString("photoUrl")
+        val sharedPreferences = activity?.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
-        binding.nickname.text = displayName
+        val username = sharedPreferences?.getString("username", "") ?: ""
+        val userPhotoUrl = sharedPreferences?.getString("userPhotoUrl", "") ?: ""
+
+        binding.nickname.text = username
+
+        val profileImageView = binding.profile
+        Glide.with(this).load(userPhotoUrl).into(profileImageView)
 
         return binding.root
     }

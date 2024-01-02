@@ -1,6 +1,7 @@
 package com.chobo.onrest
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -79,17 +80,12 @@ class MainActivity : AppCompatActivity() {
             val photoUrl = account?.photoUrl.toString()
             val idToken = account?.idToken.toString()
 
-            val bundle = Bundle()
-            bundle.putString("email", email)
-            bundle.putString("displayName", displayName)
-            bundle.putString("photoUrl", photoUrl)
+            val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
 
-            val myPageFragment = MyPageFragment()
-            myPageFragment.arguments = bundle
-
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.myPage_container, myPageFragment)
-                .commit()
+            editor.putString("username", displayName)
+            editor.putString("userPhotoUrl", photoUrl)
+            editor.apply()
 
             val serverUrl = "http://46.250.250.34:5000"
 
