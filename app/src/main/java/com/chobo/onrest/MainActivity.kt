@@ -64,6 +64,8 @@ class MainActivity : AppCompatActivity() {
                 signIn()
             }
         }
+         val nextPage = Intent(this, NaviActivity::class.java)
+         startActivity(nextPage)
     }
 
     private fun signIn() {

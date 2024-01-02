@@ -123,6 +123,10 @@ class PostWrite : AppCompatActivity() {
             binding.send.isChecked = false
             if (currentLength1 > 0){
                 if (currentLength > 0){
+                    val apiServiceImpl = ApiServiceImpl()
+                    apiServiceImpl.submitBoard(inputText,inputText1,"imbabo","board",1)
+
+
                     startActivity(Intent(this, QuestList::class.java))
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                     finish()
