@@ -1,31 +1,30 @@
 package com.chobo.onrest
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.widget.CompoundButton
 import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.databinding.CommunityPopupViewBinding
 
 class CommunityPopupView : AppCompatActivity() {
     private lateinit var binding: CommunityPopupViewBinding
-    val taglist = mutableMapOf(
-        "sad" to false,
-        "helpless" to false,
-        "shy" to false,
-        "anoying" to false,
-        "angry" to false,
-        "joyful" to false,
-        "tranquility" to false,
-        "excited" to false,
-        "happy" to false
-    )
+    val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+    val editor = sharedPreferences.edit()
+    val cleckedList = mutableListOf<String>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = CommunityPopupViewBinding.inflate(layoutInflater)
+        Log.d("tlqkf", "tkqwfk")
+
         val view = binding.root
         setContentView(view)
-        val toggleListener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
-            taglist[buttonView.toString()] = isChecked
+        val toggleListener = CompoundButton.OnCheckedChangeListener { buttonView, _ ->
+            cleckedList.add(buttonView.toString().substring(0,7))
+            editor.putString("toggle-state", cleckedList.toString())
+            editor.apply()
         }
 
         binding.sad.setOnCheckedChangeListener(toggleListener)
