@@ -64,8 +64,6 @@ class MainActivity : AppCompatActivity() {
                 signIn()
             }
         }
-         val nextPage = Intent(this, NaviActivity::class.java)
-         startActivity(nextPage)
     }
 
     private fun signIn() {
@@ -81,9 +79,9 @@ class MainActivity : AppCompatActivity() {
             val photoUrl = account?.photoUrl.toString()
             val idToken = account?.idToken.toString()
 
-            //val serverUrl = "http://46.250.250.34:5000"
+            val serverUrl = "http://46.250.250.34:5000"
 
-            //sendIdTokenToServer(idToken, serverUrl)
+            sendIdTokenToServer(idToken, serverUrl)
 
             val nextPage = Intent(this, NaviActivity::class.java)
             startActivity(nextPage)
