@@ -5,14 +5,11 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import android.widget.ArrayAdapter
 import android.widget.CompoundButton
 import android.widget.PopupWindow
 import android.widget.TextView
@@ -28,10 +25,8 @@ class CommunityFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var communityAdapter: CommunityAdapter
     private val datas = mutableListOf<CommunityData>()
-    private val searchedList = mutableListOf<CommunityData>()
     var tagList = mutableListOf<String>()
     var List = mutableListOf<CommunityData>()
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,7 +34,6 @@ class CommunityFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = CommunityBinding.inflate(inflater, container, false)
-        search()
         initRecycler()
         showCustomPopup(binding.filter, requireContext())
         return binding.root
@@ -60,61 +54,61 @@ class CommunityFragment : Fragment() {
         for (i in List) {
             if (tagList.contains("happy")) {
                 if (i.tag1 == "행복" || i.tag2 == "행복") {
-                    searchedList.add(i)
+                    datas.add(i)
                     continue
                 }
             }
             if (tagList.contains("excited")) {
                 if (i.tag1 == "신난" || i.tag2 == "신난") {
-                    searchedList.add(i)
+                    datas.add(i)
                     continue
                 }
             }
             if (tagList.contains("joyful")) {
                 if (i.tag1 == "즐거운" || i.tag2 == "즐거운") {
-                    searchedList.add(i)
+                    datas.add(i)
                     continue
                 }
             }
             if (tagList.contains("tranquility")) {
                 if (i.tag1 == "평온" || i.tag2 == "평온") {
-                    searchedList.add(i)
+                    datas.add(i)
                     continue
                 }
             }
             if (tagList.contains("shy")) {
                 if (i.tag1 == "수줍은" || i.tag2 == "수줍은") {
-                    searchedList.add(i)
+                    datas.add(i)
                     continue
                 }
             }
             if (tagList.contains("anoying")) {
                 if (i.tag1 == "짜증" || i.tag2 == "짜증") {
-                    searchedList.add(i)
+                    datas.add(i)
                     continue
                 }
             }
             if (tagList.contains("sad")) {
                 if (i.tag1 == "슬픈" || i.tag2 == "슬픈") {
-                    searchedList.add(i)
+                    datas.add(i)
                     continue
                 }
             }
             if (tagList.contains("helpless")) {
                 if (i.tag1 == "무기력한" || i.tag2 == "무기력한") {
-                    searchedList.add(i)
+                    datas.add(i)
                     continue
                 }
             }
             if (tagList.contains("angry")) {
                 if (i.tag1 == "화난" || i.tag2 == "화난") {
-                    searchedList.add(i)
+                    datas.add(i)
                     continue
                 }
             }
         }
         if (tagList.isEmpty()) {
-            searchedList.addAll(List)
+            datas.addAll(List)
         }
         if (datas.isEmpty()) {
             binding.list.setBackgroundColor(Color.parseColor("#00000000"))
@@ -123,33 +117,6 @@ class CommunityFragment : Fragment() {
         }
         communityAdapter.datas = datas
         communityAdapter.notifyDataSetChanged()
-    }
-    private fun search() {
-        binding.search.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {}
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val searchText = s.toString().toLowerCase()
-                if (searchText == ""){
-                    datas.addAll(searchedList)
-                }
-                else{
-                    val titleIndexes = searchedList
-                        .mapIndexedNotNull { index, communityData ->
-                            if (communityData.title.contains(searchText)) index else null
-                        }
-
-                    if (titleIndexes.isNotEmpty()) {
-                        for (i in titleIndexes){
-                            datas.add(searchedList[i])
-                        }
-                    }
-                }
-                initRecycler()
-            }
-        })
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
