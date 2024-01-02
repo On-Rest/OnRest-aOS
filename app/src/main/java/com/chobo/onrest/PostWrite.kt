@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.widget.CompoundButton
 import android.widget.EditText
 import android.widget.TextView
@@ -133,9 +134,13 @@ class PostWrite : AppCompatActivity() {
             if (currentLength1 > 0){
                 if (currentLength > 0){
                     if(currentToggleCount == 2){
-                        val apiServiceImpl = ApiServiceImpl()
-                        apiServiceImpl.submitBoard(inputText,inputText1,"imbabo","board",1)
-                        super.onBackPressed()
+                    
+                    val apiServiceImpl = ApiServiceImpl()
+                    val success = apiServiceImpl.submitBoard(inputText, inputText1,"imbabo-imbabo-imbabo-imbabo",1)
+                    Log.d("fuck", success.execute().body().toString()
+                    )
+
+                    super.onBackPressed()
                     }
                 }
             }
