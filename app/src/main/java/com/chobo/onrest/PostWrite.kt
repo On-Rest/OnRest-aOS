@@ -121,7 +121,6 @@ class PostWrite : AppCompatActivity() {
             if (currentLength1 > 0){
                 if (currentLength > 0){
                     val apiServiceImpl = ApiServiceImpl()
-
                     apiServiceImpl.submitBoard(inputText,inputText1,"imbabo","board",1)
                     super.onBackPressed()
                 }
