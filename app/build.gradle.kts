@@ -41,6 +41,7 @@ android {
 }
 
 dependencies {
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("com.google.firebase:firebase-auth:22.0.0")
     implementation ("com.google.firebase:firebase-bom:32.0.0")
     implementation ("org.greenrobot:eventbus:3.2.0")
