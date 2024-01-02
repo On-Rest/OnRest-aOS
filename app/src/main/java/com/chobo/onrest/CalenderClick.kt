@@ -117,7 +117,9 @@ class CalenderClick : AppCompatActivity() {
                 stringValue = receivedList[2]
             }
         }
-        when(todaysEmotion){
+         Log.d("tlqkf",todaysEmotion)
+
+         when(todaysEmotion){
             "angry" -> binding.todaysemotion.setImageResource(angryImageDrawable)
             "happy" -> binding.todaysemotion.setImageResource(happyImageDrawable)
             "sad" -> binding.todaysemotion.setImageResource(sadImageDrawable)

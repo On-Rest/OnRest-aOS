@@ -65,6 +65,7 @@
             android:background="@drawable/round_white_with_outline"
             android:text="이 감정으로 퀘스트 받을래!"
             android:textColor="@color/black"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
