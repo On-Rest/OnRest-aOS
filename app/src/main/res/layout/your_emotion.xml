@@ -29,6 +29,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/hamsteremotionsrc"
             android:layout_width="139dp"
             android:layout_height="117dp"
             android:layout_marginTop="15dp"
