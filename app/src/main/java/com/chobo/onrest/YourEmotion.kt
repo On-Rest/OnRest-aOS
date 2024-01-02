@@ -18,7 +18,7 @@ class YourEmotion : AppCompatActivity() {
             "1" -> com.chobo.onrest.R.drawable.happy_face
             "2" -> com.chobo.onrest.R.drawable.angry_face
             "3" -> com.chobo.onrest.R.drawable.sad_face
-            else ->  com.chobo.onrest.R.drawable.happy_face
+            else ->  com.chobo.onrest.R.drawable.grayyouremotion
         }
         val emotionText = when(intent.getStringExtra("emotion1321")){
             "1" -> "행복한 햄스터"
