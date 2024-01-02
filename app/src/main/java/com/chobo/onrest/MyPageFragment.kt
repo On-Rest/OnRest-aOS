@@ -40,7 +40,18 @@ class MyPageFragment : Fragment() {
     ): View {
         _binding = FragmentMyPageBinding.inflate(inflater, container, false)
         return binding.root
+
+        val rootView = inflater.inflate(R.layout.fragment_my_page, container, false)
+
+        val email = arguments?.getString("email")
+        val displayName = arguments?.getString("displayName")
+        val photoUrl = arguments?.getString("photoUrl")
+
+        binding.nickname.text = displayName
+
+        return rootView
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initPieChart()

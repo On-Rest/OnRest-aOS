@@ -79,6 +79,19 @@ class MainActivity : AppCompatActivity() {
             val photoUrl = account?.photoUrl.toString()
             val idToken = account?.idToken.toString()
 
+            val bundle = Bundle()
+            bundle.putString("email", email)
+            bundle.putString("displayName", displayName)
+            bundle.putString("photoUrl", photoUrl)
+
+            val myPageFragment = MyPageFragment()
+            myPageFragment.arguments = bundle
+
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.myPage_container, myPageFragment)
+                .commit()
+
+            
             val serverUrl = "http://46.250.250.34:5000"
 
             sendIdTokenToServer(idToken, serverUrl)
