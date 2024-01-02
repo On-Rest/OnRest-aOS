@@ -46,6 +46,14 @@ class PostWrite : AppCompatActivity() {
                 // 토글 해제 시 토글 횟수 감소
                 currentToggleCount--
             }
+            binding.send.isChecked = false
+            if (currentLength1 > 0){
+                if (currentLength > 0){
+                    if(currentToggleCount == 2){
+                        binding.send.isChecked = true
+                    }
+                }
+            }
         }
 
         binding.sad.setOnCheckedChangeListener(toggleListener)
@@ -72,7 +80,9 @@ class PostWrite : AppCompatActivity() {
                 binding.send.isChecked = false
                 if (currentLength1 > 0){
                     if (currentLength > 0){
-                        binding.send.isChecked = true
+                        if (currentToggleCount == 2){
+                            binding.send.isChecked = true
+                        }
                     }
                 }
                 captionTextView.text = "$currentLength/$maxCharacters" // 현재 글자 수를 보여줍니다
@@ -101,7 +111,9 @@ class PostWrite : AppCompatActivity() {
                 binding.send.isChecked = false
                 if (currentLength1 > 0){
                     if (currentLength > 0){
-                        binding.send.isChecked = true
+                        if(currentToggleCount == 26){
+                            binding.send.isChecked = true
+                        }
                     }
                 }
                 captionTextView1.text = "$currentLength1/$maxCharacters1" // 현재 글자 수를 보여줍니다
@@ -120,9 +132,11 @@ class PostWrite : AppCompatActivity() {
             binding.send.isChecked = false
             if (currentLength1 > 0){
                 if (currentLength > 0){
-                    val apiServiceImpl = ApiServiceImpl()
-                    apiServiceImpl.submitBoard(inputText,inputText1,"imbabo","board",1)
-                    super.onBackPressed()
+                    if(currentToggleCount == 2){
+                        val apiServiceImpl = ApiServiceImpl()
+                        apiServiceImpl.submitBoard(inputText,inputText1,"imbabo","board",1)
+                        super.onBackPressed()
+                    }
                 }
             }
         }
