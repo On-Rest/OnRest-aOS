@@ -26,7 +26,7 @@ import java.util.Date
 class MyPageFragment : Fragment() {
     private var _binding: FragmentMyPageBinding? = null
     val date = Date() // 현재 날짜와 시간 가져오기
-    val year = SimpleDateFormat("yyyy").format(date) // 일만 가져오기
+    val year = SimpleDateFormat("yyyy").format(date) // 일만 가져오 기
     val month = SimpleDateFormat("MM").format(date) // 일만 가져오
     val fileLines = mutableListOf<String>()
     var fileName = ""
@@ -52,6 +52,11 @@ class MyPageFragment : Fragment() {
 
         val profileImageView = binding.profile
         Glide.with(this).load(userPhotoUrl).into(profileImageView)
+
+        binding.logoutButton.setOnClickListener {
+            val mainActivity = activity as MainActivity
+            mainActivity.logout()
+        }
 
         return binding.root
     }
