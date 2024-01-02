@@ -91,7 +91,6 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.myPage_container, myPageFragment)
                 .commit()
 
-            
             val serverUrl = "http://46.250.250.34:5000"
 
             sendIdTokenToServer(idToken, serverUrl)
@@ -117,6 +116,5 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun sendIdTokenToServer(idToken: String?, serverUrl: String) {
-
     }
 }

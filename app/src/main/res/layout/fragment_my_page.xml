@@ -239,13 +239,15 @@
             android:id="@+id/nickname"
             style="@style/button_font"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:gravity="top|center"
             android:text="홍길동"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@id/g_nickname_bottom"
             app:layout_constraintStart_toStartOf="@id/g_nickname_start"
-            app:layout_constraintTop_toTopOf="@id/g_nickname_top" />
+            app:layout_constraintTop_toTopOf="@id/g_nickname_top"
+            app:layout_constraintVertical_bias="1.0" />
 
         <View
             android:id="@+id/month_analysis_background"

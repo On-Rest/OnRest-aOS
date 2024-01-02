@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.toColor
 import androidx.fragment.app.Fragment
 import com.chobo.onrest.databinding.FragmentMyPageBinding
 import com.github.mikephil.charting.animation.Easing
@@ -33,15 +34,13 @@ class MyPageFragment : Fragment() {
     var sadf = 0f
     var happyf = 0f
     private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentMyPageBinding.inflate(inflater, container, false)
-        return binding.root
-
-        val rootView = inflater.inflate(R.layout.fragment_my_page, container, false)
 
         val email = arguments?.getString("email")
         val displayName = arguments?.getString("displayName")
@@ -49,7 +48,7 @@ class MyPageFragment : Fragment() {
 
         binding.nickname.text = displayName
 
-        return rootView
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
