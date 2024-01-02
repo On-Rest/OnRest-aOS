@@ -33,7 +33,9 @@ class CalenderClick : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = CalendarClickBinding.inflate(layoutInflater)
         val view = binding.root
-
+        binding.header1.setOnClickListener(){
+            super.onBackPressed()
+        }
         setView()
         writefileTodo()
         writefile()
@@ -52,10 +54,11 @@ class CalenderClick : AppCompatActivity() {
         val myFile = File(filesDir, fileName)
 
         try {
-            if (myFile.exists())
-            {fileOutputStream = openFileOutput(fileName, Context.MODE_APPEND) }
-            else
-            {fileOutputStream = openFileOutput(fileName, Context.MODE_PRIVATE) }
+            fileOutputStream = if (myFile.exists()) {
+                openFileOutput(fileName, Context.MODE_APPEND)
+            } else {
+                openFileOutput(fileName, Context.MODE_PRIVATE)
+            }
 
             fileOutputStream.use {
                 it.write(dayOfMonth.toByteArray())

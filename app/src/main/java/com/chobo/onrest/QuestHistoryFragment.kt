@@ -101,7 +101,7 @@ class QuestHistoryFragment : Fragment(), ToggleStateChangeListener,PopupCallback
         watchMonth = "${yearMonthList[index].substring(0,4)}-${yearMonthList[index].substring(6,8)}"
         Log.d("tea",watchMonth)
     }
-    public fun readFile(context: Context){
+    fun readFile(context: Context){
         val fileName = watchMonth
         // 기존 데이터를 지웁니다.
         fileLines.clear()
@@ -124,7 +124,7 @@ class QuestHistoryFragment : Fragment(), ToggleStateChangeListener,PopupCallback
         }
     }
     @SuppressLint("NotifyDataSetChanged")
-    public fun initRecycler() {
+    fun initRecycler() {
         binding.questList.adapter = questHistoryAdapter
         datas.clear()
 
