@@ -6,5 +6,5 @@ import retrofit2.http.POST
 
 interface PostService {
     @POST("/api/pins")
-    fun submitPost(@Body postSubmitRequest: PostSubmitRequest) : Call<PostSubmitRequest>
+    fun submitPost(@Body postSubmitRequest: PostSubmitRequest): Call<PostSubmitResponse>
 }

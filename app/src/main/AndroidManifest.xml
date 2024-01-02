@@ -4,7 +4,11 @@
 
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"
+        tools:ignore="ScopedStorage" />
 
     <application
         android:allowBackup="true"
@@ -17,6 +21,7 @@
         android:theme="@style/Theme.OnRest"
         tools:targetApi="31"
         android:usesCleartextTraffic="true">
+        <activity android:name=".CalenderClick1"/>
         <activity
             android:name=".NaviActivity"
             android:exported="false"

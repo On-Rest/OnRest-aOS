@@ -10,6 +10,11 @@
             @layout/activity_splash_logo
         </item>
     </style>
+    <style name="TransparentDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
 
     <style name="Theme.OnRest" parent="Base.Theme.OnRest" />
 
