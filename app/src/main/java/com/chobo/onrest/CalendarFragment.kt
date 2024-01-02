@@ -32,6 +32,7 @@ class CalendarFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        calenderImageSeting()
 
         binding.stripe.setOnClickListener {
             startActivityWithAnimation(DiaryWrite::class.java)
@@ -39,6 +40,12 @@ class CalendarFragment : Fragment() {
         binding.speechbubble.setOnClickListener {
             startActivityWithAnimation(DiaryWrite::class.java)
         }
+    }
+    override fun onResume() {
+        super.onResume()
+        calenderImageSeting()
+    }
+    private fun calenderImageSeting(){
         val dayButtons = listOf(
             binding.day1, binding.day2, binding.day3, binding.day4, binding.day5,
             binding.day6, binding.day7, binding.day8, binding.day9, binding.day10,
@@ -48,7 +55,6 @@ class CalendarFragment : Fragment() {
             binding.day26, binding.day27, binding.day28 , binding.day29 , binding.day30 ,
             binding.day31
         )
-
         dayButtons.forEachIndexed { index, button ->
             val filesDir = requireContext().filesDir
             val date = String.format("%02d", index+1)
