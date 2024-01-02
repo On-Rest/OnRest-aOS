@@ -51,6 +51,9 @@ class MainActivity : AppCompatActivity() {
 
         setResultSignUp()
 
+         val nextPage = Intent(this, NaviActivity::class.java)
+         startActivity(nextPage)
+
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             //.requestIdToken(getString(R.string.sign_in_client_id))
             .requestEmail()
@@ -64,8 +67,6 @@ class MainActivity : AppCompatActivity() {
                 signIn()
             }
         }
-         val nextPage = Intent(this, NaviActivity::class.java)
-         startActivity(nextPage)
     }
 
     private fun signIn() {

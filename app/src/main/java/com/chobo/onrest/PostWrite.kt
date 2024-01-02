@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.widget.CompoundButton
 import android.widget.EditText
 import android.widget.TextView
@@ -121,7 +122,8 @@ class PostWrite : AppCompatActivity() {
             if (currentLength1 > 0){
                 if (currentLength > 0){
                     val apiServiceImpl = ApiServiceImpl()
-                    apiServiceImpl.submitBoard(inputText,inputText1,"imbabo","board",1)
+                    apiServiceImpl.submitBoard(inputText, inputText1,"imbabo",1)
+
                     super.onBackPressed()
                 }
             }
