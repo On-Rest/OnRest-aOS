@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,13 +13,18 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.PopupWindow
 import androidx.fragment.app.Fragment
 import com.chobo.onrest.databinding.CommunityBinding
+import com.chobo.onrest.dto.GetPostResponse
+import com.chobo.onrest.retrofit.RetrofitClass
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class CommunityFragment : Fragment() {
 
     private var _binding: CommunityBinding? = null
     private val binding get() = _binding!!
     private lateinit var communityAdapter: CommunityAdapter
-    private val datas = mutableListOf<CommunityData>()
+    private val datas = mutableListOf<GetPostResponse>()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -34,16 +40,9 @@ class CommunityFragment : Fragment() {
         communityAdapter = CommunityAdapter(requireContext())
         binding.list.adapter = communityAdapter
 
-        datas.apply {
-            add(CommunityData("b b", "b b b b b.", "#화난", "#짜증", 0, 0))
-            add(CommunityData("오늘의 화난썰", "오늘은 아이디어 페스티벌 프로젝트를 진행했다.", "#화난", "#짜증", 19, 27))
-            add(CommunityData("오늘의 화난썰", "오늘은 아이디어 페스티벌 프로젝트를 진행했다.", "#화난", "#짜증", 19, 27))
-            add(CommunityData("오늘의 화난썰", "오늘은 아이디어 페스티벌 프로젝트를 진행했다.", "#화난", "#짜증", 19, 27))
-            add(CommunityData("오늘의 화난썰", "오늘은 아이디어 페스티벌 프로젝트를 진행했다.", "#화난", "#짜증", 19, 27))
-        }
-
-        communityAdapter.datas = datas
         communityAdapter.notifyDataSetChanged()
+
+        loadData()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -62,7 +61,6 @@ class CommunityFragment : Fragment() {
         binding.pen.setOnClickListener {
             startActivityWithAnimation(PostWrite::class.java)
         }
-
     }
     private fun startActivityWithAnimation(clazz: Class<*>) {
         val intent = Intent(requireContext(), clazz)
@@ -94,5 +92,21 @@ class CommunityFragment : Fragment() {
             binding.filter.isChecked = false
         }
         popupWindow.isOutsideTouchable = true
+    }
+    private fun loadData() {
+        val retrofit = RetrofitClass()
+        retrofit.postService.getPost()
+            .enqueue(object : Callback<GetPostResponse> {
+                override fun onResponse(
+                    call: Call<GetPostResponse>,
+                    response: Response<GetPostResponse>
+                ) {
+                    Log.d("community", response.body().toString())
+                }
+
+                override fun onFailure(call: Call<GetPostResponse>, t: Throwable) {
+                    Log.d("this is error","에러에요")
+                }
+            })
     }
 }
