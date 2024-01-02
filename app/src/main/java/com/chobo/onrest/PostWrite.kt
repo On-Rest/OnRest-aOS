@@ -122,7 +122,9 @@ class PostWrite : AppCompatActivity() {
             if (currentLength1 > 0){
                 if (currentLength > 0){
                     val apiServiceImpl = ApiServiceImpl()
-                    apiServiceImpl.submitBoard(inputText, inputText1,"imbabo",1)
+                    val success = apiServiceImpl.submitBoard(inputText, inputText1,"imbabo-imbabo-imbabo-imbabo",1)
+                    Log.d("fuck", success.execute().body().toString()
+                    )
 
                     super.onBackPressed()
                 }
