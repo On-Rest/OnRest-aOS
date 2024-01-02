@@ -6,10 +6,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MyPageFragment"
     android:background="@color/background">
+
+    <FrameLayout
+        android:id="@+id/myPage_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <include layout="@layout/header" />
 
@@ -220,27 +225,28 @@
             app:layout_constraintStart_toStartOf="@id/g_separator_start"
             app:layout_constraintTop_toTopOf="@id/g_separator_top" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@drawable/profile"
             app:layout_constraintBottom_toBottomOf="@id/g_profile_bottom"
             app:layout_constraintEnd_toEndOf="@id/g_profile_end"
             app:layout_constraintStart_toStartOf="@id/g_profile_start"
-            app:layout_constraintTop_toTopOf="@id/g_profile_top" />
+            app:layout_constraintTop_toTopOf="@id/g_profile_top"/>
 
         <TextView
             android:id="@+id/nickname"
             style="@style/button_font"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:gravity="top|center"
             android:text="홍길동"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@id/g_nickname_bottom"
             app:layout_constraintStart_toStartOf="@id/g_nickname_start"
-            app:layout_constraintTop_toTopOf="@id/g_nickname_top" />
+            app:layout_constraintTop_toTopOf="@id/g_nickname_top"
+            app:layout_constraintVertical_bias="1.0" />
 
         <View
             android:id="@+id/month_analysis_background"
@@ -381,5 +387,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 
 </FrameLayout>
