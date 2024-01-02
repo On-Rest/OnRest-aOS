@@ -1,12 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".CalenderClick1">
-    <include layout="@layout/header"
-        android:id="@+id/header"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".Header">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_start"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.27" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.72" />
+
+        <ImageButton
+            android:id="@+id/header1"
+            android:layout_width="72dp"
+            android:layout_height="27dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/wholerest"
+            app:layout_constraintBottom_toBottomOf="@id/g_logo_bottom"
+            app:layout_constraintEnd_toEndOf="@id/g_logo_end"
+            app:layout_constraintStart_toStartOf="@id/g_logo_start"
+            app:layout_constraintTop_toTopOf="@id/g_logo_top" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_start"
         android:layout_width="match_parent"
@@ -20,6 +70,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.9556" />
+
     <ImageButton
         android:id="@+id/goback_icon"
         android:layout_width="23dp"
@@ -47,22 +98,22 @@
         android:id="@+id/todaysemotion"
         android:layout_width="24dp"
         android:layout_height="20dp"
+        android:layout_marginStart="8dp"
         android:src="@drawable/angry_face"
-        app:layout_constraintStart_toEndOf="@id/day_text"
-        app:layout_constraintTop_toTopOf="@id/day_text"
         app:layout_constraintBottom_toBottomOf="@id/day_text"
-        android:layout_marginStart="8dp"/>
+        app:layout_constraintStart_toEndOf="@id/day_text"
+        app:layout_constraintTop_toTopOf="@id/day_text" />
 
     <TextView
         android:id="@+id/diary_text"
+        style="@style/text_lg_font"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="일기"
-        style="@style/text_lg_font"
-        app:layout_constraintStart_toStartOf="@id/g_start"
-        app:layout_constraintTop_toBottomOf="@id/goback_icon"
         android:layout_marginTop="16dp"
-        android:textColor="#1E1D1B"/>
+        android:text="일기"
+        android:textColor="#1E1D1B"
+        app:layout_constraintStart_toStartOf="@id/g_start"
+        app:layout_constraintTop_toBottomOf="@id/goback_icon" />
 
     <EditText
         android:id="@+id/memoinput"
@@ -70,10 +121,10 @@
         android:layout_width="0dp"
         android:layout_height="289dp"
         android:layout_marginTop="12dp"
-        android:text="오늘은 아이디어 페스티벌 프로젝트를 진행했다. 오류가 너무 많이나서 힘들었다. 또 협업에서 소통이 가장 중요한데, 소통이 잘 되지 않아 너무 화가 났다. \n그래도 다들 힘들거라고 생각해서 다 같이 힘내야겠다고 생각했다."
         android:background="@drawable/memo_input"
         android:gravity="top"
         android:padding="16dp"
+        android:text="오늘은 아이디어 페스티벌 프로젝트를 진행했다. 오류가 너무 많이나서 힘들었다. 또 협업에서 소통이 가장 중요한데, 소통이 잘 되지 않아 너무 화가 났다. \n그래도 다들 힘들거라고 생각해서 다 같이 힘내야겠다고 생각했다."
         android:textColor="#1E1D1B"
         app:layout_constraintEnd_toEndOf="@id/g_end"
         app:layout_constraintStart_toStartOf="@id/g_start"
@@ -81,25 +132,25 @@
 
     <TextView
         android:id="@+id/quest_text"
+        style="@style/text_lg_font"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="퀘스트"
-        style="@style/text_lg_font"
-        app:layout_constraintStart_toStartOf="@id/g_start"
-        app:layout_constraintTop_toBottomOf="@id/memoinput"
         android:layout_marginTop="32dp"
-        android:textColor="#1E1D1B"/>
+        android:text="퀘스트"
+        android:textColor="#1E1D1B"
+        app:layout_constraintStart_toStartOf="@id/g_start"
+        app:layout_constraintTop_toBottomOf="@id/memoinput" />
 
     <HorizontalScrollView
         android:id="@+id/a"
-        android:orientation="horizontal"
         android:layout_width="0dp"
         android:layout_height="164dp"
-        android:scrollbars="none"
         android:layout_marginBottom="116dp"
+        android:orientation="horizontal"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -195,7 +246,6 @@
                     tools:text="mission" />
 
 
-
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guide_togle_top"
                     android:layout_width="match_parent"
@@ -242,8 +292,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="157dp"
                 android:layout_height="164dp"
-                android:background="@drawable/round_white_18dp"
-                android:layout_marginStart="10dp">
+                android:layout_marginStart="10dp"
+                android:background="@drawable/round_white_18dp">
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guide_title_top1"
@@ -329,7 +379,6 @@
                     tools:text="mission" />
 
 
-
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guide_togle_top1"
                     android:layout_width="match_parent"
@@ -376,8 +425,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="157dp"
                 android:layout_height="164dp"
-                android:background="@drawable/round_white_18dp"
-                android:layout_marginStart="10dp">
+                android:layout_marginStart="10dp"
+                android:background="@drawable/round_white_18dp">
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guide_title_top2"
@@ -461,7 +510,6 @@
                     app:layout_constraintStart_toStartOf="@id/guide_mission_start2"
                     app:layout_constraintTop_toTopOf="@id/guide_mission_top2"
                     tools:text="mission" />
-
 
 
                 <androidx.constraintlayout.widget.Guideline
