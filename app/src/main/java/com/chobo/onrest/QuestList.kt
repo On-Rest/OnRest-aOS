@@ -2,8 +2,11 @@ package com.chobo.onrest
 
 import android.R
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.databinding.QuestListBinding
 import java.io.Serializable
@@ -18,8 +21,7 @@ class QuestList : AppCompatActivity() {
     val date = Date() // 현재 날짜와 시간 가져오기
     val dayOfMonth = SimpleDateFormat("dd").format(date) // 일만 가져오기
 
-
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = QuestListBinding.inflate(layoutInflater)
@@ -27,8 +29,8 @@ class QuestList : AppCompatActivity() {
         setContentView(view)
 
 
-
         val receivedValue = intent.getStringExtra("key") // 받은 값
+
         val selectedList = when(receivedValue) {
             "happylist" -> happylist
             "angrylist" -> angrylist
