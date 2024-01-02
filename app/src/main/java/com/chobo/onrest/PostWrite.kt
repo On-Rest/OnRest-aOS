@@ -11,8 +11,12 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.databinding.PostWriteBinding
 import com.chobo.onrest.dto.PostSubmitRequest
+import com.chobo.onrest.dto.PostSubmitResponse
 import com.chobo.onrest.retrofit.PostService
 import com.chobo.onrest.retrofit.RetrofitClass
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class PostWrite : AppCompatActivity() {
@@ -138,21 +142,35 @@ class PostWrite : AppCompatActivity() {
                 if (currentLength > 0){
                     if(currentToggleCount == 2){
                         val retrofit = RetrofitClass()
-                        val res = retrofit.postService.submitPost(
+
+                        retrofit.postService.submitPost(
                             PostSubmitRequest(
-                                subject = inputText,
-                                doc = inputText1,
+                                subject = inputText1,
+                                doc = inputText,
                                 type = "board",
                                 clientId = "fuck-fuck-fuck-fuck",
                                 emotion = 1
                             )
-                        ).request()
-                        Log.d("TAF", res.body().toString())
+                        ).enqueue(object : Callback<PostSubmitResponse> {
+                            override fun onResponse(
+                                call: Call<PostSubmitResponse>,
+                                response: Response<PostSubmitResponse>
+                            ) {
+                                Log.d("ASDF", response.body().toString())
+                                this@PostWrite.finish()
+                            }
 
-                    super.onBackPressed()
+                            override fun onFailure(call: Call<PostSubmitResponse>, t: Throwable) {
+
+                            }
+
+                        })
+
+
                     }
                 }
             }
+
         }
         binding.gobackIcon.setOnClickListener() {
             super.onBackPressed()
