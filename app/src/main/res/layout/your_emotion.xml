@@ -4,10 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".YourEmotion"
-    android:background="@color/background">
+    android:background="@color/background"
+    tools:context=".YourEmotion">
 
-    <include layout="@layout/header" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".Header">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_start"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.72" />
+
+        <ImageButton
+            android:id="@+id/header"
+            android:layout_width="72dp"
+            android:layout_height="27dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/wholerest"
+            app:layout_constraintBottom_toBottomOf="@id/g_logo_bottom"
+            app:layout_constraintEnd_toEndOf="@id/g_logo_end"
+            app:layout_constraintStart_toStartOf="@id/g_logo_start"
+            app:layout_constraintTop_toTopOf="@id/g_logo_top" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:layout_width="match_parent"
@@ -16,106 +64,106 @@
         android:src="@drawable/hill_low"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-        <TextView
-            android:id="@+id/hamstertext"
-            style="@style/text_md_font"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="155dp"
-            android:text="오늘의 햄스터는..."
-            android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/hamstertext"
+        style="@style/text_md_font"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="155dp"
+        android:text="오늘의 햄스터는..."
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/hamsteremotionsrc"
-            android:layout_width="139dp"
-            android:layout_height="117dp"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/angry_face"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/hamstertext" />
+    <ImageView
+        android:id="@+id/hamsteremotionsrc"
+        android:layout_width="139dp"
+        android:layout_height="117dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/angry_face"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hamstertext" />
 
-        <TextView
-            android:id="@+id/hamsteremotion"
-            style="@style/title_sm_font"
-            android:layout_width="wrap_content"
-            android:layout_height="26dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="327dp"
-            android:gravity="center_horizontal|top"
-            android:lineSpacingExtra="2sp"
-            android:text="화난 햄스터"
-            android:textColor="#000000"
-            android:translationY="-1.07sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/hamsteremotion"
+        style="@style/title_sm_font"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="327dp"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="2sp"
+        android:text="화난 햄스터"
+        android:textColor="#000000"
+        android:translationY="-1.07sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/choice1"
-            style="@style/button_font"
-            android:layout_width="234dp"
-            android:layout_height="51dp"
-            android:layout_marginTop="413dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/round_white_with_outline"
-            android:text="이 감정으로 퀘스트 받을래!"
-            android:textColor="@color/black"
-            android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/choice1"
+        style="@style/button_font"
+        android:layout_width="234dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="413dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/round_white_with_outline"
+        android:text="이 감정으로 퀘스트 받을래!"
+        android:textColor="@color/black"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/choice2"
-            style="@style/button_font"
-            android:layout_width="234dp"
-            android:layout_height="51dp"
-            android:layout_marginTop="484dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/round_white_with_outline"
-            android:text="내가 직접 감정 입력할래!"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/choice2"
+        style="@style/button_font"
+        android:layout_width="234dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="484dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/round_white_with_outline"
+        android:text="내가 직접 감정 입력할래!"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/speechbubble"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="3dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/youremotion"
-            app:layout_constraintBottom_toTopOf="@id/rectangle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+    <ImageView
+        android:id="@+id/speechbubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/youremotion"
+        app:layout_constraintBottom_toTopOf="@id/rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
-            android:id="@+id/stripe"
-            android:layout_width="52dp"
-            android:layout_height="78dp"
-            android:background="@android:color/transparent"
-            android:scaleType="fitXY"
-            android:src="@drawable/stripe"
-            android:layout_marginBottom="60dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+    <ImageView
+        android:id="@+id/stripe"
+        android:layout_width="52dp"
+        android:layout_height="78dp"
+        android:layout_marginBottom="60dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/stripe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
-            android:id="@+id/rectangle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:src="@drawable/rectangle"
-            app:layout_constraintBottom_toTopOf="@id/stripe"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="DuplicateIds" />
+    <ImageView
+        android:id="@+id/rectangle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/rectangle"
+        app:layout_constraintBottom_toTopOf="@id/stripe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="DuplicateIds" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

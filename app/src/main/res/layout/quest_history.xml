@@ -7,7 +7,55 @@
     android:background="@color/background"
     tools:context=".QuestHistory">
 
-    <include layout="@layout/header" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".Header">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_start"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.27" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.72" />
+
+        <ImageButton
+            android:id="@+id/header"
+            android:layout_width="72dp"
+            android:layout_height="27dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/wholerest"
+            app:layout_constraintBottom_toBottomOf="@id/g_logo_bottom"
+            app:layout_constraintEnd_toEndOf="@id/g_logo_end"
+            app:layout_constraintStart_toStartOf="@id/g_logo_start"
+            app:layout_constraintTop_toTopOf="@id/g_logo_top" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_start"
@@ -52,13 +100,13 @@
         app:layout_constraintGuide_percent="0.9" />
 
     <TextView
-        style="@style/text_lg_font"
         android:id="@+id/today_month_text"
+        style="@style/text_lg_font"
         android:layout_width="wrap_content"
         android:layout_height="27dp"
+        android:gravity="center"
         android:text="2023년 12월"
         android:textColor="#1E1D1B"
-        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@id/g_Dday_bottom"
         app:layout_constraintEnd_toEndOf="@id/g_end"
         app:layout_constraintStart_toStartOf="@id/g_start"
@@ -68,23 +116,23 @@
         android:id="@+id/goback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ctrlz_left"
+        android:layout_marginEnd="4dp"
         android:background="@android:color/transparent"
-        app:layout_constraintEnd_toStartOf="@id/today_month_text"
-        app:layout_constraintTop_toTopOf="@id/today_month_text"
+        android:src="@drawable/ctrlz_left"
         app:layout_constraintBottom_toBottomOf="@id/today_month_text"
-        android:layout_marginEnd="4dp"/>
+        app:layout_constraintEnd_toStartOf="@id/today_month_text"
+        app:layout_constraintTop_toTopOf="@id/today_month_text" />
 
     <ImageButton
         android:id="@+id/gonext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ctrlz_right"
+        android:layout_marginStart="4dp"
         android:background="@android:color/transparent"
-        app:layout_constraintTop_toTopOf="@id/today_month_text"
+        android:src="@drawable/ctrlz_right"
         app:layout_constraintBottom_toBottomOf="@id/today_month_text"
         app:layout_constraintStart_toEndOf="@+id/today_month_text"
-        android:layout_marginStart="4dp"/>
+        app:layout_constraintTop_toTopOf="@id/today_month_text" />
 
 
     <androidx.recyclerview.widget.RecyclerView
