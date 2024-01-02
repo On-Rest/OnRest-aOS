@@ -63,8 +63,7 @@ class DiaryWrite : AppCompatActivity() {
                 ChatMessage("system", "You are a helpful assistant."),
                 ChatMessage(
                     "user",
-                    "일기 속 감정이 기쁨이 많으면 1, 슬픔이 많으면 2, 화남이 많으면 3을 숫자만 반환해줘 문장 없이 숫자만 일기: $memoinputText"
-                    "일기 속 감정의 비중에서 기쁨이 많으면 1, 감정의 비중에서  슬픔이 많으면 2,감정의 비중에서 화남이 많으면 3을 숫자만 반환해줘 문장 없이 숫자만,만약 일기가 없으면 공백을 출력해줘, 그리고 욕만있으면 1을 출력해줘 일기: $memoinputText"
+                    "일기 속 감정의 비중에서 기쁨이 많으면 1, 감정의 비중에서  슬픔이 많으면 2,감정의 비중에서 화남이 많으면 3을 숫자만 반환해줘 문장 없이 숫자만,만약 일기가 없으면 공백을 출력해줘, 그리고 욕이있으면  3 출력해줘 일기: $memoinputText"
                 )
             )
         )

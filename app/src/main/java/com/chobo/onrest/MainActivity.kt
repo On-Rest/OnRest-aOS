@@ -49,8 +49,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        val intent = Intent(this, NaviActivity::class.java)
 
-        setResultSignUp()
+         setResultSignUp()
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             //.requestIdToken(getString(R.string.sign_in_client_id))
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity() {
 
         with(binding) {
             googleLoginButton.setOnClickListener {
+                startActivity(intent)
                 signIn()
             }
         }
