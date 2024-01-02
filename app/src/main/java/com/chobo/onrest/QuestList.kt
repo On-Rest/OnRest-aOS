@@ -20,37 +20,16 @@ class QuestList : AppCompatActivity() {
     val sadlist = listOf<String>("아슬퍼","진짜슬퍼","너무 슬퍼")
     val date = Date() // 현재 날짜와 시간 가져오기
     val dayOfMonth = SimpleDateFormat("dd").format(date) // 일만 가져오기
-    lateinit var sharedPreferences: SharedPreferences
-    lateinit var editor: SharedPreferences.Editor
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = QuestListBinding.inflate(layoutInflater)
-        sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-        editor = sharedPreferences.edit()
-        val tlqkf = intent.getStringExtra("aiemotion")
         val view = binding.root
         setContentView(view)
 
 
-        var receivedValue = intent.getStringExtra("key") // 받은 값
-            Log.d("das", tlqkf.toString())
-            when(intent.getStringExtra("aiemotion")){
-                "1" ->{
-                    editor.putString("yourEmotion","happy")
-                    receivedValue = "happylist"
-                }
-                "2" -> {
-                    editor.putString("yourEmotion","angry")
-                    receivedValue = "angrylist"
-                }
-                "3" -> {
-                    editor.putString("yourEmotion","sad")
-                    receivedValue = "sadlist"
-                }
-                else -> {"receivedValue = s"}
-            }
+        val receivedValue = intent.getStringExtra("key") // 받은 값
 
         val selectedList = when(receivedValue) {
             "happylist" -> happylist

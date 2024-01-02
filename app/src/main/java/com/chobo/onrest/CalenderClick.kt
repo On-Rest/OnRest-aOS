@@ -103,8 +103,8 @@ class CalenderClick : AppCompatActivity() {
          if (retrievedValue == ""){
              retrievedValue = " "
          }
-         receivedList = intent.getSerializableExtra("myList") as? List<String> ?: emptyList()
-         selectedmission = intent.getStringExtra("key") ?: ""
+        receivedList = intent.getSerializableExtra("myList") as? List<String> ?: emptyList()
+        selectedmission = intent.getStringExtra("key") ?: ""
         todaysEmotion = sharedPrefs.getString("yourEmotion", "defaultValue").toString()
         when(selectedmission){
             "1" ->  {
@@ -117,7 +117,6 @@ class CalenderClick : AppCompatActivity() {
                 stringValue = receivedList[2]
             }
         }
-         Log.d("tlqkf",todaysEmotion)
 
          when(todaysEmotion){
             "angry" -> binding.todaysemotion.setImageResource(angryImageDrawable)
