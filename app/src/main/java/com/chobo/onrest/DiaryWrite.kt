@@ -75,5 +75,4 @@ class DiaryWrite : AppCompatActivity() {
             e.printStackTrace()
         }
     }
-
 }
