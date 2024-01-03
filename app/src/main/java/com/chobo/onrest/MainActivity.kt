@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -63,7 +64,7 @@ class MainActivity : AppCompatActivity() {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
         with(binding) {
-            googleLoginButton.setOnClickListener {
+            loginButton.setOnClickListener {
                 signIn()
             }
         }
@@ -73,6 +74,13 @@ class MainActivity : AppCompatActivity() {
         val signInIntent = mGoogleSignInClient.getSignInIntent()
         resultLauncher.launch(signInIntent)
     }
+
+    fun logout() {
+        mGoogleSignInClient.signOut().addOnCompleteListener(this) {
+            Toast.makeText(this, "로그아웃이 되었습니다", Toast.LENGTH_SHORT).show()
+        }
+    }
+
 
     private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
         try {
@@ -100,7 +108,8 @@ class MainActivity : AppCompatActivity() {
 
         } catch (e: ApiException) {
             Log.e("failed", "signInResultfailed = " + e.statusCode)
-            Toast.makeText(this, "구글 로그인에 실패했습니다. 상태 코드: ${e.statusCode}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "구글 로그인에 실패했습니다. 상태 코드: ${e.statusCode}", Toast.LENGTH_SHORT)
+                .show()
         }
     }
 }

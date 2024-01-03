@@ -1,5 +1,5 @@
+package com.chobo.onrest
 
-import ApiService
 import com.chobo.onrest.dto.PostSubmitRequest
 import com.chobo.onrest.dto.PostSubmitResponse
 import com.chobo.onrest.retrofit.PostService

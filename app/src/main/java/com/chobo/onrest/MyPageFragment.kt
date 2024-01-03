@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.chobo.onrest.databinding.FragmentMyPageBinding
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.data.BubbleDataSet
@@ -24,7 +25,7 @@ import java.util.Date
 class MyPageFragment : Fragment() {
     private var _binding: FragmentMyPageBinding? = null
     val date = Date() // 현재 날짜와 시간 가져오기
-    val year = SimpleDateFormat("yyyy").format(date) // 일만 가져오기
+    val year = SimpleDateFormat("yyyy").format(date) // 일만 가져오 기
     val month = SimpleDateFormat("MM").format(date) // 일만 가져오
     val fileLines = mutableListOf<String>()
     var fileName = ""
@@ -39,6 +40,22 @@ class MyPageFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentMyPageBinding.inflate(inflater, container, false)
+
+        val sharedPreferences = activity?.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+
+        val username = sharedPreferences?.getString("username", "") ?: ""
+        val userPhotoUrl = sharedPreferences?.getString("userPhotoUrl", "") ?: ""
+
+        binding.nickname.text = username
+
+        val profileImageView = binding.profile
+        Glide.with(this).load(userPhotoUrl).into(profileImageView)
+
+        binding.logoutButton.setOnClickListener {
+            val mainActivity = activity as MainActivity
+            mainActivity.logout()
+        }
+
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
