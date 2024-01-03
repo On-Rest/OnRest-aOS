@@ -32,7 +32,9 @@ class CalenderClick1 : AppCompatActivity() {
         readFile(this)
         setView()
         val view = binding.root
-
+        binding.header1.setOnClickListener(){
+            super.onBackPressed()
+        }
         setContentView(view)
 
         binding.gobackIcon.setOnClickListener(){

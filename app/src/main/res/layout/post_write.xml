@@ -4,12 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PostWrite"
-    android:background="@color/background">
+    android:background="@color/background"
+    tools:context=".PostWrite">
 
-    <include
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header"
-        layout="@layout/header" />
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".Header">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_start"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.27" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.72" />
+
+        <ImageButton
+            android:id="@+id/header1"
+            android:layout_width="72dp"
+            android:layout_height="27dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/wholerest"
+            app:layout_constraintBottom_toBottomOf="@id/g_logo_bottom"
+            app:layout_constraintEnd_toEndOf="@id/g_logo_end"
+            app:layout_constraintStart_toStartOf="@id/g_logo_start"
+            app:layout_constraintTop_toTopOf="@id/g_logo_top" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_write_block_start"
@@ -72,8 +119,8 @@
         android:layout_marginTop="17dp"
         android:background="@drawable/round_white_with_outline"
         android:gravity="top"
-        android:lineSpacingExtra="7sp"
         android:hint="게시물 내용 작성해주세요.*"
+        android:lineSpacingExtra="7sp"
         android:paddingHorizontal="16dp"
         android:paddingVertical="12dp"
         android:textColor="#1E1D1B"
@@ -90,7 +137,7 @@
         android:text="0/30"
         app:layout_constraintBottom_toBottomOf="@id/titleinput"
         app:layout_constraintEnd_toEndOf="@id/titleinput"
-        app:layout_constraintTop_toTopOf="@id/titleinput"/>
+        app:layout_constraintTop_toTopOf="@id/titleinput" />
 
     <TextView
         android:id="@+id/detail_textnum"
@@ -102,7 +149,7 @@
         android:text="0/300"
         android:textColor="#89857C"
         app:layout_constraintBottom_toBottomOf="@id/detailinput"
-        app:layout_constraintEnd_toEndOf="@id/detailinput"/>
+        app:layout_constraintEnd_toEndOf="@id/detailinput" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/emotionbox"

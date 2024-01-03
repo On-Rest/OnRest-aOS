@@ -6,8 +6,56 @@
     android:layout_height="match_parent"
     android:background="@color/background">
 
-    <include layout="@layout/header"
-        android:id="@+id/wholrest"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".Header">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_start"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.27" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.72" />
+
+        <ImageButton
+            android:id="@+id/wholerest"
+            android:layout_width="72dp"
+            android:layout_height="27dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/wholerest"
+            app:layout_constraintBottom_toBottomOf="@id/g_logo_bottom"
+            app:layout_constraintEnd_toEndOf="@id/g_logo_end"
+            app:layout_constraintStart_toStartOf="@id/g_logo_start"
+            app:layout_constraintTop_toTopOf="@id/g_logo_top" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_search_top"
@@ -115,10 +163,10 @@
         android:layout_height="0dp"
         android:background="@drawable/search_square"
         android:hint="검색어를 입력해주세요"
-        android:textColorHint="#A19E97"
         android:paddingStart="16dp"
         android:paddingEnd="12dp"
         android:textColor="#1E1D1B"
+        android:textColorHint="#A19E97"
         app:layout_constraintBottom_toBottomOf="@id/g_search_bottom"
         app:layout_constraintEnd_toEndOf="@id/g_search_end"
         app:layout_constraintStart_toStartOf="@id/g_search_start"
@@ -128,19 +176,19 @@
         android:id="@+id/search_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
         android:src="@drawable/search_icon"
-        app:layout_constraintEnd_toEndOf="@id/g_search_end"
-        app:layout_constraintTop_toTopOf="@id/g_search_top"
         app:layout_constraintBottom_toBottomOf="@id/g_search_bottom"
-        android:layout_marginEnd="14dp"/>
+        app:layout_constraintEnd_toEndOf="@id/g_search_end"
+        app:layout_constraintTop_toTopOf="@id/g_search_top" />
 
     <ToggleButton
         android:id="@+id/filter"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/filter_on_off"
-        android:textOn=""
         android:textOff=""
+        android:textOn=""
         app:layout_constraintBottom_toBottomOf="@id/g_filter_bottom"
         app:layout_constraintEnd_toEndOf="@id/g_filter_end"
         app:layout_constraintStart_toStartOf="@id/g_filter_start"
@@ -154,30 +202,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-  
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:background="@color/background"
         android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="@id/g_recyclerview_bottom"
         app:layout_constraintEnd_toEndOf="@id/g_filter_end"
         app:layout_constraintStart_toStartOf="@id/g_search_start"
         app:layout_constraintTop_toTopOf="@id/g_recyclerview_top"
-        tools:listitem="@layout/comunity_list_view"
-        android:background="@color/background"/>
+        tools:listitem="@layout/comunity_list_view" />
 
     <ImageButton
         android:id="@+id/pen"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/pen"
-        app:layout_constraintStart_toStartOf="@id/g_pen_start"
-        app:layout_constraintEnd_toEndOf="@id/g_pen_end"
-        app:layout_constraintTop_toTopOf="@id/g_pen_top"
-        app:layout_constraintBottom_toBottomOf="@id/g_pen_bottom"
         android:background="@null"
-        android:stateListAnimator="@null" />
+        android:src="@drawable/pen"
+        android:stateListAnimator="@null"
+        app:layout_constraintBottom_toBottomOf="@id/g_pen_bottom"
+        app:layout_constraintEnd_toEndOf="@id/g_pen_end"
+        app:layout_constraintStart_toStartOf="@id/g_pen_start"
+        app:layout_constraintTop_toTopOf="@id/g_pen_top" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

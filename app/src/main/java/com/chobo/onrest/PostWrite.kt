@@ -40,6 +40,9 @@ class PostWrite : AppCompatActivity() {
         binding = PostWriteBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        binding.header1.setOnClickListener(){
+            super.onBackPressed()
+        }
 
         val toggleListener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
@@ -167,7 +170,11 @@ class PostWrite : AppCompatActivity() {
                         })
 
 
-                    }
+                        val apiServiceImpl = ApiServiceImpl()
+                        val success = apiServiceImpl.submitBoard(inputText, inputText1,"imbabo-imbabo-imbabo-imbabo",1)
+                        Log.d("fuck", success.execute().body().toString()
+                        )
+                        super.onBackPressed()                    }
                 }
             }
 

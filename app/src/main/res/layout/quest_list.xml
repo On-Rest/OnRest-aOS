@@ -1,40 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background"
     tools:context=".QuestList">
 
-    <include layout="@layout/header"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".Header">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_start"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.27" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_logo_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.72" />
+
+        <ImageButton
+            android:id="@+id/header"
+            android:layout_width="72dp"
+            android:layout_height="27dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/wholerest"
+            app:layout_constraintBottom_toBottomOf="@id/g_logo_bottom"
+            app:layout_constraintEnd_toEndOf="@id/g_logo_end"
+            app:layout_constraintStart_toStartOf="@id/g_logo_start"
+            app:layout_constraintTop_toTopOf="@id/g_logo_top" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/hill_low"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+        android:src="@drawable/hill_low"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/midbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.45"
-            />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/midbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
 
     <HorizontalScrollView
         android:id="@+id/a"
-        android:orientation="horizontal"
         android:layout_width="0dp"
         android:layout_height="164dp"
-        app:layout_constraintBottom_toBottomOf="@id/midbutton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/midbutton"
+        android:orientation="horizontal"
         android:scrollbars="none"
-        app:layout_constraintEnd_toEndOf="parent" >
+        app:layout_constraintBottom_toBottomOf="@id/midbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/midbutton">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,8 +90,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="157dp"
                 android:layout_height="164dp"
-                android:background="@drawable/round_white_18dp"
-                android:layout_marginStart="16dp">
+                android:layout_marginStart="16dp"
+                android:background="@drawable/round_white_18dp">
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guide_title_top"
@@ -131,7 +177,6 @@
                     tools:text="mission" />
 
 
-
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guide_togle_top"
                     android:layout_width="match_parent"
@@ -178,8 +223,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="157dp"
                 android:layout_height="164dp"
-                android:background="@drawable/round_white_18dp"
-                android:layout_marginStart="10dp">
+                android:layout_marginStart="10dp"
+                android:background="@drawable/round_white_18dp">
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guide_title_top1"
@@ -265,7 +310,6 @@
                     tools:text="mission" />
 
 
-
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guide_togle_top1"
                     android:layout_width="match_parent"
@@ -312,8 +356,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="157dp"
                 android:layout_height="164dp"
-                android:background="@drawable/round_white_18dp"
-                android:layout_marginStart="10dp">
+                android:layout_marginStart="10dp"
+                android:background="@drawable/round_white_18dp">
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guide_title_top2"
@@ -399,7 +443,6 @@
                     tools:text="mission" />
 
 
-
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guide_togle_top2"
                     android:layout_width="match_parent"
@@ -449,40 +492,37 @@
     </HorizontalScrollView>
 
     <ImageButton
-            android:id="@+id/speechbubble"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:src="@drawable/quest_speachbubble"
-            app:layout_constraintBottom_toTopOf="@id/rectangle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="3dp"
-            />
+        android:id="@+id/speechbubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/quest_speachbubble"
+        app:layout_constraintBottom_toTopOf="@id/rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageButton
-            android:id="@+id/stripe"
-            android:layout_width="52dp"
-            android:layout_height="78dp"
-            android:src="@drawable/stripe"
-            android:scaleType="fitXY"
-            android:background="@android:color/transparent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="60dp"
-            />
+    <ImageButton
+        android:id="@+id/stripe"
+        android:layout_width="52dp"
+        android:layout_height="78dp"
+        android:layout_marginBottom="60dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/stripe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
-            android:id="@+id/rectangle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/rectangle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/stripe"
-            android:layout_marginBottom="8dp"
-            tools:ignore="DuplicateIds"
-            />
+    <ImageView
+        android:id="@+id/rectangle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/rectangle"
+        app:layout_constraintBottom_toTopOf="@id/stripe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="DuplicateIds" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
