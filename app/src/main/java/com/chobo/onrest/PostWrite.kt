@@ -10,6 +10,13 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.databinding.PostWriteBinding
+import com.chobo.onrest.dto.PostSubmitRequest
+import com.chobo.onrest.dto.PostSubmitResponse
+import com.chobo.onrest.retrofit.PostService
+import com.chobo.onrest.retrofit.RetrofitClass
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class PostWrite : AppCompatActivity() {
@@ -60,17 +67,15 @@ class PostWrite : AppCompatActivity() {
             }
         }
 
-        with(binding){
-            sad.setOnCheckedChangeListener(toggleListener)
-            shy.setOnCheckedChangeListener(toggleListener)
-            anoying.setOnCheckedChangeListener(toggleListener)
-            angry.setOnCheckedChangeListener(toggleListener)
-            joyful.setOnCheckedChangeListener(toggleListener)
-            tranquility.setOnCheckedChangeListener(toggleListener)
-            excited.setOnCheckedChangeListener(toggleListener)
-            helpless.setOnCheckedChangeListener(toggleListener)
-            happy.setOnCheckedChangeListener(toggleListener)
-        }
+        binding.sad.setOnCheckedChangeListener(toggleListener)
+        binding.shy.setOnCheckedChangeListener(toggleListener)
+        binding.anoying.setOnCheckedChangeListener(toggleListener)
+        binding.angry.setOnCheckedChangeListener(toggleListener)
+        binding.joyful.setOnCheckedChangeListener(toggleListener)
+        binding.tranquility.setOnCheckedChangeListener(toggleListener)
+        binding.excited.setOnCheckedChangeListener(toggleListener)
+        binding.helpless.setOnCheckedChangeListener(toggleListener)
+        binding.happy.setOnCheckedChangeListener(toggleListener)
 
         editText = binding.detailinput // EditText 참조 가져오기
         captionTextView = binding.detailTextnum // TextView 참조 가져오기
@@ -139,15 +144,40 @@ class PostWrite : AppCompatActivity() {
             if (currentLength1 > 0){
                 if (currentLength > 0){
                     if(currentToggleCount == 2){
+                        val retrofit = RetrofitClass()
+
+                        retrofit.postService.submitPost(
+                            PostSubmitRequest(
+                                subject = inputText1,
+                                doc = inputText,
+                                type = "board",
+                                clientId = "fuck-fuck-fuck-fuck",
+                                emotion = 1
+                            )
+                        ).enqueue(object : Callback<PostSubmitResponse> {
+                            override fun onResponse(
+                                call: Call<PostSubmitResponse>,
+                                response: Response<PostSubmitResponse>
+                            ) {
+                                Log.d("ASDF", response.body().toString())
+                                this@PostWrite.finish()
+                            }
+
+                            override fun onFailure(call: Call<PostSubmitResponse>, t: Throwable) {
+
+                            }
+
+                        })
+
 
                         val apiServiceImpl = ApiServiceImpl()
                         val success = apiServiceImpl.submitBoard(inputText, inputText1,"imbabo-imbabo-imbabo-imbabo",1)
                         Log.d("fuck", success.execute().body().toString()
                         )
-                        super.onBackPressed()
-                    }
+                        super.onBackPressed()                    }
                 }
             }
+
         }
         binding.gobackIcon.setOnClickListener() {
             super.onBackPressed()

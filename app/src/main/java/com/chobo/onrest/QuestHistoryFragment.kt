@@ -46,8 +46,6 @@ class QuestHistoryFragment : Fragment(), ToggleStateChangeListener,PopupCallback
         // QuestHistoryAdapter 인스턴스를 생성할 때 ToggleStateChangeListener를 전달합니다.
         questHistoryAdapter = QuestHistoryAdapter(requireContext(), toggleStateChangeListener)
         // 리사이클러뷰 설정 등의 작업 수행
-
-
     }
     override fun onCreateView(
         inflater: LayoutInflater,
