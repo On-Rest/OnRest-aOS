@@ -16,6 +16,11 @@ import android.widget.TextView
 import android.widget.ToggleButton
 import androidx.fragment.app.Fragment
 import com.chobo.onrest.databinding.CommunityBinding
+import com.chobo.onrest.dto.GetPostResponse
+import com.chobo.onrest.retrofit.RetrofitClass
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import com.chobo.onrest.databinding.CommunityPopupViewBinding
 import kotlin.math.log
 
@@ -24,9 +29,8 @@ class CommunityFragment : Fragment() {
     private var _binding: CommunityBinding? = null
     private val binding get() = _binding!!
     private lateinit var communityAdapter: CommunityAdapter
-    private val datas = mutableListOf<CommunityData>()
+    private val datas = mutableListOf<GetPostResponse>()
     var tagList = mutableListOf<String>()
-    var List = mutableListOf<CommunityData>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -117,6 +121,8 @@ class CommunityFragment : Fragment() {
         }
         communityAdapter.datas = datas
         communityAdapter.notifyDataSetChanged()
+
+        loadData()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -130,7 +136,6 @@ class CommunityFragment : Fragment() {
         binding.pen.setOnClickListener {
             startActivityWithAnimation(PostWrite::class.java)
         }
-
     }
 
     private fun startActivityWithAnimation(clazz: Class<*>) {
@@ -200,5 +205,22 @@ class CommunityFragment : Fragment() {
             initRecycler()
         }
         popupWindow.isOutsideTouchable = true
+    }
+    
+    private fun loadData() {
+        val retrofit = RetrofitClass()
+        retrofit.postService.getPost()
+            .enqueue(object : Callback<GetPostResponse> {
+                override fun onResponse(
+                    call: Call<GetPostResponse>,
+                    response: Response<GetPostResponse>
+                ) {
+                    Log.d("community", response.body().toString())
+                }
+
+                override fun onFailure(call: Call<GetPostResponse>, t: Throwable) {
+                    Log.d("this is error","에러에요")
+                }
+            })
     }
 }
