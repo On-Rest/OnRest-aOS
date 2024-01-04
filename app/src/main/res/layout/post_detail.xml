@@ -42,6 +42,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/title"
                 style="@style/title_sm_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -51,6 +52,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/detail"
                 style="@style/text_md_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

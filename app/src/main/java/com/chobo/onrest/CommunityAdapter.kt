@@ -8,10 +8,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.chobo.onrest.dto.GetPostResponse
 
 class CommunityAdapter(private val context: Context) : RecyclerView.Adapter<CommunityAdapter.ViewHolder>() {
-    var datas = mutableListOf<GetPostResponse>()
+    var datas = mutableListOf<CommunityData>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.comunity_list_view,parent,false)
         return ViewHolder(view)
@@ -27,21 +26,25 @@ class CommunityAdapter(private val context: Context) : RecyclerView.Adapter<Comm
         private val detail: TextView = itemView.findViewById(R.id.detail)
         private val tag1: TextView = itemView.findViewById(R.id.tag1)
         private val tag2: TextView = itemView.findViewById(R.id.tag2)
+        private val commentnum: TextView = itemView.findViewById(R.id.dhatglenum)
         private val heartnum: TextView = itemView.findViewById(R.id.heartnum)
         private val detailButton: Button = itemView.findViewById(R.id.detail_button)
 
-
-        fun bind(item: GetPostResponse){
-            title.text = item.subject
+        fun bind(item: CommunityData){
+            title.text = item.title
             detail.text = item.detail
-            tag1.text = item.emotion.toString()
-            tag2.text = item.emotion.toString()
-            heartnum.text = item.like_count.toString()
+            tag1.text = item.tag1
+            tag2.text = item.tag2
+            commentnum.text = item.comment.toString()
+            heartnum.text = item.heart.toString()
 
             detailButton.setOnClickListener() {
-                context.startActivity(Intent(context    , PostDetail::class.java))
+                val intent = Intent(context, PostDetail::class.java)
+                intent.putExtra("title", title.text) // 데이터 전달
+                intent.putExtra("detail", detail.text) // 데이터 전달
+                intent.putExtra("heartnum", heartnum.text) // 데이터 전달
+                context.startActivity(intent)
             }
         }
     }
-
 }

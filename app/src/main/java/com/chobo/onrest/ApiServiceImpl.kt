@@ -1,12 +1,11 @@
+package com.chobo.onrest
 
-import ApiService
 import com.chobo.onrest.dto.PostSubmitRequest
 import com.chobo.onrest.dto.PostSubmitResponse
 import com.chobo.onrest.retrofit.PostService
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 class ApiServiceImpl {
     fun submitBoard(doc : String, subject : String, clientId : String, emotion : Int): Call<PostSubmitResponse>{
         var retrofit = getBaseUrl()

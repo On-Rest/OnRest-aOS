@@ -15,9 +15,9 @@ import java.util.Date
 
 class QuestList : AppCompatActivity() {
     private lateinit var binding: QuestListBinding
-    val happylist = listOf<String>("기분좋아","신난다","행복해")
-    val angrylist = listOf<String>("진짜 화나","개화나","아 화나")
-    val sadlist = listOf<String>("아슬퍼","진짜슬퍼","너무 슬퍼")
+    val happylist = listOf<String>("다섯 번 크게 웃기","행복했던 순간 적어보기","1시간 산책하기")
+    val angrylist = listOf<String>("크게 숨 3번 쉬어보기","차가운 물에 씻어보기","즐거웠던 순간 떠올리기")
+    val sadlist = listOf<String>("행복했던 순간 적어보기","1시간 산책하기","명상을 통해 현재 순간에 집중하기")
     val date = Date() // 현재 날짜와 시간 가져오기
     val dayOfMonth = SimpleDateFormat("dd").format(date) // 일만 가져오기
 

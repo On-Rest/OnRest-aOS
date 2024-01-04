@@ -18,6 +18,10 @@ class PostDetail : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = PostDetailBinding.inflate(layoutInflater)
         val view = binding.root
+        binding.title.text = intent.getStringExtra("title") // 받은 값
+        binding.detail.text = intent.getStringExtra("detail") // 받은 값
+        binding.heartnum.text = intent.getStringExtra("heartnum") // 받은 값
+
         setContentView(view)
 
         binding.goback.setOnClickListener() {

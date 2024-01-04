@@ -41,8 +41,8 @@ class YourEmotion : AppCompatActivity() {
         }
         emotion = when(aiemotion){
             "1" -> "happy"
-            "2" -> "angry"
-            "3" -> "sad"
+            "3" -> "angry"
+            "2" -> "sad"
             else -> {"sad"}
         }
         aiemotion = when(aiemotion){
