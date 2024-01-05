@@ -2,39 +2,38 @@ package com.chobo.onrest
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.databinding.QuestChoiceBinding
 
 class QuestChoice : AppCompatActivity() {
     private lateinit var binding: QuestChoiceBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = QuestChoiceBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        setContentView(binding.root)
 
-        binding.header.setOnClickListener(){
-            super.onBackPressed()
+        binding.header.setOnClickListener {
+            onBackPressed()
         }
 
-        val receivedValue = intent.getStringExtra("key") // 받은 값
+        val receivedValue = intent.getStringExtra("key") ?: ""
 
-        binding.choice1.setOnClickListener() {
-            val intent =Intent(this, QuestList::class.java)
-            intent.putExtra("key", receivedValue) // 데이터 전달
+        val intent = Intent(this, QuestList::class.java).apply {
+            putExtra("key", receivedValue)
+        }
+
+        val onClickListener: (View) -> Unit = {
             startActivity(intent)
-            overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()
         }
-        binding.choice2.setOnClickListener() {
-            val intent =Intent(this, QuestList::class.java)
-            intent.putExtra("key", receivedValue) // 데이터 전달
-            startActivity(intent)
-            overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
-            finish()
-        }
-        binding.choice3.setOnClickListener() {
-            super.onBackPressed()
+
+        binding.choice1.setOnClickListener(onClickListener)
+        binding.choice2.setOnClickListener(onClickListener)
+        binding.choice3.setOnClickListener {
+            onBackPressed()
         }
     }
 }
