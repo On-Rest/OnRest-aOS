@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.databinding.QuestListBinding
 import java.io.Serializable
@@ -14,6 +15,8 @@ import java.text.SimpleDateFormat
 import java.util.Date
 
 class QuestList : AppCompatActivity() {
+    lateinit var selectedList : List<String>
+    lateinit var receivedValue : String
     private lateinit var binding: QuestListBinding
     val happylist = listOf<String>("다섯 번 크게 웃기","행복했던 순간 적어보기","1시간 산책하기")
     val angrylist = listOf<String>("크게 숨 3번 쉬어보기","차가운 물에 씻어보기","즐거웠던 순간 떠올리기")
@@ -28,13 +31,13 @@ class QuestList : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.header.setOnClickListener(){
+        binding.header.setOnClickListener{
             super.onBackPressed()
         }
 
-        val receivedValue = intent.getStringExtra("key") // 받은 값
+        receivedValue = intent.getStringExtra("key").toString() // 받은 값
 
-        val selectedList = when(receivedValue) {
+        selectedList = when(receivedValue) {
             "happylist" -> happylist
             "angrylist" -> angrylist
             "sadlist" -> sadlist
@@ -50,12 +53,6 @@ class QuestList : AppCompatActivity() {
 
 
         binding.checkTV.setOnClickListener(){
-            val intent =  Intent(this, CalenderClick::class.java)
-            intent.putExtra("myList", selectedList as Serializable)
-            intent.putExtra("key", "1") // 데이터 전달
-            startActivity(intent)
-            overridePendingTransition( R.anim.fade_in, R.anim.fade_out )
-            finish()
         }
         binding.checkTV1.setOnClickListener(){
             val intent =  Intent(this, CalenderClick::class.java)
@@ -73,5 +70,13 @@ class QuestList : AppCompatActivity() {
             overridePendingTransition( R.anim.fade_in, R.anim.fade_out )
             finish()
         }
+    }
+    fun onClickListener(Data:Int){
+        val intent =  Intent(this, CalenderClick::class.java)
+        intent.putExtra("myList", selectedList as Serializable)
+        intent.putExtra("key", Data) // 데이터 전달
+        startActivity(intent)
+        overridePendingTransition( R.anim.fade_in, R.anim.fade_out )
+        finish()
     }
 }

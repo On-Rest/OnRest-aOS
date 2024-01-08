@@ -33,7 +33,7 @@ class CalenderClick : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = CalendarClickBinding.inflate(layoutInflater)
         val view = binding.root
-        binding.header1.setOnClickListener(){
+        binding.header1.setOnClickListener{
             super.onBackPressed()
         }
         setView()
@@ -42,7 +42,7 @@ class CalenderClick : AppCompatActivity() {
         setContentView(view)
 
 
-        binding.gobackIcon.setOnClickListener(){
+        binding.gobackIcon.setOnClickListener{
             super.onBackPressed()
         }
     }

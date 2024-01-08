@@ -40,7 +40,7 @@ class PostWrite : AppCompatActivity() {
         binding = PostWriteBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        binding.header1.setOnClickListener(){
+        binding.header1.setOnClickListener{
             super.onBackPressed()
         }
 
@@ -139,7 +139,7 @@ class PostWrite : AppCompatActivity() {
                 }
             }
         })
-        binding.send.setOnClickListener() {
+        binding.send.setOnClickListener {
             binding.send.isChecked = false
             if (currentLength1 > 0){
                 if (currentLength > 0){
@@ -179,7 +179,7 @@ class PostWrite : AppCompatActivity() {
             }
 
         }
-        binding.gobackIcon.setOnClickListener() {
+        binding.gobackIcon.setOnClickListener {
             super.onBackPressed()
         }
     }

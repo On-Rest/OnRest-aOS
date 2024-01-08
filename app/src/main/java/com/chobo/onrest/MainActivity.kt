@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
     override fun onStart(){
         super.onStart()
         val account = GoogleSignIn.getLastSignedInAccount(this)
-        val intent = Intent(this, QuestChoice::class.java)
 
         if(account != null) {
             Log.d("SignIn", "이름 : ${account.displayName}, 이메일 : ${account.email}, 아이디 토큰 : ${account.idToken}")
@@ -64,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
         with(binding) {
-            googleLoginButton.setOnClickListener {
+            binding.loginButton.setOnClickListener {
                 signIn()
             }
         }

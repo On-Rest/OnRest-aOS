@@ -29,17 +29,16 @@ class CalendarFragment : Fragment() {
         binding = CalendarBinding.inflate(inflater, container, false)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         calenderImageSeting()
 
-        binding.stripe.setOnClickListener {
+        val onClickListener: (View) -> Unit = {
             startActivityWithAnimation(DiaryWrite::class.java)
         }
-        binding.speechbubble.setOnClickListener {
-            startActivityWithAnimation(DiaryWrite::class.java)
-        }
+
+        binding.stripe.setOnClickListener (onClickListener)
+        binding.speechbubble.setOnClickListener (onClickListener)
     }
     override fun onResume() {
         super.onResume()

@@ -81,13 +81,13 @@ class QuestHistoryFragment : Fragment(), ToggleStateChangeListener,PopupCallback
         initWatchMonth()
     }
     private fun dateFilter(){
-        binding.goback.setOnClickListener(){
+        binding.goback.setOnClickListener{
             index--
             initWatchMonth()
             readFile(requireContext())
             initRecycler()
         }
-        binding.gonext.setOnClickListener(){
+        binding.gonext.setOnClickListener{
             index++
             initWatchMonth()
             readFile(requireContext())

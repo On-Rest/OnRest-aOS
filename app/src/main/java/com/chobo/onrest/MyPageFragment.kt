@@ -11,8 +11,6 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.chobo.onrest.databinding.FragmentMyPageBinding
 import com.github.mikephil.charting.animation.Easing
-import com.github.mikephil.charting.data.BubbleDataSet
-import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
@@ -99,12 +97,6 @@ class MyPageFragment : Fragment() {
             setTouchEnabled(false)
             animateY(1200, Easing.EaseInOutCubic)
             animate()
-        }
-    }
-    class PieDataSet {
-        var sliceSpace: Float = 0f
-        fun setSliceSpace() {
-            sliceSpace = 5f
         }
     }
 

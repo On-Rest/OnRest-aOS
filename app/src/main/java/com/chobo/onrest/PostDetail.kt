@@ -24,10 +24,10 @@ class PostDetail : AppCompatActivity() {
 
         setContentView(view)
 
-        binding.goback.setOnClickListener() {
+        binding.goback.setOnClickListener{
             super.onBackPressed()
         }
-        binding.send.setOnClickListener(){
+        binding.send.setOnClickListener{
             super.onBackPressed()
         }
         binding.postDetailInput.addTextChangedListener(object : TextWatcher {

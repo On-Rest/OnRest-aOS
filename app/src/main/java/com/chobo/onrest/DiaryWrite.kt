@@ -24,10 +24,10 @@ class DiaryWrite : AppCompatActivity() {
         setContentView(view)
         val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
-        binding.header1.setOnClickListener(){
+        binding.header1.setOnClickListener{
             super.onBackPressed()
         }
-        binding.write.setOnClickListener() {
+        binding.write.setOnClickListener{
             memoinputText = binding.memoinput.text.toString()
 
             // 백그라운드 스레드에서 chatgpt() 함수 호출

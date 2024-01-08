@@ -40,12 +40,12 @@ class QuestHistoryPopup : DialogFragment() {
         isCancelable = true // 다이얼로그 취소 가능 여부 설정
     }
     private fun dialogFragmentButton(){
-        binding.cancel.setOnClickListener(){
+        binding.cancel.setOnClickListener{
             popupCallback?.onPopupAction() // Callback 호출
 
             dismiss()
         }
-        binding.complete.setOnClickListener(){
+        binding.complete.setOnClickListener{
             modifyFile()
             popupCallback?.onPopupAction() // Fragment의 콜백 함수 호출
 
