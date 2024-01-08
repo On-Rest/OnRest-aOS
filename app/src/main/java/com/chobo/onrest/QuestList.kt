@@ -52,23 +52,14 @@ class QuestList : AppCompatActivity() {
         binding.missionTV2.text = selectedList[2]
 
 
-        binding.checkTV.setOnClickListener(){
+        binding.checkTV.setOnClickListener{
+            onClickListener(1)
         }
-        binding.checkTV1.setOnClickListener(){
-            val intent =  Intent(this, CalenderClick::class.java)
-            intent.putExtra("myList", selectedList as Serializable)
-            intent.putExtra("key", "2") // 데이터 전달
-            startActivity(intent)
-            overridePendingTransition( R.anim.fade_in, R.anim.fade_out )
-            finish()
+        binding.checkTV1.setOnClickListener{
+            onClickListener(2)
         }
-        binding.checkTV2.setOnClickListener(){
-            val intent =  Intent(this, CalenderClick::class.java)
-            intent.putExtra("myList", selectedList as Serializable)
-            intent.putExtra("key", "3") // 데이터 전달
-            startActivity(intent)
-            overridePendingTransition( R.anim.fade_in, R.anim.fade_out )
-            finish()
+        binding.checkTV2.setOnClickListener{
+            onClickListener(3)
         }
     }
     fun onClickListener(Data:Int){
