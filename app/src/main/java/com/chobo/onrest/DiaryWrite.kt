@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.databinding.DiaryWriteBinding
+import com.chobo.onrest.interFace.ChatApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

@@ -9,13 +9,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.chobo.onrest.databinding.QuestHistoryBinding
+import com.chobo.onrest.interFace.PopupCallback
+import com.chobo.onrest.interFace.ToggleStateChangeListener
 import java.io.BufferedReader
 import java.io.FileNotFoundException
 import java.io.InputStreamReader
 import java.text.SimpleDateFormat
 import java.util.Date
 
-class QuestHistoryFragment : Fragment(), ToggleStateChangeListener,PopupCallback {
+class QuestHistoryFragment : Fragment(), ToggleStateChangeListener, PopupCallback {
 
     private lateinit var binding: QuestHistoryBinding
     lateinit var questHistoryAdapter: QuestHistoryAdapter

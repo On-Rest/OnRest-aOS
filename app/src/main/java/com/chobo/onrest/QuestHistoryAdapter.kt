@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.ToggleButton
 import androidx.recyclerview.widget.RecyclerView
+import com.chobo.onrest.interFace.ToggleStateChangeListener
 
 class QuestHistoryAdapter(
     private val context: Context,

@@ -1,13 +1,12 @@
 package com.chobo.onrest
 
-import android.content.DialogInterface
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.chobo.onrest.databinding.QuestHistoryPopupBinding
+import com.chobo.onrest.interFace.PopupCallback
 import java.io.File
 
 class QuestHistoryPopup : DialogFragment() {
