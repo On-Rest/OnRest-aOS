@@ -63,13 +63,13 @@ class YourEmotion : AppCompatActivity() {
         val intent = Intent(this, QuestList::class.java)
         intent.putExtra("key", aiemotion)
         startActivity(intent)
-        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         finish()
     }
 
     private fun navigateToEmotionChoice1() {
         startActivity(Intent(this, EmotionChoice1::class.java))
-        overridePendingTransition(R.anim.fade_in, am.anim.fade_out)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         finish()
     }
 

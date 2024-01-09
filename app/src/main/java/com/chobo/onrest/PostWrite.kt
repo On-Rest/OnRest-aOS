@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.databinding.PostWriteBinding
 import com.chobo.onrest.dto.PostSubmitRequest
 import com.chobo.onrest.dto.PostSubmitResponse
-import com.chobo.onrest.retrofit.PostService
 import com.chobo.onrest.retrofit.RetrofitClass
 import retrofit2.Call
 import retrofit2.Callback
@@ -24,13 +23,13 @@ class PostWrite : AppCompatActivity() {
     private lateinit var editText1: EditText
     private lateinit var captionTextView1: TextView
     private val maxCharacters = 300 // 최대 글자 수
-    private val maxCharacters1 = 30 // 최대 글자 수
+    private val maxCharactersTitle = 30 // 최대 글자 수
     private var maxToggleCount = 2 // 최대 토글 횟수
     private var currentToggleCount = 0 // 현재 토글 횟수
-    private var inputText1 = "" // 초기 값을 빈 문자열로 설정
-    private var currentLength1 = 0
-    private var inputText = "" // 초기 값을 빈 문자열로 설정
-    private var currentLength = 0
+    private var inputTextTitle = "" // 초기 값을 빈 문자열로 설정
+    private var currentLengthTitle = 0
+    private var inputTextDetail = "" // 초기 값을 빈 문자열로 설정
+    private var currentLengthDetail = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,31 +69,31 @@ class PostWrite : AppCompatActivity() {
         captionTextView = binding.detailTextnum
 
         editText.addTextChangedListener(createTextWatcher(maxCharacters) {
-            inputText = it
-            currentLength = inputText.length
+            inputTextDetail = it
+            currentLengthDetail = inputTextDetail.length
             updateSendButtonState()
-            updateTextViewState(captionTextView, currentLength, maxCharacters)
+            updateTextViewState(captionTextView, currentLengthDetail, maxCharacters)
         })
 
         editText1 = binding.titleinput
         captionTextView1 = binding.titleTextnum
 
-        editText1.addTextChangedListener(createTextWatcher(maxCharacters1) {
-            inputText1 = it
-            currentLength1 = inputText1.length
+        editText1.addTextChangedListener(createTextWatcher(maxCharactersTitle) {
+            inputTextTitle = it
+            currentLengthTitle = inputTextTitle.length
             updateSendButtonState()
-            updateTextViewState(captionTextView1, currentLength1, maxCharacters1)
+            updateTextViewState(captionTextView1, currentLengthTitle, maxCharactersTitle)
         })
     }
 
     private fun setupSendButtonListener() {
         binding.send.setOnClickListener {
-            if (currentLength1 > 0 && currentLength > 0 && currentToggleCount == 2) {
+            if (currentLengthTitle > 0 && currentLengthDetail > 0 && currentToggleCount == 2) {
                 val retrofit = RetrofitClass()
                 retrofit.postService.submitPost(
                     PostSubmitRequest(
-                        subject = inputText1,
-                        doc = inputText,
+                        subject = inputTextTitle,
+                        doc = inputTextDetail,
                         type = "board",
                         clientId = "fuck-fuck-fuck-fuck",
                         emotion = 1
@@ -136,7 +135,7 @@ class PostWrite : AppCompatActivity() {
     }
 
     private fun updateSendButtonState() {
-        binding.send.isChecked = currentLength1 > 0 && currentLength > 0 && currentToggleCount == 2
+        binding.send.isChecked = currentLengthTitle > 0 && currentLengthDetail > 0 && currentToggleCount == 2
     }
 
     private fun updateTextViewState(textView: TextView, currentLength: Int, maxLength: Int) {

@@ -10,39 +10,41 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class CommunityAdapter(private val context: Context) : RecyclerView.Adapter<CommunityAdapter.ViewHolder>() {
-    var datas = mutableListOf<CommunityData>()
+    var dataList = mutableListOf<CommunityData>()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.comunity_list_view,parent,false)
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int = datas.size
-    override fun onBindViewHolder(holder: CommunityAdapter.ViewHolder, position: Int) {
-        holder.bind(datas[position])
+    override fun getItemCount(): Int = dataList.size
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(dataList[position])
     }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        private val title: TextView = itemView.findViewById(R.id.title)
-        private val detail: TextView = itemView.findViewById(R.id.detail)
-        private val tag1: TextView = itemView.findViewById(R.id.tag1)
-        private val tag2: TextView = itemView.findViewById(R.id.tag2)
-        private val commentnum: TextView = itemView.findViewById(R.id.dhatglenum)
-        private val heartnum: TextView = itemView.findViewById(R.id.heartnum)
+        private val titleTextView: TextView = itemView.findViewById(R.id.title)
+        private val detailTextView: TextView = itemView.findViewById(R.id.detail)
+        private val tag1TextView: TextView = itemView.findViewById(R.id.tag1)
+        private val tag2TextView: TextView = itemView.findViewById(R.id.tag2)
+        private val commentNumTextView: TextView = itemView.findViewById(R.id.dhatglenum)
+        private val heartNumTextView: TextView = itemView.findViewById(R.id.heartnum)
         private val detailButton: Button = itemView.findViewById(R.id.detail_button)
 
-        fun bind(item: CommunityData){
-            title.text = item.title
-            detail.text = item.detail
-            tag1.text = item.tag1
-            tag2.text = item.tag2
-            commentnum.text = item.comment.toString()
-            heartnum.text = item.heart.toString()
+        fun bind(item: CommunityData) {
+            titleTextView.text = item.title
+            detailTextView.text = item.detail
+            tag1TextView.text = item.tag1
+            tag2TextView.text = item.tag2
+            commentNumTextView.text = item.comment.toString()
+            heartNumTextView.text = item.heart.toString()
 
             detailButton.setOnClickListener() {
                 val intent = Intent(context, PostDetail::class.java)
-                intent.putExtra("title", title.text) // 데이터 전달
-                intent.putExtra("detail", detail.text) // 데이터 전달
-                intent.putExtra("heartnum", heartnum.text) // 데이터 전달
+                intent.putExtra("title", titleTextView.text) // 데이터 전달
+                intent.putExtra("detail", detailTextView.text) // 데이터 전달
+                intent.putExtra("heartnum", heartNumTextView.text) // 데이터 전달
                 context.startActivity(intent)
             }
         }

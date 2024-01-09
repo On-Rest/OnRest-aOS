@@ -14,15 +14,11 @@ import java.util.Date
 
 class CalenderClick1 : AppCompatActivity() {
     private lateinit var binding: CalenderClick1Binding
-    val date = Date() // 현재 날짜와 시간 가져오기
-    val year = SimpleDateFormat("yyyy").format(date) // 일만 가져오기
-    val month = SimpleDateFormat("MM").format(date) // 일만 가져오
-    val angryImageDrawable = R.drawable.angry_face
-    val happyImageDrawable = R.drawable.happy_face
-    val sadImageDrawable = R.drawable.sad_face
-    val fileLines = mutableListOf<String>()
+    val currentDate = Date() // 현재 날짜와 시간 가져오기
+    val currentYear = SimpleDateFormat("yyyy").format(currentDate) // 일만 가져오기
+    val currentMonth = SimpleDateFormat("MM").format(currentDate) // 일만 가져오
+    val fileContents = mutableListOf<String>()
     var fileName = ""
-
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,8 +38,8 @@ class CalenderClick1 : AppCompatActivity() {
     }
     private fun readFile(context: Context){
         val fileDate = intent.getStringExtra("BUTTON_ID")
-        fileName = "${year}-${month}-${fileDate}"
-        fileLines.clear()
+        fileName = "${currentYear}-${currentMonth}-${fileDate}"
+        fileContents.clear()
 
         try {
             val fileInputStream = context.openFileInput(fileName)
@@ -52,7 +48,7 @@ class CalenderClick1 : AppCompatActivity() {
 
             var line: String?
             while (bufferedReader.readLine().also { line = it } != null) {
-                fileLines.add(line.orEmpty()) // 각 줄의 데이터를 리스트에 추가합니다.
+                fileContents.add(line.orEmpty()) // 각 줄의 데이터를 리스트에 추가합니다.
             }
 
             fileInputStream.close()
@@ -64,9 +60,9 @@ class CalenderClick1 : AppCompatActivity() {
     }
     private fun setView() {
         val emotionsMap = mapOf(
-            "angry" to angryImageDrawable,
-            "happy" to happyImageDrawable,
-            "sad" to sadImageDrawable
+            "angry" to R.drawable.angry_face,
+            "happy" to R.drawable.happy_face,
+            "sad" to R.drawable.sad_face
         )
         val checkBoxMap = mapOf(
             "1" to binding.checkTV,
@@ -85,16 +81,16 @@ class CalenderClick1 : AppCompatActivity() {
 
         fileLinesMap.forEach { (key, index) ->
             when (key) {
-                "emotion" -> fileLines.getOrNull(index)?.let { emotion ->
+                "emotion" -> fileContents.getOrNull(index)?.let { emotion ->
                     emotionsMap[emotion]?.let { drawable -> binding.todaysemotion.setImageResource(drawable) }
                 }
-                "selectedMission" -> fileLines.getOrNull(index)?.let { selected ->
+                "selectedMission" -> fileContents.getOrNull(index)?.let { selected ->
                     checkBoxMap[selected]?.isChecked = true
                 }
-                "memo" -> fileLines.getOrNull(index)?.let { binding.memoinput.setText(it) }
+                "memo" -> fileContents.getOrNull(index)?.let { binding.memoinput.setText(it) }
                 else -> {
                     listOf(binding.dateTV, binding.dateTV1, binding.dateTV2, binding.missionTV, binding.missionTV1, binding.missionTV2)
-                        .getOrNull(index)?.text = fileLines.getOrNull(index)
+                        .getOrNull(index)?.text = fileContents.getOrNull(index)
                 }
             }
         }

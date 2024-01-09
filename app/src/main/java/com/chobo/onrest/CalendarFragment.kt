@@ -16,9 +16,9 @@ import java.io.InputStreamReader
 
 class CalendarFragment : Fragment() {
     private lateinit var binding: CalendarBinding
-    private val grayImageDrawable = com.chobo.onrest.R.drawable.gray_face
-    private var fileName = ""
-    private var emotion = grayImageDrawable
+    private val defaultImageResource = R.drawable.gray_face
+    private var fileDate = ""
+    private var emotionImage = defaultImageResource
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -60,25 +60,25 @@ class CalendarFragment : Fragment() {
         dayButtons.forEachIndexed { index, button ->
             val filesDir = requireContext().filesDir
             val date = String.format("%02d", index + 1)
-            fileName = "2024-01-${date}"
-            val myFile = File(filesDir, fileName)
+            fileDate = "2024-01-${date}"
+            val myFile = File(filesDir, fileDate)
 
             if (myFile.exists()) {
-                val fileLines = readFile(requireContext(), fileName)
+                val fileLines = readFile(requireContext(), fileDate)
                 button.setOnClickListener {
                     val intent = Intent(requireContext(), CalenderClick1::class.java)
                     intent.putExtra("BUTTON_ID", date) // 데이터 전달
                     startActivity(intent)
                     requireActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                 }
-                emotion = when {
-                    fileLines.isEmpty() -> grayImageDrawable // 파일을 읽지 못한 경우
-                    fileLines[0] == "angry" -> com.chobo.onrest.R.drawable.angry_face
-                    fileLines[0] == "happy" -> com.chobo.onrest.R.drawable.happy_face
-                    fileLines[0] == "sad" -> com.chobo.onrest.R.drawable.sad_face
-                    else -> grayImageDrawable // 감정에 해당하는 이미지가 없을 경우 회색 이미지
+                emotionImage = when {
+                    fileLines.isEmpty() -> defaultImageResource // 파일을 읽지 못한 경우
+                    fileLines[0] == "angry" -> R.drawable.angry_face
+                    fileLines[0] == "happy" -> R.drawable.happy_face
+                    fileLines[0] == "sad" -> R.drawable.sad_face
+                    else -> defaultImageResource // 감정에 해당하는 이미지가 없을 경우 회색 이미지
                 }
-                button.setImageResource(emotion)
+                button.setImageResource(emotionImage)
             }
         }
     }

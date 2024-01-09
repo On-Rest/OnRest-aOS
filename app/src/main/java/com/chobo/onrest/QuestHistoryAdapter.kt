@@ -12,17 +12,17 @@ class QuestHistoryAdapter(
     private val context: Context,
     private val toggleStateChangeListener: ToggleStateChangeListener
 ) : RecyclerView.Adapter<QuestHistoryAdapter.ViewHolder>() {
-    var datas = mutableListOf<QuestHistoryData>()
+    var dataList = mutableListOf<QuestHistoryData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuestHistoryAdapter.ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.mission_list_view,parent,false)
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int = datas.size
+    override fun getItemCount(): Int = dataList.size
     override fun onBindViewHolder(holder: QuestHistoryAdapter.ViewHolder, position: Int) {
-        holder.bind(datas[position])
-        val currentItem = datas[position]
+        holder.bind(dataList[position])
+        val currentItem = dataList[position]
 
         with(holder.checkTV) {
             isClickable = !currentItem.checkTV

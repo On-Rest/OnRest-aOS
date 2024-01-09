@@ -9,8 +9,6 @@ import com.chobo.onrest.databinding.EmotionChoice2AngryBinding
 
 class EmotionChoice2Angry : AppCompatActivity() {
     private lateinit var binding: EmotionChoice2AngryBinding
-    private val value = "angrylist"
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = EmotionChoice2AngryBinding.inflate(layoutInflater)
@@ -32,7 +30,7 @@ class EmotionChoice2Angry : AppCompatActivity() {
 
     private fun setChoiceClickListener(view: View) {
         view.setOnClickListener {
-            val intent = Intent(this, QuestChoice::class.java).apply{putExtra("key", value)}
+            val intent = Intent(this, QuestChoice::class.java).apply{putExtra("key", "angrylist")}
             startActivity(intent)
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()

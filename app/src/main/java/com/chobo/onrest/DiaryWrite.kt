@@ -15,8 +15,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class DiaryWrite : AppCompatActivity() {
     private lateinit var binding: DiaryWriteBinding
-    private lateinit var emotion: String
-    private lateinit var memoinputText: String
+    private lateinit var detectedEmotion: String
+    private lateinit var diaryText: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,13 +29,13 @@ class DiaryWrite : AppCompatActivity() {
             super.onBackPressed()
         }
         binding.write.setOnClickListener{
-            memoinputText = binding.memoinput.text.toString()
+            diaryText = binding.memoinput.text.toString()
 
             GlobalScope.launch(Dispatchers.IO) {
                 try {
                     chatgpt()
-                    val intent = Intent(this@DiaryWrite, YourEmotion::class.java).apply { putExtra("emotion1321", emotion) }
-                    editor.putString("memoinput", memoinputText).apply()
+                    val intent = Intent(this@DiaryWrite, YourEmotion::class.java).apply { putExtra("emotion1321", detectedEmotion) }
+                    editor.putString("memoinput", diaryText).apply()
                     startActivity(intent)
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                     finish()
@@ -59,7 +59,7 @@ class DiaryWrite : AppCompatActivity() {
                 ChatMessage("system", "You are a helpful assistant."),
                 ChatMessage(
                     "user",
-                    "일기 속 감정의 비중에서 기쁨이 많으면 1, 감정의 비중에서  슬픔이 많으면 2,감정의 비중에서 화남이 많으면 3을 숫자만 반환해줘 문장 없이 숫자만,만약 일기가 없으면 공백을 출력해줘 일기: $memoinputText"
+                    "일기 속 감정의 비중에서 기쁨이 많으면 1, 감정의 비중에서  슬픔이 많으면 2,감정의 비중에서 화남이 많으면 3을 숫자만 반환해줘 문장 없이 숫자만,만약 일기가 없으면 공백을 출력해줘 일기: $diaryText"
 
                 )
             )
@@ -67,7 +67,7 @@ class DiaryWrite : AppCompatActivity() {
         try {
             val response = service.getChatCompletion(requestBody)
             val result = response.choices[0].message.content
-            emotion = result
+            detectedEmotion = result
         } catch (e: Exception) {
             e.printStackTrace()
         }

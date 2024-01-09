@@ -3,7 +3,6 @@ package com.chobo.onrest
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.databinding.CalendarClickBinding
 import java.io.File
@@ -13,17 +12,17 @@ import java.util.Date
 
 class CalenderClick : AppCompatActivity() {
     private lateinit var binding: CalendarClickBinding
-    val date = Date() // 현재 날짜와 시간 가져오기
-    val dayOfMonth = SimpleDateFormat("dd").format(date) // 일만 가져오기
-    val year = SimpleDateFormat("yyyy").format(date) // 일만 가져오기
-    val month = SimpleDateFormat("MM").format(date) // 일만 가져오기
+    val currentDate = Date() // 현재 날짜와 시간 가져오기
+    val currentDay = SimpleDateFormat("dd").format(currentDate) // 일만 가져오기
+    val currentYear = SimpleDateFormat("yyyy").format(currentDate) // 일만 가져오기
+    val currentMonth = SimpleDateFormat("MM").format(currentDate) // 일만 가져오기
     var stringValue = "" // 저장할 데이터
     val booleanValue = false
-    val editeddate = "${year}년 ${month}월 ${dayOfMonth}일"
+    val editedDate = "${currentYear}년 ${currentMonth}월 ${currentDay}일"
     var retrievedValue = ""
     var todaysEmotion = "" // "key"에 해당하는 데이터를 가져옵니다. 만약 데이터가 없으면 기본값인 "defaultValue"가 반환됩니다.
     private lateinit var receivedList: List<String>
-    private lateinit var selectedmission: String
+    private lateinit var selectedMission: String
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +45,7 @@ class CalenderClick : AppCompatActivity() {
 
     private fun writefileTodo() {
         val filesDir = applicationContext.filesDir
-        val fileName = "${year}-${month}"
+        val fileName = "${currentYear}-${currentMonth}"
         val fileOutputStream: FileOutputStream
         val myFile = File(filesDir, fileName)
         fileOutputStream = if (myFile.exists()) {
@@ -69,12 +68,12 @@ class CalenderClick : AppCompatActivity() {
     }
 
     private fun writefile() {
-        val fileName = "${year}-${month}-${dayOfMonth}"
+        val fileName = "${currentYear}-${currentMonth}-${currentDay}"
         val fileContent = buildString {
             appendln(todaysEmotion)
-            appendln(editeddate)
-            appendln("${dayOfMonth}일")
-            appendln(selectedmission)
+            appendln(editedDate)
+            appendln("${currentDay}일")
+            appendln(selectedMission)
             receivedList.take(3).forEach { appendln(it) }
             append(retrievedValue)
         }
@@ -97,12 +96,12 @@ class CalenderClick : AppCompatActivity() {
             retrievedValue = " "
         }
         receivedList = intent.getSerializableExtra("myList") as? List<String> ?: emptyList()
-        selectedmission = intent.getStringExtra("key") ?: ""
+        selectedMission = intent.getStringExtra("key") ?: ""
         todaysEmotion = sharedPrefs.getString("yourEmotion", "defaultValue").toString()
 
-        when (selectedmission) {
+        when (selectedMission) {
             "1", "2", "3" -> {
-                stringValue = receivedList.getOrNull(selectedmission.toInt() - 1) ?: ""
+                stringValue = receivedList.getOrNull(selectedMission.toInt() - 1) ?: ""
             }
         }
 
@@ -119,12 +118,12 @@ class CalenderClick : AppCompatActivity() {
 
         val checkTVList = listOf(binding.checkTV, binding.checkTV1, binding.checkTV2)
         checkTVList.forEachIndexed { index, checkBox ->
-            checkBox.isChecked = (index + 1).toString() == selectedmission
+            checkBox.isChecked = (index + 1).toString() == selectedMission
             checkBox.isEnabled = false
         }
 
         val dateTextViews = listOf(binding.dateTV, binding.dateTV1, binding.dateTV2)
-        dateTextViews.forEach { it.text = "${dayOfMonth}일" }
+        dateTextViews.forEach { it.text = "${currentDay}일" }
 
         val missionTextViews = listOf(binding.missionTV, binding.missionTV1, binding.missionTV2)
         receivedList.forEachIndexed { index, value ->
@@ -132,6 +131,6 @@ class CalenderClick : AppCompatActivity() {
         }
 
         binding.memoinput.setText(retrievedValue)
-        binding.dayText.text = "${year}년 ${month}월 ${dayOfMonth}일"
+        binding.dayText.text = "${currentYear}년 ${currentMonth}월 ${currentDay}일"
     }
 }

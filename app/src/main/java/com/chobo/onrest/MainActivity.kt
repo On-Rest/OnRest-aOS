@@ -17,7 +17,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 
 class MainActivity : AppCompatActivity() {
-
+// 코드이해못함
     private lateinit var binding: ActivityMainBinding
     lateinit var mGoogleSignInClient: GoogleSignInClient
     lateinit var resultLauncher: ActivityResultLauncher<Intent>
@@ -52,7 +52,6 @@ class MainActivity : AppCompatActivity() {
          setResultSignUp()
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            //.requestIdToken(getString(R.string.sign_in_client_id))
             .requestEmail()
             .requestProfile()
             .build()
@@ -62,11 +61,10 @@ class MainActivity : AppCompatActivity() {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        with(binding) {
             binding.loginButton.setOnClickListener {
                 signIn()
             }
-        }
+
     }
 
     private fun signIn() {

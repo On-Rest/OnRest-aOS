@@ -9,7 +9,6 @@ import com.chobo.onrest.databinding.EmotionChoice2SadBinding
 
 class EmotionChoice2Sad : AppCompatActivity() {
     private lateinit var binding: EmotionChoice2SadBinding
-    private val value = "sadlist"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +31,7 @@ class EmotionChoice2Sad : AppCompatActivity() {
 
     private fun setChoiceClickListener(view: View) {
         view.setOnClickListener {
-            val intent = Intent(this, QuestChoice::class.java).apply{putExtra("key", value)}
+            val intent = Intent(this, QuestChoice::class.java).apply{putExtra("key", "sadlist")}
             startActivity(intent)
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()

@@ -129,7 +129,7 @@ class QuestHistoryFragment : Fragment(), ToggleStateChangeListener,PopupCallback
             val day = fileLines[i].substring(0, 2)
             datas.add(QuestHistoryData("${day}일", fileLines[i + 1], fileLines[i + 2].toBoolean()))
         }
-        questHistoryAdapter.datas = datas
+        questHistoryAdapter.dataList = datas
         questHistoryAdapter.notifyDataSetChanged()
     }
 }
