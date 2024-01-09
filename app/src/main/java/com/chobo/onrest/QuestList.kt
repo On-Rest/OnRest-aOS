@@ -62,7 +62,7 @@ class QuestList : AppCompatActivity() {
             onClickListener(3)
         }
     }
-    fun onClickListener(Data:Int){
+    private fun onClickListener(Data:Int){
         val intent =  Intent(this, CalenderClick::class.java)
         intent.putExtra("myList", selectedList as Serializable)
         intent.putExtra("key", Data) // 데이터 전달

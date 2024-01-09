@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.databinding.PostWriteBinding
 import com.chobo.onrest.dto.PostSubmitRequest
 import com.chobo.onrest.dto.PostSubmitResponse
+import com.chobo.onrest.interFace.TextChangedCallback
 import com.chobo.onrest.retrofit.RetrofitClass
 import retrofit2.Call
 import retrofit2.Callback
@@ -67,23 +68,27 @@ class PostWrite : AppCompatActivity() {
     private fun setupEditTextWatchers() {
         editText = binding.detailinput
         captionTextView = binding.detailTextnum
-
-        editText.addTextChangedListener(createTextWatcher(maxCharacters) {
-            inputTextDetail = it
-            currentLengthDetail = inputTextDetail.length
-            updateSendButtonState()
-            updateTextViewState(captionTextView, currentLengthDetail, maxCharacters)
-        })
-
+        editText.addTextChangedListener(createTextWatcher(maxCharacters, object :
+            TextChangedCallback {
+            override fun onTextChanged(text: String) {
+                inputTextDetail = text
+                currentLengthDetail = inputTextDetail.length
+                updateSendButtonState()
+                updateTextViewState(captionTextView, currentLengthDetail, maxCharacters)
+            }
+        }))
         editText1 = binding.titleinput
         captionTextView1 = binding.titleTextnum
 
-        editText1.addTextChangedListener(createTextWatcher(maxCharactersTitle) {
-            inputTextTitle = it
-            currentLengthTitle = inputTextTitle.length
-            updateSendButtonState()
-            updateTextViewState(captionTextView1, currentLengthTitle, maxCharactersTitle)
-        })
+        editText1.addTextChangedListener(createTextWatcher(maxCharactersTitle, object :
+            TextChangedCallback {
+            override fun onTextChanged(text: String) {
+                inputTextTitle = text
+                currentLengthTitle = inputTextTitle.length
+                updateSendButtonState()
+                updateTextViewState(captionTextView1, currentLengthTitle, maxCharactersTitle)
+            }
+        }))
     }
 
     private fun setupSendButtonListener() {
@@ -110,13 +115,11 @@ class PostWrite : AppCompatActivity() {
                         // Handle failure
                     }
                 })
-                // rest of your code
-                super.onBackPressed()
             }
         }
     }
 
-    private fun createTextWatcher(maxLength: Int, callback: (String) -> Unit): TextWatcher {
+    private fun createTextWatcher(maxLength: Int, callback: TextChangedCallback): TextWatcher {
         return object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
@@ -128,7 +131,7 @@ class PostWrite : AppCompatActivity() {
                         editText.setText(truncatedText)
                         editText.setSelection(maxLength)
                     }
-                    callback(text)
+                    callback.onTextChanged(text)
                 }
             }
         }

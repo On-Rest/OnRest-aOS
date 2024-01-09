@@ -67,10 +67,6 @@
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".Header"
-            android:exported="false"
-            android:windowSoftInputMode="adjustNothing" />
-        <activity
             android:name=".PostWrite"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
