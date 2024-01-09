@@ -17,9 +17,7 @@ class QuestHistoryPopup : DialogFragment() {
 
     override fun onResume() {
         super.onResume()
-        val width = (resources.displayMetrics.widthPixels)
-        val height = (resources.displayMetrics.heightPixels)
-        dialog?.window?.setLayout(width, height)
+        dialog?.window?.setLayout(resources.displayMetrics.widthPixels, resources.displayMetrics.heightPixels)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -64,14 +62,13 @@ class QuestHistoryPopup : DialogFragment() {
 
             if (lineIndexToModify < lines.size) {
                 lines[lineIndexToModify] = "true" // 선택한 줄을 새로운 문자열로 대체
-            } else {
-                // 선택한 줄이 파일의 범위를 벗어날 경우 예외처리
-                throw IndexOutOfBoundsException("선택한 줄이 파일의 범위를 벗어났습니다.")
-            }
-            myFile.bufferedWriter().use { writer ->
-                lines.forEach { line ->
-                    writer.write("$line\n") // 수정된 내용을 파일에 씀
+                myFile.bufferedWriter().use { writer ->
+                    lines.forEach { line ->
+                        writer.write("$line\n") // 수정된 내용을 파일에 씀
+                    }
                 }
+            } else {
+                throw IndexOutOfBoundsException("선택한 줄이 파일의 범위를 벗어났습니다.")
             }
         } catch (e: Exception) {
             e.printStackTrace()

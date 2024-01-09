@@ -23,8 +23,7 @@ class EmotionChoice2Happy : AppCompatActivity() {
             onBackPressed()
         }
 
-        editor.putString("yourEmotion", "happy")
-        editor.apply()
+        editor.putString("yourEmotion", "happy").apply()
 
         setChoiceClickListener(binding.choice1)
         setChoiceClickListener(binding.choice2)
@@ -33,7 +32,7 @@ class EmotionChoice2Happy : AppCompatActivity() {
 
     private fun setChoiceClickListener(view: View) {
         view.setOnClickListener {
-            val intent = Intent(this, QuestChoice::class.java)
+            val intent = Intent(this, QuestChoice::class.java).apply{putExtra("key", value)}
             intent.putExtra("key", value)
             startActivity(intent)
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)

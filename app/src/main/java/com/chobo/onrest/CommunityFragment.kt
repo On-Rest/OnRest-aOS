@@ -169,27 +169,16 @@ class CommunityFragment : Fragment() {
                 R.id.happy -> "happy"
                 else -> ""
             }
-
-            if (isChecked) {
-                if (!tagList.contains(tag)) {
-                    tagList.add(tag)
-                }
-            } else {
-                if (tagList.contains(tag)) {
-                    tagList.remove(tag)
-                }
-            }
+            if (isChecked) tagList.add(tag) else tagList.remove(tag)
         }
 
-        popupViewBinding.sad.setOnCheckedChangeListener(toggleListener)
-        popupViewBinding.helpless.setOnCheckedChangeListener(toggleListener)
-        popupViewBinding.shy.setOnCheckedChangeListener(toggleListener)
-        popupViewBinding.anoying.setOnCheckedChangeListener(toggleListener)
-        popupViewBinding.angry.setOnCheckedChangeListener(toggleListener)
-        popupViewBinding.joyful.setOnCheckedChangeListener(toggleListener)
-        popupViewBinding.tranquility.setOnCheckedChangeListener(toggleListener)
-        popupViewBinding.excited.setOnCheckedChangeListener(toggleListener)
-        popupViewBinding.happy.setOnCheckedChangeListener(toggleListener)
+        val toggleButtons = arrayOf(
+            popupViewBinding.sad, popupViewBinding.helpless, popupViewBinding.shy,
+            popupViewBinding.anoying, popupViewBinding.angry, popupViewBinding.joyful,
+            popupViewBinding.tranquility, popupViewBinding.excited, popupViewBinding.happy
+        )
+
+        toggleButtons.forEach { it.setOnCheckedChangeListener(toggleListener) }
 
         binding.filter.setOnClickListener {
             if (popupWindow.isShowing) {

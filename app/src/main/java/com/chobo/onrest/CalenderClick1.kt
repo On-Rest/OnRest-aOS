@@ -28,7 +28,6 @@ class CalenderClick1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = CalenderClick1Binding.inflate(layoutInflater)
-        initFileName()
         readFile(this)
         setView()
         val view = binding.root
@@ -42,6 +41,8 @@ class CalenderClick1 : AppCompatActivity() {
         }
     }
     private fun readFile(context: Context){
+        val fileDate = intent.getStringExtra("BUTTON_ID")
+        fileName = "${year}-${month}-${fileDate}"
         fileLines.clear()
 
         try {
@@ -61,41 +62,44 @@ class CalenderClick1 : AppCompatActivity() {
             e.printStackTrace()
         }
     }
-    private fun initFileName(){
-        val fileDate = intent.getStringExtra("BUTTON_ID")
-        fileName = "${year}-${month}-${fileDate}"
-    }
-    private fun setView(){
-        when(fileLines[0]){
-            "angry" -> binding.todaysemotion.setImageResource(angryImageDrawable)
-            "happy" -> binding.todaysemotion.setImageResource(happyImageDrawable)
-            "sad" -> binding.todaysemotion.setImageResource(sadImageDrawable)
+    private fun setView() {
+        val emotionsMap = mapOf(
+            "angry" to angryImageDrawable,
+            "happy" to happyImageDrawable,
+            "sad" to sadImageDrawable
+        )
+        val checkBoxMap = mapOf(
+            "1" to binding.checkTV,
+            "2" to binding.checkTV1,
+            "3" to binding.checkTV2
+        )
+        val fileLinesMap = mapOf(
+            "emotion" to 0,
+            "date" to 1,
+            "selectedMission" to 3,
+            "mission1" to 4,
+            "mission2" to 5,
+            "mission3" to 6,
+            "memo" to 7
+        )
+
+        fileLinesMap.forEach { (key, index) ->
+            when (key) {
+                "emotion" -> fileLines.getOrNull(index)?.let { emotion ->
+                    emotionsMap[emotion]?.let { drawable -> binding.todaysemotion.setImageResource(drawable) }
+                }
+                "selectedMission" -> fileLines.getOrNull(index)?.let { selected ->
+                    checkBoxMap[selected]?.isChecked = true
+                }
+                "memo" -> fileLines.getOrNull(index)?.let { binding.memoinput.setText(it) }
+                else -> {
+                    listOf(binding.dateTV, binding.dateTV1, binding.dateTV2, binding.missionTV, binding.missionTV1, binding.missionTV2)
+                        .getOrNull(index)?.text = fileLines.getOrNull(index)
+                }
+            }
         }
-        when(fileLines[3]){
-            "1" ->  {
-                binding.checkTV.isChecked = true
-            }
-            "2" ->  {
-                binding.checkTV1.isChecked = true
-            }
-            "3" ->  {
-                binding.checkTV2.isChecked = true
-            }
-        }
-        binding.memoinput.setText(fileLines[7])
 
-        binding.checkTV.isEnabled = false
-        binding.checkTV1.isEnabled = false
-        binding.checkTV2.isEnabled = false
-
-        binding.dateTV.text = fileLines[2]
-        binding.dateTV1.text = fileLines[2]
-        binding.dateTV2.text = fileLines[2]
-
-        binding.missionTV.text = fileLines[4]
-        binding.missionTV1.text = fileLines[5]
-        binding.missionTV2.text = fileLines[6]
-
-        binding.dayText.text = fileLines[1]
+        listOf(binding.checkTV, binding.checkTV1, binding.checkTV2).forEach { it.isEnabled = false }
     }
+
 }

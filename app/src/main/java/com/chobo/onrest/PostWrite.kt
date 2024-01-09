@@ -4,7 +4,6 @@ import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.widget.CompoundButton
 import android.widget.EditText
 import android.widget.TextView
@@ -18,7 +17,6 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
 class PostWrite : AppCompatActivity() {
     private lateinit var binding: PostWriteBinding
     private lateinit var editText: EditText
@@ -27,160 +25,126 @@ class PostWrite : AppCompatActivity() {
     private lateinit var captionTextView1: TextView
     private val maxCharacters = 300 // 최대 글자 수
     private val maxCharacters1 = 30 // 최대 글자 수
-    var maxToggleCount = 2 // 최대 토글 횟수
-    var currentToggleCount = 0 // 현재 토글 횟수
-    var inputText1 = "" // 초기 값을 빈 문자열로 설정
-    var currentLength1 = 0
-    var inputText = "" // 초기 값을 빈 문자열로 설정
-    var currentLength = 0
-
+    private var maxToggleCount = 2 // 최대 토글 횟수
+    private var currentToggleCount = 0 // 현재 토글 횟수
+    private var inputText1 = "" // 초기 값을 빈 문자열로 설정
+    private var currentLength1 = 0
+    private var inputText = "" // 초기 값을 빈 문자열로 설정
+    private var currentLength = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = PostWriteBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        binding.header1.setOnClickListener{
-            super.onBackPressed()
-        }
+        binding.header1.setOnClickListener { super.onBackPressed() }
+        setupToggleListeners()
+        setupEditTextWatchers()
+        setupSendButtonListener()
+        binding.gobackIcon.setOnClickListener { super.onBackPressed() }
+    }
 
+    private fun setupToggleListeners() {
         val toggleListener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
                 if (currentToggleCount >= maxToggleCount) {
-                    // 최대 토글 횟수를 초과하면 다시 체크를 해제합니다.
                     buttonView.isChecked = false
                 } else {
-                    // 현재 토글 횟수가 최대 토글 횟수보다 작을 경우에만 토글 횟수 증가
                     currentToggleCount++
                 }
             } else {
-                // 토글 해제 시 토글 횟수 감소
                 currentToggleCount--
             }
-            binding.send.isChecked = false
-            if (currentLength1 > 0){
-                if (currentLength > 0){
-                    if(currentToggleCount == 2){
-                        binding.send.isChecked = true
-                    }
-                }
-            }
+            updateSendButtonState()
         }
 
-        binding.sad.setOnCheckedChangeListener(toggleListener)
-        binding.shy.setOnCheckedChangeListener(toggleListener)
-        binding.anoying.setOnCheckedChangeListener(toggleListener)
-        binding.angry.setOnCheckedChangeListener(toggleListener)
-        binding.joyful.setOnCheckedChangeListener(toggleListener)
-        binding.tranquility.setOnCheckedChangeListener(toggleListener)
-        binding.excited.setOnCheckedChangeListener(toggleListener)
-        binding.helpless.setOnCheckedChangeListener(toggleListener)
-        binding.happy.setOnCheckedChangeListener(toggleListener)
+        arrayOf(
+            binding.sad, binding.shy, binding.anoying, binding.angry,
+            binding.joyful, binding.tranquility, binding.excited,
+            binding.helpless, binding.happy
+        ).forEach { it.setOnCheckedChangeListener(toggleListener) }
+    }
 
-        editText = binding.detailinput // EditText 참조 가져오기
-        captionTextView = binding.detailTextnum // TextView 참조 가져오기
+    private fun setupEditTextWatchers() {
+        editText = binding.detailinput
+        captionTextView = binding.detailTextnum
 
-        editText.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            }
-            override fun afterTextChanged(s: Editable?) {
-                inputText = s.toString()
-                currentLength = inputText.length
-                binding.send.isChecked = false
-                if (currentLength1 > 0){
-                    if (currentLength > 0){
-                        if (currentToggleCount == 2){
-                            binding.send.isChecked = true
-                        }
-                    }
-                }
-                captionTextView.text = "$currentLength/$maxCharacters" // 현재 글자 수를 보여줍니다
-
-                if (currentLength > maxCharacters) {
-                    editText.setText(inputText.substring(0, maxCharacters))
-                    editText.setSelection(maxCharacters)
-                    captionTextView.setTextColor(Color.parseColor("#E92626")) // 텍스트 색상을 변경합니다
-                } else {
-                    // 글자 수 제한 안에 있을 때 텍스트 색상을 리셋합니다
-                    captionTextView.setTextColor(Color.parseColor("#89857C"))
-                }            }
+        editText.addTextChangedListener(createTextWatcher(maxCharacters) {
+            inputText = it
+            currentLength = inputText.length
+            updateSendButtonState()
+            updateTextViewState(captionTextView, currentLength, maxCharacters)
         })
-        editText1 = binding.titleinput // EditText 참조 가져오기
-        captionTextView1 = binding.titleTextnum // TextView 참조 가져오기
 
-        editText1.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            }
-            override fun afterTextChanged(s: Editable?) {
-                // 텍스트 변경 후에 호출되는 메서드
-                inputText1 = s.toString()
-                currentLength1 = inputText1.length
-                binding.send.isChecked = false
-                if (currentLength1 > 0){
-                    if (currentLength > 0){
-                        if(currentToggleCount == 26){
-                            binding.send.isChecked = true
-                        }
-                    }
-                }
-                captionTextView1.text = "$currentLength1/$maxCharacters1" // 현재 글자 수를 보여줍니다
+        editText1 = binding.titleinput
+        captionTextView1 = binding.titleTextnum
 
-                if (currentLength1 > maxCharacters1) {
-                    editText1.setText(inputText1.substring(0, maxCharacters1))
-                    editText1.setSelection(maxCharacters1)
-                    captionTextView1.setTextColor(Color.parseColor("#E92626")) // 텍스트 색상을 변경합니다
-                } else {
-                    // 글자 수 제한 안에 있을 때 텍스트 색상을 리셋합니다
-                    captionTextView1.setTextColor(Color.parseColor("#89857C"))
-                }
-            }
+        editText1.addTextChangedListener(createTextWatcher(maxCharacters1) {
+            inputText1 = it
+            currentLength1 = inputText1.length
+            updateSendButtonState()
+            updateTextViewState(captionTextView1, currentLength1, maxCharacters1)
         })
+    }
+
+    private fun setupSendButtonListener() {
         binding.send.setOnClickListener {
-            binding.send.isChecked = false
-            if (currentLength1 > 0){
-                if (currentLength > 0){
-                    if(currentToggleCount == 2){
-                        val retrofit = RetrofitClass()
+            if (currentLength1 > 0 && currentLength > 0 && currentToggleCount == 2) {
+                val retrofit = RetrofitClass()
+                retrofit.postService.submitPost(
+                    PostSubmitRequest(
+                        subject = inputText1,
+                        doc = inputText,
+                        type = "board",
+                        clientId = "fuck-fuck-fuck-fuck",
+                        emotion = 1
+                    )
+                ).enqueue(object : Callback<PostSubmitResponse> {
+                    override fun onResponse(
+                        call: Call<PostSubmitResponse>,
+                        response: Response<PostSubmitResponse>
+                    ) {
+                        this@PostWrite.finish()
+                    }
 
-                        retrofit.postService.submitPost(
-                            PostSubmitRequest(
-                                subject = inputText1,
-                                doc = inputText,
-                                type = "board",
-                                clientId = "fuck-fuck-fuck-fuck",
-                                emotion = 1
-                            )
-                        ).enqueue(object : Callback<PostSubmitResponse> {
-                            override fun onResponse(
-                                call: Call<PostSubmitResponse>,
-                                response: Response<PostSubmitResponse>
-                            ) {
-                                Log.d("ASDF", response.body().toString())
-                                this@PostWrite.finish()
-                            }
+                    override fun onFailure(call: Call<PostSubmitResponse>, t: Throwable) {
+                        // Handle failure
+                    }
+                })
+                // rest of your code
+                super.onBackPressed()
+            }
+        }
+    }
 
-                            override fun onFailure(call: Call<PostSubmitResponse>, t: Throwable) {
-
-                            }
-
-                        })
-
-
-                        val apiServiceImpl = ApiServiceImpl()
-                        val success = apiServiceImpl.submitBoard(inputText, inputText1,"imbabo-imbabo-imbabo-imbabo",1)
-                        Log.d("fuck", success.execute().body().toString()
-                        )
-                        super.onBackPressed()                    }
+    private fun createTextWatcher(maxLength: Int, callback: (String) -> Unit): TextWatcher {
+        return object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable?) {
+                s?.let {
+                    val text = it.toString()
+                    if (text.length > maxLength) {
+                        val truncatedText = text.substring(0, maxLength)
+                        editText.setText(truncatedText)
+                        editText.setSelection(maxLength)
+                    }
+                    callback(text)
                 }
             }
-
         }
-        binding.gobackIcon.setOnClickListener {
-            super.onBackPressed()
+    }
+
+    private fun updateSendButtonState() {
+        binding.send.isChecked = currentLength1 > 0 && currentLength > 0 && currentToggleCount == 2
+    }
+
+    private fun updateTextViewState(textView: TextView, currentLength: Int, maxLength: Int) {
+        textView.text = "$currentLength/$maxLength"
+        if (currentLength > maxLength) {
+            textView.setTextColor(Color.parseColor("#E92626"))
+        } else {
+            textView.setTextColor(Color.parseColor("#89857C"))
         }
     }
 }

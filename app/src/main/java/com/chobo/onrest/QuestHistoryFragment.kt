@@ -125,10 +125,9 @@ class QuestHistoryFragment : Fragment(), ToggleStateChangeListener,PopupCallback
     fun initRecycler() {
         binding.questList.adapter = questHistoryAdapter
         datas.clear()
-
-        for(i in 0 until (fileLines.size - 2) step 3) {
-                val day = fileLines[i].substring(0,2)
-                datas.add(QuestHistoryData("${day}일", fileLines[i + 1], fileLines[i + 2].toBoolean()))
+        (0 until fileLines.size - 2 step 3).forEach { i ->
+            val day = fileLines[i].substring(0, 2)
+            datas.add(QuestHistoryData("${day}일", fileLines[i + 1], fileLines[i + 2].toBoolean()))
         }
         questHistoryAdapter.datas = datas
         questHistoryAdapter.notifyDataSetChanged()

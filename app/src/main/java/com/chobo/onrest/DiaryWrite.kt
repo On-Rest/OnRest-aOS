@@ -1,5 +1,6 @@
 package com.chobo.onrest
 
+import YourEmotion
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -30,21 +31,16 @@ class DiaryWrite : AppCompatActivity() {
         binding.write.setOnClickListener{
             memoinputText = binding.memoinput.text.toString()
 
-            // 백그라운드 스레드에서 chatgpt() 함수 호출
             GlobalScope.launch(Dispatchers.IO) {
                 try {
                     chatgpt()
-                    val intent = Intent(this@DiaryWrite, YourEmotion::class.java)
-                    intent.putExtra("emotion1321", emotion)
-                    editor.putString("memoinput", memoinputText)
-                    editor.apply()
+                    val intent = Intent(this@DiaryWrite, YourEmotion::class.java).apply { putExtra("emotion1321", emotion) }
+                    editor.putString("memoinput", memoinputText).apply()
                     startActivity(intent)
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                     finish()
                 } catch (e: Exception) {
-                    // 네트워크 요청 실패 시 예외 처리
                     Log.e("DiaryWrite", "Network request failed: ${e.message}")
-                    // 사용자에게 알림을 표시하거나 다른 오류 처리를 수행할 수 있습니다.
                 }
             }
         }

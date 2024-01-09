@@ -14,7 +14,7 @@ class ComunityListView : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.detail.setOnClickListener() {
+        binding.detail.setOnClickListener {
             startActivity(Intent(this, PostDetail::class.java))
             overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out )
             finish()

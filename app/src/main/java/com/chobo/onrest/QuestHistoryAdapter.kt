@@ -24,15 +24,13 @@ class QuestHistoryAdapter(
         holder.bind(datas[position])
         val currentItem = datas[position]
 
-        if (currentItem.checkTV) {
-            holder.checkTV.isClickable = false
-            holder.checkTV.isEnabled = false
-        } else {
-            holder.checkTV.isClickable = true
-            holder.checkTV.isEnabled = true
-            // 토글 버튼 상태 변경 리스너 설정
-            holder.checkTV.setOnCheckedChangeListener { _, isChecked ->
-                toggleStateChangeListener.onToggleStateChanged(currentItem.mission, isChecked, position)
+        with(holder.checkTV) {
+            isClickable = !currentItem.checkTV
+            isEnabled = !currentItem.checkTV
+            setOnCheckedChangeListener(null)
+            isChecked = currentItem.checkTV
+            setOnClickListener {
+                toggleStateChangeListener.onToggleStateChanged(currentItem.mission, !isChecked, position)
             }
         }
     }

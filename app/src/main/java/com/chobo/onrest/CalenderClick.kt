@@ -19,9 +19,6 @@ class CalenderClick : AppCompatActivity() {
     val month = SimpleDateFormat("MM").format(date) // 일만 가져오기
     var stringValue = "" // 저장할 데이터
     val booleanValue = false
-    val angryImageDrawable = R.drawable.angry_face
-    val happyImageDrawable = R.drawable.happy_face
-    val sadImageDrawable = R.drawable.sad_face
     val editeddate = "${year}년 ${month}월 ${dayOfMonth}일"
     var retrievedValue = ""
     var todaysEmotion = "" // "key"에 해당하는 데이터를 가져옵니다. 만약 데이터가 없으면 기본값인 "defaultValue"가 반환됩니다.
@@ -33,7 +30,7 @@ class CalenderClick : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = CalendarClickBinding.inflate(layoutInflater)
         val view = binding.root
-        binding.header1.setOnClickListener{
+        binding.header1.setOnClickListener {
             super.onBackPressed()
         }
         setView()
@@ -42,7 +39,7 @@ class CalenderClick : AppCompatActivity() {
         setContentView(view)
 
 
-        binding.gobackIcon.setOnClickListener{
+        binding.gobackIcon.setOnClickListener {
             super.onBackPressed()
         }
     }
@@ -52,107 +49,89 @@ class CalenderClick : AppCompatActivity() {
         val fileName = "${year}-${month}"
         val fileOutputStream: FileOutputStream
         val myFile = File(filesDir, fileName)
-
+        fileOutputStream = if (myFile.exists()) {
+            openFileOutput(fileName, Context.MODE_APPEND)
+        } else {
+            openFileOutput(fileName, Context.MODE_PRIVATE)
+        }
+        val filcontent = buildString {
+            appendln(todaysEmotion)
+            appendln(stringValue)
+            appendln(booleanValue)
+        }
         try {
-            fileOutputStream = if (myFile.exists()) {
-                openFileOutput(fileName, Context.MODE_APPEND)
-            } else {
-                openFileOutput(fileName, Context.MODE_PRIVATE)
-            }
-
             fileOutputStream.use {
-                it.write(dayOfMonth.toByteArray())
-                it.write("\n".toByteArray())
-                it.write(stringValue.toByteArray())
-                it.write("\n".toByteArray())
-                it.write(booleanValue.toString().toByteArray())
-                it.write("\n".toByteArray())
+                it.write(filcontent.toByteArray())
             }
         } catch (e: Exception) {
             e.printStackTrace()
         }
     }
+
     private fun writefile() {
         val fileName = "${year}-${month}-${dayOfMonth}"
-        val fileOutputStream: FileOutputStream
-        try {
-            fileOutputStream = openFileOutput(fileName, Context.MODE_PRIVATE)
+        val fileContent = buildString {
+            appendln(todaysEmotion)
+            appendln(editeddate)
+            appendln("${dayOfMonth}일")
+            appendln(selectedmission)
+            receivedList.take(3).forEach { appendln(it) }
+            append(retrievedValue)
+        }
 
-            fileOutputStream.use {
-                it.write(todaysEmotion.toByteArray())
-                it.write("\n".toByteArray())
-                it.write(editeddate.toByteArray())
-                it.write("\n".toByteArray())
-                it.write("${dayOfMonth}일".toByteArray())
-                it.write("\n".toByteArray())
-                it.write(selectedmission.toByteArray())
-                it.write("\n".toByteArray())
-                it.write(receivedList[0].toByteArray())
-                it.write("\n".toByteArray())
-                it.write(receivedList[1].toByteArray())
-                it.write("\n".toByteArray())
-                it.write(receivedList[2].toByteArray())
-                it.write("\n".toByteArray())
-                it.write(retrievedValue.toByteArray())
-                }
+        try {
+            openFileOutput(fileName, Context.MODE_PRIVATE).use {
+                it.write(fileContent.toByteArray())
+            }
         } catch (e: Exception) {
             e.printStackTrace()
         }
     }
-     @SuppressLint("SetTextI18n")
-     private fun setView(){
+
+
+    @SuppressLint("SetTextI18n")
+    private fun setView() {
         val sharedPrefs = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-         retrievedValue = sharedPrefs.getString("memoinput", "defaultValue").toString()
-         if (retrievedValue == ""){
-             retrievedValue = " "
-         }
+        retrievedValue = sharedPrefs.getString("memoinput", "defaultValue").toString()
+        if (retrievedValue == "") {
+            retrievedValue = " "
+        }
         receivedList = intent.getSerializableExtra("myList") as? List<String> ?: emptyList()
         selectedmission = intent.getStringExtra("key") ?: ""
         todaysEmotion = sharedPrefs.getString("yourEmotion", "defaultValue").toString()
-        when(selectedmission){
-            "1" ->  {
-                stringValue = receivedList[0]
-            }
-            "2" ->  {
-                stringValue = receivedList[1]
-            }
-            "3" ->  {
-                stringValue = receivedList[2]
+
+        when (selectedmission) {
+            "1", "2", "3" -> {
+                stringValue = receivedList.getOrNull(selectedmission.toInt() - 1) ?: ""
             }
         }
 
-         when(todaysEmotion){
-            "angry" -> binding.todaysemotion.setImageResource(angryImageDrawable)
-            "happy" -> binding.todaysemotion.setImageResource(happyImageDrawable)
-            "sad" -> binding.todaysemotion.setImageResource(sadImageDrawable)
+        binding.todaysemotion.setImageResource(
+            when (todaysEmotion) {
+                "angry" -> R.drawable.angry_face
+                "happy" -> R.drawable.happy_face
+                "sad" -> R.drawable.sad_face
+                else -> {
+                    R.drawable.angry_face
+                }
+            }
+        )
+
+        val checkTVList = listOf(binding.checkTV, binding.checkTV1, binding.checkTV2)
+        checkTVList.forEachIndexed { index, checkBox ->
+            checkBox.isChecked = (index + 1).toString() == selectedmission
+            checkBox.isEnabled = false
         }
 
-        when(selectedmission){
-            "1" ->  {
-                binding.checkTV.isChecked = true
-            }
-            "2" ->  {
-                binding.checkTV1.isChecked = true
-            }
-            "3" ->  {
-                binding.checkTV2.isChecked = true
-            }
+        val dateTextViews = listOf(binding.dateTV, binding.dateTV1, binding.dateTV2)
+        dateTextViews.forEach { it.text = "${dayOfMonth}일" }
+
+        val missionTextViews = listOf(binding.missionTV, binding.missionTV1, binding.missionTV2)
+        receivedList.forEachIndexed { index, value ->
+            missionTextViews.getOrNull(index)?.text = value
         }
 
         binding.memoinput.setText(retrievedValue)
-
-        binding.checkTV.isEnabled = false
-        binding.checkTV1.isEnabled = false
-        binding.checkTV2.isEnabled = false
-
-        binding.dateTV.text = "${dayOfMonth}일"
-        binding.dateTV1.text = "${dayOfMonth}일"
-        binding.dateTV2.text = "${dayOfMonth}일"
-
-        binding.missionTV.text = receivedList[0]
-        binding.missionTV1.text = receivedList[1]
-        binding.missionTV2.text = receivedList[2]
-
-        binding.dayText.text = editeddate
+        binding.dayText.text = "${year}년 ${month}월 ${dayOfMonth}일"
     }
 }

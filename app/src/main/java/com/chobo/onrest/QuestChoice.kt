@@ -29,7 +29,6 @@ class QuestChoice : AppCompatActivity() {
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()
         }
-
         binding.choice1.setOnClickListener(onClickListener)
         binding.choice2.setOnClickListener(onClickListener)
         binding.choice3.setOnClickListener {
