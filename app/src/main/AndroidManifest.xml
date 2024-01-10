@@ -21,25 +21,25 @@
         android:theme="@style/Theme.OnRest"
         tools:targetApi="31"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CalenderClick1"/>
+        <activity android:name=".activity.CalenderClick1"/>
         <activity
             android:name=".NaviActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
         <activity
-            android:name=".CalenderClick"
+            android:name=".activity.CalenderClick"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
         <activity
-            android:name=".EmotionChoice1"
+            android:name=".activity.EmotionChoice1"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
         <activity
-            android:name=".QuestList"
+            android:name=".activity.QuestList"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
         <activity
-            android:name=".DiaryWrite"
+            android:name=".activity.DiaryWrite"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
         <activity
@@ -47,34 +47,34 @@
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
         <activity
-            android:name=".EmotionChoice2Sad"
+            android:name=".activity.EmotionChoice2Sad"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
         <activity
-            android:name=".EmotionChoice2Happy"
+            android:name=".activity.EmotionChoice2Happy"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
         <activity
-            android:name=".EmotionChoice2Angry"
+            android:name=".activity.EmotionChoice2Angry"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
         <activity
-            android:name=".QuestChoice"
+            android:name=".activity.QuestChoice"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".PostWrite"
+            android:name=".activity.PostWrite"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".PostDetail"
+            android:name=".activity.PostDetail"
             android:exported="false" />
         <activity
-            android:name=".splash_logo"
+            android:name=".activity.splash_logo"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

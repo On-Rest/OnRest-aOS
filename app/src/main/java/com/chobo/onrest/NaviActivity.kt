@@ -1,15 +1,14 @@
 package com.chobo.onrest
 
-import android.annotation.SuppressLint
-import android.mtp.MtpConstants
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.chobo.onrest.activity.MyPageFragment
 import com.chobo.onrest.databinding.ActivityNaviBinding
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.bottomnavigation.LabelVisibilityMode
+import com.chobo.onrest.fragment.CalendarFragment
+import com.chobo.onrest.fragment.CommunityFragment
+import com.chobo.onrest.fragment.QuestHistoryFragment
 
 private const val TAG_CALENDAR = "calendar_fragment"
 private const val TAG_COMMUNITY = "community_fragment"

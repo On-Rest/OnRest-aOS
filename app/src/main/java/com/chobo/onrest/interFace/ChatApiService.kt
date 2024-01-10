@@ -1,7 +1,7 @@
 package com.chobo.onrest.interFace
 
-import com.chobo.onrest.ChatRequestBody
-import com.chobo.onrest.ChatResponse
+import com.chobo.onrest.dataclass.ChatRequestBody
+import com.chobo.onrest.dataclass.ChatResponse
 import retrofit2.http.Body
 import retrofit2.http.Headers
 import retrofit2.http.POST

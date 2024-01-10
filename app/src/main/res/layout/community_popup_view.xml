@@ -5,7 +5,7 @@
     android:layout_height="123dp"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#00000000"
-    tools:context=".CommunityPopupView">
+    tools:context=".activity.CommunityPopupView">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/emotionbox"

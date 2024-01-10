@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".PostDetail">
+    tools:context=".activity.PostDetail">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_recylerview_top"
