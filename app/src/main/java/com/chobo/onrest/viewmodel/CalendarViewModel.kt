@@ -1,7 +1,9 @@
 package com.chobo.onrest.viewmodel
 
 
+import android.annotation.SuppressLint
 import android.app.Application
+import android.content.Context
 import android.content.Intent
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -11,29 +13,30 @@ import com.chobo.onrest.model.CalendarModel
 import java.text.SimpleDateFormat
 import java.util.Date
 
-class CalendarViewModel(application: Application,intent: Intent) : AndroidViewModel(application) {
-    private val _calendarData = MutableLiveData<CalendarData>()
+@SuppressLint("SimpleDateFormat")
+class CalendarViewModel(application: Application, intent: Intent) : AndroidViewModel(application) {
+     val _calendarData = MutableLiveData<CalendarData>()
     val calendarData: LiveData<CalendarData>
         get() = _calendarData
     private val calendarModel: CalendarModel = CalendarModel(application)
+    private val receivedList = intent.getSerializableExtra("myList") as? List<String> ?: emptyList()
+    private val selectedMission = intent.getStringExtra("key") ?: ""
+    private val sharedPrefs = application.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
     init {
-        val receivedList =
-            intent.getSerializableExtra("myList") as? List<String> ?: emptyList()
-        val selectedMission = intent.getStringExtra("key") ?: ""
         _calendarData.value = CalendarData(
             currentDay = SimpleDateFormat("dd").format(Date()),
             currentYear = SimpleDateFormat("yyyy").format(Date()),
             currentMonth = SimpleDateFormat("MM").format(Date()),
-            selectedMission = selectedMission,
+            selectedMission = intent.getStringExtra("key") ?: "",
             stringValue = when (selectedMission) {
                 "1", "2", "3" -> receivedList.getOrNull(selectedMission.toInt() - 1) ?: ""
                 else -> ""
             },
             booleanValue = false,
             editedDate = "",
-            retrievedValue = "",
-            todaysEmotion = "",
+            retrievedValue = sharedPrefs.getString("memoinput", "defaultValue").toString(),
+            todaysEmotion = sharedPrefs.getString("yourEmotion", "defaultValue").toString(),
             receivedList = emptyList(),
         )
         _calendarData.value?.let { calendarData ->
@@ -45,14 +48,6 @@ class CalendarViewModel(application: Application,intent: Intent) : AndroidViewMo
                 calendarData.booleanValue,
             )
         }
-
-        calendarModel.writefileTodo(
-            _calendarData.value!!.currentYear,
-            _calendarData.value!!.currentMonth,
-            _calendarData.value!!.todaysEmotion,
-            _calendarData.value!!.stringValue,
-            _calendarData.value!!.booleanValue
-        )
 
         _calendarData.value?.let { calendarData ->
             calendarModel.writefile(
@@ -66,16 +61,6 @@ class CalendarViewModel(application: Application,intent: Intent) : AndroidViewMo
                 calendarData.retrievedValue,
             )
         }
-
-        calendarModel.writefile(
-            _calendarData.value!!.currentYear,
-            _calendarData.value!!.currentMonth,
-            _calendarData.value!!.currentDay,
-            _calendarData.value!!.todaysEmotion,
-            _calendarData.value!!.editedDate,
-            _calendarData.value!!.selectedMission,
-            _calendarData.value!!.receivedList,
-            _calendarData.value!!.retrievedValue,
-        )
     }
 }
+

@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.chobo.onrest.R
 import com.chobo.onrest.databinding.CalendarClickBinding
+import com.chobo.onrest.model.CalendarModel
 import com.chobo.onrest.viewmodel.CalendarViewModel
 
 class CalendarClick : AppCompatActivity() {
@@ -15,6 +16,7 @@ class CalendarClick : AppCompatActivity() {
     private val viewModel: CalendarViewModel by lazy {
         ViewModelProvider(this).get(CalendarViewModel::class.java)
     }
+    private val calendarModel: CalendarModel = CalendarModel(application)
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +28,23 @@ class CalendarClick : AppCompatActivity() {
         }
         setView()
         setContentView(view)
+        calendarModel.writefileTodo(
+            viewModel.calendarData.value!!.currentYear,
+            viewModel.calendarData.value!!.currentMonth,
+            viewModel.calendarData.value!!.todaysEmotion,
+            viewModel.calendarData.value!!.stringValue,
+            viewModel.calendarData.value!!.booleanValue
+        )
+        calendarModel.writefile(
+            viewModel.calendarData.value!!.currentYear,
+            viewModel.calendarData.value!!.currentMonth,
+            viewModel.calendarData.value!!.currentDay,
+            viewModel.calendarData.value!!.todaysEmotion,
+            viewModel.calendarData.value!!.editedDate,
+            viewModel.calendarData.value!!.selectedMission,
+            viewModel.calendarData.value!!.receivedList,
+            viewModel.calendarData.value!!.retrievedValue,
+        )
 
         binding.gobackIcon.setOnClickListener {
             super.onBackPressed()
@@ -35,16 +54,9 @@ class CalendarClick : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun setView() {
         viewModel.calendarData.observe(this, Observer { calendarData ->
-            val sharedPrefs = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-            val retrievedValue =
-                sharedPrefs.getString("memoinput", "defaultValue").toString()
-            val selectedMission = intent.getStringExtra("key") ?: ""
-            val todaysEmotion =
-                sharedPrefs.getString("yourEmotion", "defaultValue").toString()
-
 
             binding.todaysemotion.setImageResource(
-                when (todaysEmotion) {
+                when (calendarData.todaysEmotion) {
                     "angry" -> R.drawable.angry_face
                     "happy" -> R.drawable.happy_face
                     "sad" -> R.drawable.sad_face
@@ -54,7 +66,7 @@ class CalendarClick : AppCompatActivity() {
 
             val checkTVList = listOf(binding.checkTV, binding.checkTV1, binding.checkTV2)
             checkTVList.forEachIndexed { index, checkBox ->
-                checkBox.isChecked = (index + 1).toString() == selectedMission
+                checkBox.isChecked = (index + 1).toString() == calendarData.selectedMission
                 checkBox.isEnabled = false
             }
 
@@ -67,7 +79,7 @@ class CalendarClick : AppCompatActivity() {
                 missionTextViews.getOrNull(index)?.text = value
             }
 
-            binding.memoinput.setText(retrievedValue)
+            binding.memoinput.setText(calendarData.retrievedValue)
             binding.dayText.text =
                 "${calendarData.currentYear}년 ${calendarData.currentMonth}월 ${calendarData.currentDay}일"
         })

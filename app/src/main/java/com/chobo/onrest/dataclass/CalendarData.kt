@@ -10,5 +10,6 @@ data class CalendarData(
     var retrievedValue: String,
     var todaysEmotion: String,
     var receivedList: List<String>,
-    var selectedMission: String
+    var selectedMission: String,
+
 )
