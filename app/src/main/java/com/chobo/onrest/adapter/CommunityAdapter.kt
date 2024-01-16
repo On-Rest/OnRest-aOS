@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.chobo.onrest.activity.PostDetail
+import com.chobo.onrest.view.PostDetail
 import com.chobo.onrest.R
 import com.chobo.onrest.dataclass.CommunityData
 

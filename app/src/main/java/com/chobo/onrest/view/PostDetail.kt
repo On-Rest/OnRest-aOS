@@ -1,4 +1,4 @@
-package com.chobo.onrest.activity
+package com.chobo.onrest.view
 
 import android.graphics.Color
 import android.os.Bundle

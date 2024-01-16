@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.chobo.onrest.activity.QuestHistoryPopup
+import com.chobo.onrest.view.QuestHistoryPopup
 import com.chobo.onrest.adapter.QuestHistoryAdapter
 import com.chobo.onrest.databinding.QuestHistoryBinding
 import com.chobo.onrest.dataclass.QuestHistoryData

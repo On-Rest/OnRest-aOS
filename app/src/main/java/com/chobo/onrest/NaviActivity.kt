@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.chobo.onrest.activity.MyPageFragment
+import com.chobo.onrest.view.MyPageFragment
 import com.chobo.onrest.databinding.ActivityNaviBinding
 import com.chobo.onrest.fragment.CalendarFragment
 import com.chobo.onrest.fragment.CommunityFragment
@@ -15,7 +15,7 @@ private const val TAG_COMMUNITY = "community_fragment"
 private const val TAG_QUEST_History = "quest_History_fragment"
 private const val TAG_MY_PAGE = "my_page_fragment"
 
-class NaviActivity : AppCompatActivity() {
+class  NaviActivity : AppCompatActivity() {
     val binding by lazy { ActivityNaviBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

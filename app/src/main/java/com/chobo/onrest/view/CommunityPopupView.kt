@@ -1,9 +1,6 @@
-package com.chobo.onrest.activity
+package com.chobo.onrest.view
 
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
-import android.widget.CompoundButton
 import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.databinding.CommunityPopupViewBinding
 

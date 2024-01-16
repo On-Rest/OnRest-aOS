@@ -1,4 +1,4 @@
-package com.chobo.onrest.activity
+package com.chobo.onrest.view
 
 import com.chobo.onrest.dto.PostSubmitRequest
 import com.chobo.onrest.dto.PostSubmitResponse

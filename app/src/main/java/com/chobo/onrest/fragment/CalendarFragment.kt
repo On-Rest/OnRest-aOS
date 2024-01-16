@@ -8,8 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.chobo.onrest.activity.CalenderClick1
-import com.chobo.onrest.activity.DiaryWrite
+import com.chobo.onrest.view.CalenderClick1
+import com.chobo.onrest.view.DiaryWrite
 import com.chobo.onrest.R
 import com.chobo.onrest.databinding.CalendarBinding
 import java.io.BufferedReader

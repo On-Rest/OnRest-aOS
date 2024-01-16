@@ -12,7 +12,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.CompoundButton
 import android.widget.PopupWindow
 import androidx.fragment.app.Fragment
-import com.chobo.onrest.activity.PostWrite
+import com.chobo.onrest.view.PostWrite
 import com.chobo.onrest.R
 import com.chobo.onrest.adapter.CommunityAdapter
 import com.chobo.onrest.databinding.CommunityBinding

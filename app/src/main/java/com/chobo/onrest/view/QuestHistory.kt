@@ -1,12 +1,10 @@
-package com.chobo.onrest.activity
+package com.chobo.onrest.view
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.databinding.CalendarBinding
 
-class
-Calender : AppCompatActivity() {
+class QuestHistory : AppCompatActivity() {
     private lateinit var binding: CalendarBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
