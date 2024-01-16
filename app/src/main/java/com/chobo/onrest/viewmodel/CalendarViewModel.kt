@@ -2,6 +2,7 @@ package com.chobo.onrest.viewmodel
 
 
 import android.app.Application
+import android.content.Intent
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,25 +11,30 @@ import com.chobo.onrest.model.CalendarModel
 import java.text.SimpleDateFormat
 import java.util.Date
 
-class CalendarViewModel(application: Application) : AndroidViewModel(application) {
+class CalendarViewModel(application: Application,intent: Intent) : AndroidViewModel(application) {
     private val _calendarData = MutableLiveData<CalendarData>()
     val calendarData: LiveData<CalendarData>
         get() = _calendarData
     private val calendarModel: CalendarModel = CalendarModel(application)
 
     init {
-        // CalendarData 초기화
+        val receivedList =
+            intent.getSerializableExtra("myList") as? List<String> ?: emptyList()
+        val selectedMission = intent.getStringExtra("key") ?: ""
         _calendarData.value = CalendarData(
             currentDay = SimpleDateFormat("dd").format(Date()),
             currentYear = SimpleDateFormat("yyyy").format(Date()),
             currentMonth = SimpleDateFormat("MM").format(Date()),
-            stringValue = "",
+            selectedMission = selectedMission,
+            stringValue = when (selectedMission) {
+                "1", "2", "3" -> receivedList.getOrNull(selectedMission.toInt() - 1) ?: ""
+                else -> ""
+            },
             booleanValue = false,
             editedDate = "",
             retrievedValue = "",
             todaysEmotion = "",
             receivedList = emptyList(),
-            selectedMission = ""
         )
         _calendarData.value?.let { calendarData ->
             calendarModel.writefileTodo(

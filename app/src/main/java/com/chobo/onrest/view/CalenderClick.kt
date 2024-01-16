@@ -38,16 +38,10 @@ class CalendarClick : AppCompatActivity() {
             val sharedPrefs = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
             val retrievedValue =
                 sharedPrefs.getString("memoinput", "defaultValue").toString()
-            val receivedList =
-                intent.getSerializableExtra("myList") as? List<String> ?: emptyList()
             val selectedMission = intent.getStringExtra("key") ?: ""
             val todaysEmotion =
                 sharedPrefs.getString("yourEmotion", "defaultValue").toString()
 
-            val stringValue = when (selectedMission) {
-                "1", "2", "3" -> receivedList.getOrNull(selectedMission.toInt() - 1) ?: ""
-                else -> ""
-            }
 
             binding.todaysemotion.setImageResource(
                 when (todaysEmotion) {
@@ -69,7 +63,7 @@ class CalendarClick : AppCompatActivity() {
 
             val missionTextViews =
                 listOf(binding.missionTV, binding.missionTV1, binding.missionTV2)
-            receivedList.forEachIndexed { index, value ->
+            calendarData.receivedList.forEachIndexed { index, value ->
                 missionTextViews.getOrNull(index)?.text = value
             }
 
