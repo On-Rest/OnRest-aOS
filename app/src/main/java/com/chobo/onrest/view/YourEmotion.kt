@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.view.View.INVISIBLE
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.R
 import com.chobo.onrest.databinding.YourEmotionBinding
@@ -14,7 +14,6 @@ class YourEmotion : AppCompatActivity() {
     private lateinit var aiemotion: String
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
-    private lateinit var emotion: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +29,6 @@ class YourEmotion : AppCompatActivity() {
         binding.header.setOnClickListener { onBackPressed() }
         sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
         editor = sharedPreferences.edit()
-        emotion = sharedPreferences.getString("yourEmotion", "defaultValue").toString()
         aiemotion = intent.getStringExtra("emotion1321").toString()
     }
 
@@ -46,23 +44,22 @@ class YourEmotion : AppCompatActivity() {
             "3" to EmotionData(R.drawable.sad_face, "슬픈 햄스터", "angry", "sadlist")
         )
 
-        val emotionData = emotionsMap[aiemotion]
-        if (emotionData != null) {
+        emotionsMap[aiemotion]?.let { emotionData ->
             editor.putString("yourEmotion", emotionData.emotion)
-            editor.apply()
+            editor.commit()
 
             binding.hamsteremotion.text = emotionData.emotionText
             binding.hamsteremotionsrc.setImageResource(emotionData.emotionSrc)
-        } else {
-            binding.choice1.visibility = INVISIBLE
+        } ?: run {
+            binding.choice1.visibility = View.INVISIBLE
             binding.hamsteremotion.text = "분석 실패!"
         }
     }
 
     private fun navigateToQuestList() {
-        val intent = Intent(this, QuestList::class.java)
-        intent.putExtra("key", aiemotion)
-        startActivity(intent)
+        startActivity(Intent(this, QuestList::class.java).apply {
+            putExtra("key", aiemotion)
+        })
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         finish()
     }
