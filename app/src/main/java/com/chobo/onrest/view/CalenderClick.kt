@@ -1,7 +1,6 @@
 package com.chobo.onrest.view
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -14,7 +13,7 @@ import com.chobo.onrest.viewmodel.CalendarViewModel
 class CalendarClick : AppCompatActivity() {
     private lateinit var binding: CalendarClickBinding
     private val viewModel: CalendarViewModel by lazy {
-        ViewModelProvider(this).get(CalendarViewModel::class.java)
+        ViewModelProvider(this)[CalendarViewModel::class.java]
     }
     private val calendarModel: CalendarModel = CalendarModel(application)
 
@@ -73,8 +72,7 @@ class CalendarClick : AppCompatActivity() {
             val dateTextViews = listOf(binding.dateTV, binding.dateTV1, binding.dateTV2)
             dateTextViews.forEach { it.text = "${calendarData.currentDay}일" }
 
-            val missionTextViews =
-                listOf(binding.missionTV, binding.missionTV1, binding.missionTV2)
+            val missionTextViews = listOf(binding.missionTV, binding.missionTV1, binding.missionTV2)
             calendarData.receivedList.forEachIndexed { index, value ->
                 missionTextViews.getOrNull(index)?.text = value
             }

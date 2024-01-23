@@ -19,8 +19,10 @@ class QuestList : AppCompatActivity() {
     private val angrylist = listOf("크게 숨 3번 쉬어보기", "차가운 물에 씻어보기", "즐거웠던 순간 떠올리기")
     private val sadlist = listOf("행복했던 순간 적어보기", "1시간 산책하기", "명상을 통해 현재 순간에 집중하기")
 
+    @SuppressLint("SimpleDateFormat")
     private val date = SimpleDateFormat("dd").format(Date())
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = QuestListBinding.inflate(layoutInflater)

@@ -8,6 +8,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.chobo.onrest.R
 import com.chobo.onrest.databinding.YourEmotionBinding
+import com.chobo.onrest.dataclass.EmotionData
 
 class YourEmotion : AppCompatActivity() {
     private lateinit var binding: YourEmotionBinding
@@ -70,5 +71,4 @@ class YourEmotion : AppCompatActivity() {
         finish()
     }
 
-    data class EmotionData(val emotionSrc: Int, val emotionText: String, val emotion: String, val aiemotion: String)
 }

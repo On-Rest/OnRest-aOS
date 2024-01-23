@@ -138,7 +138,8 @@ class PostWrite : AppCompatActivity() {
     }
 
     private fun updateSendButtonState() {
-        binding.send.isChecked = currentLengthTitle > 0 && currentLengthDetail > 0 && currentToggleCount == 2
+        binding.send.isChecked =
+            currentLengthTitle > 0 && currentLengthDetail > 0 && currentToggleCount == 2
     }
 
     private fun updateTextViewState(textView: TextView, currentLength: Int, maxLength: Int) {
